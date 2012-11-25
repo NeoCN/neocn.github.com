@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Open Source | DevX.Me]]></title>
+  <link href="http://NeoCN.github.com/blog/categories/open-source/atom.xml" rel="self"/>
+  <link href="http://NeoCN.github.com/"/>
+  <updated>2012-11-25T22:00:16+08:00</updated>
+  <id>http://NeoCN.github.com/</id>
+  <author>
+    <name><![CDATA[小马]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Openfire License 切换至 Apache License 2.0]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/10/01/openfire-switches-to-apache-license/"/>
+    <updated>2009-10-01T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/10/01/openfire-switches-to-apache-license</id>
+    <content type="html"><![CDATA[<p>Openfire已经在SVN中将GPL许可证切换为Apache许可证2.0版。下面是tweet上的一条消息：</p>
+
+
+
+
+<p><img class="alignnone size-full wp-image-164" title="Openfire switches to Apache License 2.0" src="http://www.devx.me/wp-content/uploads/2009/10/matttucker.png" alt="Openfire switches to Apache License 2.0" width="542" height="81" /></p>
+
+
+
+
+<p>Openfire主页并没有变化：</p>
+
+
+
+
+<p><img class="alignnone size-full wp-image-166" title="Openfire" src="http://www.devx.me/wp-content/uploads/2009/10/Openfire.png" alt="Openfire" width="652" height="241" /></p>
+
+
+
+
+<p>尽管如此，这至少是一条引人关注的新闻。当建立这些开源项目的公司更换协议的时候，常常也进行着商业模式的改变。或者难道是因为来自Google的压力（Google Wave 是基于XMPP协议的扩展，Google Wave服务器使用了Openfire XMPP服务器为载体，作为一个插件安装在OpenFire服务器上面）？</p>
+
+
+
+
+<p>还好Matt Tucker对此作了解释：
+<blockquote>I’m happy to announce that Openfire will be moving to a more liberal open source license — Apache 2.0. Apache 2.0 provides significantly more flexiblity than the GPL in virtually every way, so it should be a big win for the community all around. We expect to get all the source code headers updated for the next release. There were several motivations for making this change:
+<ol>
+    <li>The GPL license was preventing some companies from using Openfire due to corporate policies</li>
+    <li>There was no reason to keep using GPL and end-users generally seem to prefer Apache</li>
+    <li>We’d like to encourage a broader range of commercial companies to contribute to the project and the Apache license is a good way to help make that happen</li>
+</ol>
+</blockquote>
+大意如下：
+<blockquote>我很高兴地宣布Openfire将会迁移到一个更宽松的开源协议----Apache 2.0。Apache 2.0意味着在各个方面比GPL更灵活，所以它应该是社区的一次大胜利。我们期望在下一次Release版中更新所有源代码的头部信息。促使我们做出改变的几个方面:
+<ol>
+    <li>GPL许可证使一些公司因策略问题无法使用Openfire</li>
+    <li>没有理由继续使用GPL而且最终用户看起来通常更喜欢Apache许可证</li>
+    <li>我们想要鼓励更多的商业公司向项目捐献代码，而Apache许可证是实现这一目标的一个很好的方法</li>
+</ol>
+</blockquote></p>
+
+]]></content>
+  </entry>
+  
+</feed>

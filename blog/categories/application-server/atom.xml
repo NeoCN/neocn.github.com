@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Application Server | DevX.Me]]></title>
+  <link href="http://NeoCN.github.com/blog/categories/application-server/atom.xml" rel="self"/>
+  <link href="http://NeoCN.github.com/"/>
+  <updated>2012-11-25T22:00:16+08:00</updated>
+  <id>http://NeoCN.github.com/</id>
+  <author>
+    <name><![CDATA[小马]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[WebLogic不同域的Cookie冲突问题]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/10/01/weblogic-domain-cookie-conflict/"/>
+    <updated>2009-10-01T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/10/01/weblogic-domain-cookie-conflict</id>
+    <content type="html"><![CDATA[<p><strong>一、现象：</strong></p>
+
+
+
+
+<p>在WebLogic中，有两个不同域A（端口：9000）和B（端口：8000），应用CA在域A中，应用CB在域B中，进行如下操作：</p>
+
+
+
+
+<p>1、先登录应用CA，再登录应用CB，然后，切换回应用CA，发现应用CA的Session丢失；</p>
+
+
+
+
+<p>2、应用CA中有指向应用CB的链接，登录应用CA，点击指向应用CB的链接，应用CA的Session丢失；</p>
+
+
+
+
+<p><strong>二、原因：</strong></p>
+
+
+
+
+<p>因Cookie冲突导致Session丢失。</p>
+
+
+
+
+<p><strong>Cookie的覆盖机制：</strong>如果一个新的cookie与一个已存在的cookie的NAME、Domain和Path属性值均相同，则旧的cookie会被丢弃。（参考：<a href="http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies" target="_blank">http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</a>）</p>
+
+
+
+
+<p><strong>WebLogic的Cookie相关配置：</strong>
+<table border="0">
+<tbody>
+<tr>
+<td>
+<p style="text-align: left;">属性名</p>
+</td>
+<td>默认值</td>
+<td>值</td>
+</tr>
+<tr>
+<td>cookie-name</td>
+<td>JSESSIONID</td>
+<td>如未设置，默认为“JSESSIONID”</td>
+</tr>
+<tr>
+<td>cookie-path</td>
+<td>NULL</td>
+<td>如未设置，默认为“/”</td>
+</tr>
+<tr>
+<td>cookie-domain</td>
+<td>NULL</td>
+<td>如未设置，默认为发放cookie的服务器的域</td>
+</tr>
+</tbody></table>
+由于没有在Weblogic.xml配置文件中对cookie的相关属性值进行配置，因此应用CA和应用CB的cookie的Name、Domain和Path属性值均为默认值，即Name为JSESSIONID，Path为“/”，Domain为服务器的IP地址，三个属性值均相同，这就造成了应用CA的cookie与应用CB的cookie会互相覆盖，从而导致相应应用的session丢失。</p>
+
+
+
+
+<p><strong>三、解决办法：</strong></p>
+
+
+
+
+<p>在Weblogic.xml配置文件中增加Cookie的相应属性值的配置：<strong>
+</strong></p>
+
+
+
+
+<p>方法1：设置各应用的cookie的Name属性为不同值</p>
+
+
+
+
+<p>方法2：设置各应用的cookie的Path属性为不同值（cookie的Path属性值需与context-root值保持一致，context-root若未在Weblogic.xml中指定则默认为部署的WAR包名或文件夹名，若同一Weblogic服务器不同域中的两应用context-root相同，则此方法不可行）</p>
+
+
+
+
+<p><strong>附注：</strong>虽然问题是在WebLogic下的不同域部署应用进行互访的情况下发现的，但是，从问题产生的原因来看，在同一个域中的不同应用的互访，如果未做cookie相关属性值的配置，也会出现cookie冲突的问题。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Weblogic 10.3 连接 Oracle 8i]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/08/14/weblogic10-3-connect-to-oracle8i/"/>
+    <updated>2009-08-14T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/08/14/weblogic10-3-connect-to-oracle8i</id>
+    <content type="html"><![CDATA[<p>最近做一个项目与统一接入的集成，修改完配置文件后，需要部署到正式环境中去，应用服务器是WebLogic 10.3，在新建JNDI数据源的时候无法建立成功，出现如下错误：</p>
+
+
+
+
+<p>java.lang.ArrayIndexOutOfBoundsException: 4</p>
+
+
+
+
+<p>数组下标越界？很是让人摸不着头脑，这建数据源跟数组下标越界有什么关系？？？</p>
+
+
+
+
+<p>数据库的版本是Oracle 8i，经过查找资料，发现问题的根源是WebLogic 10.3不再支持Oracle 8i。</p>
+
+
+
+
+<p>WebLogic 10.3所支持的数据库：<a title="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" href="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" target="_blank">http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245</a></p>
+
+
+
+
+<p>目前暂时没有解决办法，只能升级Oracle数据库，或者，如果是付费用户的话可寻求官方技术支持！</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[WebLogic的antlr包冲突问题]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/19/weblogic-antlr-conflict-solution/"/>
+    <updated>2009-07-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/19/weblogic-antlr-conflict-solution</id>
+    <content type="html"><![CDATA[<p>使用Hibernate的系统在WebLogic下部署经常会出现ClassNotFoundException: org.hibernate.hql.ast.HqlToken的问题，出现该问题的原因主要由于WebLogic已经集成了antlr包 ，在使用Hibernate时，会先加载其本身所带的antlr包， 所以会和Hibernate 捆绑的antlr-2.7.5.jar冲突，导致上述错误。</p>
+
+
+
+
+<p>解决方法是：在WebLogic启动类路径先加载最新的antlr包。<!--more--></p>
+
+
+
+
+<p>具体方法，以WebLogic 10.3 为例：</p>
+
+
+
+
+<p>Windows下修改<br />
+安装目录：D:\bea\<br />
+将最新antlr包拷贝到D:\bea\wlserver_10.0\common\lib\<br />
+修改：D:\bea\user_projects\domains\base_domain\bin\startWebLogic.cmd</p>
+
+
+
+
+<p>添加如下内容：
+<pre>set CLASSPATH=D:\bea\wlserver_10.0\common\lib\antlr-2.7.6.jar%CLASSPATH%;
+%MEDREC_WEBLOGIC_CLASSPATH%</pre>
+Linux下修改<br />
+安装目录：/home/bea<br />
+将 antlr包拷贝到 /home/bea/wlserver_10.3/common/lib/<br />
+修改：/home/bea/user_projects/domains/xmyd/bin/startWebLogic.sh</p>
+
+
+
+
+<p>添加如下内容：
+<pre>export HIBERNATE_CLASSPATH="/home/bea/wlserver_10.3/common/lib/antlr-2.7.6.jar"
+CLASSPATH="${HIBERNATE_CLASSPATH}${SAVE_CLASSPATH}"</pre>
+这样系统部署在AdminServer上就可以正常运行<br />
+但是如果weblogic有多个server时，我们将系统部署到非AdminServer时，上述错误又出来了，折腾了很久终于找到了解决方法</p>
+
+
+
+
+<p>我们需要在部署系统的war包中，添加（*.war/web/WEB-INF/）weblogic.xml<br />
+其内容如下：</p>
+
+
+
+
+<p>[xml]<br />
+&lt;weblogic-web-app&gt;<br />
+    &lt;container-descriptor&gt;<br />
+        &lt;prefer-web-inf-classes&gt;true&lt;/prefer-web-inf-classes&gt;<br />
+    &lt;/container-descriptor&gt;<br />
+&lt;/weblogic-web-app&gt;<br />
+[/xml]</p>
+
+
+
+
+<p>要求Web应用优先加载应用系统WEB-INF下的Jar，上述问题得以解决。</p>
+
+]]></content>
+  </entry>
+  
+</feed>

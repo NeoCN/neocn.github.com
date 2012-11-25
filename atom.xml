@@ -1,16 +1,1134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[DevX.Me]]></title>
   <link href="http://NeoCN.github.com/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T17:54:13+08:00</updated>
+  <updated>2012-11-25T22:00:16+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[小马]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[8个正则表达式图解]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/12/02/8-regular-expressions-diagrammatic-explanation/"/>
+    <updated>2009-12-02T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/12/02/8-regular-expressions-diagrammatic-explanation</id>
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[译]10个你应该知道的Java正则表达式的例子]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/12/01/10-java-regular-expression-examples-you-should-know/"/>
+    <updated>2009-12-01T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/12/01/10-java-regular-expression-examples-you-should-know</id>
+    <content type="html"><![CDATA[<p>正则表达式，用于验证用户输入的合法性是非常方便的，正好在网上看到了这篇文章，顺手翻译一下。</p>
+
+<p>原文链接：<a title="10 Java Regular Expression Examples You Should Know " href="http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/" target="_blank">http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/</a></p>
+
+<p>声明：原创翻译，不足之处请多多指正，转载请注明出处！</p>
+
+<p>正则表达式是一个编程的艺术，很难调试，学习和理解，但强大的功能，仍吸引不少开发者编写正则表达式。让我们探索一下下面10个实际应用中的正则表达式。
+<h3><strong>1. 用户名正则表达式模式</strong></h3>
+<pre>^[a-z0-9_-]{3,15}$</pre>
+<pre>^                         # 行开始
+  [a-z0-9_-]              # 匹配列表中的字符，a-z,0–9,下划线，连字符
+            {3,15}        # 长度至少3个字符，最大长度为15
+$                         # 行结束</pre>
+<h3>2. 密码正则表达式模式</h3>
+<pre>((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})</pre>
+<pre>(                        # 组开始
+    (?=.*\d)             # 必须包含一个数字 0-9
+    (?=.*[a-z])          # 必须包含一个小写字符
+    (?=.*[A-Z])          # 必须包含一个大写字符
+    (?=.*[@#$%])         # 必须包含一个列表中的特殊字符"@#$%"
+                .        # 检查所有字符串与前面的条件的匹配
+                 {6,20}  # 长度至少为6个字符，最大长度为20
+)                        # 组结束</pre>
+<h3><!--more-->3. 16进制颜色代码正则表达式模式</h3>
+<pre>^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$</pre>
+<pre>^                       # 行开始
+ #                      #   必须包含一个"#"符号
+  (                     #   组#1开始
+   [A-Fa-f0-9]{6}       #     列表中的任意字符串,长度为6
+   |                    #     ..或者
+   [A-Fa-f0-9]{3}       #     列表中的任意字符串,长度为3
+  )                     #   组#1结束
+$                       # 行结束</pre>
+<h3>4. Email 正则表达式模式</h3>
+<pre>^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</pre>
+<pre>^                            # 行开始
+  [_A-Za-z0-9-]+             #   必须以中括号中的字符为起始字符[],必须包含一个或多个(+)
+  (                          #   组#1开始
+    \\.[_A-Za-z0-9-]+        #     接下来是一个点"."和中括号内的字符[],必须包含一个或者多个(+)
+  )*                         #   组#1结束, 这个组是可选的(*)
+    @                        #     必须包含一个"@"符号
+     [A-Za-z0-9]+            #       接下来是中括号内的字符[],必须包含一个或者多个(+)
+      (                      #         组 #2开始 – 一级TLD检查
+       \\.[A-Za-z0-9]+       #           接下来是一个点"."和中括号内的字符[],必须包含一个或者多个(+)
+      )*                     #         组#2结束,这个组是可选的(*)
+      (                      #         组#3开始 – 二级TLD检查
+       \\.[A-Za-z]{2,}       #           接下来是一个点"."和中括号内的字符[], 最小长度为2
+      )                      #         组#3结束
+$                            # 行结束</pre>
+<h3>5. 图像文件扩展名正则表达式模式</h3>
+<pre>([^\s]+(\.(?i)(jpg|png|gif|bmp))$)</pre>
+<pre>(                         # 组#1开始
+ [^\s]+                   #   必须包含一个或更多的任意字符(除了空格)
+       (                  #     组#2开始
+        \.                #       接下来是一个点"."
+         (?i)             #       忽略后边字符的大小写检查
+             (            #         组#3开始
+              jpg         #           包含字符"jpg"
+              |           #           ..或者
+              png         #           包含字符"png"
+              |           #           .. 或者
+              gif         #           包含字符"gif"
+              |           #           .. 或者
+              bmp         #           包含字符"bmp"
+             )            #         组#3结束
+       )                  #     组#2结束
+ $                        #   字符串的结束
+)                         # 组#1结束</pre>
+<h3>6. IP地址正则表达式模式</h3>
+<pre>^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.
+([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$</pre>
+<pre>^                  # 行开始
+ (                 #   组#1开始
+  [01]?\\d\\d?     #     可以是1到2个数字. 如果出现3个数字, 必须以0或者1开始
+                   #     例如 ([0-9], [0-9][0-9],[0-1][0-9][0-9])
+    |              #     ...或者
+  2[0-4]\\d        #     以2开始, 紧跟着是0-4，并且以任意数字结尾(2[0-4][0-9])
+   |               #     ...或者
+  25[0-5]          #     以2开始, 紧跟着是5，并且以0-5结尾 (25[0-5])
+ )                 #   组#1结束
+  \.               #   接下来是点"."
+....               #   重复3次 (3x)
+$                  # 行结束</pre>
+<h3>7. 时间格式正则表达式模式</h3>
+<h4>12-小时制时间正则表达式模式</h4>
+<pre>(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)</pre>
+<pre>(                                  # 组#1开始
+ 1[012]                            #   以10, 11, 12开始
+ |                                 #   或者
+ [1-9]                             #   以1,2,...9开始
+)                                  # 组#1结束
+ :                                 #   接下来是一个冒号 (:)
+  [0-5][0-9]                       #     接下来是0..5和0..9,意思是00到59
+            (\\s)?                 #       接下来是一个空格(可选)
+                  (?i)             #         下面的检查不区分大小写
+                      (am|pm)      #           接下来是AM或者PM</pre>
+<h4>24小时制时间正则表达式模式</h4>
+<pre>([01]?[0-9]|2[0-3]):[0-5][0-9]</pre>
+<pre>(                                  # 组#1开始
+ [01]?[0-9]                        #   以0-9,1-9,00-09,10-19开始
+ |                                 #   或者
+ 2[0-3]                            #   以20-23开始
+)                                  # 组#1结束
+ :                                 #   接下来是一个冒号(:)
+  [0-5][0-9]                       #     接下来是0..5和0..9,意思是00到59</pre>
+<h3>8. 日期格式 (dd/mm/yyyy) 正则表达式模式</h3>
+<pre>(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)</pre>
+<pre>(                          # 组#1开始
+ 0?[1-9]                   #   01-09或者1-9
+ |                         #   ..或者
+ [12][0-9]                 #   10-19或者20-29
+ |                         #   ..或者
+ 3[01]                     #   30, 31
+)                          # 组#1结束
+  /                        #   接下来是一个"/"
+   (                       #     组#2开始
+    0?[1-9]                #       01-09或者1-9
+    |                      #       ..或者
+    1[012]                 #       10,11,12
+    )                      #     组#2结束
+     /                     #       接下来是一个"/"
+      (                    #         组#3开始
+       (19|20)\\d\\d       #           19[0-9][0-9]或者20[0-9][0-9]
+      )                    #         组#3结束</pre>
+<h3>9. HTML标签正则表达式模式</h3>
+<pre>&lt;("[^"]*"|'[^']*'|[^'"&gt;])*&gt;</pre>
+<pre>&lt;                # 以"&lt;"标签开始
+ (               #   组#1开始
+  "[^"]*"        #     只允许两个双引号成对出现-"string"
+  |              #     ..或者
+  '[^']*'        #     只允许两个单引号成对出现- 'string'
+  |              #     ..或者
+  [^'"&gt;]         #     不能出现单独的双引号、单引号和"&gt;"
+ )               #   组#1结束
+ *               #   0次或多次
+&gt;                # 以结束标签"&gt;"结束</pre>
+<h3>10. HTML链接正则表达式模式</h3>
+<h4>HTML中的A标签正则表达式模式</h4>
+<pre>(?i)&lt;a([^&gt;]+)&gt;(.+?)&lt;/a&gt;</pre>
+<pre>(              # 组#1开始
+ ?i            #   所有的检查区分大小写
+)              # 组#1结束
+&lt;a             # 以"&lt;a"开始
+  (            #   组#2开始
+   [^&gt;]+       #     除了("&gt;")之外的任意字符,至少一个字符
+  )            #   组#2结束
+  &gt;            #     接下来是"&gt;"
+   (.+?)       #       匹配所有
+        &lt;/a&gt;   #         以"&lt;/a&gt;结束</pre>
+<h4>提取HTML链接正则表达式模式</h4>
+<pre>\s*(?i)href\s*=\s*(\"([^"]*\")|'[^']*'|([^'"&gt;\s]+));</pre>
+<pre>\s*                          # 可以以空格开始
+  (?i)                       #   所有的检查是区分大小写的
+     href                    #     接下来是一个"href"字
+        \s*=\s*              #       等号两边都允许空格,
+              (              #         组#1开始
+               "([^"]*")     #           只允许2个双引号成对出现 - "string"
+               |             #           ..或者
+               '[^']*'       #           只允许2个单引号成对出现 - 'string'
+               |             #           ..或者
+               ([^'"&gt;]+)     #           或者不允许出现单独的单引号、双引号和"&gt;"
+               )             #         组#1结束</pre></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[博客有Google PageRank值啦~~]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/11/26/blog-has-google-pagerank-value/"/>
+    <updated>2009-11-26T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/11/26/blog-has-google-pagerank-value</id>
+    <content type="html"><![CDATA[<p>上个月的时候，还关注过自己网站的Google PageRank，嘛都没有，索性后边也没再看。几个月来一直被公司派驻移动，事情挺多，也挺杂的，也没怎么抽时间来弄博客，等这次WAP单点登录系统完成后，一定抽个时间好好总结总结……</p>
+
+<p>不知道昨天老婆装什么软件把Google工具条给装上了，今天突然对这个工具条有了兴趣，发现安装了Google工具条后可以查看一个网站的Google PageRank，赶紧的，访问了自己的博客，居然，PageRank有值了，虽然仅仅是1，但也很兴奋，完全没想到啊！兴奋中……</p>
+
+<p>[caption id=&#8221;attachment_208&#8221; align=&#8221;aligncenter&#8221; width=&#8221;347&#8221; caption=&#8221;iJavaEE-PageRank&#8221;]<img class="size-full wp-image-208" title="iJavaEE-PageRank" src="http://www.devx.me/wp-content/uploads/2009/11/iJavaEE-PageRank.PNG" alt="iJavaEE-PageRank" width="347" height="82" />[/caption]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[WordPress自动更新超时]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/11/15/wordpress-auto-update-timeout/"/>
+    <updated>2009-11-15T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/11/15/wordpress-auto-update-timeout</id>
+    <content type="html"><![CDATA[<p>WordPress 自动更新升级的时候，总是会出现类似下面的错误：
+<pre>Operation timed out after <span style="color: #ff0000;">60</span> seconds with <span style="color: #ff0000;">xxxxxx</span> out of <span style="color: #ff0000;">2593212</span> bytes receiveds 。</pre>
+解决办法如下：</p>
+
+<p>打开 /wp-admin/includes/file.php 文件，找到如下代码：
+<pre lang="php">$response = wp_remote_get($url, array('timeout' = 60));</pre>
+修改超时时间60为600或更长。</p>
+
+<p>完成后，重新升级即可。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PL SQL Developer v8.0.0.1480 KeyMaker]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/11/11/pl-sql-developer-v8-keymaker/"/>
+    <updated>2009-11-11T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/11/11/pl-sql-developer-v8-keymaker</id>
+    <content type="html"><![CDATA[<p>晚上下班回家，整理桌面上的软件，发现9月份下载的 PL SQL Developer v8 还在那里，当时因为没法注册，丢在那里没管它，今天Google一搜，不错，ZWT小组已经放出了注册机了，并且很有意思的是，注册机中的图片是庆祝建国60周年相关的。ZWT小组的破解功力果然深厚。<img class="size-full wp-image-197 aligncenter" title="PLSQL Developer KeyMaker" src="http://www.devx.me/wp-content/uploads/2009/11/PLSQL-Developer-KeyMaker.PNG" alt="PLSQL Developer KeyMaker" width="407" height="372" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JSF 2.0 相关资料]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/10/30/jsf-2-tutorials/"/>
+    <updated>2009-10-30T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/10/30/jsf-2-tutorials</id>
+    <content type="html"><![CDATA[<p>07年的这个时候，正折腾着JSF1.2呢，不过自打去年毕业后，就再也没碰过JSF了。转眼间，都2.0了，突然觉得，这技术咋就变化那么快呢。搞IT，尤其是搞Java EE ，真是，累就一个字啊～～ 据说这次的2.0有很大的变化，尤其是在自定义组件的开发方面，简化了很多；2.0中也直接对AJAX做了支持。</p>
+
+<p>随手Google了一下相关资料，整理一下列出来：</p>
+
+<p><a onmousedown="return clk(0,'','','res','2','','0CAsQFjAB')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu1/" target="_blank">JSF 2 简介，第1 部分: 流线化Web 应用程序开发</a></p>
+
+<p><a onmousedown="return clk(0,'','','res','2','','0CAoQFjAB')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu2/" target="_blank">JSF 2 简介，第2 部分: 模板及复合组件</a></p>
+
+<p><a onmousedown="return clk(0,'more-results','','result','1','','0CAMQxAEwAA')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu3/index.html" target="_blank">JSF 2 简介，第3 部分: 事件处理、JavaScript 和Ajax</a></p>
+
+<p><a onmousedown="return clk(0,'more-results','','result','3','','0CAcQxAEwAg')" href="http://www.ibm.com/developerworks/cn/web/wa-aj-gmaps/" target="_blank">JSF 2.0 Ajax 世界中的GMaps4JSF</a></p>
+
+<p><a title="JSF 2.0 Refcard " href="http://refcardz.dzone.com/refcardz/javaserver-faces-20">JSF 2.0 Refcard</a></p>
+
+<p><a title="JSF 2.0 Tutorials" href="http://www.coreservlets.com/JSF-Tutorial/jsf2/">JSF 2.0 Tutorials : JavaServer Faces 2.0 with Facelets and Ajax</a></p>
+
+<p>Sun的参考实现下载：<a title="JSF" href="https://javaserverfaces.dev.java.net/">https://javaserverfaces.dev.java.net/</a></p>
+
+<p>IceFaces和MyFaces的JSF2.0实现，也会很快的跟进的。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[李开复：人生中的十大启发]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/10/19/kai-fu-lee-ten-inspiration-in-life/"/>
+    <updated>2009-10-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/10/19/kai-fu-lee-ten-inspiration-in-life</id>
+    <content type="html"><![CDATA[<p><ol>
+	<li>自信不失谦虚，谦虚不失自信；</li>
+	<li>兴趣就是天赋，天赋就是兴趣，</li>
+	<li>思考比传道更重要，观点比解惑更重要；</li>
+	<li>我不同意你，但是我支持你；</li>
+	<li>挫折不 是惩罚，而是学习的机会；</li>
+	<li>创新不重要，有用的创新才重要；</li>
+	<li>用勇气改变可以改变的事情，用胸怀接受不能接受的事情，用智慧分辨两者的不同；</li>
+	<li>求知若饥，虚心若愚；</li>
+	<li>追随你的心，用它引领你的一生，其他的一切都是次要的；</li>
+	<li>你的价值不是你拥有了多少，而是你留下多少。</li>
+</ol></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[WebLogic不同域的Cookie冲突问题]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/10/01/weblogic-domain-cookie-conflict/"/>
+    <updated>2009-10-01T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/10/01/weblogic-domain-cookie-conflict</id>
+    <content type="html"><![CDATA[<p><strong>一、现象：</strong></p>
+
+<p>在WebLogic中，有两个不同域A（端口：9000）和B（端口：8000），应用CA在域A中，应用CB在域B中，进行如下操作：</p>
+
+<p>1、先登录应用CA，再登录应用CB，然后，切换回应用CA，发现应用CA的Session丢失；</p>
+
+<p>2、应用CA中有指向应用CB的链接，登录应用CA，点击指向应用CB的链接，应用CA的Session丢失；</p>
+
+<p><strong>二、原因：</strong></p>
+
+<p>因Cookie冲突导致Session丢失。</p>
+
+<p><strong>Cookie的覆盖机制：</strong>如果一个新的cookie与一个已存在的cookie的NAME、Domain和Path属性值均相同，则旧的cookie会被丢弃。（参考：<a href="http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies" target="_blank">http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</a>）</p>
+
+<p><strong>WebLogic的Cookie相关配置：</strong>
+<table border="0">
+<tbody>
+<tr>
+<td>
+<p style="text-align: left;">属性名</p>
+</td>
+<td>默认值</td>
+<td>值</td>
+</tr>
+<tr>
+<td>cookie-name</td>
+<td>JSESSIONID</td>
+<td>如未设置，默认为“JSESSIONID”</td>
+</tr>
+<tr>
+<td>cookie-path</td>
+<td>NULL</td>
+<td>如未设置，默认为“/”</td>
+</tr>
+<tr>
+<td>cookie-domain</td>
+<td>NULL</td>
+<td>如未设置，默认为发放cookie的服务器的域</td>
+</tr>
+</tbody></table>
+由于没有在Weblogic.xml配置文件中对cookie的相关属性值进行配置，因此应用CA和应用CB的cookie的Name、Domain和Path属性值均为默认值，即Name为JSESSIONID，Path为“/”，Domain为服务器的IP地址，三个属性值均相同，这就造成了应用CA的cookie与应用CB的cookie会互相覆盖，从而导致相应应用的session丢失。</p>
+
+<p><strong>三、解决办法：</strong></p>
+
+<p>在Weblogic.xml配置文件中增加Cookie的相应属性值的配置：<strong>
+</strong></p>
+
+<p>方法1：设置各应用的cookie的Name属性为不同值</p>
+
+<p>方法2：设置各应用的cookie的Path属性为不同值（cookie的Path属性值需与context-root值保持一致，context-root若未在Weblogic.xml中指定则默认为部署的WAR包名或文件夹名，若同一Weblogic服务器不同域中的两应用context-root相同，则此方法不可行）</p>
+
+<p><strong>附注：</strong>虽然问题是在WebLogic下的不同域部署应用进行互访的情况下发现的，但是，从问题产生的原因来看，在同一个域中的不同应用的互访，如果未做cookie相关属性值的配置，也会出现cookie冲突的问题。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Openfire License 切换至 Apache License 2.0]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/10/01/openfire-switches-to-apache-license/"/>
+    <updated>2009-10-01T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/10/01/openfire-switches-to-apache-license</id>
+    <content type="html"><![CDATA[<p>Openfire已经在SVN中将GPL许可证切换为Apache许可证2.0版。下面是tweet上的一条消息：</p>
+
+<p><img class="alignnone size-full wp-image-164" title="Openfire switches to Apache License 2.0" src="http://www.devx.me/wp-content/uploads/2009/10/matttucker.png" alt="Openfire switches to Apache License 2.0" width="542" height="81" /></p>
+
+<p>Openfire主页并没有变化：</p>
+
+<p><img class="alignnone size-full wp-image-166" title="Openfire" src="http://www.devx.me/wp-content/uploads/2009/10/Openfire.png" alt="Openfire" width="652" height="241" /></p>
+
+<p>尽管如此，这至少是一条引人关注的新闻。当建立这些开源项目的公司更换协议的时候，常常也进行着商业模式的改变。或者难道是因为来自Google的压力（Google Wave 是基于XMPP协议的扩展，Google Wave服务器使用了Openfire XMPP服务器为载体，作为一个插件安装在OpenFire服务器上面）？</p>
+
+<p>还好Matt Tucker对此作了解释：
+<blockquote>I’m happy to announce that Openfire will be moving to a more liberal open source license — Apache 2.0. Apache 2.0 provides significantly more flexiblity than the GPL in virtually every way, so it should be a big win for the community all around. We expect to get all the source code headers updated for the next release. There were several motivations for making this change:
+<ol>
+	<li>The GPL license was preventing some companies from using Openfire due to corporate policies</li>
+	<li>There was no reason to keep using GPL and end-users generally seem to prefer Apache</li>
+	<li>We’d like to encourage a broader range of commercial companies to contribute to the project and the Apache license is a good way to help make that happen</li>
+</ol>
+</blockquote>
+大意如下：
+<blockquote>我很高兴地宣布Openfire将会迁移到一个更宽松的开源协议&#8212;-Apache 2.0。Apache 2.0意味着在各个方面比GPL更灵活，所以它应该是社区的一次大胜利。我们期望在下一次Release版中更新所有源代码的头部信息。促使我们做出改变的几个方面:
+<ol>
+	<li>GPL许可证使一些公司因策略问题无法使用Openfire</li>
+	<li>没有理由继续使用GPL而且最终用户看起来通常更喜欢Apache许可证</li>
+	<li>我们想要鼓励更多的商业公司向项目捐献代码，而Apache许可证是实现这一目标的一个很好的方法</li>
+</ol>
+</blockquote></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Larry Ellison：We are in it to win it.]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/09/10/we-are-in-it-to-win-it/"/>
+    <updated>2009-09-10T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/09/10/we-are-in-it-to-win-it</id>
+    <content type="html"><![CDATA[<p>Oracle以74亿美元收购Sun公司，这项并购已经被美国司法部批准，但欧盟于北京时间9月3日晚宣布对Oracle 74亿美元收购SUN一案展开反垄断调查，计划对竞争力影响进行深入的审核。欧盟的调查重点是该收购案对MySQL数据库的影响。</p>
+
+<p>这项收购案中，人们最担心的，也许是Sun的Sparc处理器和Solars操作系统的命运。Oracle会如何处理Sun的硬件部门，会如何对待Solars操作系统呢？下面的这张图片也许会让Sun的客户吃下一个定心丸：
+<p style="text-align: center;"><img class="size-full wp-image-155 aligncenter" title="sun_customers_lg" src="http://www.devx.me/wp-content/uploads/2009/09/sun_customers_lg.gif" alt="sun_customers_lg" width="370" height="552" /></p></p>
+
+<p>内容大致翻译如下：</p>
+
+<p>Sun的客户们，Oracle计划：</p>
+
+<p>1、投入更多的资金开发SPARC</p>
+
+<p>2、投入更多的资金开发Solars</p>
+
+<p>3、拥有超过Sun 2倍的硬件专家来销售和服务SPARC/Solars系统</p>
+
+<p>4、通过紧密集成Oracle的软件和Sun的硬件显著提高Sun的硬件性能</p>
+
+<p><strong>我们志在必得。IBM，我们期待着在硬件业务上与你一较高下。 &#8211; 拉里.埃里森</strong></p>
+
+<p>埃里森的这句话，把他的个性体现的淋漓尽致，也显现出了Oracle在硬件业务上的巨大野心。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[有史以来最狂妄的演讲 -- Larry Ellison]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/09/10/commencement-speech-larry-ellison/"/>
+    <updated>2009-09-10T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/09/10/commencement-speech-larry-ellison</id>
+    <content type="html"><![CDATA[<p>下面是Oracle  CEO Larry Ellison 在耶鲁大学2000届毕业典礼上发表的世人看来最为狂妄、不受欢迎但又是现实真实状况的演讲：</p>
+
+<p>耶鲁的毕业生们，我很抱歉——如果你们不喜欢这样的开场。我想请你们为我做一件事。请你——好好看一看周围，看一看站在你左边的同学，看一看站在你右边的同学。</p>
+
+<p>请你设想这样的情况：从现在起5年之后，10年之后，或30年之后，今天站在你左边的这个人会是一个失败者；右边的这个人，同样，也是个失败者。而你，站在中间的家伙，你以为会怎样？一样是失败者。失败的经历。失败的优等生。</p>
+
+<p>说实话，今天我站在这里，并没有看到一千个毕业生的灿烂未来。我没有看到一千个行业的一千名卓越领导者，我只看到了一千个失败者。你们感到沮丧，这是可以理解的。为什么，我，埃里森，一个退学生，竟然在美国最具声望的学府里这样厚颜地散布异端？我来告诉你原因。因为，我，埃里森，这个行星上第二富有的人，是个退学生，而你不是。因为比尔·盖茨，这个行星上最富有的人——就目前而言——是个退学生，而你不是。因为艾伦，这个行星上第三富有的人，也退了学，而你没有。再来一点证据吧，因为戴尔，这个行星上第九富有的人——他的排位还在不断上升，也是个退学生。而你，不是。
+<!--more-->
+&#8230;&#8230;你们非常沮丧，这是可以理解的。</p>
+
+<p>你们将来需要这些有用的工作习惯。你将来需要这种“治疗”。你需要它们，因为你没辍学，所以你永远不会成为世界上最富有的人。哦，当然，你可以，也许，以你的方式进步到第10位，第11位，就像Steve。但，我没有告诉你他在为谁工作，是吧？</p>
+
+<p>根据记载，他是研究生时辍的学，开化得稍晚了些。</p>
+
+<p>现在，我猜想你们中间很多人，也许是绝大多数人，正在琢磨，“我能做什么？  我究竟有没有前途？”，当然没有。太晚了，你们已经吸收了太多东西，以为自己懂得太多。你们再也不是19岁了。你们有了“内置”的帽子，哦，我指的可不是你们脑袋上的学位帽。</p>
+
+<p>嗯&#8230;&#8230;你们已经非常沮丧啦。这是可以理解的。所以，现在可能是讨论实质的时候啦——</p>
+
+<p>绝不是为了你们，2000年毕业生。你们已经被报销，不予考虑了。我想，你们就偷偷摸摸去干那年薪20万的可怜工作吧，在那里，工资单是由你两年前辍学的同班同学签字开出来的。事实上，我是寄希望于眼下还没有毕业的同学。我要对他们说，离开这里。收拾好你的东西，带着你的点子，别再回来。退学吧，开始行动。</p>
+
+<p>我要告诉你，一顶帽子一套学位服必然要让你沦落&#8230;&#8230;就像这些保安马上要把我从这个讲台上撵走一样必然&#8230;&#8230;（此时，Larry被带离了讲台）</p>
+
+<p>Graduates  of Yale University, I apologize if you have endured this type of prologue  before, but I want you to do something for me. Please, take a ood look around  you. Look at the classmate on your left. Look at the classmate on your right.  Now, consider this: five years from now, 10 years from now, even 30 years from  now, odds are the person on your left is going to be a loser. The person on your  right, meanwhile, will also be a loser. And you, in the middle? What can you  expect? Loser. Loserhood. Loser Cum Laude.</p>
+
+<p>In fact, as I look out before  me today, I don&#8217;t see a thousand hopes for a bright tomorrow. I don&#8217;t see a  thousand future leaders in a thousand industries. I see a thousand  losers.</p>
+
+<p>You&#8217;re upset. That&#8217;s understandable. After all, how can I,  Lawrence &#8216;Larry&#8217; Ellison, college dropout, have the audacity to spout such  heresy to the graduating class of one of the nation&#8217;s most prestigious  institutions? I&#8217;ll tell you why. Because I, Lawrence &#8220;Larry&#8221; Ellison, second  richest man on the planet, am a college dropout, and you are  not.</p>
+
+<p>Because Bill Gates, richest man on the planet &#8211; for now, anyway &#8211;  is a college dropout, and you are not.</p>
+
+<p>Because Paul Allen, the third  richest man on the planet, dropped out of college, and you did not.</p>
+
+<p>And  for good measure, because Michael Dell, No. 9 on the list and moving up fast, is  a college dropout, and you, yet again, are not.</p>
+
+<p>Hmm &#8230; you&#8217;re very  upset. That&#8217;s understandable. So let me stroke your egos for a moment by  pointing out, quite sincerely, that your diplomas were not attained in vain.  Most of you, I imagine, have spent four to five years here, and in many ways  what you&#8217;ve learned and endured will serve you well in the years ahead. You&#8217;ve  established good work habits. You&#8217;ve established a network of people that will  help you down the road. And you&#8217;ve established what will be lifelong  relationships with the word &#8216;therapy.&#8217; All that of is good. For in truth, you  will need that network. You will need those strong work habits. You will need  that therapy.</p>
+
+<p>You will need them because you didn&#8217;t drop out, and so you  will never be among the richest people in the world. Oh sure, you may, perhaps,  work your way up to No. 10 or No. 11, like Steve Ballmer. But then, I don&#8217;t have  to tell you who he really works for, do I? And for the record, he dropped out of  grad school. Bit of a late bloomer.</p>
+
+<p>Finally, I realize that many of you,  and hopefully by now most of you, are wondering, &#8216;Is there anything I can do? Is  there any hope for me at all?&#8217; Actually, no. It&#8217;s too late. You&#8217;ve absorbed too  much, think you know too much. You&#8217;re not 19 anymore. You have a built-in cap,  and I&#8217;m not referring to the mortar boards on your heads.</p>
+
+<p>Hmm&#8230; you&#8217;re  really very upset. That&#8217;s understandable. So perhaps this would be a good time  to bring up the silver lining. Not for you, Class of &#8216;00. You are a write-off,  so I&#8217;ll let you slink off to your pathetic $200,000-a-year jobs, where your  checks will be signed by former classmates who dropped out two years  ago.</p>
+
+<p>Instead, I want to give hope to any underclassmen here today. I say  to you, and I can&#8217;t stress this enough: leave. Pack your things and your ideas  and don&#8217;t come back. Drop out. Start up.</p>
+
+<p>For I can tell you that a cap  and gown will keep you down just as surely as these security guards dragging me  off this stage are keeping me down &#8230;</p>
+
+<p>(At this point The Oracle CEO  was ushered off stage.)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google App Engine 部署异常]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/09/07/google-application-engine-deploy-exception/"/>
+    <updated>2009-09-07T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/09/07/google-application-engine-deploy-exception</id>
+    <content type="html"><![CDATA[<p>今天开始尝试着做Google Application Engine  应用程序开发（Java版），第一次部署还比较正常，除了在文件超过1M时频繁出现：java.net.SocketException: Unexpected end of file from server；</p>
+
+<p>在了解了文件大小限制并成功部署之后，再次重新部署时，却出现如下异常，让人非常头疼：</p>
+
+<p>Another transaction by user XXXXXX is already in progress for this app and major version. That user can undo the transaction with appcfg.py&#8217;s &#8220;rollback&#8221; command.</p>
+
+<p>解决办法如下：</p>
+
+<p>从控制台进入Google App Engine的SDK目录下的bin目录，执行：“appcfg.cmd rollback  项目war目录路径”即可。</p>
+
+<p>例如：</p>
+
+<p>D:\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.2.5.v200909021031\appengine-java-sdk-1.2.5\bin&gt;appcfg.cmd rollback D:\eclipse\workspace\XXXXXX\war</p>
+
+<p>输出如下：</p>
+
+<p>Reading application configuration data&#8230;<br />
+Beginning server interaction for XXXXXX&#8230;<br />
+0% Rolling back the update.<br />
+Success.<br />
+Cleaning up temporary files&#8230;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Weblogic 10.3 连接 Oracle 8i]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/08/14/weblogic10-3-connect-to-oracle8i/"/>
+    <updated>2009-08-14T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/08/14/weblogic10-3-connect-to-oracle8i</id>
+    <content type="html"><![CDATA[<p>最近做一个项目与统一接入的集成，修改完配置文件后，需要部署到正式环境中去，应用服务器是WebLogic 10.3，在新建JNDI数据源的时候无法建立成功，出现如下错误：</p>
+
+<p>java.lang.ArrayIndexOutOfBoundsException: 4</p>
+
+<p>数组下标越界？很是让人摸不着头脑，这建数据源跟数组下标越界有什么关系？？？</p>
+
+<p>数据库的版本是Oracle 8i，经过查找资料，发现问题的根源是WebLogic 10.3不再支持Oracle 8i。</p>
+
+<p>WebLogic 10.3所支持的数据库：<a title="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" href="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" target="_blank">http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245</a></p>
+
+<p>目前暂时没有解决办法，只能升级Oracle数据库，或者，如果是付费用户的话可寻求官方技术支持！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cygwin Bash Shell 中文显示]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/08/14/cygwin-bash-shell-chinese/"/>
+    <updated>2009-08-14T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/08/14/cygwin-bash-shell-chinese</id>
+    <content type="html"><![CDATA[<p>昨天，在XP上安装了Cygwin，移动的网速还是不错的，很快就安装完成了，只是，发现中文全部显示为问号，而且，ls和dir命令，也没有对目录等的进行着色，以下是解决办法：</p>
+
+<p>1、解决中文文件和目录名显示问题</p>
+
+<p>修改.inputrc文件，打开以下设置：
+<pre lang="bash">set meta-flag on
+# 关闭bash命令行8字节字符转义符的转换
+set convert-meta off
+# 使bash命令行支持8字节字符输入
+set input-meta on
+# 使bash命令行支持8字节字符输出
+set output-meta on</pre>
+<!--more--></p>
+
+<p>2、修改.bashrc文件中，添加如下代码，解决目录着色问题
+<pre lang="bash">alias ls='ls --color --show-control-chars'</pre>
+3、修改.bash_profile，增加语言相关环境变量
+<pre lang="bash">export LC_ALL=zh_CN.GBK
+export LC_CTYPE=zh_CN.GBK
+export LANG=zh_CN.GBK
+export XMODIFIERS="@im=Chinput"3
+stty cs8 -istrip
+stty pass8
+export LESSCHARSET=latin1</pre>
+完成以上修改以后，重新启动Cygwin即可。</p>
+
+<p><img class="size-full wp-image-142" title="Cygwin Chinese Test" src="http://www.devx.me/wp-content/uploads/2009/08/Cygwin-Chinese-Test.PNG" alt="Cygwin中文测试" height="294" /></p>
+
+<p><img class="size-full wp-image-133" title="Cygwin GCC Help" src="http://www.devx.me/wp-content/uploads/2009/08/Cygwin-GCC-Help1.PNG" alt="Cygwin GCC 中文帮助信息" height="439" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery小贴士]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/31/jquery-tips/"/>
+    <updated>2009-07-31T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/31/jquery-tips</id>
+    <content type="html"><![CDATA[<p>本文译自：<a title="Things you may not know about jQuery" href="http://james.padolsey.com/javascript/things-you-may-not-know-about-jquery/" target="_blank">http://james.padolsey.com/javascript/things-you-may-not-know-about-jquery/</a></p>
+
+<p>声明：原创翻译，不当之处还请多多指正，转载请注明出处。
+<ul>
+	<li> $.fn仅仅是jQuery.prototype 的一个快捷方式。</li>
+	<li> 您可以通过尝试访问jQuery集合的第一个元素来测试jQuery集合是否包含某些内容，例如： if($(selector)[0]){…} 。</li>
+	<li> jQuery在所有浏览器中标准化了事件对象！可以到这里查看所有可用的属性/方法： http://docs.jquery.com/Events/jQuery.Event 。</li>
+	<li> 当您创建一个插件时，您可以使用的jQuery的链式调用访问前面的对象：</li><!--more-->
+</ul>
+<pre lang="javascript">
+      jQuery.fn.doSomething = function() {
+          this; // => $('a')
+          this.prevObject; // => $('li')
+          // 记得在你的插件中使用链式代码
+          return this;
+      };
+       
+      jQuery('li').show().find('a').doSomething();
+       
+      // 你甚至可以从创建一个新的“根”插件:
+      // (返回这个链的“根”)
+      jQuery.fn.root = function() {
+          // 根永远都是Document所以我们不得不
+          // 回到最后一个的前一个：
+          var root = this;
+          while(root.prevObject.prevObject) {
+              root = root.prevObject;
+          }
+          return root;
+      };
+       
+      $('li').find('a').children().root(); // <= $('li') 被返回
+      //在这种情况下使用root()与使用end()是一样的
+</pre>
+<ul>
+	<li> 您可以对事件应用命名空间！这对于插件开发是特别有用的：</li>
+</ul>
+<pre lang="javascript">
+      jQuery.fn.myPlugin = function() {</pre></p>
+
+<p>          //自己做一些清理 <br />
+          jQuery.myPlugin = {<br />
+              cleanUp: function() { </p>
+
+<p>                  // 该插件的作用是移除所有已绑定的click事件处理器<br />
+                  jQuery(&#8216;*&#8217;).unbind(&#8216;click.myPlugin&#8217;); </p>
+
+<p>                  //或者，删除所有事件：<br />
+                  jQuery(&#8216;*&#8217;).unbind(&#8216;.myPlugin&#8217;); </p>
+
+<p>              }<br />
+          }; <br />
+          return this.bind(&#8216;click.myPlugin&#8217;, function() {<br />
+              //做些什么&#8230;<br />
+          });<br />
+      };<br />
+       <br />
+      //请注意，您也可以为数据定义命名空间：<br />
+      // 例如. $(elem).data(&#8216;whatever.myPlugin&#8217;,value);
+
+<ul>
+	<li> 您可以通过jQuery的事件存储机制访问所有绑定到一个元素（或任何对象）的所有事件处理器：</li>
+</ul>
+<pre lang="javascript">
+      //列表已绑定的事件：
+      console.dir( jQuery('#elem').data('events') ); 
+      //记录所有事件的处理程序：
+      jQuery.each($('#elem').data('events'), function(i, event){
+          jQuery.each(event, function(i, handler){
+              console.log( handler.toString() );
+          });
+      }); 
+      //你可以看到某个事件发生时真正执行的方法，
+      //对调试非常有用！
+</pre></p>
+
+<p><ul>
+	<li> jQuery原生支持JSONP （&#8217;JSON with padding&#8217;），它实际上意味着可以做跨域“Ajax”请求（虽然严格意义上来讲并不是Ajax，因为它没有使用XHR ）。JSONP需要被请求域必须有一些相应的JSONP的API（它必须能够封装JSON数据与指定的回调函数）。一个例子：</li>
+</ul>
+<pre lang="javascript">
+      function getLatestFlickrPics(tag,callback) {
+          var flickrFeed = 'http://api.flickr.com/services/feeds/photos_public.gne?tags='
+                         + tag + '&tagmode=any&format=json&jsoncallback=?';
+          jQuery.getJSON(flickrFeed, callback);
+      }
+       
+      //用法
+      getLatestFlickrPics('ferrari', function(data){
+          jQuery.each(data.items, function(i, item){
+              $("</pre><img />&#8221;).attr(&#8220;src&#8221;, item.media.m).appendTo(&#8216;body&#8217;);<br />
+          });<br />
+      });
+</p>
+
+<p><ul>
+	<li> 您可能会发现它有点混乱，但jQuery使我们能够在一个链式代码中建立一个完整的DOM结构：</li>
+</ul>
+<pre lang="javascript">
+      //创建或注入一个链：
+      jQuery('<div>')
+          .append('<p><a href="#">Foo</a></p>')
+          .find('p a')
+              .click(function(){
+                  // 做些什么...
+                  return false;
+              })
+              .end()
+          .append('<p><a href="#">Bar</a></p>')
+          .find('p:eq(1) a')
+              .click(function(){
+                  //做些别的事情...
+                  return false;
+              })
+              .end()
+          .appendTo('body');
+</div></pre></p>
+
+<p><ul>
+	<li> 访问一个jQuery集合内部的DOM元素是非常简单的：</li>
+</ul>
+<pre lang="javascript">
+     var HTMLCollection = $('div').get(); </pre></p>
+
+<p>      //或者，如果您只想获取第一个元素：<br />
+      $(&#8216;div&#8217;).get(0);<br />
+      $(&#8216;div&#8217;).get()[0];<br />
+      $(&#8216;div&#8217;)[0];
+</p>
+
+<p><ul>
+	<li> 您不仅可以绑定事件到DOM元素;您也可以绑定一个自定义事件到任何对象！</li>
+</ul>
+<pre lang="javascript">
+      function Widget() {
+          //做些什么...
+      };</pre></p>
+
+<p>      var myPhotoWidget = new Widget(&#8216;photos&#8217;);  <br />
+      var myPhotoWidget = new Widget(&#8216;photos&#8217;);  <br />
+      jQuery(myPhotoWidget).bind(&#8216;photoAdd&#8217;, function() {<br />
+            //自定义的事件处理&#8230;<br />
+      });<br />
+      //触发事件：<br />
+      jQuery(myPhotoWidget).trigger(&#8216;photoAdd&#8217;);
+</p>
+
+<p><ul>
+	<li> 获取所选中的元素的索引值是非常容易的， jQuery给我们提供了一个&#8217;index&#8217;方法：</li>
+</ul>
+<pre lang="javascript">
+    $('table tr').click(function(){
+       //查找点击的表格行索引：
+       var index = $('table tr').index(this);
+    });
+</pre>
+<ul>
+	<li> 您可以创建自己的过滤选择器。下面是一个例子：</li>
+</ul>
+<pre lang="javascript">
+      $.expr[':'].external = function(elem,index,match) {
+          var url = elem.href || elem.src, loc = window.location; 
+              loc = window.location;
+          return !!url.match(new RegExp('^' + loc.protocol + '//' + '(?!' + loc.hostname + ')' ));}; 
+      }; 
+      //现在您可以在您的选择器使用它： 
+      //查找所有的外部链接：
+      $('a:external');  
+      //查找所有外部脚本元素：
+      $('script:external');  
+      //判断是否是外部链接：
+      $('a#mylink').is(':external'); // true/false
+</pre>
+<ul>
+	<li> 我看到不少人仍然在他们的jQuery脚本中使用JavaScript的FOR或者WHILE结构来创建循环。这样做没有什么不对，但请注意， jQuery的&#8217;each&#8217;方法也能够迭代数组和对象！</li>
+</ul>
+<pre lang="javascript">
+    var myArr = ['apple','banana','orange'];  
+      $.each(myArr, function(index, item) {
+          //做些什么
+          //返回False来终止循环
+          //返回True来继续下一次循环
+      });
+</pre></p>
+
+<p><ul>
+	<li> &#8216;过滤器&#8217;方法接受一个字符串选择器或者一个函数。当和函数一起使用的时候，您必须返回false来从堆栈中删除这个元素，返回true来保留它：</li>
+</ul>
+<pre lang="javascript">
+      $('div').filter(function(){
+          return this.childNodes.length > 10; // 必须返回一个Boolean类型的值   
+      });
+</pre></p>
+
+<p><ul>
+	<li> 您没有必要为一个新的元素的指定ID或classes以便于以后对其进行引用，只需将他们缓存到一个变量就可以了：</li>
+</ul>
+<pre lang="javascript">
+     var myInjectedDiv = $('<div>').appendTo('body'); </div></pre></p>
+
+<p>      //使用&#8217; myInjectedDiv &#8216;来引用这个元素：<br />
+      myInjectedDiv.bind(&#8216;click&#8217;, function(){<br />
+          // &#8230;<br />
+      });
+</p>
+
+<p><ul>
+	<li> jQuery的&#8217;map&#8217;方法是非常有用的，参数中传递过来的函数将会对传递过来的数组（或对象）中的每一个元素进行操作，并且将每一次的函数返回值添加到新的数组中去，我们来看一看：</li>
+</ul>
+<pre lang="javascript">
+      //创建一个包含所有锚点HREF属性的数组：
+      var URLs = $.map($('a'), function(elem, index){
+          return elem.href;
+      });
+       
+      // URLs = ['http://google.com', 'http://whatever.com', 'http://yahoo.com']
+</pre></p>
+
+<p><ul>
+	<li> 这一个不是jQuery相关的，但它是非常有用的。当您需要比较做一些工作的不同方法时（为了获得更好的性能）您可以使用Firebug控制台来记录每一段代码的执行时间，例如：</li>
+<pre lang="javascript">
+      console.time('My first method');
+      //做些什么...
+      console.time('My first method'); </pre></ul></p>
+
+<p>      console.time(&#8216;My second method&#8217;);<br />
+      //做些别的事情&#8230;<br />
+      console.time(&#8216;My second method&#8217;); </p>
+
+<p>      //Firebug会记录完成每块代码所用的时间（以毫秒为单位）
+
+</p>
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[译] PL/SQL 格式化指南 (PL/SQL Formatting Guide)]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/23/plsql-formatting-guide/"/>
+    <updated>2009-07-23T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/23/plsql-formatting-guide</id>
+    <content type="html"><![CDATA[<p>最近一直在修改以前同事写的Oracle存储过程，由于编码不规范，修改起来相当费神，于是乎，翻译了这篇 PL/SQL Formatting Guide （Oracle PL/ SQL by Example，Appendix A），费了九牛二虎之力，终于翻译完了，也终于知道自己的英语有多烂了，呜呜。</p>
+
+<p>声明：原创翻译，不足之处请多多指正，转载请注明出处！</p>
+
+<p><strong>一、大小写</strong><strong> </strong></p>
+
+<p>就像在SQL中一样，PL / SQL中是不区分大小写的。其一般准则如下：
+<ul>
+	<li>关键字(BEGIN, EXCEPTION, END, IF THEN ELSE,LOOP, END LOOP)、数据类型(VARCHAR2, NUMBER)、内部函数(LEAST, SUBSTR)和用户定义的子程序(procedures, functions,packages)，使用大写。</li>
+	<li>变量名以及SQL中的列名和表名，使用小写。<!--more--></li>
+</ul>
+<strong>二、空白</strong><strong> </strong>
+<p align="left">空白（空行和空格）在PL/SQL中如同在SQL中一样重要，因为它是提高代码可读性的一个重要因素。换句话说，可以通过在代码中使用缩进来体现程序的逻辑结构。以下是一些建议：</p></p>
+
+<p><ul>
+	<li>在等号或比较操作符的左右各留一个空格；</li>
+	<li>结构词（DECLARE, BEGIN, EXCEPTION, END,IF 和 END IF, LOOP 和 END LOOP）居左排列。另外，结构中的嵌套结构要缩进三个空格（使用空格键，而不是Tab键）；</li>
+	<li>主要代码段之间用空行隔开；</li>
+	<li>把同一结构的不同逻辑部分分开写在独立的行，即使这个结构很短。例如，IF和THEN被放在同一行，而ELSE 和END IF则放在独立的行。</li>
+</ul>
+<p align="left"><strong>三、命名约定</strong><strong> </strong></p>
+<p align="left">使用以下前缀对于避免与关键字和表名列名相冲突是很有帮助的：</p></p>
+
+<p><ul>
+	<li>v_变量名</li>
+	<li>con_常量名</li>
+	<li>i_输入参数名，o_输出参数名，io_输入输出参数名</li>
+	<li>c_游标名 或者 游标名_cur</li>
+	<li>rc_<em> Ref Cursor</em>名</li>
+	<li>r_<em>Record</em>名 或者 <em>Record</em>名_rec</li>
+	<li>FOR r_stud IN c_stud LOOP&#8230;</li>
+	<li>FOR stud_rec IN stud_cur LOOP</li>
+	<li>type_名称，名称_type (用户定义的类型)</li>
+	<li>t_表名，表名_tab （PL/SQL 表）</li>
+	<li>rec_<em>Record</em>名，<em>Record</em>名_rec （<em>Record</em>变量）</li>
+	<li>e_异常名 （用户定义的异常）</li>
+</ul>
+<p align="left">包的名称应该描述包内的存储过程和函数主要所完成的功能</p>
+<p align="left">存储过程的名称应该描述该存储过程所执行的动作</p>
+<p align="left">函数的名称应该描述所返回的变量</p>
+<p align="left">例如：</p>
+<p align="left"></p></p>
+
+<p><pre lang="plsql">PACKAGE student_admin
+-- admin 后缀可能是用于表示管理功能.
+PROCEDURE remove_student (i_student_id IN student.studid%TYPE);</pre></p>
+
+<p>FUNCTION student_enroll_count (i_student_id student.studid%TYPE)<br />
+RETURN INTEGER;
+<p align="left"><strong>四、注释</strong></p>
+<p align="left">PL/SQL中的注释如同SQL中的注释一样重要。他们应该解释程序的主要部分和所有关键的逻辑步骤。</p>
+<p align="left">使用单行注释(&#8211;)而不是多行注释(/*)。即使PL/SQL对这些注释做同样处理，这样在代码完成后进行调试也会容易些，因为你不能在多行注释中嵌入多行注释。换句话说，单行注释代码中可以部分取消注释，而在多行注释代码中则不行。</p>
+<p align="left"><strong>五、其他的建议</strong></p>
+<p align="left">对于PL/SQL中嵌入的SQL声明，使用相同的格式化指南来决定这些声明应该如何在代码块中出现</p>
+<p align="left">提供一个头部注释，用于说明代码块的用途并列出创建日期和作者名字。并且每个修订版都要有一行注释，包含作者名、日期和修订版描述。</p>
+<p align="left">例如：下面的这个示例体现了上述建议。请注意该示例还使用了等宽字体（Courier New），因为每个字体占据同等宽度可以使格式化更加简便。等比例空格字体会隐藏空格使得行间对齐比较困难。多数文本和程序编辑器默认使用等宽字体。</p></p>
+
+<p><pre lang="plsql">REM ********************************************************
+REM * 文件名：coursediscount01.sql
+REM * 版本：1
+REM * 用途：对于至少有一部分超过十个学生登记的课程给予折扣
+REM * 参数：无
+REM *
+REM * 作者：s.tashi  时间：2000.1.1
+REM * 修改者：y.sonam 时间：2000.2.1
+REM * 描述：修正游标，添加缩进和注释。
+REM ********************************************************
+DECLARE
+   -- C_DISCOUNT_COURSE 找出那些至少有一部分超过十个学生登记的课程
+   CURSOR c_discount_course IS
+      SELECT DISTINCT course_no
+      FROM section sect
+      WHERE 10 &lt;= (SELECT COUNT(*)
+                    FROM enrollment enr
+                   WHERE enr.section_id = sect.section_id
+                   );
+   -- 费用超过 $2000.00的课程的折扣率
+   con_discount_2000 CONSTANT NUMBER := .90;
+   -- 费用在$1001.00和$2000.00之间的课程的折扣率
+   con_discount_other CONSTANT NUMBER := .95;</pre></p>
+
+<p>   v_current_course_cost course.cost%TYPE;<br />
+   v_discount_all NUMBER;<br />
+   e_update_is_problematic EXCEPTION;<br />
+BEGIN<br />
+   &#8211; 对于那些要打折的课程, 确定当前费用和新的费用<br />
+   FOR r_discount_course in c_discount_course LOOP<br />
+       SELECT cost<br />
+       INTO v_current_course_cost<br />
+       FROM course<br />
+       WHERE course_no = r_discount_course.course_no;</p>
+
+<p>       IF v_current_course_cost &gt; 2000 THEN<br />
+          v_discount_all := con_discount_2000;<br />
+       ELSE<br />
+          IF v_current_course_cost &gt; 1000 THEN<br />
+             v_discount_all := con_discount_other;<br />
+          ELSE<br />
+             v_discount_all := 1;<br />
+          END IF;<br />
+       END IF;</p>
+
+<p>       BEGIN<br />
+          UPDATE course<br />
+          SET cost = cost * v_discount_all<br />
+          WHERE course_no = r_discount_course.course_no;<br />
+       EXCEPTION<br />
+          WHEN OTHERS THEN<br />
+             RAISE e_update_is_problematic;<br />
+       END; &#8211; 更新记录的子代码块结束</p>
+
+<p>   END LOOP;&#8211; 主循环结束</p>
+
+<p>   COMMIT;</p>
+
+<p>EXCEPTION<br />
+   WHEN e_update_is_problematic THEN<br />
+   &#8211; 事务回滚<br />
+   ROLLBACK;<br />
+   DBMS_OUTPUT.PUT_LINE<br />
+      (&#8216;There was a problem updating a course cost.&#8217;);<br />
+   WHEN OTHERS THEN<br />
+      NULL;<br />
+END;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[数据库JDBC连接方法总结]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/20/jdbc-connection-code-snippets/"/>
+    <updated>2009-07-20T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/20/jdbc-connection-code-snippets</id>
+    <content type="html"><![CDATA[<p>好久之前整理的资料了，忘了在哪里搜集的，发出来跟大家分享：
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="115" valign="top">
+<p align="left">数据库名称</p>
+</td>
+<td width="641" valign="top">
+<p align="left">连接串</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>MySQL</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;org.gjt.mm.mysql.Driver&#8221;);</p>
+<p align="left">DriverManager.getConnection(   &#8220;jdbc:mysql://MyDbComputerNameOrIP:3306/myDatabaseName&#8221;, sUsr, sPwd   );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>PostgreSQL</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;org.postgresql.Driver&#8221;);</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:postgresql://MyDbComputerNameOrIP/myDatabaseName&#8221;,   sUsr, sPwd );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>Oracle</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName( &#8220;oracle.jdbc.driver.OracleDriver&#8221; );</p>
+<p align="left">DriverManager.getConnection( &#8220;jdbc:oracle:thin::1521:ORCL&#8221;,   sUsr, sPwd );</p>
+</td>
+</tr>
+<tr>
+<td colspan="2"><!--more--></td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>Sybase</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;com.sybase.jdbc2.jdbc.SybDriver&#8221;);</p>
+<p align="left">DriverManager.getConnection(   &#8220;jdbc:sybase:Tds:MyDbComputerNameOrIP:2638&#8221;, sUsr, sPwd );</p>
+<p align="left">//(Default-Username/Password: &#8220;dba&#8221;/&#8221;sql&#8221;)</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>SQLServer</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName( &#8220;net.sourceforge.jtds.jdbc.Driver&#8221; );</p>
+<p align="left">DriverManager.getConnection(   &#8220;jdbc:jtds:sqlserver://MyDbComputerNameOrIP:1433/master&#8221;, sUsr,   sPwd );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>ODBC</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName( &#8220;sun.jdbc.odbc.JdbcOdbcDriver&#8221; );</p>
+<p align="left">DriverManager.getConnection( &#8220;jdbc:odbc:&#8221; + sDsn, sUsr,   sPwd );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>DB2</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;com.ibm.db2.jdbc.net.DB2Driver&#8221;);</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:db2://192.9.200.108:6789/SAMPLE&#8221;,   sUsr, sPwd );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>SAP DB</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName (&#8220;com.sap.dbtech.jdbc.DriverSapDB&#8221;);</p>
+<p align="left">DriverManager.getConnection ( &#8220;jdbc:sapdb://&#8221; + host +   &#8220;/&#8221; + database_name,user_name, password)</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>InterBase</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;interbase.interclient.Driver&#8221;);</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:interbase://localhost/e:/testbed/database/employee.gdb&#8221;,   &#8220;sysdba&#8221;, &#8220;masterkey&#8221; );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left">Microsoft <strong>SQL Server </strong>series (6.5, 7.x and 2000) and Sybase 10</p>
+</td>
+<td width="641" valign="top">
+<p align="left">JDBC Name: jTDS</p>
+<p align="left">Class.forName(&#8220;net.sourceforge.jtds.jdbc.Driver &#8220;);</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:jtds:sqlserver://host:port/database&#8221;,&#8221;user&#8221;,&#8221;password&#8221;);or</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:jtds:sybase://host:port/database&#8221;,&#8221;user&#8221;,&#8221;password&#8221;);</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>IBM AS400</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">装V4R4以上版本的Client Access Express可以在C:Program FilesIBMClient Accessjt400ib找到 driver 档案 jt400.zip，并更改扩展名成为 jt400.jar语法</p>
+<p align="left">java.sql.DriverManager.registerDriver (new   com.ibm.as400.access.AS400JDBCDriver ());</p>
+<p align="left">Class.forName(&#8220;com.ibm.as400.access.AS400JDBCConnection&#8221;);con   = DriverManager.getConnection(&#8220;jdbc:as400://IP&#8221;,&#8221;user&#8221;,&#8221;password&#8221;);</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>Informix</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;com.informix.jdbc.IfxDriver&#8221;).newInstance();</p>
+<p align="left">String url =   &#8220;jdbc:informix-sqli://123.45.67.89:1533/testDB:INFORMIXSERVER=myserver;   user=testuser;password=testpassword&#8221;;</p>
+</td>
+</tr>
+</tbody></table>
+<p align="left"></p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[去掉“是否要关闭本窗口”的提示]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/19/window-close-with-no-prompt/"/>
+    <updated>2009-07-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/19/window-close-with-no-prompt</id>
+    <content type="html"><![CDATA[<p>想要在javascript里调用window.close(); 关且闭窗口时不提示“是否要关闭本窗口？”有以下两种方法可以实现这样的效果：</p>
+
+<p>方法一、</p>
+
+<p><pre lang="javascript">
+window.opener = null;
+window.close();
+</pre></p>
+
+<p>方法二、</p>
+
+<p><pre lang="javascript">
+window.opener = window;
+window.self.close();
+</pre></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[WebLogic的antlr包冲突问题]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/19/weblogic-antlr-conflict-solution/"/>
+    <updated>2009-07-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/19/weblogic-antlr-conflict-solution</id>
+    <content type="html"><![CDATA[<p>使用Hibernate的系统在WebLogic下部署经常会出现ClassNotFoundException: org.hibernate.hql.ast.HqlToken的问题，出现该问题的原因主要由于WebLogic已经集成了antlr包 ，在使用Hibernate时，会先加载其本身所带的antlr包， 所以会和Hibernate 捆绑的antlr-2.7.5.jar冲突，导致上述错误。</p>
+
+<p>解决方法是：在WebLogic启动类路径先加载最新的antlr包。<!--more--></p>
+
+<p>具体方法，以WebLogic 10.3 为例：</p>
+
+<p>Windows下修改<br />
+安装目录：D:\bea\<br />
+将最新antlr包拷贝到D:\bea\wlserver_10.0\common\lib\<br />
+修改：D:\bea\user_projects\domains\base_domain\bin\startWebLogic.cmd</p>
+
+<p>添加如下内容：
+<pre>set CLASSPATH=D:\bea\wlserver_10.0\common\lib\antlr-2.7.6.jar%CLASSPATH%;
+%MEDREC_WEBLOGIC_CLASSPATH%</pre>
+Linux下修改<br />
+安装目录：/home/bea<br />
+将 antlr包拷贝到 /home/bea/wlserver_10.3/common/lib/<br />
+修改：/home/bea/user_projects/domains/xmyd/bin/startWebLogic.sh</p>
+
+<p>添加如下内容：
+<pre>export HIBERNATE_CLASSPATH="/home/bea/wlserver_10.3/common/lib/antlr-2.7.6.jar"
+CLASSPATH="${HIBERNATE_CLASSPATH}${SAVE_CLASSPATH}"</pre>
+这样系统部署在AdminServer上就可以正常运行<br />
+但是如果weblogic有多个server时，我们将系统部署到非AdminServer时，上述错误又出来了，折腾了很久终于找到了解决方法</p>
+
+<p>我们需要在部署系统的war包中，添加（*.war/web/WEB-INF/）weblogic.xml<br />
+其内容如下：</p>
+
+<p>[xml]<br />
+&lt;weblogic-web-app&gt;<br />
+    &lt;container-descriptor&gt;<br />
+        &lt;prefer-web-inf-classes&gt;true&lt;/prefer-web-inf-classes&gt;<br />
+    &lt;/container-descriptor&gt;<br />
+&lt;/weblogic-web-app&gt;<br />
+[/xml]</p>
+
+<p>要求Web应用优先加载应用系统WEB-INF下的Jar，上述问题得以解决。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[一个超牛的日期时间判断正则表达式]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/19/super-date-time-validate-regular-expressions/"/>
+    <updated>2009-07-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/19/super-date-time-validate-regular-expressions</id>
+    <content type="html"><![CDATA[<p>这里是判断YYYY-MM-DD这种格式的，基本上把闰年和2月等的情况都考虑进去了：</p>
+
+<p>^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-))$</p>
+
+<p>下面的是加了时间验证的：格式为YYYY-MM-DD HH:MM:SS</p>
+
+<p>^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-)) (20|21|22|23|[0-1]?\d):[0-5]?\d:[0-5]?\d$</p>
+]]></content>
+  </entry>
   
 </feed>

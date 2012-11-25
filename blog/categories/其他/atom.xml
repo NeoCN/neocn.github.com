@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 其他 | DevX.Me]]></title>
+  <link href="http://NeoCN.github.com/blog/categories/其他/atom.xml" rel="self"/>
+  <link href="http://NeoCN.github.com/"/>
+  <updated>2012-11-25T22:00:16+08:00</updated>
+  <id>http://NeoCN.github.com/</id>
+  <author>
+    <name><![CDATA[小马]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[博客有Google PageRank值啦~~]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/11/26/blog-has-google-pagerank-value/"/>
+    <updated>2009-11-26T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/11/26/blog-has-google-pagerank-value</id>
+    <content type="html"><![CDATA[<p>上个月的时候，还关注过自己网站的Google PageRank，嘛都没有，索性后边也没再看。几个月来一直被公司派驻移动，事情挺多，也挺杂的，也没怎么抽时间来弄博客，等这次WAP单点登录系统完成后，一定抽个时间好好总结总结……</p>
+
+
+
+
+<p>不知道昨天老婆装什么软件把Google工具条给装上了，今天突然对这个工具条有了兴趣，发现安装了Google工具条后可以查看一个网站的Google PageRank，赶紧的，访问了自己的博客，居然，PageRank有值了，虽然仅仅是1，但也很兴奋，完全没想到啊！兴奋中……</p>
+
+
+
+
+<p>[caption id="attachment_208" align="aligncenter" width="347" caption="iJavaEE-PageRank"]<img class="size-full wp-image-208" title="iJavaEE-PageRank" src="http://www.devx.me/wp-content/uploads/2009/11/iJavaEE-PageRank.PNG" alt="iJavaEE-PageRank" width="347" height="82" />[/caption]</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[WordPress自动更新超时]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/11/15/wordpress-auto-update-timeout/"/>
+    <updated>2009-11-15T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/11/15/wordpress-auto-update-timeout</id>
+    <content type="html"><![CDATA[<p>WordPress 自动更新升级的时候，总是会出现类似下面的错误：
+<pre>Operation timed out after <span style="color: #ff0000;">60</span> seconds with <span style="color: #ff0000;">xxxxxx</span> out of <span style="color: #ff0000;">2593212</span> bytes receiveds 。</pre>
+解决办法如下：</p>
+
+
+
+
+<p>打开 /wp-admin/includes/file.php 文件，找到如下代码：
+<pre lang="php">$response = wp_remote_get($url, array('timeout' = 60));</pre>
+修改超时时间60为600或更长。</p>
+
+
+
+
+<p>完成后，重新升级即可。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[李开复：人生中的十大启发]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/10/19/kai-fu-lee-ten-inspiration-in-life/"/>
+    <updated>2009-10-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/10/19/kai-fu-lee-ten-inspiration-in-life</id>
+    <content type="html"><![CDATA[<p><ol>
+    <li>自信不失谦虚，谦虚不失自信；</li>
+    <li>兴趣就是天赋，天赋就是兴趣，</li>
+    <li>思考比传道更重要，观点比解惑更重要；</li>
+    <li>我不同意你，但是我支持你；</li>
+    <li>挫折不 是惩罚，而是学习的机会；</li>
+    <li>创新不重要，有用的创新才重要；</li>
+    <li>用勇气改变可以改变的事情，用胸怀接受不能接受的事情，用智慧分辨两者的不同；</li>
+    <li>求知若饥，虚心若愚；</li>
+    <li>追随你的心，用它引领你的一生，其他的一切都是次要的；</li>
+    <li>你的价值不是你拥有了多少，而是你留下多少。</li>
+</ol></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Larry Ellison：We are in it to win it.]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/09/10/we-are-in-it-to-win-it/"/>
+    <updated>2009-09-10T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/09/10/we-are-in-it-to-win-it</id>
+    <content type="html"><![CDATA[<p>Oracle以74亿美元收购Sun公司，这项并购已经被美国司法部批准，但欧盟于北京时间9月3日晚宣布对Oracle 74亿美元收购SUN一案展开反垄断调查，计划对竞争力影响进行深入的审核。欧盟的调查重点是该收购案对MySQL数据库的影响。</p>
+
+
+
+
+<p>这项收购案中，人们最担心的，也许是Sun的Sparc处理器和Solars操作系统的命运。Oracle会如何处理Sun的硬件部门，会如何对待Solars操作系统呢？下面的这张图片也许会让Sun的客户吃下一个定心丸：
+<p style="text-align: center;"><img class="size-full wp-image-155 aligncenter" title="sun_customers_lg" src="http://www.devx.me/wp-content/uploads/2009/09/sun_customers_lg.gif" alt="sun_customers_lg" width="370" height="552" /></p></p>
+
+
+
+
+<p>内容大致翻译如下：</p>
+
+
+
+
+<p>Sun的客户们，Oracle计划：</p>
+
+
+
+
+<p>1、投入更多的资金开发SPARC</p>
+
+
+
+
+<p>2、投入更多的资金开发Solars</p>
+
+
+
+
+<p>3、拥有超过Sun 2倍的硬件专家来销售和服务SPARC/Solars系统</p>
+
+
+
+
+<p>4、通过紧密集成Oracle的软件和Sun的硬件显著提高Sun的硬件性能</p>
+
+
+
+
+<p><strong>我们志在必得。IBM，我们期待着在硬件业务上与你一较高下。 -- 拉里.埃里森</strong></p>
+
+
+
+
+<p>埃里森的这句话，把他的个性体现的淋漓尽致，也显现出了Oracle在硬件业务上的巨大野心。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[有史以来最狂妄的演讲 -- Larry Ellison]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/09/10/commencement-speech-larry-ellison/"/>
+    <updated>2009-09-10T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/09/10/commencement-speech-larry-ellison</id>
+    <content type="html"><![CDATA[<p>下面是Oracle  CEO Larry Ellison 在耶鲁大学2000届毕业典礼上发表的世人看来最为狂妄、不受欢迎但又是现实真实状况的演讲：</p>
+
+
+
+
+<p>耶鲁的毕业生们，我很抱歉——如果你们不喜欢这样的开场。我想请你们为我做一件事。请你——好好看一看周围，看一看站在你左边的同学，看一看站在你右边的同学。</p>
+
+
+
+
+<p>请你设想这样的情况：从现在起5年之后，10年之后，或30年之后，今天站在你左边的这个人会是一个失败者；右边的这个人，同样，也是个失败者。而你，站在中间的家伙，你以为会怎样？一样是失败者。失败的经历。失败的优等生。</p>
+
+
+
+
+<p>说实话，今天我站在这里，并没有看到一千个毕业生的灿烂未来。我没有看到一千个行业的一千名卓越领导者，我只看到了一千个失败者。你们感到沮丧，这是可以理解的。为什么，我，埃里森，一个退学生，竟然在美国最具声望的学府里这样厚颜地散布异端？我来告诉你原因。因为，我，埃里森，这个行星上第二富有的人，是个退学生，而你不是。因为比尔·盖茨，这个行星上最富有的人——就目前而言——是个退学生，而你不是。因为艾伦，这个行星上第三富有的人，也退了学，而你没有。再来一点证据吧，因为戴尔，这个行星上第九富有的人——他的排位还在不断上升，也是个退学生。而你，不是。
+<!--more-->
+......你们非常沮丧，这是可以理解的。</p>
+
+
+
+
+<p>你们将来需要这些有用的工作习惯。你将来需要这种“治疗”。你需要它们，因为你没辍学，所以你永远不会成为世界上最富有的人。哦，当然，你可以，也许，以你的方式进步到第10位，第11位，就像Steve。但，我没有告诉你他在为谁工作，是吧？</p>
+
+
+
+
+<p>根据记载，他是研究生时辍的学，开化得稍晚了些。</p>
+
+
+
+
+<p>现在，我猜想你们中间很多人，也许是绝大多数人，正在琢磨，“我能做什么？  我究竟有没有前途？”，当然没有。太晚了，你们已经吸收了太多东西，以为自己懂得太多。你们再也不是19岁了。你们有了“内置”的帽子，哦，我指的可不是你们脑袋上的学位帽。</p>
+
+
+
+
+<p>嗯......你们已经非常沮丧啦。这是可以理解的。所以，现在可能是讨论实质的时候啦——</p>
+
+
+
+
+<p>绝不是为了你们，2000年毕业生。你们已经被报销，不予考虑了。我想，你们就偷偷摸摸去干那年薪20万的可怜工作吧，在那里，工资单是由你两年前辍学的同班同学签字开出来的。事实上，我是寄希望于眼下还没有毕业的同学。我要对他们说，离开这里。收拾好你的东西，带着你的点子，别再回来。退学吧，开始行动。</p>
+
+
+
+
+<p>我要告诉你，一顶帽子一套学位服必然要让你沦落......就像这些保安马上要把我从这个讲台上撵走一样必然......（此时，Larry被带离了讲台）</p>
+
+
+
+
+<p>Graduates  of Yale University, I apologize if you have endured this type of prologue  before, but I want you to do something for me. Please, take a ood look around  you. Look at the classmate on your left. Look at the classmate on your right.  Now, consider this: five years from now, 10 years from now, even 30 years from  now, odds are the person on your left is going to be a loser. The person on your  right, meanwhile, will also be a loser. And you, in the middle? What can you  expect? Loser. Loserhood. Loser Cum Laude.</p>
+
+
+
+
+<p>In fact, as I look out before  me today, I don't see a thousand hopes for a bright tomorrow. I don't see a  thousand future leaders in a thousand industries. I see a thousand  losers.</p>
+
+
+
+
+<p>You're upset. That's understandable. After all, how can I,  Lawrence 'Larry' Ellison, college dropout, have the audacity to spout such  heresy to the graduating class of one of the nation's most prestigious  institutions? I'll tell you why. Because I, Lawrence "Larry" Ellison, second  richest man on the planet, am a college dropout, and you are  not.</p>
+
+
+
+
+<p>Because Bill Gates, richest man on the planet -- for now, anyway --  is a college dropout, and you are not.</p>
+
+
+
+
+<p>Because Paul Allen, the third  richest man on the planet, dropped out of college, and you did not.</p>
+
+
+
+
+<p>And  for good measure, because Michael Dell, No. 9 on the list and moving up fast, is  a college dropout, and you, yet again, are not.</p>
+
+
+
+
+<p>Hmm . . . you're very  upset. That's understandable. So let me stroke your egos for a moment by  pointing out, quite sincerely, that your diplomas were not attained in vain.  Most of you, I imagine, have spent four to five years here, and in many ways  what you've learned and endured will serve you well in the years ahead. You've  established good work habits. You've established a network of people that will  help you down the road. And you've established what will be lifelong  relationships with the word 'therapy.' All that of is good. For in truth, you  will need that network. You will need those strong work habits. You will need  that therapy.</p>
+
+
+
+
+<p>You will need them because you didn't drop out, and so you  will never be among the richest people in the world. Oh sure, you may, perhaps,  work your way up to No. 10 or No. 11, like Steve Ballmer. But then, I don't have  to tell you who he really works for, do I? And for the record, he dropped out of  grad school. Bit of a late bloomer.</p>
+
+
+
+
+<p>Finally, I realize that many of you,  and hopefully by now most of you, are wondering, 'Is there anything I can do? Is  there any hope for me at all?' Actually, no. It's too late. You've absorbed too  much, think you know too much. You're not 19 anymore. You have a built-in cap,  and I'm not referring to the mortar boards on your heads.</p>
+
+
+
+
+<p>Hmm... you're  really very upset. That's understandable. So perhaps this would be a good time  to bring up the silver lining. Not for you, Class of '00. You are a write-off,  so I'll let you slink off to your pathetic $200,000-a-year jobs, where your  checks will be signed by former classmates who dropped out two years  ago.</p>
+
+
+
+
+<p>Instead, I want to give hope to any underclassmen here today. I say  to you, and I can't stress this enough: leave. Pack your things and your ideas  and don't come back. Drop out. Start up.</p>
+
+
+
+
+<p>For I can tell you that a cap  and gown will keep you down just as surely as these security guards dragging me  off this stage are keeping me down . . .</p>
+
+
+
+
+<p>(At this point The Oracle CEO  was ushered off stage.)</p>
+
+]]></content>
+  </entry>
+  
+</feed>

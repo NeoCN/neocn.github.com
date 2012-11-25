@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Cygwin Bash Shell 中文显示 - DevX.Me</title>
+  <meta name="author" content="小马">
+
+  
+  <meta name="description" content="昨天，在XP上安装了Cygwin，移动的网速还是不错的，很快就安装完成了，只是，发现中文全部显示为问号，而且，ls和dir命令，也没有对目录等的进行着色，以下是解决办法： 1、解决中文文件和目录名显示问题 修改.inputrc文件，打开以下设置：
+set meta-flag on
+# &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://NeoCN.github.com/blog/2009/08/14/cygwin-bash-shell-chinese/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DevX.Me</a></h1>
+  
+    <h2>My Coding Life!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Cygwin Bash Shell 中文显示</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-14T00:00:00+08:00" pubdate data-updated="true">Aug 14<span>th</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>昨天，在XP上安装了Cygwin，移动的网速还是不错的，很快就安装完成了，只是，发现中文全部显示为问号，而且，ls和dir命令，也没有对目录等的进行着色，以下是解决办法：</p>
+
+<p>1、解决中文文件和目录名显示问题</p>
+
+<p>修改.inputrc文件，打开以下设置：
+<pre lang="bash">set meta-flag on
+# 关闭bash命令行8字节字符转义符的转换
+set convert-meta off
+# 使bash命令行支持8字节字符输入
+set input-meta on
+# 使bash命令行支持8字节字符输出
+set output-meta on</pre>
+<!--more--></p>
+
+<p>2、修改.bashrc文件中，添加如下代码，解决目录着色问题
+<pre lang="bash">alias ls='ls --color --show-control-chars'</pre>
+3、修改.bash_profile，增加语言相关环境变量
+<pre lang="bash">export LC_ALL=zh_CN.GBK
+export LC_CTYPE=zh_CN.GBK
+export LANG=zh_CN.GBK
+export XMODIFIERS="@im=Chinput"3
+stty cs8 -istrip
+stty pass8
+export LESSCHARSET=latin1</pre>
+完成以上修改以后，重新启动Cygwin即可。</p>
+
+<p><img class="size-full wp-image-142" title="Cygwin Chinese Test" src="http://www.devx.me/wp-content/uploads/2009/08/Cygwin-Chinese-Test.PNG" alt="Cygwin中文测试" height="294" /></p>
+
+<p><img class="size-full wp-image-133" title="Cygwin GCC Help" src="http://www.devx.me/wp-content/uploads/2009/08/Cygwin-GCC-Help1.PNG" alt="Cygwin GCC 中文帮助信息" height="439" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小马</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-14T00:00:00+08:00" pubdate data-updated="true">Aug 14<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cygwin/'>Cygwin</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/07/31/jquery-tips/" title="Previous Post: jQuery小贴士">&laquo; jQuery小贴士</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/08/14/weblogic10-3-connect-to-oracle8i/" title="Next Post: Weblogic 10.3 连接 Oracle 8i">Weblogic 10.3 连接 Oracle 8i &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2009/12/02/8-regular-expressions-diagrammatic-explanation/">8个正则表达式图解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/12/01/10-java-regular-expression-examples-you-should-know/">[译]10个你应该知道的Java正则表达式的例子</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/26/blog-has-google-pagerank-value/">博客有Google PageRank值啦~~</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/15/wordpress-auto-update-timeout/">WordPress自动更新超时</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/11/pl-sql-developer-v8-keymaker/">PL SQL Developer v8.0.0.1480 KeyMaker</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - 小马 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://NeoCN.github.com/blog/2009/08/14/cygwin-bash-shell-chinese/';
+        var disqus_url = 'http://NeoCN.github.com/blog/2009/08/14/cygwin-bash-shell-chinese/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

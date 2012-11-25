@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>DevX.Me</title>
+  <meta name="author" content="小马">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,20 +24,32 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">DevX.Me</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>My Coding Life!</h2>
   
 </hgroup>
 
@@ -46,13 +58,6 @@
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:NeoCN.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
   
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
@@ -65,7 +70,550 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/02/8-regular-expressions-diagrammatic-explanation/">8个正则表达式图解</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-02T00:00:00+08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2009</time>
+        
+         | <a href="/blog/2009/12/02/8-regular-expressions-diagrammatic-explanation/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/01/10-java-regular-expression-examples-you-should-know/">[译]10个你应该知道的Java正则表达式的例子</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-01T00:00:00+08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2009</time>
+        
+         | <a href="/blog/2009/12/01/10-java-regular-expression-examples-you-should-know/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>正则表达式，用于验证用户输入的合法性是非常方便的，正好在网上看到了这篇文章，顺手翻译一下。</p>
+
+<p>原文链接：<a title="10 Java Regular Expression Examples You Should Know " href="http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/" target="_blank">http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/</a></p>
+
+<p>声明：原创翻译，不足之处请多多指正，转载请注明出处！</p>
+
+<p>正则表达式是一个编程的艺术，很难调试，学习和理解，但强大的功能，仍吸引不少开发者编写正则表达式。让我们探索一下下面10个实际应用中的正则表达式。
+<h3><strong>1. 用户名正则表达式模式</strong></h3>
+<pre>^[a-z0-9_-]{3,15}$</pre>
+<pre>^                         # 行开始
+  [a-z0-9_-]              # 匹配列表中的字符，a-z,0–9,下划线，连字符
+            {3,15}        # 长度至少3个字符，最大长度为15
+$                         # 行结束</pre>
+<h3>2. 密码正则表达式模式</h3>
+<pre>((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})</pre>
+<pre>(                        # 组开始
+    (?=.*\d)             # 必须包含一个数字 0-9
+    (?=.*[a-z])          # 必须包含一个小写字符
+    (?=.*[A-Z])          # 必须包含一个大写字符
+    (?=.*[@#$%])         # 必须包含一个列表中的特殊字符"@#$%"
+                .        # 检查所有字符串与前面的条件的匹配
+                 {6,20}  # 长度至少为6个字符，最大长度为20
+)                        # 组结束</pre>
+<h3></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2009/12/01/10-java-regular-expression-examples-you-should-know/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/26/blog-has-google-pagerank-value/">博客有Google PageRank值啦~~</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-26T00:00:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/11/26/blog-has-google-pagerank-value/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上个月的时候，还关注过自己网站的Google PageRank，嘛都没有，索性后边也没再看。几个月来一直被公司派驻移动，事情挺多，也挺杂的，也没怎么抽时间来弄博客，等这次WAP单点登录系统完成后，一定抽个时间好好总结总结……</p>
+
+<p>不知道昨天老婆装什么软件把Google工具条给装上了，今天突然对这个工具条有了兴趣，发现安装了Google工具条后可以查看一个网站的Google PageRank，赶紧的，访问了自己的博客，居然，PageRank有值了，虽然仅仅是1，但也很兴奋，完全没想到啊！兴奋中……</p>
+
+<p>[caption id=&#8221;attachment_208&#8221; align=&#8221;aligncenter&#8221; width=&#8221;347&#8221; caption=&#8221;iJavaEE-PageRank&#8221;]<img class="size-full wp-image-208" title="iJavaEE-PageRank" src="http://www.devx.me/wp-content/uploads/2009/11/iJavaEE-PageRank.PNG" alt="iJavaEE-PageRank" width="347" height="82" />[/caption]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/15/wordpress-auto-update-timeout/">WordPress自动更新超时</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-15T00:00:00+08:00" pubdate data-updated="true">Nov 15<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/11/15/wordpress-auto-update-timeout/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>WordPress 自动更新升级的时候，总是会出现类似下面的错误：
+<pre>Operation timed out after <span style="color: #ff0000;">60</span> seconds with <span style="color: #ff0000;">xxxxxx</span> out of <span style="color: #ff0000;">2593212</span> bytes receiveds 。</pre>
+解决办法如下：</p>
+
+<p>打开 /wp-admin/includes/file.php 文件，找到如下代码：
+<pre lang="php">$response = wp_remote_get($url, array('timeout' = 60));</pre>
+修改超时时间60为600或更长。</p>
+
+<p>完成后，重新升级即可。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/11/pl-sql-developer-v8-keymaker/">PL SQL Developer v8.0.0.1480 KeyMaker</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-11T00:00:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/11/11/pl-sql-developer-v8-keymaker/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>晚上下班回家，整理桌面上的软件，发现9月份下载的 PL SQL Developer v8 还在那里，当时因为没法注册，丢在那里没管它，今天Google一搜，不错，ZWT小组已经放出了注册机了，并且很有意思的是，注册机中的图片是庆祝建国60周年相关的。ZWT小组的破解功力果然深厚。<img class="size-full wp-image-197 aligncenter" title="PLSQL Developer KeyMaker" src="http://www.devx.me/wp-content/uploads/2009/11/PLSQL-Developer-KeyMaker.PNG" alt="PLSQL Developer KeyMaker" width="407" height="372" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/30/jsf-2-tutorials/">JSF 2.0 相关资料</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-30T00:00:00+08:00" pubdate data-updated="true">Oct 30<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/10/30/jsf-2-tutorials/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>07年的这个时候，正折腾着JSF1.2呢，不过自打去年毕业后，就再也没碰过JSF了。转眼间，都2.0了，突然觉得，这技术咋就变化那么快呢。搞IT，尤其是搞Java EE ，真是，累就一个字啊～～ 据说这次的2.0有很大的变化，尤其是在自定义组件的开发方面，简化了很多；2.0中也直接对AJAX做了支持。</p>
+
+<p>随手Google了一下相关资料，整理一下列出来：</p>
+
+<p><a onmousedown="return clk(0,'','','res','2','','0CAsQFjAB')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu1/" target="_blank">JSF 2 简介，第1 部分: 流线化Web 应用程序开发</a></p>
+
+<p><a onmousedown="return clk(0,'','','res','2','','0CAoQFjAB')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu2/" target="_blank">JSF 2 简介，第2 部分: 模板及复合组件</a></p>
+
+<p><a onmousedown="return clk(0,'more-results','','result','1','','0CAMQxAEwAA')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu3/index.html" target="_blank">JSF 2 简介，第3 部分: 事件处理、JavaScript 和Ajax</a></p>
+
+<p><a onmousedown="return clk(0,'more-results','','result','3','','0CAcQxAEwAg')" href="http://www.ibm.com/developerworks/cn/web/wa-aj-gmaps/" target="_blank">JSF 2.0 Ajax 世界中的GMaps4JSF</a></p>
+
+<p><a title="JSF 2.0 Refcard " href="http://refcardz.dzone.com/refcardz/javaserver-faces-20">JSF 2.0 Refcard</a></p>
+
+<p><a title="JSF 2.0 Tutorials" href="http://www.coreservlets.com/JSF-Tutorial/jsf2/">JSF 2.0 Tutorials : JavaServer Faces 2.0 with Facelets and Ajax</a></p>
+
+<p>Sun的参考实现下载：<a title="JSF" href="https://javaserverfaces.dev.java.net/">https://javaserverfaces.dev.java.net/</a></p>
+
+<p>IceFaces和MyFaces的JSF2.0实现，也会很快的跟进的。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/19/kai-fu-lee-ten-inspiration-in-life/">李开复：人生中的十大启发</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-19T00:00:00+08:00" pubdate data-updated="true">Oct 19<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/10/19/kai-fu-lee-ten-inspiration-in-life/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><ol>
+	<li>自信不失谦虚，谦虚不失自信；</li>
+	<li>兴趣就是天赋，天赋就是兴趣，</li>
+	<li>思考比传道更重要，观点比解惑更重要；</li>
+	<li>我不同意你，但是我支持你；</li>
+	<li>挫折不 是惩罚，而是学习的机会；</li>
+	<li>创新不重要，有用的创新才重要；</li>
+	<li>用勇气改变可以改变的事情，用胸怀接受不能接受的事情，用智慧分辨两者的不同；</li>
+	<li>求知若饥，虚心若愚；</li>
+	<li>追随你的心，用它引领你的一生，其他的一切都是次要的；</li>
+	<li>你的价值不是你拥有了多少，而是你留下多少。</li>
+</ol></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/01/weblogic-domain-cookie-conflict/">WebLogic不同域的Cookie冲突问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-01T00:00:00+08:00" pubdate data-updated="true">Oct 1<span>st</span>, 2009</time>
+        
+         | <a href="/blog/2009/10/01/weblogic-domain-cookie-conflict/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>一、现象：</strong></p>
+
+<p>在WebLogic中，有两个不同域A（端口：9000）和B（端口：8000），应用CA在域A中，应用CB在域B中，进行如下操作：</p>
+
+<p>1、先登录应用CA，再登录应用CB，然后，切换回应用CA，发现应用CA的Session丢失；</p>
+
+<p>2、应用CA中有指向应用CB的链接，登录应用CA，点击指向应用CB的链接，应用CA的Session丢失；</p>
+
+<p><strong>二、原因：</strong></p>
+
+<p>因Cookie冲突导致Session丢失。</p>
+
+<p><strong>Cookie的覆盖机制：</strong>如果一个新的cookie与一个已存在的cookie的NAME、Domain和Path属性值均相同，则旧的cookie会被丢弃。（参考：<a href="http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies" target="_blank">http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</a>）</p>
+
+<p><strong>WebLogic的Cookie相关配置：</strong>
+<table border="0">
+<tbody>
+<tr>
+<td>
+<p style="text-align: left;">属性名</p>
+</td>
+<td>默认值</td>
+<td>值</td>
+</tr>
+<tr>
+<td>cookie-name</td>
+<td>JSESSIONID</td>
+<td>如未设置，默认为“JSESSIONID”</td>
+</tr>
+<tr>
+<td>cookie-path</td>
+<td>NULL</td>
+<td>如未设置，默认为“/”</td>
+</tr>
+<tr>
+<td>cookie-domain</td>
+<td>NULL</td>
+<td>如未设置，默认为发放cookie的服务器的域</td>
+</tr>
+</tbody></table>
+由于没有在Weblogic.xml配置文件中对cookie的相关属性值进行配置，因此应用CA和应用CB的cookie的Name、Domain和Path属性值均为默认值，即Name为JSESSIONID，Path为“/”，Domain为服务器的IP地址，三个属性值均相同，这就造成了应用CA的cookie与应用CB的cookie会互相覆盖，从而导致相应应用的session丢失。</p>
+
+<p><strong>三、解决办法：</strong></p>
+
+<p>在Weblogic.xml配置文件中增加Cookie的相应属性值的配置：<strong>
+</strong></p>
+
+<p>方法1：设置各应用的cookie的Name属性为不同值</p>
+
+<p>方法2：设置各应用的cookie的Path属性为不同值（cookie的Path属性值需与context-root值保持一致，context-root若未在Weblogic.xml中指定则默认为部署的WAR包名或文件夹名，若同一Weblogic服务器不同域中的两应用context-root相同，则此方法不可行）</p>
+
+<p><strong>附注：</strong>虽然问题是在WebLogic下的不同域部署应用进行互访的情况下发现的，但是，从问题产生的原因来看，在同一个域中的不同应用的互访，如果未做cookie相关属性值的配置，也会出现cookie冲突的问题。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/01/openfire-switches-to-apache-license/">Openfire License 切换至 Apache License 2.0</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-01T00:00:00+08:00" pubdate data-updated="true">Oct 1<span>st</span>, 2009</time>
+        
+         | <a href="/blog/2009/10/01/openfire-switches-to-apache-license/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Openfire已经在SVN中将GPL许可证切换为Apache许可证2.0版。下面是tweet上的一条消息：</p>
+
+<p><img class="alignnone size-full wp-image-164" title="Openfire switches to Apache License 2.0" src="http://www.devx.me/wp-content/uploads/2009/10/matttucker.png" alt="Openfire switches to Apache License 2.0" width="542" height="81" /></p>
+
+<p>Openfire主页并没有变化：</p>
+
+<p><img class="alignnone size-full wp-image-166" title="Openfire" src="http://www.devx.me/wp-content/uploads/2009/10/Openfire.png" alt="Openfire" width="652" height="241" /></p>
+
+<p>尽管如此，这至少是一条引人关注的新闻。当建立这些开源项目的公司更换协议的时候，常常也进行着商业模式的改变。或者难道是因为来自Google的压力（Google Wave 是基于XMPP协议的扩展，Google Wave服务器使用了Openfire XMPP服务器为载体，作为一个插件安装在OpenFire服务器上面）？</p>
+
+<p>还好Matt Tucker对此作了解释：
+<blockquote>I’m happy to announce that Openfire will be moving to a more liberal open source license — Apache 2.0. Apache 2.0 provides significantly more flexiblity than the GPL in virtually every way, so it should be a big win for the community all around. We expect to get all the source code headers updated for the next release. There were several motivations for making this change:
+<ol>
+	<li>The GPL license was preventing some companies from using Openfire due to corporate policies</li>
+	<li>There was no reason to keep using GPL and end-users generally seem to prefer Apache</li>
+	<li>We’d like to encourage a broader range of commercial companies to contribute to the project and the Apache license is a good way to help make that happen</li>
+</ol>
+</blockquote>
+大意如下：
+<blockquote>我很高兴地宣布Openfire将会迁移到一个更宽松的开源协议&#8212;-Apache 2.0。Apache 2.0意味着在各个方面比GPL更灵活，所以它应该是社区的一次大胜利。我们期望在下一次Release版中更新所有源代码的头部信息。促使我们做出改变的几个方面:
+<ol>
+	<li>GPL许可证使一些公司因策略问题无法使用Openfire</li>
+	<li>没有理由继续使用GPL而且最终用户看起来通常更喜欢Apache许可证</li>
+	<li>我们想要鼓励更多的商业公司向项目捐献代码，而Apache许可证是实现这一目标的一个很好的方法</li>
+</ol>
+</blockquote></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/09/10/we-are-in-it-to-win-it/">Larry Ellison：We Are in It to Win It.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-10T00:00:00+08:00" pubdate data-updated="true">Sep 10<span>th</span>, 2009</time>
+        
+         | <a href="/blog/2009/09/10/we-are-in-it-to-win-it/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Oracle以74亿美元收购Sun公司，这项并购已经被美国司法部批准，但欧盟于北京时间9月3日晚宣布对Oracle 74亿美元收购SUN一案展开反垄断调查，计划对竞争力影响进行深入的审核。欧盟的调查重点是该收购案对MySQL数据库的影响。</p>
+
+<p>这项收购案中，人们最担心的，也许是Sun的Sparc处理器和Solars操作系统的命运。Oracle会如何处理Sun的硬件部门，会如何对待Solars操作系统呢？下面的这张图片也许会让Sun的客户吃下一个定心丸：
+<p style="text-align: center;"><img class="size-full wp-image-155 aligncenter" title="sun_customers_lg" src="http://www.devx.me/wp-content/uploads/2009/09/sun_customers_lg.gif" alt="sun_customers_lg" width="370" height="552" /></p></p>
+
+<p>内容大致翻译如下：</p>
+
+<p>Sun的客户们，Oracle计划：</p>
+
+<p>1、投入更多的资金开发SPARC</p>
+
+<p>2、投入更多的资金开发Solars</p>
+
+<p>3、拥有超过Sun 2倍的硬件专家来销售和服务SPARC/Solars系统</p>
+
+<p>4、通过紧密集成Oracle的软件和Sun的硬件显著提高Sun的硬件性能</p>
+
+<p><strong>我们志在必得。IBM，我们期待着在硬件业务上与你一较高下。 &#8211; 拉里.埃里森</strong></p>
+
+<p>埃里森的这句话，把他的个性体现的淋漓尽致，也显现出了Oracle在硬件业务上的巨大野心。</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -76,6 +624,26 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2009/12/02/8-regular-expressions-diagrammatic-explanation/">8个正则表达式图解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/12/01/10-java-regular-expression-examples-you-should-know/">[译]10个你应该知道的Java正则表达式的例子</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/26/blog-has-google-pagerank-value/">博客有Google PageRank值啦~~</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/15/wordpress-auto-update-timeout/">WordPress自动更新超时</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/11/pl-sql-developer-v8-keymaker/">PL SQL Developer v8.0.0.1480 KeyMaker</a>
+      </li>
     
   </ul>
 </section>
@@ -91,12 +659,25 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Your Name -
+  Copyright &copy; 2012 - 小马 -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

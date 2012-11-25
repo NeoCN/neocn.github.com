@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>WebLogic不同域的Cookie冲突问题 - DevX.Me</title>
+  <meta name="author" content="小马">
+
+  
+  <meta name="description" content="一、现象： 在WebLogic中，有两个不同域A（端口：9000）和B（端口：8000），应用CA在域A中，应用CB在域B中，进行如下操作： 1、先登录应用CA，再登录应用CB，然后，切换回应用CA，发现应用CA的Session丢失； 2、应用CA中有指向应用CB的链接，登录应用CA， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://NeoCN.github.com/blog/2009/10/01/weblogic-domain-cookie-conflict/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DevX.Me</a></h1>
+  
+    <h2>My Coding Life!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">WebLogic不同域的Cookie冲突问题</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-01T00:00:00+08:00" pubdate data-updated="true">Oct 1<span>st</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><strong>一、现象：</strong></p>
+
+<p>在WebLogic中，有两个不同域A（端口：9000）和B（端口：8000），应用CA在域A中，应用CB在域B中，进行如下操作：</p>
+
+<p>1、先登录应用CA，再登录应用CB，然后，切换回应用CA，发现应用CA的Session丢失；</p>
+
+<p>2、应用CA中有指向应用CB的链接，登录应用CA，点击指向应用CB的链接，应用CA的Session丢失；</p>
+
+<p><strong>二、原因：</strong></p>
+
+<p>因Cookie冲突导致Session丢失。</p>
+
+<p><strong>Cookie的覆盖机制：</strong>如果一个新的cookie与一个已存在的cookie的NAME、Domain和Path属性值均相同，则旧的cookie会被丢弃。（参考：<a href="http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies" target="_blank">http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</a>）</p>
+
+<p><strong>WebLogic的Cookie相关配置：</strong>
+<table border="0">
+<tbody>
+<tr>
+<td>
+<p style="text-align: left;">属性名</p>
+</td>
+<td>默认值</td>
+<td>值</td>
+</tr>
+<tr>
+<td>cookie-name</td>
+<td>JSESSIONID</td>
+<td>如未设置，默认为“JSESSIONID”</td>
+</tr>
+<tr>
+<td>cookie-path</td>
+<td>NULL</td>
+<td>如未设置，默认为“/”</td>
+</tr>
+<tr>
+<td>cookie-domain</td>
+<td>NULL</td>
+<td>如未设置，默认为发放cookie的服务器的域</td>
+</tr>
+</tbody></table>
+由于没有在Weblogic.xml配置文件中对cookie的相关属性值进行配置，因此应用CA和应用CB的cookie的Name、Domain和Path属性值均为默认值，即Name为JSESSIONID，Path为“/”，Domain为服务器的IP地址，三个属性值均相同，这就造成了应用CA的cookie与应用CB的cookie会互相覆盖，从而导致相应应用的session丢失。</p>
+
+<p><strong>三、解决办法：</strong></p>
+
+<p>在Weblogic.xml配置文件中增加Cookie的相应属性值的配置：<strong>
+</strong></p>
+
+<p>方法1：设置各应用的cookie的Name属性为不同值</p>
+
+<p>方法2：设置各应用的cookie的Path属性为不同值（cookie的Path属性值需与context-root值保持一致，context-root若未在Weblogic.xml中指定则默认为部署的WAR包名或文件夹名，若同一Weblogic服务器不同域中的两应用context-root相同，则此方法不可行）</p>
+
+<p><strong>附注：</strong>虽然问题是在WebLogic下的不同域部署应用进行互访的情况下发现的，但是，从问题产生的原因来看，在同一个域中的不同应用的互访，如果未做cookie相关属性值的配置，也会出现cookie冲突的问题。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小马</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-01T00:00:00+08:00" pubdate data-updated="true">Oct 1<span>st</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/application-server/'>Application Server</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/10/01/openfire-switches-to-apache-license/" title="Previous Post: Openfire License 切换至 Apache License 2.0">&laquo; Openfire License 切换至 Apache License 2.0</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/10/19/kai-fu-lee-ten-inspiration-in-life/" title="Next Post: 李开复：人生中的十大启发">李开复：人生中的十大启发 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2009/12/02/8-regular-expressions-diagrammatic-explanation/">8个正则表达式图解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/12/01/10-java-regular-expression-examples-you-should-know/">[译]10个你应该知道的Java正则表达式的例子</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/26/blog-has-google-pagerank-value/">博客有Google PageRank值啦~~</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/15/wordpress-auto-update-timeout/">WordPress自动更新超时</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/11/pl-sql-developer-v8-keymaker/">PL SQL Developer v8.0.0.1480 KeyMaker</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - 小马 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://NeoCN.github.com/blog/2009/10/01/weblogic-domain-cookie-conflict/';
+        var disqus_url = 'http://NeoCN.github.com/blog/2009/10/01/weblogic-domain-cookie-conflict/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

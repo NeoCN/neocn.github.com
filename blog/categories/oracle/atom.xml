@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Oracle | DevX.Me]]></title>
+  <link href="http://NeoCN.github.com/blog/categories/oracle/atom.xml" rel="self"/>
+  <link href="http://NeoCN.github.com/"/>
+  <updated>2012-11-25T22:00:16+08:00</updated>
+  <id>http://NeoCN.github.com/</id>
+  <author>
+    <name><![CDATA[小马]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PL SQL Developer v8.0.0.1480 KeyMaker]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/11/11/pl-sql-developer-v8-keymaker/"/>
+    <updated>2009-11-11T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/11/11/pl-sql-developer-v8-keymaker</id>
+    <content type="html"><![CDATA[<p>晚上下班回家，整理桌面上的软件，发现9月份下载的 PL SQL Developer v8 还在那里，当时因为没法注册，丢在那里没管它，今天Google一搜，不错，ZWT小组已经放出了注册机了，并且很有意思的是，注册机中的图片是庆祝建国60周年相关的。ZWT小组的破解功力果然深厚。<img class="size-full wp-image-197 aligncenter" title="PLSQL Developer KeyMaker" src="http://www.devx.me/wp-content/uploads/2009/11/PLSQL-Developer-KeyMaker.PNG" alt="PLSQL Developer KeyMaker" width="407" height="372" /></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Weblogic 10.3 连接 Oracle 8i]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/08/14/weblogic10-3-connect-to-oracle8i/"/>
+    <updated>2009-08-14T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/08/14/weblogic10-3-connect-to-oracle8i</id>
+    <content type="html"><![CDATA[<p>最近做一个项目与统一接入的集成，修改完配置文件后，需要部署到正式环境中去，应用服务器是WebLogic 10.3，在新建JNDI数据源的时候无法建立成功，出现如下错误：</p>
+
+
+
+
+<p>java.lang.ArrayIndexOutOfBoundsException: 4</p>
+
+
+
+
+<p>数组下标越界？很是让人摸不着头脑，这建数据源跟数组下标越界有什么关系？？？</p>
+
+
+
+
+<p>数据库的版本是Oracle 8i，经过查找资料，发现问题的根源是WebLogic 10.3不再支持Oracle 8i。</p>
+
+
+
+
+<p>WebLogic 10.3所支持的数据库：<a title="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" href="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" target="_blank">http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245</a></p>
+
+
+
+
+<p>目前暂时没有解决办法，只能升级Oracle数据库，或者，如果是付费用户的话可寻求官方技术支持！</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[译] PL/SQL 格式化指南 (PL/SQL Formatting Guide)]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/23/plsql-formatting-guide/"/>
+    <updated>2009-07-23T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/23/plsql-formatting-guide</id>
+    <content type="html"><![CDATA[<p>最近一直在修改以前同事写的Oracle存储过程，由于编码不规范，修改起来相当费神，于是乎，翻译了这篇 PL/SQL Formatting Guide （Oracle PL/ SQL by Example，Appendix A），费了九牛二虎之力，终于翻译完了，也终于知道自己的英语有多烂了，呜呜。</p>
+
+
+
+
+<p>声明：原创翻译，不足之处请多多指正，转载请注明出处！</p>
+
+
+
+
+<p><strong>一、大小写</strong><strong> </strong></p>
+
+
+
+
+<p>就像在SQL中一样，PL / SQL中是不区分大小写的。其一般准则如下：
+<ul>
+    <li>关键字(BEGIN, EXCEPTION, END, IF THEN ELSE,LOOP, END LOOP)、数据类型(VARCHAR2, NUMBER)、内部函数(LEAST, SUBSTR)和用户定义的子程序(procedures, functions,packages)，使用大写。</li>
+    <li>变量名以及SQL中的列名和表名，使用小写。<!--more--></li>
+</ul>
+<strong>二、空白</strong><strong> </strong>
+<p align="left">空白（空行和空格）在PL/SQL中如同在SQL中一样重要，因为它是提高代码可读性的一个重要因素。换句话说，可以通过在代码中使用缩进来体现程序的逻辑结构。以下是一些建议：</p></p>
+
+
+
+
+<p><ul>
+    <li>在等号或比较操作符的左右各留一个空格；</li>
+    <li>结构词（DECLARE, BEGIN, EXCEPTION, END,IF 和 END IF, LOOP 和 END LOOP）居左排列。另外，结构中的嵌套结构要缩进三个空格（使用空格键，而不是Tab键）；</li>
+    <li>主要代码段之间用空行隔开；</li>
+    <li>把同一结构的不同逻辑部分分开写在独立的行，即使这个结构很短。例如，IF和THEN被放在同一行，而ELSE 和END IF则放在独立的行。</li>
+</ul>
+<p align="left"><strong>三、命名约定</strong><strong> </strong></p>
+<p align="left">使用以下前缀对于避免与关键字和表名列名相冲突是很有帮助的：</p></p>
+
+
+
+
+<p><ul>
+    <li>v_变量名</li>
+    <li>con_常量名</li>
+    <li>i_输入参数名，o_输出参数名，io_输入输出参数名</li>
+    <li>c_游标名 或者 游标名_cur</li>
+    <li>rc_<em> Ref Cursor</em>名</li>
+    <li>r_<em>Record</em>名 或者 <em>Record</em>名_rec</li>
+    <li>FOR r_stud IN c_stud LOOP...</li>
+    <li>FOR stud_rec IN stud_cur LOOP</li>
+    <li>type_名称，名称_type (用户定义的类型)</li>
+    <li>t_表名，表名_tab （PL/SQL 表）</li>
+    <li>rec_<em>Record</em>名，<em>Record</em>名_rec （<em>Record</em>变量）</li>
+    <li>e_异常名 （用户定义的异常）</li>
+</ul>
+<p align="left">包的名称应该描述包内的存储过程和函数主要所完成的功能</p>
+<p align="left">存储过程的名称应该描述该存储过程所执行的动作</p>
+<p align="left">函数的名称应该描述所返回的变量</p>
+<p align="left">例如：</p>
+<p align="left"></p></p>
+
+
+
+
+<p><pre lang="plsql">PACKAGE student_admin
+-- admin 后缀可能是用于表示管理功能.
+PROCEDURE remove_student (i_student_id IN student.studid%TYPE);</pre></p>
+
+
+
+
+<p>FUNCTION student_enroll_count (i_student_id student.studid%TYPE)<br />
+RETURN INTEGER;
+<p align="left"><strong>四、注释</strong></p>
+<p align="left">PL/SQL中的注释如同SQL中的注释一样重要。他们应该解释程序的主要部分和所有关键的逻辑步骤。</p>
+<p align="left">使用单行注释(--)而不是多行注释(/*)。即使PL/SQL对这些注释做同样处理，这样在代码完成后进行调试也会容易些，因为你不能在多行注释中嵌入多行注释。换句话说，单行注释代码中可以部分取消注释，而在多行注释代码中则不行。</p>
+<p align="left"><strong>五、其他的建议</strong></p>
+<p align="left">对于PL/SQL中嵌入的SQL声明，使用相同的格式化指南来决定这些声明应该如何在代码块中出现</p>
+<p align="left">提供一个头部注释，用于说明代码块的用途并列出创建日期和作者名字。并且每个修订版都要有一行注释，包含作者名、日期和修订版描述。</p>
+<p align="left">例如：下面的这个示例体现了上述建议。请注意该示例还使用了等宽字体（Courier New），因为每个字体占据同等宽度可以使格式化更加简便。等比例空格字体会隐藏空格使得行间对齐比较困难。多数文本和程序编辑器默认使用等宽字体。</p></p>
+
+
+
+
+<p><pre lang="plsql">REM ********************************************************
+REM * 文件名：coursediscount01.sql
+REM * 版本：1
+REM * 用途：对于至少有一部分超过十个学生登记的课程给予折扣
+REM * 参数：无
+REM *
+REM * 作者：s.tashi  时间：2000.1.1
+REM * 修改者：y.sonam 时间：2000.2.1
+REM * 描述：修正游标，添加缩进和注释。
+REM ********************************************************
+DECLARE
+   -- C_DISCOUNT_COURSE 找出那些至少有一部分超过十个学生登记的课程
+   CURSOR c_discount_course IS
+      SELECT DISTINCT course_no
+      FROM section sect
+      WHERE 10 &lt;= (SELECT COUNT(*)
+                    FROM enrollment enr
+                   WHERE enr.section_id = sect.section_id
+                   );
+   -- 费用超过 $2000.00的课程的折扣率
+   con_discount_2000 CONSTANT NUMBER := .90;
+   -- 费用在$1001.00和$2000.00之间的课程的折扣率
+   con_discount_other CONSTANT NUMBER := .95;</pre></p>
+
+
+
+
+<p>   v_current_course_cost course.cost%TYPE;<br />
+   v_discount_all NUMBER;<br />
+   e_update_is_problematic EXCEPTION;<br />
+BEGIN<br />
+   -- 对于那些要打折的课程, 确定当前费用和新的费用<br />
+   FOR r_discount_course in c_discount_course LOOP<br />
+       SELECT cost<br />
+       INTO v_current_course_cost<br />
+       FROM course<br />
+       WHERE course_no = r_discount_course.course_no;</p>
+
+
+
+
+<p>       IF v_current_course_cost &gt; 2000 THEN<br />
+          v_discount_all := con_discount_2000;<br />
+       ELSE<br />
+          IF v_current_course_cost &gt; 1000 THEN<br />
+             v_discount_all := con_discount_other;<br />
+          ELSE<br />
+             v_discount_all := 1;<br />
+          END IF;<br />
+       END IF;</p>
+
+
+
+
+<p>       BEGIN<br />
+          UPDATE course<br />
+          SET cost = cost * v_discount_all<br />
+          WHERE course_no = r_discount_course.course_no;<br />
+       EXCEPTION<br />
+          WHEN OTHERS THEN<br />
+             RAISE e_update_is_problematic;<br />
+       END; -- 更新记录的子代码块结束</p>
+
+
+
+
+<p>   END LOOP;-- 主循环结束</p>
+
+
+
+
+<p>   COMMIT;</p>
+
+
+
+
+<p>EXCEPTION<br />
+   WHEN e_update_is_problematic THEN<br />
+   -- 事务回滚<br />
+   ROLLBACK;<br />
+   DBMS_OUTPUT.PUT_LINE<br />
+      ('There was a problem updating a course cost.');<br />
+   WHEN OTHERS THEN<br />
+      NULL;<br />
+END;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle执行exp出现Oracle942错误]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/19/oracle-export-ora-00942/"/>
+    <updated>2009-07-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/19/oracle-export-ora-00942</id>
+    <content type="html"><![CDATA[<p>在公司新借的笔记本上安装Oracle 9i 9.2.0.1，看到有个升级补丁9.2.0.6，就顺手给装上了，结果，升级补丁安装完后，使用exp命令连接到其他电脑上的9.2.0.1版本的数据库进行数据导出是出现以下错误：</p>
+
+
+
+
+<p>EXP-00056: 遇到 ORACLE 错误 942<br />
+ORA-00942: 表或视图不存在<br />
+EXP-00024: 未安装导出视图，请通知您的DBA<!--more--></p>
+
+
+
+
+<p>出现该错误的原因是：由于exp的版本与数据库的版本不相同，所以～～</p>
+
+
+
+
+<p>Oracle不同版本间数据导入导出的规则：
+<pre>规则一：从Oracle 低版本的Export数据可以Import到Oracle高版本中，但限于Oracle的相邻版本，
+       如从Oracle 7 到 Oracle 8。对于两个不相邻版本间进行转换，如从Oracle 6 到 Oracle 8，
+       则应先将数据输入到中间版本—Oracle 7，再从中间数据库转入更高版本。</pre>
+<pre>规则二：Oracle的Export/Import工具只能连接到拥更高或者一样的Export/Import版本的数据库，
+       如Oracle 8.0.5的Export/Import 可连接到Oracle 8.1.6数据库。
+       高版本的Export导出来的转储文件，低版本的Import读不了；
+       低版本的Export导出来的转储文件，高版本的Import可以进行读取。</pre>
+我从9.2.0.6连接到9.2.0.1去exp数据，当然是没办法导出了！</p>
+
+
+
+
+<p>另外，虽然9.2.0.1到9.2.0.6的补丁已经安装成功，但是数据字典表中的相关信息并未更新，<br />
+通过该语句查看：select comp_id,version from dba_registry;</p>
+
+
+
+
+<p>解决方法：<br />
+使用SQL Plus，以DBA的身份登录；<br />
+执行以下语句：<br />
+Shutdown immediate  //关掉数据库<br />
+startup migrate  //启动到migrate模式<br />
+@"%oracle_home%\rdbms\admin\catpatch.sql"   //迁移到新版本的字典</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle异常]]></title>
+    <link href="http://NeoCN.github.com/blog/2009/07/19/oracle-exception-ora/"/>
+    <updated>2009-07-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/blog/2009/07/19/oracle-exception-ora</id>
+    <content type="html"><![CDATA[<p>1、ORA-01791：不是 SELECTed 表达式<br />
+如果SELECT中用到DISTINCT关键字，还要使用ORDER BY 子句，那么排序的列必须是包含在SELECT列表中的字段，否则会报ORA-01791 不是SELECTed表达式。</p>
+
+
+
+
+<p>2、ORA-00979：不是GROUP BY 表达式<br />
+聚集函数前面几个列就要在group by后面出现几列，否则出现“不是 GROUP BY 表达式”。</p>
+
+
+
+
+<p>3、ORA-22858:：数据类型的更改无效<br />
+Oracle 数据库表字段类型直接从varchar2 修改为clob时报错：ORA-22858: 数据类型的更改无效<br />
+解决办法：可以先修改为Long类型，清空该列数据，然后再从Long修改为clob类型</p>
+
+
+
+
+<p>4、ORA-00972：identifier is too long  标识过长<br />
+Oracle 数据库 模式对象的名字长度上限为30个字符，因此数据库表名、字段名都不能超过30个字符</p>
+
+]]></content>
+  </entry>
+  
+</feed>
