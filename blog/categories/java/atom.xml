@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:43:14+08:00</updated>
+  <updated>2012-11-25T22:46:56+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[8个正则表达式图解]]></title>
-    <link href="http://NeoCN.github.com/blog/Java/8-regular-expressions-diagrammatic-explanation.html"/>
+    <link href="http://NeoCN.github.com/Java/8-regular-expressions-diagrammatic-explanation.html"/>
     <updated>2009-12-02T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Java/8-regular-expressions-diagrammatic-explanation</id>
+    <id>http://NeoCN.github.com/Java/8-regular-expressions-diagrammatic-explanation</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[[译]10个你应该知道的Java正则表达式的例子]]></title>
-    <link href="http://NeoCN.github.com/blog/Java/10-java-regular-expression-examples-you-should-know.html"/>
+    <link href="http://NeoCN.github.com/Java/10-java-regular-expression-examples-you-should-know.html"/>
     <updated>2009-12-01T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Java/10-java-regular-expression-examples-you-should-know</id>
+    <id>http://NeoCN.github.com/Java/10-java-regular-expression-examples-you-should-know</id>
     <content type="html"><![CDATA[<p>正则表达式，用于验证用户输入的合法性是非常方便的，正好在网上看到了这篇文章，顺手翻译一下。</p>
 
 
@@ -204,9 +204,9 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[Google App Engine 部署异常]]></title>
-    <link href="http://NeoCN.github.com/blog/Java/google-application-engine-deploy-exception.html"/>
+    <link href="http://NeoCN.github.com/Java/google-application-engine-deploy-exception.html"/>
     <updated>2009-09-07T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Java/google-application-engine-deploy-exception</id>
+    <id>http://NeoCN.github.com/Java/google-application-engine-deploy-exception</id>
     <content type="html"><![CDATA[<p>今天开始尝试着做Google Application Engine  应用程序开发（Java版），第一次部署还比较正常，除了在文件超过1M时频繁出现：java.net.SocketException: Unexpected end of file from server；</p>
 
 
@@ -258,9 +258,9 @@ Cleaning up temporary files...</p>
   
   <entry>
     <title type="html"><![CDATA[IP地址与长整型互转]]></title>
-    <link href="http://NeoCN.github.com/blog/Java/ip-address-long-exchange.html"/>
+    <link href="http://NeoCN.github.com/Java/ip-address-long-exchange.html"/>
     <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Java/ip-address-long-exchange</id>
+    <id>http://NeoCN.github.com/Java/ip-address-long-exchange</id>
     <content type="html"><![CDATA[<p><pre lang="java" /></p>
 
 

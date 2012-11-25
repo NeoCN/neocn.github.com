@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>jQuery小贴士 - DevX.Me</title>
+  <meta name="author" content="小马">
+
+  
+  <meta name="description" content="本文译自：http://james.padolsey.com/javascript/things-you-may-not-know-about-jquery/ 声明：原创翻译，不当之处还请多多指正，转载请注明出处。 $.fn仅仅是jQuery.prototype 的一个快捷方式。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://NeoCN.github.com/jQuery/jquery-tips.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DevX.Me</a></h1>
+  
+    <h2>My Coding Life!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">jQuery小贴士</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-31T00:00:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>本文译自：<a title="Things you may not know about jQuery" href="http://james.padolsey.com/javascript/things-you-may-not-know-about-jquery/" target="_blank">http://james.padolsey.com/javascript/things-you-may-not-know-about-jquery/</a></p>
+
+<p>声明：原创翻译，不当之处还请多多指正，转载请注明出处。
+<ul>
+	<li> $.fn仅仅是jQuery.prototype 的一个快捷方式。</li>
+	<li> 您可以通过尝试访问jQuery集合的第一个元素来测试jQuery集合是否包含某些内容，例如： if($(selector)[0]){…} 。</li>
+	<li> jQuery在所有浏览器中标准化了事件对象！可以到这里查看所有可用的属性/方法： http://docs.jquery.com/Events/jQuery.Event 。</li>
+	<li> 当您创建一个插件时，您可以使用的jQuery的链式调用访问前面的对象：</li><!--more-->
+</ul>
+<pre lang="javascript">
+      jQuery.fn.doSomething = function() {
+          this; // => $('a')
+          this.prevObject; // => $('li')
+          // 记得在你的插件中使用链式代码
+          return this;
+      };
+       
+      jQuery('li').show().find('a').doSomething();
+       
+      // 你甚至可以从创建一个新的“根”插件:
+      // (返回这个链的“根”)
+      jQuery.fn.root = function() {
+          // 根永远都是Document所以我们不得不
+          // 回到最后一个的前一个：
+          var root = this;
+          while(root.prevObject.prevObject) {
+              root = root.prevObject;
+          }
+          return root;
+      };
+       
+      $('li').find('a').children().root(); // <= $('li') 被返回
+      //在这种情况下使用root()与使用end()是一样的
+</pre>
+<ul>
+	<li> 您可以对事件应用命名空间！这对于插件开发是特别有用的：</li>
+</ul>
+<pre lang="javascript">
+      jQuery.fn.myPlugin = function() {</pre></p>
+
+<p>          //自己做一些清理 <br />
+          jQuery.myPlugin = {<br />
+              cleanUp: function() { </p>
+
+<p>                  // 该插件的作用是移除所有已绑定的click事件处理器<br />
+                  jQuery(&#8216;*&#8217;).unbind(&#8216;click.myPlugin&#8217;); </p>
+
+<p>                  //或者，删除所有事件：<br />
+                  jQuery(&#8216;*&#8217;).unbind(&#8216;.myPlugin&#8217;); </p>
+
+<p>              }<br />
+          }; <br />
+          return this.bind(&#8216;click.myPlugin&#8217;, function() {<br />
+              //做些什么&#8230;<br />
+          });<br />
+      };<br />
+       <br />
+      //请注意，您也可以为数据定义命名空间：<br />
+      // 例如. $(elem).data(&#8216;whatever.myPlugin&#8217;,value);
+
+<ul>
+	<li> 您可以通过jQuery的事件存储机制访问所有绑定到一个元素（或任何对象）的所有事件处理器：</li>
+</ul>
+<pre lang="javascript">
+      //列表已绑定的事件：
+      console.dir( jQuery('#elem').data('events') ); 
+      //记录所有事件的处理程序：
+      jQuery.each($('#elem').data('events'), function(i, event){
+          jQuery.each(event, function(i, handler){
+              console.log( handler.toString() );
+          });
+      }); 
+      //你可以看到某个事件发生时真正执行的方法，
+      //对调试非常有用！
+</pre></p>
+
+<p><ul>
+	<li> jQuery原生支持JSONP （&#8217;JSON with padding&#8217;），它实际上意味着可以做跨域“Ajax”请求（虽然严格意义上来讲并不是Ajax，因为它没有使用XHR ）。JSONP需要被请求域必须有一些相应的JSONP的API（它必须能够封装JSON数据与指定的回调函数）。一个例子：</li>
+</ul>
+<pre lang="javascript">
+      function getLatestFlickrPics(tag,callback) {
+          var flickrFeed = 'http://api.flickr.com/services/feeds/photos_public.gne?tags='
+                         + tag + '&tagmode=any&format=json&jsoncallback=?';
+          jQuery.getJSON(flickrFeed, callback);
+      }
+       
+      //用法
+      getLatestFlickrPics('ferrari', function(data){
+          jQuery.each(data.items, function(i, item){
+              $("</pre><img />&#8221;).attr(&#8220;src&#8221;, item.media.m).appendTo(&#8216;body&#8217;);<br />
+          });<br />
+      });
+</p>
+
+<p><ul>
+	<li> 您可能会发现它有点混乱，但jQuery使我们能够在一个链式代码中建立一个完整的DOM结构：</li>
+</ul>
+<pre lang="javascript">
+      //创建或注入一个链：
+      jQuery('<div>')
+          .append('<p><a href="#">Foo</a></p>')
+          .find('p a')
+              .click(function(){
+                  // 做些什么...
+                  return false;
+              })
+              .end()
+          .append('<p><a href="#">Bar</a></p>')
+          .find('p:eq(1) a')
+              .click(function(){
+                  //做些别的事情...
+                  return false;
+              })
+              .end()
+          .appendTo('body');
+</div></pre></p>
+
+<p><ul>
+	<li> 访问一个jQuery集合内部的DOM元素是非常简单的：</li>
+</ul>
+<pre lang="javascript">
+     var HTMLCollection = $('div').get(); </pre></p>
+
+<p>      //或者，如果您只想获取第一个元素：<br />
+      $(&#8216;div&#8217;).get(0);<br />
+      $(&#8216;div&#8217;).get()[0];<br />
+      $(&#8216;div&#8217;)[0];
+</p>
+
+<p><ul>
+	<li> 您不仅可以绑定事件到DOM元素;您也可以绑定一个自定义事件到任何对象！</li>
+</ul>
+<pre lang="javascript">
+      function Widget() {
+          //做些什么...
+      };</pre></p>
+
+<p>      var myPhotoWidget = new Widget(&#8216;photos&#8217;);  <br />
+      var myPhotoWidget = new Widget(&#8216;photos&#8217;);  <br />
+      jQuery(myPhotoWidget).bind(&#8216;photoAdd&#8217;, function() {<br />
+            //自定义的事件处理&#8230;<br />
+      });<br />
+      //触发事件：<br />
+      jQuery(myPhotoWidget).trigger(&#8216;photoAdd&#8217;);
+</p>
+
+<p><ul>
+	<li> 获取所选中的元素的索引值是非常容易的， jQuery给我们提供了一个&#8217;index&#8217;方法：</li>
+</ul>
+<pre lang="javascript">
+    $('table tr').click(function(){
+       //查找点击的表格行索引：
+       var index = $('table tr').index(this);
+    });
+</pre>
+<ul>
+	<li> 您可以创建自己的过滤选择器。下面是一个例子：</li>
+</ul>
+<pre lang="javascript">
+      $.expr[':'].external = function(elem,index,match) {
+          var url = elem.href || elem.src, loc = window.location; 
+              loc = window.location;
+          return !!url.match(new RegExp('^' + loc.protocol + '//' + '(?!' + loc.hostname + ')' ));}; 
+      }; 
+      //现在您可以在您的选择器使用它： 
+      //查找所有的外部链接：
+      $('a:external');  
+      //查找所有外部脚本元素：
+      $('script:external');  
+      //判断是否是外部链接：
+      $('a#mylink').is(':external'); // true/false
+</pre>
+<ul>
+	<li> 我看到不少人仍然在他们的jQuery脚本中使用JavaScript的FOR或者WHILE结构来创建循环。这样做没有什么不对，但请注意， jQuery的&#8217;each&#8217;方法也能够迭代数组和对象！</li>
+</ul>
+<pre lang="javascript">
+    var myArr = ['apple','banana','orange'];  
+      $.each(myArr, function(index, item) {
+          //做些什么
+          //返回False来终止循环
+          //返回True来继续下一次循环
+      });
+</pre></p>
+
+<p><ul>
+	<li> &#8216;过滤器&#8217;方法接受一个字符串选择器或者一个函数。当和函数一起使用的时候，您必须返回false来从堆栈中删除这个元素，返回true来保留它：</li>
+</ul>
+<pre lang="javascript">
+      $('div').filter(function(){
+          return this.childNodes.length > 10; // 必须返回一个Boolean类型的值   
+      });
+</pre></p>
+
+<p><ul>
+	<li> 您没有必要为一个新的元素的指定ID或classes以便于以后对其进行引用，只需将他们缓存到一个变量就可以了：</li>
+</ul>
+<pre lang="javascript">
+     var myInjectedDiv = $('<div>').appendTo('body'); </div></pre></p>
+
+<p>      //使用&#8217; myInjectedDiv &#8216;来引用这个元素：<br />
+      myInjectedDiv.bind(&#8216;click&#8217;, function(){<br />
+          // &#8230;<br />
+      });
+</p>
+
+<p><ul>
+	<li> jQuery的&#8217;map&#8217;方法是非常有用的，参数中传递过来的函数将会对传递过来的数组（或对象）中的每一个元素进行操作，并且将每一次的函数返回值添加到新的数组中去，我们来看一看：</li>
+</ul>
+<pre lang="javascript">
+      //创建一个包含所有锚点HREF属性的数组：
+      var URLs = $.map($('a'), function(elem, index){
+          return elem.href;
+      });
+       
+      // URLs = ['http://google.com', 'http://whatever.com', 'http://yahoo.com']
+</pre></p>
+
+<p><ul>
+	<li> 这一个不是jQuery相关的，但它是非常有用的。当您需要比较做一些工作的不同方法时（为了获得更好的性能）您可以使用Firebug控制台来记录每一段代码的执行时间，例如：</li>
+<pre lang="javascript">
+      console.time('My first method');
+      //做些什么...
+      console.time('My first method'); </pre></ul></p>
+
+<p>      console.time(&#8216;My second method&#8217;);<br />
+      //做些别的事情&#8230;<br />
+      console.time(&#8216;My second method&#8217;); </p>
+
+<p>      //Firebug会记录完成每块代码所用的时间（以毫秒为单位）
+
+</p>
+
+<p></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小马</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-31T00:00:00+08:00" pubdate data-updated="true">Jul 31<span>st</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/jquery/'>jQuery</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/Oracle/plsql-formatting-guide.html" title="Previous Post: [译] PL/SQL 格式化指南 (PL/SQL Formatting Guide)">&laquo; [译] PL/SQL 格式化指南 (PL/SQL Formatting Guide)</a>
+      
+      
+        <a class="basic-alignment right" href="/Cygwin/Linux/cygwin-bash-shell-chinese.html" title="Next Post: Cygwin Bash Shell 中文显示">Cygwin Bash Shell 中文显示 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/Java/8-regular-expressions-diagrammatic-explanation.html">8个正则表达式图解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Java/10-java-regular-expression-examples-you-should-know.html">[译]10个你应该知道的Java正则表达式的例子</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/blog-has-google-pagerank-value.html">博客有Google PageRank值啦~~</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/wordpress-auto-update-timeout.html">WordPress自动更新超时</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Oracle/pl-sql-developer-v8-keymaker.html">PL SQL Developer v8.0.0.1480 KeyMaker</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - 小马 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://NeoCN.github.com/jQuery/jquery-tips.html';
+        var disqus_url = 'http://NeoCN.github.com/jQuery/jquery-tips.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

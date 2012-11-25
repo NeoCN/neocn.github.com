@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>数据库JDBC连接方法总结 - DevX.Me</title>
+  <meta name="author" content="小马">
+
+  
+  <meta name="description" content="好久之前整理的资料了，忘了在哪里搜集的，发出来跟大家分享： 数据库名称 连接串 MySQL Class.forName(&#8220;org.gjt.mm.mysql.Driver&#8221;);
+DriverManager.getConnection( &#8220;jdbc:mysql:// &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://NeoCN.github.com/DataBase/jdbc-connection-code-snippets.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DevX.Me</a></h1>
+  
+    <h2>My Coding Life!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">数据库JDBC连接方法总结</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-20T00:00:00+08:00" pubdate data-updated="true">Jul 20<span>th</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>好久之前整理的资料了，忘了在哪里搜集的，发出来跟大家分享：
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="115" valign="top">
+<p align="left">数据库名称</p>
+</td>
+<td width="641" valign="top">
+<p align="left">连接串</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>MySQL</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;org.gjt.mm.mysql.Driver&#8221;);</p>
+<p align="left">DriverManager.getConnection(   &#8220;jdbc:mysql://MyDbComputerNameOrIP:3306/myDatabaseName&#8221;, sUsr, sPwd   );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>PostgreSQL</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;org.postgresql.Driver&#8221;);</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:postgresql://MyDbComputerNameOrIP/myDatabaseName&#8221;,   sUsr, sPwd );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>Oracle</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName( &#8220;oracle.jdbc.driver.OracleDriver&#8221; );</p>
+<p align="left">DriverManager.getConnection( &#8220;jdbc:oracle:thin::1521:ORCL&#8221;,   sUsr, sPwd );</p>
+</td>
+</tr>
+<tr>
+<td colspan="2"><!--more--></td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>Sybase</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;com.sybase.jdbc2.jdbc.SybDriver&#8221;);</p>
+<p align="left">DriverManager.getConnection(   &#8220;jdbc:sybase:Tds:MyDbComputerNameOrIP:2638&#8221;, sUsr, sPwd );</p>
+<p align="left">//(Default-Username/Password: &#8220;dba&#8221;/&#8221;sql&#8221;)</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>SQLServer</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName( &#8220;net.sourceforge.jtds.jdbc.Driver&#8221; );</p>
+<p align="left">DriverManager.getConnection(   &#8220;jdbc:jtds:sqlserver://MyDbComputerNameOrIP:1433/master&#8221;, sUsr,   sPwd );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>ODBC</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName( &#8220;sun.jdbc.odbc.JdbcOdbcDriver&#8221; );</p>
+<p align="left">DriverManager.getConnection( &#8220;jdbc:odbc:&#8221; + sDsn, sUsr,   sPwd );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>DB2</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;com.ibm.db2.jdbc.net.DB2Driver&#8221;);</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:db2://192.9.200.108:6789/SAMPLE&#8221;,   sUsr, sPwd );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>SAP DB</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName (&#8220;com.sap.dbtech.jdbc.DriverSapDB&#8221;);</p>
+<p align="left">DriverManager.getConnection ( &#8220;jdbc:sapdb://&#8221; + host +   &#8220;/&#8221; + database_name,user_name, password)</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>InterBase</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;interbase.interclient.Driver&#8221;);</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:interbase://localhost/e:/testbed/database/employee.gdb&#8221;,   &#8220;sysdba&#8221;, &#8220;masterkey&#8221; );</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left">Microsoft <strong>SQL Server </strong>series (6.5, 7.x and 2000) and Sybase 10</p>
+</td>
+<td width="641" valign="top">
+<p align="left">JDBC Name: jTDS</p>
+<p align="left">Class.forName(&#8220;net.sourceforge.jtds.jdbc.Driver &#8220;);</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:jtds:sqlserver://host:port/database&#8221;,&#8221;user&#8221;,&#8221;password&#8221;);or</p>
+<p align="left">DriverManager.getConnection(&#8220;jdbc:jtds:sybase://host:port/database&#8221;,&#8221;user&#8221;,&#8221;password&#8221;);</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>IBM AS400</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">装V4R4以上版本的Client Access Express可以在C:Program FilesIBMClient Accessjt400ib找到 driver 档案 jt400.zip，并更改扩展名成为 jt400.jar语法</p>
+<p align="left">java.sql.DriverManager.registerDriver (new   com.ibm.as400.access.AS400JDBCDriver ());</p>
+<p align="left">Class.forName(&#8220;com.ibm.as400.access.AS400JDBCConnection&#8221;);con   = DriverManager.getConnection(&#8220;jdbc:as400://IP&#8221;,&#8221;user&#8221;,&#8221;password&#8221;);</p>
+</td>
+</tr>
+<tr>
+<td width="115" valign="top">
+<p align="left"><strong>Informix</strong></p>
+</td>
+<td width="641" valign="top">
+<p align="left">Class.forName(&#8220;com.informix.jdbc.IfxDriver&#8221;).newInstance();</p>
+<p align="left">String url =   &#8220;jdbc:informix-sqli://123.45.67.89:1533/testDB:INFORMIXSERVER=myserver;   user=testuser;password=testpassword&#8221;;</p>
+</td>
+</tr>
+</tbody></table>
+<p align="left"></p></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小马</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-20T00:00:00+08:00" pubdate data-updated="true">Jul 20<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/database/'>DataBase</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/Javascript/window-close-with-no-prompt.html" title="Previous Post: 去掉“是否要关闭本窗口”的提示">&laquo; 去掉“是否要关闭本窗口”的提示</a>
+      
+      
+        <a class="basic-alignment right" href="/Oracle/plsql-formatting-guide.html" title="Next Post: [译] PL/SQL 格式化指南 (PL/SQL Formatting Guide)">[译] PL/SQL 格式化指南 (PL/SQL Formatting Guide) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/Java/8-regular-expressions-diagrammatic-explanation.html">8个正则表达式图解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Java/10-java-regular-expression-examples-you-should-know.html">[译]10个你应该知道的Java正则表达式的例子</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/blog-has-google-pagerank-value.html">博客有Google PageRank值啦~~</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/wordpress-auto-update-timeout.html">WordPress自动更新超时</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Oracle/pl-sql-developer-v8-keymaker.html">PL SQL Developer v8.0.0.1480 KeyMaker</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - 小马 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://NeoCN.github.com/DataBase/jdbc-connection-code-snippets.html';
+        var disqus_url = 'http://NeoCN.github.com/DataBase/jdbc-connection-code-snippets.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

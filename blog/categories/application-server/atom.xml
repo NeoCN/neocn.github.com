@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Application Server | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/application-server/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:43:14+08:00</updated>
+  <updated>2012-11-25T22:46:56+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[WebLogic不同域的Cookie冲突问题]]></title>
-    <link href="http://NeoCN.github.com/blog/Application Server/weblogic-domain-cookie-conflict.html"/>
+    <link href="http://NeoCN.github.com/Application Server/weblogic-domain-cookie-conflict.html"/>
     <updated>2009-10-01T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Application Server/weblogic-domain-cookie-conflict</id>
+    <id>http://NeoCN.github.com/Application Server/weblogic-domain-cookie-conflict</id>
     <content type="html"><![CDATA[<p><strong>一、现象：</strong></p>
 
 
@@ -112,9 +112,9 @@
   
   <entry>
     <title type="html"><![CDATA[Weblogic 10.3 连接 Oracle 8i]]></title>
-    <link href="http://NeoCN.github.com/blog/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html"/>
+    <link href="http://NeoCN.github.com/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html"/>
     <updated>2009-08-14T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Application Server/Oracle/weblogic10-3-connect-to-oracle8i</id>
+    <id>http://NeoCN.github.com/Application Server/Oracle/weblogic10-3-connect-to-oracle8i</id>
     <content type="html"><![CDATA[<p>最近做一个项目与统一接入的集成，修改完配置文件后，需要部署到正式环境中去，应用服务器是WebLogic 10.3，在新建JNDI数据源的时候无法建立成功，出现如下错误：</p>
 
 
@@ -147,9 +147,9 @@
   
   <entry>
     <title type="html"><![CDATA[WebLogic的antlr包冲突问题]]></title>
-    <link href="http://NeoCN.github.com/blog/Application Server/weblogic-antlr-conflict-solution.html"/>
+    <link href="http://NeoCN.github.com/Application Server/weblogic-antlr-conflict-solution.html"/>
     <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Application Server/weblogic-antlr-conflict-solution</id>
+    <id>http://NeoCN.github.com/Application Server/weblogic-antlr-conflict-solution</id>
     <content type="html"><![CDATA[<p>使用Hibernate的系统在WebLogic下部署经常会出现ClassNotFoundException: org.hibernate.hql.ast.HqlToken的问题，出现该问题的原因主要由于WebLogic已经集成了antlr包 ，在使用Hibernate时，会先加载其本身所带的antlr包， 所以会和Hibernate 捆绑的antlr-2.7.5.jar冲突，导致上述错误。</p>
 
 

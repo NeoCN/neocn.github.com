@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Oracle | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/oracle/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:43:14+08:00</updated>
+  <updated>2012-11-25T22:46:56+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[PL SQL Developer v8.0.0.1480 KeyMaker]]></title>
-    <link href="http://NeoCN.github.com/blog/Oracle/pl-sql-developer-v8-keymaker.html"/>
+    <link href="http://NeoCN.github.com/Oracle/pl-sql-developer-v8-keymaker.html"/>
     <updated>2009-11-11T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Oracle/pl-sql-developer-v8-keymaker</id>
+    <id>http://NeoCN.github.com/Oracle/pl-sql-developer-v8-keymaker</id>
     <content type="html"><![CDATA[<p>晚上下班回家，整理桌面上的软件，发现9月份下载的 PL SQL Developer v8 还在那里，当时因为没法注册，丢在那里没管它，今天Google一搜，不错，ZWT小组已经放出了注册机了，并且很有意思的是，注册机中的图片是庆祝建国60周年相关的。ZWT小组的破解功力果然深厚。<img class="size-full wp-image-197 aligncenter" title="PLSQL Developer KeyMaker" src="http://www.devx.me/wp-content/uploads/2009/11/PLSQL-Developer-KeyMaker.PNG" alt="PLSQL Developer KeyMaker" width="407" height="372" /></p>
 
 ]]></content>
@@ -25,9 +25,9 @@
   
   <entry>
     <title type="html"><![CDATA[Weblogic 10.3 连接 Oracle 8i]]></title>
-    <link href="http://NeoCN.github.com/blog/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html"/>
+    <link href="http://NeoCN.github.com/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html"/>
     <updated>2009-08-14T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Application Server/Oracle/weblogic10-3-connect-to-oracle8i</id>
+    <id>http://NeoCN.github.com/Application Server/Oracle/weblogic10-3-connect-to-oracle8i</id>
     <content type="html"><![CDATA[<p>最近做一个项目与统一接入的集成，修改完配置文件后，需要部署到正式环境中去，应用服务器是WebLogic 10.3，在新建JNDI数据源的时候无法建立成功，出现如下错误：</p>
 
 
@@ -60,9 +60,9 @@
   
   <entry>
     <title type="html"><![CDATA[[译] PL/SQL 格式化指南 (PL/SQL Formatting Guide)]]></title>
-    <link href="http://NeoCN.github.com/blog/Oracle/plsql-formatting-guide.html"/>
+    <link href="http://NeoCN.github.com/Oracle/plsql-formatting-guide.html"/>
     <updated>2009-07-23T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Oracle/plsql-formatting-guide</id>
+    <id>http://NeoCN.github.com/Oracle/plsql-formatting-guide</id>
     <content type="html"><![CDATA[<p>最近一直在修改以前同事写的Oracle存储过程，由于编码不规范，修改起来相当费神，于是乎，翻译了这篇 PL/SQL Formatting Guide （Oracle PL/ SQL by Example，Appendix A），费了九牛二虎之力，终于翻译完了，也终于知道自己的英语有多烂了，呜呜。</p>
 
 
@@ -235,9 +235,9 @@ END;</p>
   
   <entry>
     <title type="html"><![CDATA[Oracle执行exp出现Oracle942错误]]></title>
-    <link href="http://NeoCN.github.com/blog/Oracle/oracle-export-ora-00942.html"/>
+    <link href="http://NeoCN.github.com/Oracle/oracle-export-ora-00942.html"/>
     <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Oracle/oracle-export-ora-00942</id>
+    <id>http://NeoCN.github.com/Oracle/oracle-export-ora-00942</id>
     <content type="html"><![CDATA[<p>在公司新借的笔记本上安装Oracle 9i 9.2.0.1，看到有个升级补丁9.2.0.6，就顺手给装上了，结果，升级补丁安装完后，使用exp命令连接到其他电脑上的9.2.0.1版本的数据库进行数据导出是出现以下错误：</p>
 
 
@@ -286,9 +286,9 @@ startup migrate  //启动到migrate模式<br />
   
   <entry>
     <title type="html"><![CDATA[Oracle异常]]></title>
-    <link href="http://NeoCN.github.com/blog/Oracle/oracle-exception-ora.html"/>
+    <link href="http://NeoCN.github.com/Oracle/oracle-exception-ora.html"/>
     <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Oracle/oracle-exception-ora</id>
+    <id>http://NeoCN.github.com/Oracle/oracle-exception-ora</id>
     <content type="html"><![CDATA[<p>1、ORA-01791：不是 SELECTed 表达式<br />
 如果SELECT中用到DISTINCT关键字，还要使用ORDER BY 子句，那么排序的列必须是包含在SELECT列表中的字段，否则会报ORA-01791 不是SELECTed表达式。</p>
 

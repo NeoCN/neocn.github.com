@@ -4,7 +4,7 @@
   <title><![CDATA[DevX.Me]]></title>
   <link href="http://NeoCN.github.com/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:43:14+08:00</updated>
+  <updated>2012-11-25T22:46:56+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -15,17 +15,17 @@
   
   <entry>
     <title type="html"><![CDATA[8个正则表达式图解]]></title>
-    <link href="http://NeoCN.github.com/blog/Java/8-regular-expressions-diagrammatic-explanation.html"/>
+    <link href="http://NeoCN.github.com/Java/8-regular-expressions-diagrammatic-explanation.html"/>
     <updated>2009-12-02T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Java/8-regular-expressions-diagrammatic-explanation</id>
+    <id>http://NeoCN.github.com/Java/8-regular-expressions-diagrammatic-explanation</id>
     <content type="html"><![CDATA[]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[[译]10个你应该知道的Java正则表达式的例子]]></title>
-    <link href="http://NeoCN.github.com/blog/Java/10-java-regular-expression-examples-you-should-know.html"/>
+    <link href="http://NeoCN.github.com/Java/10-java-regular-expression-examples-you-should-know.html"/>
     <updated>2009-12-01T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Java/10-java-regular-expression-examples-you-should-know</id>
+    <id>http://NeoCN.github.com/Java/10-java-regular-expression-examples-you-should-know</id>
     <content type="html"><![CDATA[<p>正则表达式，用于验证用户输入的合法性是非常方便的，正好在网上看到了这篇文章，顺手翻译一下。</p>
 
 <p>原文链接：<a title="10 Java Regular Expression Examples You Should Know " href="http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/" target="_blank">http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/</a></p>
@@ -193,9 +193,9 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[博客有Google PageRank值啦~~]]></title>
-    <link href="http://NeoCN.github.com/blog/其他/blog-has-google-pagerank-value.html"/>
+    <link href="http://NeoCN.github.com/其他/blog-has-google-pagerank-value.html"/>
     <updated>2009-11-26T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/其他/blog-has-google-pagerank-value</id>
+    <id>http://NeoCN.github.com/其他/blog-has-google-pagerank-value</id>
     <content type="html"><![CDATA[<p>上个月的时候，还关注过自己网站的Google PageRank，嘛都没有，索性后边也没再看。几个月来一直被公司派驻移动，事情挺多，也挺杂的，也没怎么抽时间来弄博客，等这次WAP单点登录系统完成后，一定抽个时间好好总结总结……</p>
 
 <p>不知道昨天老婆装什么软件把Google工具条给装上了，今天突然对这个工具条有了兴趣，发现安装了Google工具条后可以查看一个网站的Google PageRank，赶紧的，访问了自己的博客，居然，PageRank有值了，虽然仅仅是1，但也很兴奋，完全没想到啊！兴奋中……</p>
@@ -206,9 +206,9 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[WordPress自动更新超时]]></title>
-    <link href="http://NeoCN.github.com/blog/其他/wordpress-auto-update-timeout.html"/>
+    <link href="http://NeoCN.github.com/其他/wordpress-auto-update-timeout.html"/>
     <updated>2009-11-15T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/其他/wordpress-auto-update-timeout</id>
+    <id>http://NeoCN.github.com/其他/wordpress-auto-update-timeout</id>
     <content type="html"><![CDATA[<p>WordPress 自动更新升级的时候，总是会出现类似下面的错误：
 <pre>Operation timed out after <span style="color: #ff0000;">60</span> seconds with <span style="color: #ff0000;">xxxxxx</span> out of <span style="color: #ff0000;">2593212</span> bytes receiveds 。</pre>
 解决办法如下：</p>
@@ -223,18 +223,18 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[PL SQL Developer v8.0.0.1480 KeyMaker]]></title>
-    <link href="http://NeoCN.github.com/blog/Oracle/pl-sql-developer-v8-keymaker.html"/>
+    <link href="http://NeoCN.github.com/Oracle/pl-sql-developer-v8-keymaker.html"/>
     <updated>2009-11-11T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Oracle/pl-sql-developer-v8-keymaker</id>
+    <id>http://NeoCN.github.com/Oracle/pl-sql-developer-v8-keymaker</id>
     <content type="html"><![CDATA[<p>晚上下班回家，整理桌面上的软件，发现9月份下载的 PL SQL Developer v8 还在那里，当时因为没法注册，丢在那里没管它，今天Google一搜，不错，ZWT小组已经放出了注册机了，并且很有意思的是，注册机中的图片是庆祝建国60周年相关的。ZWT小组的破解功力果然深厚。<img class="size-full wp-image-197 aligncenter" title="PLSQL Developer KeyMaker" src="http://www.devx.me/wp-content/uploads/2009/11/PLSQL-Developer-KeyMaker.PNG" alt="PLSQL Developer KeyMaker" width="407" height="372" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[JSF 2.0 相关资料]]></title>
-    <link href="http://NeoCN.github.com/blog/JSP/jsf-2-tutorials.html"/>
+    <link href="http://NeoCN.github.com/JSP/jsf-2-tutorials.html"/>
     <updated>2009-10-30T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/JSP/jsf-2-tutorials</id>
+    <id>http://NeoCN.github.com/JSP/jsf-2-tutorials</id>
     <content type="html"><![CDATA[<p>07年的这个时候，正折腾着JSF1.2呢，不过自打去年毕业后，就再也没碰过JSF了。转眼间，都2.0了，突然觉得，这技术咋就变化那么快呢。搞IT，尤其是搞Java EE ，真是，累就一个字啊～～ 据说这次的2.0有很大的变化，尤其是在自定义组件的开发方面，简化了很多；2.0中也直接对AJAX做了支持。</p>
 
 <p>随手Google了一下相关资料，整理一下列出来：</p>
@@ -259,9 +259,9 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[李开复：人生中的十大启发]]></title>
-    <link href="http://NeoCN.github.com/blog/其他/kai-fu-lee-ten-inspiration-in-life.html"/>
+    <link href="http://NeoCN.github.com/其他/kai-fu-lee-ten-inspiration-in-life.html"/>
     <updated>2009-10-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/其他/kai-fu-lee-ten-inspiration-in-life</id>
+    <id>http://NeoCN.github.com/其他/kai-fu-lee-ten-inspiration-in-life</id>
     <content type="html"><![CDATA[<p><ol>
 	<li>自信不失谦虚，谦虚不失自信；</li>
 	<li>兴趣就是天赋，天赋就是兴趣，</li>
@@ -279,9 +279,9 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[WebLogic不同域的Cookie冲突问题]]></title>
-    <link href="http://NeoCN.github.com/blog/Application Server/weblogic-domain-cookie-conflict.html"/>
+    <link href="http://NeoCN.github.com/Application Server/weblogic-domain-cookie-conflict.html"/>
     <updated>2009-10-01T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Application Server/weblogic-domain-cookie-conflict</id>
+    <id>http://NeoCN.github.com/Application Server/weblogic-domain-cookie-conflict</id>
     <content type="html"><![CDATA[<p><strong>一、现象：</strong></p>
 
 <p>在WebLogic中，有两个不同域A（端口：9000）和B（端口：8000），应用CA在域A中，应用CB在域B中，进行如下操作：</p>
@@ -339,9 +339,9 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[Openfire License 切换至 Apache License 2.0]]></title>
-    <link href="http://NeoCN.github.com/blog/Open Source/openfire-switches-to-apache-license.html"/>
+    <link href="http://NeoCN.github.com/Open Source/openfire-switches-to-apache-license.html"/>
     <updated>2009-10-01T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Open Source/openfire-switches-to-apache-license</id>
+    <id>http://NeoCN.github.com/Open Source/openfire-switches-to-apache-license</id>
     <content type="html"><![CDATA[<p>Openfire已经在SVN中将GPL许可证切换为Apache许可证2.0版。下面是tweet上的一条消息：</p>
 
 <p><img class="alignnone size-full wp-image-164" title="Openfire switches to Apache License 2.0" src="http://www.devx.me/wp-content/uploads/2009/10/matttucker.png" alt="Openfire switches to Apache License 2.0" width="542" height="81" /></p>
@@ -373,9 +373,9 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[Larry Ellison：We are in it to win it.]]></title>
-    <link href="http://NeoCN.github.com/blog/其他/we-are-in-it-to-win-it.html"/>
+    <link href="http://NeoCN.github.com/其他/we-are-in-it-to-win-it.html"/>
     <updated>2009-09-10T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/其他/we-are-in-it-to-win-it</id>
+    <id>http://NeoCN.github.com/其他/we-are-in-it-to-win-it</id>
     <content type="html"><![CDATA[<p>Oracle以74亿美元收购Sun公司，这项并购已经被美国司法部批准，但欧盟于北京时间9月3日晚宣布对Oracle 74亿美元收购SUN一案展开反垄断调查，计划对竞争力影响进行深入的审核。欧盟的调查重点是该收购案对MySQL数据库的影响。</p>
 
 <p>这项收购案中，人们最担心的，也许是Sun的Sparc处理器和Solars操作系统的命运。Oracle会如何处理Sun的硬件部门，会如何对待Solars操作系统呢？下面的这张图片也许会让Sun的客户吃下一个定心丸：
@@ -401,9 +401,9 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[有史以来最狂妄的演讲 -- Larry Ellison]]></title>
-    <link href="http://NeoCN.github.com/blog/其他/commencement-speech-larry-ellison.html"/>
+    <link href="http://NeoCN.github.com/其他/commencement-speech-larry-ellison.html"/>
     <updated>2009-09-10T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/其他/commencement-speech-larry-ellison</id>
+    <id>http://NeoCN.github.com/其他/commencement-speech-larry-ellison</id>
     <content type="html"><![CDATA[<p>下面是Oracle  CEO Larry Ellison 在耶鲁大学2000届毕业典礼上发表的世人看来最为狂妄、不受欢迎但又是现实真实状况的演讲：</p>
 
 <p>耶鲁的毕业生们，我很抱歉——如果你们不喜欢这样的开场。我想请你们为我做一件事。请你——好好看一看周围，看一看站在你左边的同学，看一看站在你右边的同学。</p>
@@ -456,9 +456,9 @@ $                  # 行结束</pre>
   
   <entry>
     <title type="html"><![CDATA[Google App Engine 部署异常]]></title>
-    <link href="http://NeoCN.github.com/blog/Java/google-application-engine-deploy-exception.html"/>
+    <link href="http://NeoCN.github.com/Java/google-application-engine-deploy-exception.html"/>
     <updated>2009-09-07T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Java/google-application-engine-deploy-exception</id>
+    <id>http://NeoCN.github.com/Java/google-application-engine-deploy-exception</id>
     <content type="html"><![CDATA[<p>今天开始尝试着做Google Application Engine  应用程序开发（Java版），第一次部署还比较正常，除了在文件超过1M时频繁出现：java.net.SocketException: Unexpected end of file from server；</p>
 
 <p>在了解了文件大小限制并成功部署之后，再次重新部署时，却出现如下异常，让人非常头疼：</p>
@@ -485,9 +485,9 @@ Cleaning up temporary files&#8230;</p>
   
   <entry>
     <title type="html"><![CDATA[Weblogic 10.3 连接 Oracle 8i]]></title>
-    <link href="http://NeoCN.github.com/blog/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html"/>
+    <link href="http://NeoCN.github.com/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html"/>
     <updated>2009-08-14T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Application Server/Oracle/weblogic10-3-connect-to-oracle8i</id>
+    <id>http://NeoCN.github.com/Application Server/Oracle/weblogic10-3-connect-to-oracle8i</id>
     <content type="html"><![CDATA[<p>最近做一个项目与统一接入的集成，修改完配置文件后，需要部署到正式环境中去，应用服务器是WebLogic 10.3，在新建JNDI数据源的时候无法建立成功，出现如下错误：</p>
 
 <p>java.lang.ArrayIndexOutOfBoundsException: 4</p>
@@ -504,9 +504,9 @@ Cleaning up temporary files&#8230;</p>
   
   <entry>
     <title type="html"><![CDATA[Cygwin Bash Shell 中文显示]]></title>
-    <link href="http://NeoCN.github.com/blog/Cygwin/Linux/cygwin-bash-shell-chinese.html"/>
+    <link href="http://NeoCN.github.com/Cygwin/Linux/cygwin-bash-shell-chinese.html"/>
     <updated>2009-08-14T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Cygwin/Linux/cygwin-bash-shell-chinese</id>
+    <id>http://NeoCN.github.com/Cygwin/Linux/cygwin-bash-shell-chinese</id>
     <content type="html"><![CDATA[<p>昨天，在XP上安装了Cygwin，移动的网速还是不错的，很快就安装完成了，只是，发现中文全部显示为问号，而且，ls和dir命令，也没有对目录等的进行着色，以下是解决办法：</p>
 
 <p>1、解决中文文件和目录名显示问题</p>
@@ -541,9 +541,9 @@ export LESSCHARSET=latin1</pre>
   
   <entry>
     <title type="html"><![CDATA[jQuery小贴士]]></title>
-    <link href="http://NeoCN.github.com/blog/jQuery/jquery-tips.html"/>
+    <link href="http://NeoCN.github.com/jQuery/jquery-tips.html"/>
     <updated>2009-07-31T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/jQuery/jquery-tips</id>
+    <id>http://NeoCN.github.com/jQuery/jquery-tips</id>
     <content type="html"><![CDATA[<p>本文译自：<a title="Things you may not know about jQuery" href="http://james.padolsey.com/javascript/things-you-may-not-know-about-jquery/" target="_blank">http://james.padolsey.com/javascript/things-you-may-not-know-about-jquery/</a></p>
 
 <p>声明：原创翻译，不当之处还请多多指正，转载请注明出处。
@@ -782,9 +782,9 @@ export LESSCHARSET=latin1</pre>
   
   <entry>
     <title type="html"><![CDATA[[译] PL/SQL 格式化指南 (PL/SQL Formatting Guide)]]></title>
-    <link href="http://NeoCN.github.com/blog/Oracle/plsql-formatting-guide.html"/>
+    <link href="http://NeoCN.github.com/Oracle/plsql-formatting-guide.html"/>
     <updated>2009-07-23T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Oracle/plsql-formatting-guide</id>
+    <id>http://NeoCN.github.com/Oracle/plsql-formatting-guide</id>
     <content type="html"><![CDATA[<p>最近一直在修改以前同事写的Oracle存储过程，由于编码不规范，修改起来相当费神，于是乎，翻译了这篇 PL/SQL Formatting Guide （Oracle PL/ SQL by Example，Appendix A），费了九牛二虎之力，终于翻译完了，也终于知道自己的英语有多烂了，呜呜。</p>
 
 <p>声明：原创翻译，不足之处请多多指正，转载请注明出处！</p>
@@ -914,9 +914,9 @@ END;</p>
   
   <entry>
     <title type="html"><![CDATA[数据库JDBC连接方法总结]]></title>
-    <link href="http://NeoCN.github.com/blog/DataBase/jdbc-connection-code-snippets.html"/>
+    <link href="http://NeoCN.github.com/DataBase/jdbc-connection-code-snippets.html"/>
     <updated>2009-07-20T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/DataBase/jdbc-connection-code-snippets</id>
+    <id>http://NeoCN.github.com/DataBase/jdbc-connection-code-snippets</id>
     <content type="html"><![CDATA[<p>好久之前整理的资料了，忘了在哪里搜集的，发出来跟大家分享：
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody>
@@ -1050,9 +1050,9 @@ END;</p>
   
   <entry>
     <title type="html"><![CDATA[去掉“是否要关闭本窗口”的提示]]></title>
-    <link href="http://NeoCN.github.com/blog/Javascript/window-close-with-no-prompt.html"/>
+    <link href="http://NeoCN.github.com/Javascript/window-close-with-no-prompt.html"/>
     <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Javascript/window-close-with-no-prompt</id>
+    <id>http://NeoCN.github.com/Javascript/window-close-with-no-prompt</id>
     <content type="html"><![CDATA[<p>想要在javascript里调用window.close(); 关且闭窗口时不提示“是否要关闭本窗口？”有以下两种方法可以实现这样的效果：</p>
 
 <p>方法一、</p>
@@ -1073,9 +1073,9 @@ window.self.close();
   
   <entry>
     <title type="html"><![CDATA[WebLogic的antlr包冲突问题]]></title>
-    <link href="http://NeoCN.github.com/blog/Application Server/weblogic-antlr-conflict-solution.html"/>
+    <link href="http://NeoCN.github.com/Application Server/weblogic-antlr-conflict-solution.html"/>
     <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/Application Server/weblogic-antlr-conflict-solution</id>
+    <id>http://NeoCN.github.com/Application Server/weblogic-antlr-conflict-solution</id>
     <content type="html"><![CDATA[<p>使用Hibernate的系统在WebLogic下部署经常会出现ClassNotFoundException: org.hibernate.hql.ast.HqlToken的问题，出现该问题的原因主要由于WebLogic已经集成了antlr包 ，在使用Hibernate时，会先加载其本身所带的antlr包， 所以会和Hibernate 捆绑的antlr-2.7.5.jar冲突，导致上述错误。</p>
 
 <p>解决方法是：在WebLogic启动类路径先加载最新的antlr包。<!--more--></p>
@@ -1118,9 +1118,9 @@ CLASSPATH="${HIBERNATE_CLASSPATH}${SAVE_CLASSPATH}"</pre>
   
   <entry>
     <title type="html"><![CDATA[一个超牛的日期时间判断正则表达式]]></title>
-    <link href="http://NeoCN.github.com/blog/其他/super-date-time-validate-regular-expressions.html"/>
+    <link href="http://NeoCN.github.com/其他/super-date-time-validate-regular-expressions.html"/>
     <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/其他/super-date-time-validate-regular-expressions</id>
+    <id>http://NeoCN.github.com/其他/super-date-time-validate-regular-expressions</id>
     <content type="html"><![CDATA[<p>这里是判断YYYY-MM-DD这种格式的，基本上把闰年和2月等的情况都考虑进去了：</p>
 
 <p>^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-))$</p>
