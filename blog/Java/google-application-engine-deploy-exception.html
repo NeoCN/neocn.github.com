@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Google App Engine 部署异常 - DevX.Me</title>
+  <meta name="author" content="小马">
+
+  
+  <meta name="description" content="今天开始尝试着做Google Application Engine  应用程序开发（Java版），第一次部署还比较正常，除了在文件超过1M时频繁出现：java.net.SocketException: Unexpected end of file from server； &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://NeoCN.github.com/blog/Java/google-application-engine-deploy-exception.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DevX.Me</a></h1>
+  
+    <h2>My Coding Life!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Google App Engine 部署异常</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-07T00:00:00+08:00" pubdate data-updated="true">Sep 7<span>th</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>今天开始尝试着做Google Application Engine  应用程序开发（Java版），第一次部署还比较正常，除了在文件超过1M时频繁出现：java.net.SocketException: Unexpected end of file from server；</p>
+
+<p>在了解了文件大小限制并成功部署之后，再次重新部署时，却出现如下异常，让人非常头疼：</p>
+
+<p>Another transaction by user XXXXXX is already in progress for this app and major version. That user can undo the transaction with appcfg.py&#8217;s &#8220;rollback&#8221; command.</p>
+
+<p>解决办法如下：</p>
+
+<p>从控制台进入Google App Engine的SDK目录下的bin目录，执行：“appcfg.cmd rollback  项目war目录路径”即可。</p>
+
+<p>例如：</p>
+
+<p>D:\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.2.5.v200909021031\appengine-java-sdk-1.2.5\bin&gt;appcfg.cmd rollback D:\eclipse\workspace\XXXXXX\war</p>
+
+<p>输出如下：</p>
+
+<p>Reading application configuration data&#8230;<br />
+Beginning server interaction for XXXXXX&#8230;<br />
+0% Rolling back the update.<br />
+Success.<br />
+Cleaning up temporary files&#8230;</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小马</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-07T00:00:00+08:00" pubdate data-updated="true">Sep 7<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>Java</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html" title="Previous Post: Weblogic 10.3 连接 Oracle 8i">&laquo; Weblogic 10.3 连接 Oracle 8i</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/其他/commencement-speech-larry-ellison.html" title="Next Post: 有史以来最狂妄的演讲 -- Larry Ellison">有史以来最狂妄的演讲 -- Larry Ellison &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/Java/8-regular-expressions-diagrammatic-explanation.html">8个正则表达式图解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Java/10-java-regular-expression-examples-you-should-know.html">[译]10个你应该知道的Java正则表达式的例子</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/其他/blog-has-google-pagerank-value.html">博客有Google PageRank值啦~~</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/其他/wordpress-auto-update-timeout.html">WordPress自动更新超时</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Oracle/pl-sql-developer-v8-keymaker.html">PL SQL Developer v8.0.0.1480 KeyMaker</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - 小马 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://NeoCN.github.com/blog/Java/google-application-engine-deploy-exception.html';
+        var disqus_url = 'http://NeoCN.github.com/blog/Java/google-application-engine-deploy-exception.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

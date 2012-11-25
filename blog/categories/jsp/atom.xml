@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JSP | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/jsp/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:00:16+08:00</updated>
+  <updated>2012-11-25T22:43:14+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JSF 2.0 相关资料]]></title>
-    <link href="http://NeoCN.github.com/blog/2009/10/30/jsf-2-tutorials/"/>
+    <link href="http://NeoCN.github.com/blog/JSP/jsf-2-tutorials.html"/>
     <updated>2009-10-30T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/2009/10/30/jsf-2-tutorials</id>
+    <id>http://NeoCN.github.com/blog/JSP/jsf-2-tutorials</id>
     <content type="html"><![CDATA[<p>07年的这个时候，正折腾着JSF1.2呢，不过自打去年毕业后，就再也没碰过JSF了。转眼间，都2.0了，突然觉得，这技术咋就变化那么快呢。搞IT，尤其是搞Java EE ，真是，累就一个字啊～～ 据说这次的2.0有很大的变化，尤其是在自定义组件的开发方面，简化了很多；2.0中也直接对AJAX做了支持。</p>
 
 

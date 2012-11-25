@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 其他 | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/其他/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:00:16+08:00</updated>
+  <updated>2012-11-25T22:43:14+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[博客有Google PageRank值啦~~]]></title>
-    <link href="http://NeoCN.github.com/blog/2009/11/26/blog-has-google-pagerank-value/"/>
+    <link href="http://NeoCN.github.com/blog/其他/blog-has-google-pagerank-value.html"/>
     <updated>2009-11-26T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/2009/11/26/blog-has-google-pagerank-value</id>
+    <id>http://NeoCN.github.com/blog/其他/blog-has-google-pagerank-value</id>
     <content type="html"><![CDATA[<p>上个月的时候，还关注过自己网站的Google PageRank，嘛都没有，索性后边也没再看。几个月来一直被公司派驻移动，事情挺多，也挺杂的，也没怎么抽时间来弄博客，等这次WAP单点登录系统完成后，一定抽个时间好好总结总结……</p>
 
 
@@ -35,9 +35,9 @@
   
   <entry>
     <title type="html"><![CDATA[WordPress自动更新超时]]></title>
-    <link href="http://NeoCN.github.com/blog/2009/11/15/wordpress-auto-update-timeout/"/>
+    <link href="http://NeoCN.github.com/blog/其他/wordpress-auto-update-timeout.html"/>
     <updated>2009-11-15T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/2009/11/15/wordpress-auto-update-timeout</id>
+    <id>http://NeoCN.github.com/blog/其他/wordpress-auto-update-timeout</id>
     <content type="html"><![CDATA[<p>WordPress 自动更新升级的时候，总是会出现类似下面的错误：
 <pre>Operation timed out after <span style="color: #ff0000;">60</span> seconds with <span style="color: #ff0000;">xxxxxx</span> out of <span style="color: #ff0000;">2593212</span> bytes receiveds 。</pre>
 解决办法如下：</p>
@@ -59,9 +59,9 @@
   
   <entry>
     <title type="html"><![CDATA[李开复：人生中的十大启发]]></title>
-    <link href="http://NeoCN.github.com/blog/2009/10/19/kai-fu-lee-ten-inspiration-in-life/"/>
+    <link href="http://NeoCN.github.com/blog/其他/kai-fu-lee-ten-inspiration-in-life.html"/>
     <updated>2009-10-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/2009/10/19/kai-fu-lee-ten-inspiration-in-life</id>
+    <id>http://NeoCN.github.com/blog/其他/kai-fu-lee-ten-inspiration-in-life</id>
     <content type="html"><![CDATA[<p><ol>
     <li>自信不失谦虚，谦虚不失自信；</li>
     <li>兴趣就是天赋，天赋就是兴趣，</li>
@@ -80,9 +80,9 @@
   
   <entry>
     <title type="html"><![CDATA[Larry Ellison：We are in it to win it.]]></title>
-    <link href="http://NeoCN.github.com/blog/2009/09/10/we-are-in-it-to-win-it/"/>
+    <link href="http://NeoCN.github.com/blog/其他/we-are-in-it-to-win-it.html"/>
     <updated>2009-09-10T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/2009/09/10/we-are-in-it-to-win-it</id>
+    <id>http://NeoCN.github.com/blog/其他/we-are-in-it-to-win-it</id>
     <content type="html"><![CDATA[<p>Oracle以74亿美元收购Sun公司，这项并购已经被美国司法部批准，但欧盟于北京时间9月3日晚宣布对Oracle 74亿美元收购SUN一案展开反垄断调查，计划对竞争力影响进行深入的审核。欧盟的调查重点是该收购案对MySQL数据库的影响。</p>
 
 
@@ -136,9 +136,9 @@
   
   <entry>
     <title type="html"><![CDATA[有史以来最狂妄的演讲 -- Larry Ellison]]></title>
-    <link href="http://NeoCN.github.com/blog/2009/09/10/commencement-speech-larry-ellison/"/>
+    <link href="http://NeoCN.github.com/blog/其他/commencement-speech-larry-ellison.html"/>
     <updated>2009-09-10T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/2009/09/10/commencement-speech-larry-ellison</id>
+    <id>http://NeoCN.github.com/blog/其他/commencement-speech-larry-ellison</id>
     <content type="html"><![CDATA[<p>下面是Oracle  CEO Larry Ellison 在耶鲁大学2000届毕业典礼上发表的世人看来最为狂妄、不受欢迎但又是现实真实状况的演讲：</p>
 
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Javascript | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:00:16+08:00</updated>
+  <updated>2012-11-25T22:43:14+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[去掉“是否要关闭本窗口”的提示]]></title>
-    <link href="http://NeoCN.github.com/blog/2009/07/19/window-close-with-no-prompt/"/>
+    <link href="http://NeoCN.github.com/blog/Javascript/window-close-with-no-prompt.html"/>
     <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/2009/07/19/window-close-with-no-prompt</id>
+    <id>http://NeoCN.github.com/blog/Javascript/window-close-with-no-prompt</id>
     <content type="html"><![CDATA[<p>想要在javascript里调用window.close(); 关且闭窗口时不提示“是否要关闭本窗口？”有以下两种方法可以实现这样的效果：</p>
 
 
@@ -51,9 +51,9 @@ window.self.close();
   
   <entry>
     <title type="html"><![CDATA[兼容IE和Firefox的键盘事件监听]]></title>
-    <link href="http://NeoCN.github.com/blog/2009/07/19/ie-firefox-keyboard-events/"/>
+    <link href="http://NeoCN.github.com/blog/Javascript/Web/ie-firefox-keyboard-events.html"/>
     <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/blog/2009/07/19/ie-firefox-keyboard-events</id>
+    <id>http://NeoCN.github.com/blog/Javascript/Web/ie-firefox-keyboard-events</id>
     <content type="html"><![CDATA[<p><pre lang="javascript">
 document.onkeypress = function(e) { // 兼容IE和Firefox
     var key = window.event ? window.event.keyCode : e.which;
