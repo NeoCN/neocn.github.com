@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Application Server | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/application-server/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:48:32+08:00</updated>
+  <updated>2012-11-27T22:42:13+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[重置WebLogic管理控制台密码]]></title>
+    <link href="http://NeoCN.github.com/Application Server/reset-weblogic-admin-console-password.html"/>
+    <updated>2010-06-14T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Application Server/reset-weblogic-admin-console-password</id>
+    <content type="html"><![CDATA[<p>1、关掉WebLogic；<br />
+2、进入需要重置密码的域的security目录下(例如: $WL_HOME/user_projects/domains/base_domain/security)，备份DefaultAuthenticatorInit.ldift文件为DefaultAuthenticatorInit.ldift_old；<br />
+3、命令行下，进入域的bin目录，运行setDomainEnv脚本，设置环境变量；<br />
+4、在操作3之后，运行如下命令：</p>
+
+
+
+
+<p><strong><span style="color: #00ff00;">java weblogic.security.utils.AdminAccount admin_user admin_pass .</span></strong></p>
+
+
+
+
+<p><strong></strong>记得修改“admin_user”和“admin_pass”为你所需要的用户名和密码，并且，<span style="color: #ff0000;">不要忘了最后的那个“.”和前面的空格，是必须的，不然会报参数非法</span>；</p>
+
+
+
+
+<p>5、运行4中的命令后, 文件“DefaultAuthenticatorInit.ldift”会被更新；<br />
+6、进入域的AdminServer目录下，重命名data文件夹为data_old；<br />
+7、进入域的AdminServer目录下的security子目录，备份boot.properties文件为boot.properties_old，同时修改原boot.properties文件中的username和password为你所需要的用户名和密码；<br />
+7、运行域的startWebLogic脚本，启动WebLogic；<br />
+8、现在，就可以用你设置的用户名和密码登录Console控制台了。</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[WebLogic不同域的Cookie冲突问题]]></title>

@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Oracle EXP-00003 异常解决办法 - DevX.Me</title>
+  <meta name="author" content="小马">
+
+  
+  <meta name="description" content="今天下午，想在测试环境下进行数据库迁移的模拟测试，本机Oracle 版本为9.2.0.1 ，服务器Oracle版本为9.2.0.8 ，在使用EXP命令进行用户数据导出时，如果表中有数据类型是Lob的列，则会出现EXP-00003：未找到段×××的存储定义(EXP-00003 : no &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://NeoCN.github.com/DataBase/Oracle/oracle-exp-00003-solutions.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DevX.Me</a></h1>
+  
+    <h2>My Coding Life!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Oracle EXP-00003 异常解决办法</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-12T00:00:00+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2010</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>今天下午，想在测试环境下进行数据库迁移的模拟测试，本机Oracle 版本为9.2.0.1 ，服务器Oracle版本为9.2.0.8 ，在使用EXP命令进行用户数据导出时，如果表中有数据类型是Lob的列，则会出现EXP-00003：未找到段×××的存储定义(EXP-00003 : no storage definition found for segment &#8230;..)。</p>
+
+<p>出现 EXP-00003异常，是Oracle数据库的一个Bug。当使用低版本的EXP从高版本(9.2.0.5或者更高)去导出含有Lob列的表的时候，就会遇到EXP-00003异常。</p>
+
+<p>为了解决这个问题，可以选择升级客户端，将客户端EXP升级到较高版本，可以解决这个Bug；当然有些人不想这么麻烦，那么可以用下面的临时解决方案(替换视图&#8221;exu9tne&#8221;)：
+<p style="text-align: left;">EXP导出前，在SYS用户下执行下面的SQL：</p></p>
+
+<p><pre lang="sql">CREATE OR REPLACE VIEW exu9tne (
+tsno, fileno, blockno, length) AS
+SELECT ts#, segfile#, segblock#, length
+FROM sys.uet$
+WHERE ext# = 1
+UNION ALL
+SELECT * FROM SYS.EXU9TNEB
+/
+</pre>
+<p style="text-align: left;">EXP导出完成后，执行下面的SQL恢复视图定义(Metalink建议)：</p></p>
+
+<p><pre lang="sql">CREATE OR REPLACE VIEW exu9tne (
+tsno, fileno, blockno, length) AS
+SELECT ts#, segfile#, segblock#, length
+FROM sys.uet$
+WHERE ext# = 1
+/
+</pre>
+PS: 下午升级数据库后，服务起不来了，自己又是菜鸟一个，折腾N久还是不行，最后一狠心，重装……唉，可怜了我辛辛苦苦导进去的数据……</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小马</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-12T00:00:00+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/database/'>DataBase</a>, <a class='category' href='/blog/categories/oracle/'>Oracle</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/其他/crack-excel-workbook-and-worksheet-protection.html" title="Previous Post: 破解Excel的工作簿和工作表保护">&laquo; 破解Excel的工作簿和工作表保护</a>
+      
+      
+        <a class="basic-alignment right" href="/Java/r-i-p-sun.html" title="Next Post: R.I.P. Sun">R.I.P. Sun &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/其他/4-traps-a-startup-should-care.html">[转]4个造成创业失败的最重要陷阱</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/twelve-principles-of-agile-software.html">敏捷软件的十二条原则</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/stay-hungry-stay-foolish.html">Stay Hungry. Stay Foolish.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/how-to-start-a-startup.html">如何进行成功的创业</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Android/hierarchyviewer-bat-is-missing-from-android-sdk_r07-windows.html">Windows版本的Android SDK R07中缺少hierarchyviewer.bat文件</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - 小马 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://NeoCN.github.com/DataBase/Oracle/oracle-exp-00003-solutions.html';
+        var disqus_url = 'http://NeoCN.github.com/DataBase/Oracle/oracle-exp-00003-solutions.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 其他 | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/其他/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:48:32+08:00</updated>
+  <updated>2012-11-27T22:42:13+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -14,244 +14,1374 @@
 
   
   <entry>
-    <title type="html"><![CDATA[博客有Google PageRank值啦~~]]></title>
-    <link href="http://NeoCN.github.com/其他/blog-has-google-pagerank-value.html"/>
-    <updated>2009-11-26T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/blog-has-google-pagerank-value</id>
-    <content type="html"><![CDATA[<p>上个月的时候，还关注过自己网站的Google PageRank，嘛都没有，索性后边也没再看。几个月来一直被公司派驻移动，事情挺多，也挺杂的，也没怎么抽时间来弄博客，等这次WAP单点登录系统完成后，一定抽个时间好好总结总结……</p>
+    <title type="html"><![CDATA[[转]4个造成创业失败的最重要陷阱]]></title>
+    <link href="http://NeoCN.github.com/其他/4-traps-a-startup-should-care.html"/>
+    <updated>2011-09-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/4-traps-a-startup-should-care</id>
+    <content type="html"><![CDATA[<p>我常说创业跟棒球很像，即使是 全世界最厉害的打者 ，10次上场打击也有6次要摸摸鼻子下来，更何况你是刚刚开始拿球棒的新人。 所以身为一个创业人，你的目标不是避免失败，而是认知到你一定会失败，然后学会如何 从失败中获取教训 ，让你的打击率一次比一次更高。</p>
 
 
 
 
-<p>不知道昨天老婆装什么软件把Google工具条给装上了，今天突然对这个工具条有了兴趣，发现安装了Google工具条后可以查看一个网站的Google PageRank，赶紧的，访问了自己的博客，居然，PageRank有值了，虽然仅仅是1，但也很兴奋，完全没想到啊！兴奋中……</p>
+<p>不过虽然如此，就像上场打击一定要带球棒一样，有些创业失败的陷阱其实你大可以避免。这些可以说是创业必要的基本观念，很多前人已经经历过了，你们学到就好，不用自己尝试一次。 昨天刚好读到一篇Elad Gil (伊列‧盖优)写的「 4 Ways Startups Fail 」(4个新创团队失败的原因)，我认为写得非常好，按照惯例，原文不长，我鼓励你们去读读。 以下，则是我加入自己的经验后整理出来的版本：</p>
 
 
 
 
-<p>[caption id="attachment_208" align="aligncenter" width="347" caption="iJavaEE-PageRank"]<img class="size-full wp-image-208" title="iJavaEE-PageRank" src="http://www.devx.me/wp-content/uploads/2009/11/iJavaEE-PageRank.PNG" alt="iJavaEE-PageRank" width="347" height="82" />[/caption]</p>
+<p><strong>陷阱一：钱烧完了</strong></p>
+
+
+
+
+<p>大多创业团队失败的原因，不是在募不到创投的资金，而是在募到钱后开始盲目的花费，搬新家、一股脑的雇用工程师、每个人一台最高档的MacBook Pro笔电。 在你发现之前，你的公司已经只剩下6个月的现金水位了，但是你根本还没找到 Product/Market Fit ，怎么办？ 只好再去跟创投伸手要钱，我问你，这时候谁会再给你钱？</p>
+
+
+
+
+<p>如何避免？</p>
+
+
+
+
+<p>精实创业 —只把钱 花在最有效率、生产力的地方 (我再说一次，精实指得是效率，不是抠门)</p>
+
+
+
+
+<p>Product/Market Fit优先 —大多时候找PMF是不需要(一大笔)钱的</p>
+
+
+
+
+<p>假如明天开始创投都垮了 —即使你拿到一些资金，你要当作你永远不会再拿到更多</p>
+
+
+
+
+<p>Hack Everything —管理、行销、人事、营运，所有的事情，都去想要怎么把钱花得更有效率</p>
+
+
+
+
+<p><strong>陷阱二：团队分裂</strong></p>
+
+
+
+
+<p>每个创业团队都会吵架，但是解决的方式大不同。 如果大家是就事论事，最后很快的做出结论，那还好。如果吵到不相往来，彼此看不顺眼，甚至公司变成两个党派，那就非常糟糕。</p>
+
+
+
+
+<p>如何避免？</p>
+
+
+
+
+<p>明确的分工 —共同创办人间要有明确的分工，一个事情就要有一个总负责人(Direct Responsible Individual)，关于这件事情，大家都要听他的话</p>
+
+
+
+
+<p>认清决策一定会有错误 —有些人一旦自己的意见不被采纳，就陷入一种看好戏的心态，等着看对方出糗。 这对于团队一点好处也没有，没有一个人知道什么会成功，什么会失败。如果这个决策最后失败了，原因往往也跟你预测的不一样。 全部的人都在同一条船上，如果团队决定了一个方向，那每个人都必须要尽全力让这个东西成功，失败也是每个人的责任，每个人的学习机会。</p>
+
+
+
+
+<p>开门见山的沟通 —团队这么小，就你们几个人，要养成什么话都说出来的习惯，如果连这么小的团队都有沟通上的障碍，那你们注定失败。</p>
+
+
+
+
+<p><strong>陷阱三：市场不对</strong></p>
+
+
+
+
+<p>很多创业失败的原因，是选了一个错误的市场。 大多数是太早，比较少是需要这样东西的人不多。</p>
+
+
+
+
+<p>如何避免？</p>
+
+
+
+
+<p>专注在找Product/Market Fit — PMF的重点是Market的需求，而不是产品本身的功能酷不酷，设计炫不炫， 千万别搞错了 。</p>
+
+
+
+
+<p>选一个大/成长/多金的市场 —千万别搞错了，大不一定要是几亿人，如果有300~500万人有这样的需求，而且每个人都有很高的付费意愿，那也是很棒的市场。</p>
+
+
+
+
+<p>适时Pivot —苗头不对，赶快 Pivot 吧！</p>
+
+
+
+
+<p><strong>陷阱四：找个不懂又爱管事的投资人</strong></p>
+
+
+
+
+<p>相信我，这世界上最恐怖的不是笨蛋投资人，而是「不懂又想要插手」的投资人。 他们会叫你赶快多雇一点员工、干预产品决策、没事叫你开董事会、做报告，甚至还想要把你开除，找「专业的人」进来「管理」，天啊！</p>
+
+
+
+
+<p>如何避免？</p>
+
+
+
+
+<p>只跟「你需要的人」拿钱 —在找到PMF前，其实你不太需要钱，所以如果你跟这个人拿钱，应该只是为了你需要他成为你的支持者，帮助你找到PMF。</p>
+
+
+
+
+<p>做好你的功课 —拿钱之前，先跟别人聊聊，确认这个投资人带来的是价值，而不是毁灭。</p>
+
+
+
+
+<p>过半 —找到PMF之前，你需要能够快速Pivot，在那之前让投资人过半，是很不好的架构。</p>
+
+
+
+
+<p>董事会 —在找到PMF之前，董事会其实没什么功能。</p>
+
+
+
+
+<p>以上，就是会造成创业失败的四个最重要陷阱，以及如何避免，提供给你们参考。 不过说穿了，其实也很简单，就是在找到Product/Market Fit 之前，请你什么事情都不要做，专心的找PMF，那就对了！</p>
 
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[WordPress自动更新超时]]></title>
-    <link href="http://NeoCN.github.com/其他/wordpress-auto-update-timeout.html"/>
-    <updated>2009-11-15T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/wordpress-auto-update-timeout</id>
-    <content type="html"><![CDATA[<p>WordPress 自动更新升级的时候，总是会出现类似下面的错误：
-<pre>Operation timed out after <span style="color: #ff0000;">60</span> seconds with <span style="color: #ff0000;">xxxxxx</span> out of <span style="color: #ff0000;">2593212</span> bytes receiveds 。</pre>
-解决办法如下：</p>
+    <title type="html"><![CDATA[敏捷软件的十二条原则]]></title>
+    <link href="http://NeoCN.github.com/其他/twelve-principles-of-agile-software.html"/>
+    <updated>2011-04-03T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/twelve-principles-of-agile-software</id>
+    <content type="html"><![CDATA[<p><span> 我们最重要的目标，是通过持续不断地及早交付有价值的软件使客户满意。</span></p>
 
 
 
 
-<p>打开 /wp-admin/includes/file.php 文件，找到如下代码：
-<pre lang="php">$response = wp_remote_get($url, array('timeout' = 60));</pre>
-修改超时时间60为600或更长。</p>
+<p><span> 欣然面对需求变化，即使在开发后期也一样。<br />
+为了客户的竞争优势，敏捷过程掌控变化。</span></p>
 
 
 
 
-<p>完成后，重新升级即可。</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[李开复：人生中的十大启发]]></title>
-    <link href="http://NeoCN.github.com/其他/kai-fu-lee-ten-inspiration-in-life.html"/>
-    <updated>2009-10-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/kai-fu-lee-ten-inspiration-in-life</id>
-    <content type="html"><![CDATA[<p><ol>
-    <li>自信不失谦虚，谦虚不失自信；</li>
-    <li>兴趣就是天赋，天赋就是兴趣，</li>
-    <li>思考比传道更重要，观点比解惑更重要；</li>
-    <li>我不同意你，但是我支持你；</li>
-    <li>挫折不 是惩罚，而是学习的机会；</li>
-    <li>创新不重要，有用的创新才重要；</li>
-    <li>用勇气改变可以改变的事情，用胸怀接受不能接受的事情，用智慧分辨两者的不同；</li>
-    <li>求知若饥，虚心若愚；</li>
-    <li>追随你的心，用它引领你的一生，其他的一切都是次要的；</li>
-    <li>你的价值不是你拥有了多少，而是你留下多少。</li>
-</ol></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Larry Ellison：We are in it to win it.]]></title>
-    <link href="http://NeoCN.github.com/其他/we-are-in-it-to-win-it.html"/>
-    <updated>2009-09-10T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/we-are-in-it-to-win-it</id>
-    <content type="html"><![CDATA[<p>Oracle以74亿美元收购Sun公司，这项并购已经被美国司法部批准，但欧盟于北京时间9月3日晚宣布对Oracle 74亿美元收购SUN一案展开反垄断调查，计划对竞争力影响进行深入的审核。欧盟的调查重点是该收购案对MySQL数据库的影响。</p>
+<p><span> 经常地交付可工作的软件，相隔几星期或一两个月，倾向于采取较短的周期。</span></p>
 
 
 
 
-<p>这项收购案中，人们最担心的，也许是Sun的Sparc处理器和Solars操作系统的命运。Oracle会如何处理Sun的硬件部门，会如何对待Solars操作系统呢？下面的这张图片也许会让Sun的客户吃下一个定心丸：
-<p style="text-align: center;"><img class="size-full wp-image-155 aligncenter" title="sun_customers_lg" src="http://www.devx.me/wp-content/uploads/2009/09/sun_customers_lg.gif" alt="sun_customers_lg" width="370" height="552" /></p></p>
+<p><span> 业务人员和开发人员必须相互合作，项目中的每一天都不例外。</span></p>
 
 
 
 
-<p>内容大致翻译如下：</p>
+<p><span> 激发个体的斗志，以他们为核心搭建项目。<br />
+提供所需的环境和支援，辅以信任，从而达成目标。</span></p>
 
 
 
 
-<p>Sun的客户们，Oracle计划：</p>
+<p><span> 不论团队内外，传递信息效果最好效率也最高的方式是面对面的交谈。</span></p>
 
 
 
 
-<p>1、投入更多的资金开发SPARC</p>
+<p><span> 可工作的软件是进度的首要度量标准。</span></p>
 
 
 
 
-<p>2、投入更多的资金开发Solars</p>
+<p><span> 敏捷过程倡导可持续开发。<br />
+责任人、开发人员和用户要能够共同维持其步调稳定延续。</span></p>
 
 
 
 
-<p>3、拥有超过Sun 2倍的硬件专家来销售和服务SPARC/Solars系统</p>
+<p><span> 坚持不懈地追求技术卓越和良好设计，敏捷能力由此增强。</span></p>
 
 
 
 
-<p>4、通过紧密集成Oracle的软件和Sun的硬件显著提高Sun的硬件性能</p>
+<p><span> 以简洁为本，它是极力减少不必要工作量的艺术。</span></p>
 
 
 
 
-<p><strong>我们志在必得。IBM，我们期待着在硬件业务上与你一较高下。 -- 拉里.埃里森</strong></p>
+<p><span> 最好的架构、需求和设计出自自组织团队。</span></p>
 
 
 
 
-<p>埃里森的这句话，把他的个性体现的淋漓尽致，也显现出了Oracle在硬件业务上的巨大野心。</p>
+<p><span> 团队定期地反思如何能提高成效，并依此调整自身的举止表现。</span></p>
 
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[有史以来最狂妄的演讲 -- Larry Ellison]]></title>
-    <link href="http://NeoCN.github.com/其他/commencement-speech-larry-ellison.html"/>
-    <updated>2009-09-10T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/commencement-speech-larry-ellison</id>
-    <content type="html"><![CDATA[<p>下面是Oracle  CEO Larry Ellison 在耶鲁大学2000届毕业典礼上发表的世人看来最为狂妄、不受欢迎但又是现实真实状况的演讲：</p>
+    <title type="html"><![CDATA[Stay Hungry. Stay Foolish.]]></title>
+    <link href="http://NeoCN.github.com/其他/stay-hungry-stay-foolish.html"/>
+    <updated>2011-02-18T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/stay-hungry-stay-foolish</id>
+    <content type="html"><![CDATA[<p>You’ve got to find what you love,’ Jobs says</p>
 
 
 
 
-<p>耶鲁的毕业生们，我很抱歉——如果你们不喜欢这样的开场。我想请你们为我做一件事。请你——好好看一看周围，看一看站在你左边的同学，看一看站在你右边的同学。</p>
+<p><strong>Jobs说，你必须要找到你所爱的东西。</strong></p>
 
 
 
 
-<p>请你设想这样的情况：从现在起5年之后，10年之后，或30年之后，今天站在你左边的这个人会是一个失败者；右边的这个人，同样，也是个失败者。而你，站在中间的家伙，你以为会怎样？一样是失败者。失败的经历。失败的优等生。</p>
+<p>This is the text of the Commencement address by Steve Jobs, CEO of  Apple Computer and of Pixar Animation Studios, delivered on June 12,  2005.</p>
 
 
 
 
-<p>说实话，今天我站在这里，并没有看到一千个毕业生的灿烂未来。我没有看到一千个行业的一千名卓越领导者，我只看到了一千个失败者。你们感到沮丧，这是可以理解的。为什么，我，埃里森，一个退学生，竟然在美国最具声望的学府里这样厚颜地散布异端？我来告诉你原因。因为，我，埃里森，这个行星上第二富有的人，是个退学生，而你不是。因为比尔·盖茨，这个行星上最富有的人——就目前而言——是个退学生，而你不是。因为艾伦，这个行星上第三富有的人，也退了学，而你没有。再来一点证据吧，因为戴尔，这个行星上第九富有的人——他的排位还在不断上升，也是个退学生。而你，不是。
-<!--more-->
-......你们非常沮丧，这是可以理解的。</p>
+<p><strong>这是苹果公司和Pixar动画工作室的CEO Steve Jobs于2005年6月12号在斯坦福大学的毕业典礼上面的演讲稿。</strong></p>
 
 
 
 
-<p>你们将来需要这些有用的工作习惯。你将来需要这种“治疗”。你需要它们，因为你没辍学，所以你永远不会成为世界上最富有的人。哦，当然，你可以，也许，以你的方式进步到第10位，第11位，就像Steve。但，我没有告诉你他在为谁工作，是吧？</p>
+<p>I am honored to be with you today at your commencement from one of  the finest universities in the world. I never graduated from college.  Truth be told, this is the closest I’ve ever gotten to a college  graduation. Today I want to tell you three stories from my life. That’s  it. No big deal. Just three stories.</p>
 
 
 
 
-<p>根据记载，他是研究生时辍的学，开化得稍晚了些。</p>
+<p><strong>我今天很荣幸能和你们一起参加毕业典礼，斯坦福大学是世界上最好的大学之一。我从来没有从大学中毕业。说实话,今天也许是在我的生命中离大学毕业最近的一天了。今天我想向你们讲述我生活中的三个故事。不是什么大不了的事情,只是三个故事而已。
+</strong></p>
 
 
 
 
-<p>现在，我猜想你们中间很多人，也许是绝大多数人，正在琢磨，“我能做什么？  我究竟有没有前途？”，当然没有。太晚了，你们已经吸收了太多东西，以为自己懂得太多。你们再也不是19岁了。你们有了“内置”的帽子，哦，我指的可不是你们脑袋上的学位帽。</p>
+<p>The first story is about connecting the dots.</p>
 
 
 
 
-<p>嗯......你们已经非常沮丧啦。这是可以理解的。所以，现在可能是讨论实质的时候啦——</p>
+<p><strong>第一个故事是关于如何把生命中的点点滴滴串连起来。</strong></p>
 
 
 
 
-<p>绝不是为了你们，2000年毕业生。你们已经被报销，不予考虑了。我想，你们就偷偷摸摸去干那年薪20万的可怜工作吧，在那里，工资单是由你两年前辍学的同班同学签字开出来的。事实上，我是寄希望于眼下还没有毕业的同学。我要对他们说，离开这里。收拾好你的东西，带着你的点子，别再回来。退学吧，开始行动。</p>
+<p>I dropped out of Reed College after the first 6 months, but then  stayed around as a drop-in for another 18 months or so before I really  quit. So why did I drop out?
+<strong>
+我在Reed大学读了六个月之后就退学了,但是在十八个月以后——我真正的作出退学决定之前,我还经常去学校。我为什么要退学呢？</strong></p>
 
 
 
 
-<p>我要告诉你，一顶帽子一套学位服必然要让你沦落......就像这些保安马上要把我从这个讲台上撵走一样必然......（此时，Larry被带离了讲台）</p>
+<p>It started before I was born. My biological mother was a young, unwed  college graduate student, and she decided to put me up for adoption.  She felt very strongly that I should be adopted by college graduates, so  everything was all set for me to be adopted at birth by a lawyer and  his wife. Except that when I popped out they decided at the last minute  that they really wanted a girl. So my parents, who were on a waiting  list, got a call in the middle of the night asking: “We have an  unexpected baby boy; do you want him?” They said: “Of course.” My  biological mother later found out that my mother had never graduated  from college and that my father had never graduated from high school.  She refused to sign the final adoption papers. She only relented a few  months later when my parents promised that I would someday go to  college.
+<strong>
+故事从我出生的时候讲起。我的亲生母亲是一个年轻的,没有结婚的大学毕业生。她决定让别人收养我,  她十分想让我被大学毕业生收养。所以在我出生的时候，她已经做好了一切的准备工作，能使得我被一个律师和他的妻子所收养。但是她没有料到,当我出生之后, 律师夫妇突然决定他们想要一个女孩。  所以我的生养父母（他们还在我亲生父母的观察名单上）突然在半夜接到了一个电话:“我们现在这儿有一个不小心生出来的男婴,你们想要他吗？”他们回答道: “当然！”但是我亲生母亲随后发现，我的养母从来没有上过大学,我的父亲甚至从没有读过高中。她拒绝签这个收养合同。只是在几个月以后,我的父母答应她一 定要让我上大学,那个时候她才同意。</strong></p>
 
 
 
 
-<p>Graduates  of Yale University, I apologize if you have endured this type of prologue  before, but I want you to do something for me. Please, take a ood look around  you. Look at the classmate on your left. Look at the classmate on your right.  Now, consider this: five years from now, 10 years from now, even 30 years from  now, odds are the person on your left is going to be a loser. The person on your  right, meanwhile, will also be a loser. And you, in the middle? What can you  expect? Loser. Loserhood. Loser Cum Laude.</p>
+<p>And 17 years later I did go to college. But I naively chose a college  that was almost as expensive as Stanford, and all of my working-class  parents’ savings were being spent on my college tuition. After six  months, I couldn’t see the value in it. I had no idea what I wanted to  do with my life and no idea how college was going to help me figure it  out. And here I was spending all of the money my parents had saved their  entire life. So I decided to drop out and trust that it would all work  out OK. It was pretty scary at the time, but looking back it was one of  the best decisions I ever made. The minute I dropped out I could stop  taking the required classes that didn’t interest me, and begin dropping  in on the ones that looked interesting.</p>
 
 
 
 
-<p>In fact, as I look out before  me today, I don't see a thousand hopes for a bright tomorrow. I don't see a  thousand future leaders in a thousand industries. I see a thousand  losers.</p>
+<p><strong>在十七岁那年,我真的上了大学。但是我很愚蠢的选择了一个几乎和你们斯坦福大学一样贵的学校,  我父母还处于蓝领阶层，他们几乎把所有积蓄都花在了我的学费上面。在六个月后,  我已经看不到其中的价值所在。我不知道我想要在生命中做什么,我也不知道大学能帮助我找到怎样的答案。  但是在这里，我几乎花光了我父母这一辈子的所有积蓄。所以我决定要退学,我觉得这是个正确的决定。不能否认,我当时确实非常的害怕,  但是现在回头看看,那的确是我这一生中最棒的一个决定。在我做出退学决定的那一刻,  我终于可以不必去读那些令我提不起丝毫兴趣的课程了。然后我还可以去修那些看起来有点意思的课程。</strong></p>
 
 
 
 
-<p>You're upset. That's understandable. After all, how can I,  Lawrence 'Larry' Ellison, college dropout, have the audacity to spout such  heresy to the graduating class of one of the nation's most prestigious  institutions? I'll tell you why. Because I, Lawrence "Larry" Ellison, second  richest man on the planet, am a college dropout, and you are  not.</p>
+<p>It wasn’t all romantic. I didn’t have a dorm room, so I slept on the  floor in friends’ rooms, I returned coke bottles for the 5¢ deposits to  buy food with, and I would walk the 7 miles across town every Sunday  night to get one good meal a week at the Hare Krishna temple. I loved  it. And much of what I stumbled into by following my curiosity and  intuitio turned out to be priceless later on. Let me give you one  example:</p>
 
 
 
 
-<p>Because Bill Gates, richest man on the planet -- for now, anyway --  is a college dropout, and you are not.</p>
+<p><strong>但是这并不是那么罗曼蒂克。我失去了我的宿舍,所以我只能在朋友房间的地板上面睡觉,我去捡5美分的可乐瓶子，仅仅为了填饱肚子,  在星期天的晚上,我需要走七英里的路程，穿过这个城市到Hare  Krishna寺庙（注：位于纽约Brooklyn下城）,只是为了能吃上饭——这个星期唯一一顿好一点的饭。但是我喜欢这样。我跟着我的直觉和好奇心 走, 遇到的很多东西,此后被证明是无价之宝。让我给你们举一个例子吧：</strong></p>
 
 
 
 
-<p>Because Paul Allen, the third  richest man on the planet, dropped out of college, and you did not.</p>
+<p>Reed College at that time offered perhaps the best calligraphy  instruction in the country. Throughout the campus every poster, every  label on every drawer, was beautifully hand calligraphed. Because I had  dropped out and didn’t have to take the normal classes, I decided to  take a calligraphy class to learn how to do this. I learned about serif  and san serif typefaces, about varying the amount of space between  different letter combinations, about what makes great typography great.  It was beautiful, historical, artistically subtle in a way that science  can’t capture, and I found it fascinating.</p>
 
 
 
 
-<p>And  for good measure, because Michael Dell, No. 9 on the list and moving up fast, is  a college dropout, and you, yet again, are not.</p>
+<p><strong>Reed大学在那时提供也许是全美最好的美术字课程。在这个大学里面的每个海报,  每个抽屉的标签上面全都是漂亮的美术字。因为我退学了, 没有受到正规的训练, 所以我决定去参加这个课程，去学学怎样写出漂亮的美术字。我学到了san  serif 和serif字体, 我学会了怎么样在不同的字母组合之中改变空格的长度,  还有怎么样才能作出最棒的印刷式样。那是一种科学永远不能捕捉到的、美丽的、真实的艺术精妙, 我发现那实在是太美妙了。</strong></p>
 
 
 
 
-<p>Hmm . . . you're very  upset. That's understandable. So let me stroke your egos for a moment by  pointing out, quite sincerely, that your diplomas were not attained in vain.  Most of you, I imagine, have spent four to five years here, and in many ways  what you've learned and endured will serve you well in the years ahead. You've  established good work habits. You've established a network of people that will  help you down the road. And you've established what will be lifelong  relationships with the word 'therapy.' All that of is good. For in truth, you  will need that network. You will need those strong work habits. You will need  that therapy.</p>
+<p>None of this had even a hope of any practical application in my life.  But ten years later, when we were designing the first Macintosh  computer, it all came back to me. And we designed it all into the Mac.  It was the first computer with beautiful typography. If I had never  dropped in on that single course in college, the Mac would have never  had multiple typefaces or proportionally spaced fonts. And since Windows  just copied the Mac, its likely that no personal computer would have  them. If I had never dropped out, I would have never dropped in on this  calligraphy class, and personal computers might not have the wonderful  typography that they do. Of course it was impossible to connect the dots  looking forward when I was in college. But it was very, very clear  looking backwards ten years later.</p>
 
 
 
 
-<p>You will need them because you didn't drop out, and so you  will never be among the richest people in the world. Oh sure, you may, perhaps,  work your way up to No. 10 or No. 11, like Steve Ballmer. But then, I don't have  to tell you who he really works for, do I? And for the record, he dropped out of  grad school. Bit of a late bloomer.</p>
+<p><strong>当时看起来这些东西在我的生命中，好像都没有什么实际应用的可能。但是十年之后,当我们在设计第一台Macintosh电脑的时 候,就不是那样了。我把当时我学的那些家伙全都设计进了Mac。那是第一台使用了漂亮的印刷字体的电脑。如果我当时没有退学,  就不会有机会去参加这个我感兴趣的美术字课程,  Mac就不会有这么多丰富的字体，以及赏心悦目的字体间距。那么现在个人电脑就不会有现在这么美妙的字型了。当然我在大学的时候，还不可能把从前的点点滴 滴串连起来,但是当我十年后回顾这一切的时候,真的豁然开朗了。</strong></p>
 
 
 
 
-<p>Finally, I realize that many of you,  and hopefully by now most of you, are wondering, 'Is there anything I can do? Is  there any hope for me at all?' Actually, no. It's too late. You've absorbed too  much, think you know too much. You're not 19 anymore. You have a built-in cap,  and I'm not referring to the mortar boards on your heads.</p>
+<p>Again, you can’t connect the dots looking forward; you can only  connect them looking backwards. So you have to trust that the dots will  somehow connect in your future. You have to trust in something – your  gut, destiny, life, karma, whatever. This approach has never let me  down, and it has made all the difference in my life.</p>
 
 
 
 
-<p>Hmm... you're  really very upset. That's understandable. So perhaps this would be a good time  to bring up the silver lining. Not for you, Class of '00. You are a write-off,  so I'll let you slink off to your pathetic $200,000-a-year jobs, where your  checks will be signed by former classmates who dropped out two years  ago.</p>
+<p><strong>再次说明的是,你在向前展望的时候不可能将这些片断串连起来；你只能在回顾的时候将点点滴滴串连起来。所以你必须相信这些片断会在 你未来的某一天串连起来。你必须要相信某些东西：你的勇气、目的、生命、因缘。这个过程从来没有令我失望（let me  down）,只是让我的生命更加地与众不同而已。</strong></p>
 
 
 
 
-<p>Instead, I want to give hope to any underclassmen here today. I say  to you, and I can't stress this enough: leave. Pack your things and your ideas  and don't come back. Drop out. Start up.</p>
+<p>My second story is about love and loss.</p>
 
 
 
 
-<p>For I can tell you that a cap  and gown will keep you down just as surely as these security guards dragging me  off this stage are keeping me down . . .</p>
+<p><strong>我的第二个故事是关于爱和损失的。</strong></p>
 
 
 
 
-<p>(At this point The Oracle CEO  was ushered off stage.)</p>
+<p>I was lucky – I found what I loved to do early in life. Woz and I  started Apple in my parents garage when I was 20. We worked hard, and in  10 years Apple had grown from just the two of us in a garage into a $2  billion company with over 4000 employees. We had just released our  finest creation – the Macintosh – a year earlier, and I had just turned  30. And then I got fired. How can you get fired from a company you  started? Well, as Apple grew we hired someone who I thought was very  talented to run the company with me, and for the first year or so things  went well. But then our visions of the future began to diverge and  eventually we had a falling out. When we did, our Board of Directors  sided with him. So at 30 I was out. And very publicly out. What had been  the focus of my entire adult life was gone, and it was devastating.</p>
+
+
+
+
+<p><strong>我非常幸运,  因为我在很早的时候就找到了我钟爱的东西。Woz和我在二十岁的时候就在父母的车库里面开创了苹果公司。我们工作得很努力, 十年之后,  这个公司从那两个车库中的穷光蛋发展到了超过四千名的雇员、价值超过二十亿的大公司。在公司成立的第九年,我们刚刚发布了最好的产品,那就是 Macintosh。我也快要到三十岁了。在那一年, 我被炒了鱿鱼。你怎么可能被你自己创立的公司炒了鱿鱼呢?  嗯,在苹果快速成长的时候，我们雇用了一个很有天分的家伙和我一起管理这个公司, 在最初的几年,公司运转的很好。但是后来我们对未来的看法发生了分歧,  最终我们吵了起来。当争吵不可开交的时候, 董事会站在了他的那一边。所以在三十岁的时候,  我被炒了。在这么多人的眼皮下我被炒了。在而立之年，我生命的全部支柱离自己远去, 这真是毁灭性的打击。</strong></p>
+
+
+
+
+<p>I really didn’t know what to do for a few months. I felt that I had  let the previous generation of entrepreneurs down – that I had dropped  the baton as it was being passed to me. I met with David Packard and Bob  Noyce and tried to apologize for screwing up so badly. I was a very  public failure, and I even thought about running away from the valley.  But something slowly began to dawn on me – I still loved what I did. The  turn of events at Apple had not changed that one bit. I had been  rejected, but I was still in love. And so I decided to start over.</p>
+
+
+
+
+<p><strong>在最初的几个月里，我真是不知道该做些什么。我把从前的创业激情给丢了, 我觉得自己让与我一同创业的人都很沮丧。我和David  Pack和Bob Boyce见面，并试图向他们道歉。我把事情弄得糟糕透顶了。但是我渐渐发现了曙光,  我仍然喜爱我从事的这些东西。苹果公司发生的这些事情丝毫的没有改变这些, 一点也没有。我被驱逐了,但是我仍然钟爱它。所以我决定从头再来。</strong></p>
+
+
+
+
+<p>I didn’t see it then, but it turned out that getting fired from Apple  was the best thing that could have ever happened to me. The heaviness  of being successful was replaced by the lightness of being a beginner  again, less sure about everything. It freed me to enter one of the most  creative periods of my life.</p>
+
+
+
+
+<p><strong>我当时没有觉察, 但是事后证明, 从苹果公司被炒是我这辈子发生的最棒的事情。因为，作为一个成功者的极乐感觉被作为一个创业者的轻松感觉所重新代替: 对任何事情都不那么特别看重。这让我觉得如此自由, 进入了我生命中最有创造力的一个阶段。</strong></p>
+
+
+
+
+<p>During the next five years, I started a company named NeXT, another  company named Pixar, and fell in love with an amazing woman who would  become my wife. Pixar went on to create the worlds first computer  animated feature film, Toy Story, and is now the most successful  animation studio in the world. In a remarkable turn of events, Apple  bought NeXT, I retuned to Apple, and the technology we developed at NeXT  is at the heart of Apple’s current renaissance. And Laurene and I have a  wonderful family together.</p>
+
+
+
+
+<p><strong>在接下来的五年里, 我创立了一个名叫NeXT的公司, 还有一个叫Pixar的公司,  然后和一个后来成为我妻子优雅女人相识。Pixar  制作了世界上第一个用电脑制作的动画电影——“”玩具总动员”,Pixar现在也是世界上最成功的电脑制作工作室。在后来的一系列运转中,Apple收购 了NeXT, 然后我又回到了Apple公司。我们在NeXT发展的技术在Apple的复兴之中发挥了关键的作用。我还和Laurence  一起建立了一个幸福的家庭。</strong></p>
+
+
+
+
+<p>I’m pretty sure none of this would have happened if I hadn’t been  fired from Apple. It was awful tasting medicine, but I guess the patient  needed it. Sometimes life hits you in the head with a brick. Don’t lose  faith. I’m convinced that the only thing that kept me going was that I  loved what I did. You’ve got to find what you love. And that is as true  for your work as it is for your lovers. Your work is going to fill a  large part of your life, and the only way to be truly satisfied is to do  what you believe is great work. And the only way to do great work is to  love what you do. If you haven’t found it yet, keep looking. Don’t  settle. As with all matters of the heart, you’ll know when you find it.  And, like any great relationship, it just gets better and better as the  years roll on. So keep looking until you find it. Don’t settle.</p>
+
+
+
+
+<p><strong>我可以非常肯定,如果我不被Apple开除的话,  这其中一件事情也不会发生的。这个良药的味道实在是太苦了,但是我想病人需要这个药。有些时候,  生活会拿起一块砖头向你的脑袋上猛拍一下。不要失去信心。我很清楚唯一使我一直走下去的，就是我做的事情令我无比钟爱。你需要去找到你所爱的东西。对于工 作是如此, 对于你的爱人也是如此。你的工作将会占据生活中很大的一部分。你只有相信自己所做的是伟大的工作, 你才能怡然自得。如果你现在还没有找到,  那么继续找、不要停下来、全心全意的去找, 当你找到的时候你就会知道的。就像任何真诚的关系,  随着岁月的流逝只会越来越紧密。所以继续找，直到你找到它，不要停下来！</strong></p>
+
+
+
+
+<p>My third story is about death.</p>
+
+
+
+
+<p><strong>我的第三个故事是关于死亡的。</strong></p>
+
+
+
+
+<p>When I was 17, I read a quote that went something like: “If you live  each day as if it was your last, someday you’ll most certainly be  right.” It made an impression on me, and since then, for the past 33  years, I have looked in the mirror every morning and asked myself: “If  today were the last day of my life, would I want to do what I am about  to do today?” And whenever the answer has been “No” for too many days in  a row, I know I need to change something.</p>
+
+
+
+
+<p><strong>当我十七岁的时候,  我读到了一句话:“如果你把每一天都当作生命中最后一天去生活的话,那么有一天你会发现你是正确的。”这句话给我留下了深刻的印象。从那时开始,过了33 年,我在每天早晨都会对着镜子问自己:“如果今天是我生命中的最后一天, 你会不会完成你今天想做的事情呢？”当答案连续很多次被给予“不是”的时候,  我知道自己需要改变某些事情了。</strong></p>
+
+
+
+
+<p>Remembering that I’ll be dead soon is the most important tool I’ve  ever encountered to help me make the big choices in life. Because almost  everything – all external expectations, all pride, all fear of  embarrassment or failure – these things just fall away in the face of  death, leaving only what is truly important. Remembering that you are  going to die is the best way I know to avoid the trap of thinking you  have something to lose. You are already naked. There is no reason not to  follow your heart.</p>
+
+
+
+
+<p><strong>“记住你即将死去”是我一生中遇到的最重要箴言。它帮我指明了生命中重要的选择。因为几乎所有的事情,  包括所有的荣誉、所有的骄傲、所有对难堪和失败的恐惧,这些在死亡面前都会消失。我看到的是留下的真正重要的东西。你有时候会思考你将会失去某些东西, “记住你即将死去”是我知道的避免这些想法的最好办法。你已经赤身裸体了, 你没有理由不去跟随自己的心一起跳动。</strong></p>
+
+
+
+
+<p>About a year ago I was diagnosed with cancer. I had a scan at 7:30 in  the morning, and it clearly showed a tumor on my pancreas. I didn’t  even know what a pancreas was. The doctors told me this was almost  certainly a type of cancer that is incurable, and that I should expect  to live no longer than three to six months. My doctor advised me to go  home and get my affairs in order, which is doctor’s code for prepare to  die. It means to try to tell your kids everything you thought you’d have  the next 10 years to tell them in just a few months. It means to make  sure everything is buttoned up so that it will be as easy as possible  for your family. It means to say your goodbyes.</p>
+
+
+
+
+<p><strong>大概一年以前, 我被诊断出癌症。我在早晨七点半做了一个检查,  检查清楚的显示在我的胰腺有一个肿瘤。我当时都不知道胰腺是什么东西。医生告诉我那很可能是一种无法治愈的癌症,  我还有三到六个月的时间活在这个世界上。我的医生叫我回家, 然后整理好我的一切,  那就是医生准备死亡的程序。那意味着你将要把未来十年对你小孩说的话在几个月里面说完.；那意味着把每件事情都搞定,  让你的家人会尽可能轻松的生活；那意味着你要说“再见了”。
+</strong>
+I lived with that diagnosis all day. Later that evening I had a biopsy,  where they stuck an endoscope down my throat, through my stomach and  into my intestines, put a needle into my pancreas and got a few cells  from the tumor. I was sedated, but my wife, who was there, told me that  when they viewed the cells under a microscope the doctors started crying  because it turned out to be a very rare form of pancreatic cancer that  is curable with surgery. I had the surgery and I’m fine now.</p>
+
+
+
+
+<p><strong>我整天和那个诊断书一起生活。后来有一天早上我作了一个活切片检查，医生将一个内窥镜从我的喉咙伸进去,通过我的胃,  然后进入我的肠子, 用一根针在我的胰腺上的肿瘤上取了几个细胞。我当时很镇静,因为我被注射了镇定剂。但是我的妻子在那里,  后来告诉我，当医生在显微镜地下观察这些细胞的时候他们开始尖叫, 因为这些细胞最后竟然是一种非常罕见的可以用手术治愈的胰腺癌症。我做了这个手术,  现在我痊愈了。</strong></p>
+
+
+
+
+<p>This was the closest I’ve been to facing death, and I hope its the  closest I get for a few more decades. Having lived through it, I can now  say this to you with a bit more certainty than when death was a useful  but purely intellectual concept:</p>
+
+
+
+
+<p><strong>那是我最接近死亡的时候, 我还希望这也是以后的几十年最接近的一次。从死亡线上又活了过来, 死亡对我来说，只是一个有用但是纯粹是知识上的概念的时候，我可以更肯定一点地对你们说：
+</strong>
+No one wants to die. Even people who want to go to heaven don’t want to  die to get there. And yet death is the destination we all share. No one  has ever escaped it. And that is as it should be, because Death is very  likely the single best invention of Life. It is Life’s change agent. It  clears out the old to make way for the new. Right now the new is you,  but someday not too long from now, you will gradually become the old and  be cleared away. Sorry to be so dramatic, but it is quite true.</p>
+
+
+
+
+<p><strong>没有人愿意死, 即使人们想上天堂,  人们也不会为了去那里而死。但是死亡是我们每个人共同的终点。从来没有人能够逃脱它。也应该如此。  因为死亡就是生命中最好的一个发明。它将旧的清除以便给新的让路。你们现在是新的, 但是从现在开始不久以后,  你们将会逐渐的变成旧的然后被清除。我很抱歉这很戏剧性, 但是这十分的真实。</strong></p>
+
+
+
+
+<p>Your time is limited, so don’t waste it living someone else’s life.  Don’t be trapped by dogma – which is living with the results of other  people’s thinking. Don’t let the noise of other’s opinions drown out  your own inner voice. And most important, have the courage to follow  your heart and intuition. They somehow already know what you truly want  to become. Everything else is secondary.</p>
+
+
+
+
+<p><strong>你们的时间很有限,  所以不要将他们浪费在重复其他人的生活上。不要被教条束缚,那意味着你和其他人思考的结果一起生活。不要被其他人喧嚣的观点掩盖你真正的内心的声音。还有 最重要的是, 你要有勇气去听从你直觉和心灵的指示——它们在某种程度上知道你想要成为什么样子，所有其他的事情都是次要的。</strong></p>
+
+
+
+
+<p>When I was young, there was an amazing publication called The Whole  Earth Catalog,which was one of the bibles of my generation. It was  created by a fellow named Stewart Brand not far from here in Menlo Park,  and he brought it to life with his poetic touch. This was in the late  1960′s, before personal computers and desktop publishing, so it was all  made with typewriters, scissors, and polaroid cameras. It was sort of  like Google in paperback form, 35 years before Google came along: it was  idealistic, and overflowing with neat tools and great notions.</p>
+
+
+
+
+<p><strong>当我年轻的时候, 有一本叫做“整个地球的目录”振聋发聩的杂志，它是我们那一代人的圣经之一。它是一个叫Stewart  Brand的家伙在离这里不远的Menlo Park书写的, 他象诗一般神奇地将这本书带到了这个世界。那是六十年代后期, 在个人电脑出现之前,  所以这本书全部是用打字机,、剪刀还有偏光镜制造的。有点像用软皮包装的google, 在google出现三十五年之前：这是理想主义的，  其中有许多灵巧的工具和伟大的想法。</strong></p>
+
+
+
+
+<p>Stewart and his team put out several issues of The Whole Earth  Catalog, and then when it had run its course, they put out a final  issue. It was the mid-1970s, and I was your age. On the back cover of  their final issue was a photograph of an early morning country road, the  kind you might find yourself hitchhiking on if you were so adventurous.  Beneath it were the words: “Stay Hungry. Stay Foolish.” It was their  farewell message as they signed off. Stay Hungry. Stay Foolish. And I  have always wished that for myself. And now, as you graduate to begin  anew, I wish that for you.</p>
+
+
+
+
+<p><strong>Stewart和他的伙伴出版了几期的“整个地球的目录”,当它完成了自己使命的时候,  他们做出了最后一期的目录。那是在七十年代的中期,  你们的时代。在最后一期的封底上是清晨乡村公路的照片（如果你有冒险精神的话，你可以自己找到这条路的），在照片之下有这样一段话：“保持饥饿,保持愚 蠢。”这是他们停止了发刊的告别语。“保持饥饿,保持愚蠢。”我总是希望自己能够那样,现在, 在你们即将毕业，开始新的旅程的时候,  我也希望你们能这样：
+</strong>
+Stay Hungry. Stay Foolish.</p>
+
+
+
+
+<p><strong>保持饥饿，保持愚蠢。
+</strong>
+Thank you all very much.</p>
+
+
+
+
+<p><strong>非常感谢你们。</strong></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[如何进行成功的创业]]></title>
+    <link href="http://NeoCN.github.com/其他/how-to-start-a-startup.html"/>
+    <updated>2010-12-10T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/how-to-start-a-startup</id>
+    <content type="html"><![CDATA[<p>作者简介：<a href="http://www.paugraham.com" target="_blank">Paul Graham</a>是Y Combinator公司创始人，程序员，专栏作家。他在1995年创建了第一个基于Web的应用viaWeb，后来被雅虎收购。他的关于程序员与创造力，程序员与创业，程序员创造财富等方面的文章被上百万人收藏。</p>
+
+
+
+
+<p>开篇</p>
+
+
+
+
+<p>如果你想进行一次成功的创业，你需要三件事情：<br />
+优秀的核心成员，<br />
+客户真正需要的产品，<br />
+花越少的钱越好。</p>
+
+
+
+
+<p>大多数的创业公司失败的原因基本上都是这三个原因的一个。而一个成功了的创业公司大多数都是因为成功的完成了这三件事情。</p>
+
+
+
+
+<p>其实如果你想想看，这三件事情并不是什么遥不可及的事情。都是可以操作的，是很难做到，但肯定是可以做地。如果成功的做到了这三个事情就意味着成功创业，从而发家致富的话，那么发财也不是什么遥不可及的事情，是可以一步一步的去操作的，当然很难，但是是可以做到的。</p>
+
+
+
+
+<p>作为一个过来人，如果我只能给你一条创业忠告的话，那就是创业过程中没有什么不可以解决的超级困难问题。
+<!--more-->创业点子</p>
+
+
+
+
+<p>实际上，你并不需要一个超级天才的想法才能进行创业开公司。 大多数挣了钱的创业公司都是在现有的技术的基础上进行 提高，来满足人们更多的需要。实际上现在的技术可以提高的方面很多，并不需要一个天才才能在此基础上进行提高。</p>
+
+
+
+
+<p>举个例子。Google的商业计划很简单，就是创建一个还不赖的搜索网站。他们有三个点子：对web进行索；根据链接来对搜索结果进行排序；简洁的页面和不让人生厌的关键词广告。在这个基础上，他们还下定决心让网站尽可能好用。当然背后一定还有一些技术问题和技巧，但总的商业计划是很简明扼要的。虽然他们现在的胃口要比搜索本身大多了，但只搜索一项就能为他们每年带来10亿美金的收入。</p>
+
+
+
+
+<p>很多点子的风格都和Google当初的风格相似。我可以想出好几个创业公司点子应该具有的特征，但最重要的一点是：看看大家都在解决什么问题，然后想到一个解决这个问题的还不赖的方法。比现在的解决方法要好一点。</p>
+
+
+
+
+<p>例如，目前的网上约会服务比Google诞生之前的搜索服务水平还要糟糕。他们都基于简单的数据库匹配算法。和现实生活中人们如何约会简直是风马牛不相及。一个本科生的毕业设计都有可能设计出更好的约会网站来。而在这个领域人们投资的钱又很多。在线约会的生意现在很火，但如果现在的约会网站能向Goolge<br />
+对搜索的提高那样进行提高，可能服务状况可能会比现在还要好上一百倍。</p>
+
+
+
+
+<p>然而，有了创业的点子，只是创业道路万里长征的第一步。很多跃跃欲试想创业的人都认为一个创业的点子是最重要的，有了点子，剩下的就是如何去执行去实现的问题了。但风险投资商们可不这么认为，但是如果你跑到风险投资商哪里，说你有一个天才的想法，只要他们同意签署不扩散协议（NDA）， 你就可以告诉他们你想要做什么，他们基本上连理都不会理你。这时你就可以看出，一个点子到底值多少钱。如果你只有一个点子，风险投资商们来签署一个NDA的功夫都懒的出。</p>
+
+
+
+
+<p>而且很多创业公司在创业的时候就已经在改变他们的创业计划和点子了，从这一点你也可以看出一个点子是多么的不值钱。 微软当初创业的想法是靠卖编程语言赚钱，创业的五年内没有任何起色，直到有一天 IBM决定使用他们的操作系统。</p>
+
+
+
+
+<p>当然，点子也是重要的，但问题是，你不可能把它转移给别人去执行。点子的价值与作用就是作为一个开始， 可以在创业之初按照这个一直思考下去。</p>
+
+
+
+
+<p>记住，重要的不是点子，而是能想出点子的人来。优秀的人才可以把坏点子变成好点子。而多天才的想法放到庸人手里也会变得一钱不值。</p>
+
+
+
+
+<p>人才</p>
+
+
+
+
+<p>好的人才到底是什么样的？我在创业之初，定下了一条规则，决定我是不是要雇佣这个人，后来被证明是一个不错的技巧。在大学里，我们说某个人在某个方面出色是常说：这个人是牛人，象牲口一样。美国也有同样的说法。意思是这个人对他的工作有点太当真了，已经超过了职业了范围，变成一种爱好，甚至偏执了。</p>
+
+
+
+
+<p>这种象牲口一样的人因工作的不同而异：一个销售人员，不把对方搞定拿下决不罢休。一个程序员可以工作到凌晨4点，因为他不能容忍修不好一个bug。一个市场推广人员可以够胆子给纽约时报的记者打手机来推广自己的公司。一个网页设计者对网页上图片2毫米的偏移会觉得浑身不自在。</p>
+
+
+
+
+<p>几乎和我们工作过的每一个人都符合“牲口”的定义。我当时的公司里，负责销售的女士对潜在的客户是那么不达目的，誓不罢休，在电话上时而循循善诱，时而晓之亿理，动之以情。让我都有的时候挺可怜那个客户的。</p>
+
+
+
+
+<p>看一个人到底是不是 “牲口”型的人，有一个简单的测试方法。和他谈话，然后把你认为怎么做是牲口的一个工作方法形容出来。如果你觉得这种工作方法疯狂的有点可笑，而他觉得很自然，那么他基本上就是一个牲口型的选手。在按部就班的大公司里，你可能不需要牲口型的选手，但在创业公司里，是多多益善。</p>
+
+
+
+
+<p>对程序员来说，我们还做其他三个附加的测试：这个人是否真的很聪明，如果是，他能按时保质完成任务么？最后，既然大多数天才型的程序员都有点古怪脾气，那你能和他工作到一块儿么？</p>
+
+
+
+
+<p>实际上，也许出乎你的意外，最后一个测试基本上筛不下去什么程序员。如果一个程序员非常聪明的话，我们基本上都能和他合作。我们不能合作的人常常是态度很牛，可干起活来却不拿么牛的人。所以最后一个测试基本上和第一个测试是重复的。</p>
+
+
+
+
+<p>大多数情况下，当一个程序员太不可合作时，基本上都是因为他太想让别人觉得他聪明了，太自以为是了。但规律是，一个程序员越聪明能干，他就越没有压力要表现出他聪明能干。因为他并不需要得到你的认可，在他心里知道的很清楚他很能干。而且他可能会变得很谦虚。有一个规律来看一个人是否聪明与能干与否是看这个人是不是经常说：“我不知道啊；我觉得你可能是对的”；或者“我对这个方面不是很了解”。。。。</p>
+
+
+
+
+<p>这个技巧并不是百试百灵。在麻省理工学院的计算机系，几乎每个人都染上了“我无所不知”的毛病。但是有一个人例外，他就是Robert Morris， 他几乎是我见到的人中说“我不知道啊”次数最多的人了（至少是在他成为MIT教授之前）。但没有人敢在他面前装腔作势，因为几乎每个人都知道他是这里最聪明的人，却谦虚的到家。</p>
+
+
+
+
+<p>在大多数情况下，一个创业公司都由一组朋友发起。其他的雇员基本上都是靠熟人介绍。这个和正规大公司有很大不同。以朋友的方式交往对人的了解，比大公司正规的面试，广度和深度都要大得多。</p>
+
+
+
+
+<p>创业公司大多数都在大学的周围并不是偶然的。那里是聪明人和天才聚集的地方。并不是因为麻省理工或者斯坦福课程设置的好，周围才有那么多创业公司。而是因为这些大学只招聪明和天才的学生。这些学生哪怕天天旷课，也照样能开创业公司。</p>
+
+
+
+
+<p>如果你开始创业了，那么很有可能你最初的创业伙伴是你大学或者研究生时候的同学。因此从理论上来说，当你读书时，尽可能多认识一些天才学生是对的，是吧？ 但是，能认识天才程序员的方法并不像交普通朋友那么简单。</p>
+
+
+
+
+<p>在学校的时候，你应该尽可能的多去做项目，这是一个程序员学会编程的唯一真正方法。有的时候你会和其他同学一起做项目，这就是你认识天才程序员最好的方法，就是通过作项目来结识彼此。一起做的项目有可能会成为一个创业公司的开始。但是，不要为了开公司而去做项目，做你喜欢做的事情是最重要的。</p>
+
+
+
+
+<p>最理想的情况，你应该选二到四个公司创始人。一个人创业是件很困难的事情。一个人创业要肩负难以想象的精神上的压力。但同时，你也不想公司创业之初有太多的创始人。首先你一开始的时候不需要那么多人。更重要的是：人越多，越难统一意见。如果一开始就两三个人，如果有不同意见，基本上也能很快达成一致。如果有七到八个人，每个人都要发表一下意见，不同意见很不容易消除，而且有的时候会造成内部的小帮派。创业之初，最好不要总是用投票来解决问题，你更需要的是创业元老们的齐心协力。</p>
+
+
+
+
+<p>基本上现在大多数的创业公司都是技术型的创业公司。这样的公司，创业元老应该要包括技术人员。在互联网泡沫的时候，有那么一些公司，发起人就是一些所谓的商业人士，然后这些商业人士去雇一些程序员来为他们做事。对于技术型的公司，这样做并不是好事，商人不懂技术，当涉及到需要在技术方面做一些决定时，商人的决定通常都是错的，因为他们不知道技术上哪些问题很难，哪些问题容易。而且当商人去雇佣程序员，面试程序员时，他基本上无法判断哪些程序员是编程高手，哪些只是夸夸其谈，只有真正做过工程的人才能知道。有的时候，做过工程的人都无法百分百的判断一个人是不是一个好程序员，更别说对技术一窍不通的商人了。</p>
+
+
+
+
+<p>那么，创业元老中要不要包括商人，或者懂商业的人呢？ 我的意见是：未必。当年在我们创业之初，我们以为我们一定需要一个商业人士，然后问了好几个我们认为他们对所谓的神秘的“商业运作”很精通的人愿意不愿意做我们公司的总裁。结果没有一个人答应的。所以不得已，我自己做了公司的总裁。在以后公司的运作中我发现，所谓的商业运作并不是想我想象中那么神秘，并不需要什么特别专业的知识，你做的只不过是花钱雇人来干活。</p>
+
+
+
+
+<p>后来我进行了一下反思，发现之所以我认为“商业运作”是那么神秘和困难，是因为我一直认为我应该做纯技术的工作，写优秀的软件是我的专长。所以不知不觉中，我在我周围设置了一个心理保护层，从心理上一开始就不想，不敢，和不愿意去想这些事情。但一旦突破了这些心理障碍后，我发现所谓的商业运作既不难，也不可怕，更不乏味。当然，如果你从事的是税法或者对冲基金，商业上还是有很多有关的专业知识。但在创业公司里你并不需要这些知识。你只要按照一些常识就好了，这些大众常识不用去商学院，甚至不用上大学也能在生活中学到。</p>
+
+
+
+
+<p>看一下福布斯全球企业排行榜吧。你就会知道一个工商管理硕士的头衔对一个企业家到底有多重要。你要数到第22才能看到一个人有工商管理硕士的学位。就是奈克的CEO。 前50名里，只有四个人是从商学院毕业的。而且你能看到，很多里面的人的背景都是和技术有关的。例如比尔-盖茨，Steve Jobs, Larry Ellison, Michael Dell, Jeff Bezos,<br />
+Gordon Moore。技术型企业是从技术起家的，而不是从商业运作起家的。因此如果你想投入你生命中宝贵的两年时间来学点东西帮助你成功创业的话，学编程序比拿一个工商管理硕士的学位要有用多了。</p>
+
+
+
+
+<p>在一个条件下你也许应该让一个商人加入你的创业团队：那就是，你需要一个人来专注于如何提高顾客的满意度。有些人认为一个商人比一个程序员更能知道客户需要什么，程序员只会编软件，不会设计软件。这根本就是无稽之谈。会编程序的程序员想要了解客户需求并不是什么难事。也不要假设一个对编程一窍不通的商人就一定能对客户想要什么知道的一清二楚。</p>
+
+
+
+
+<p>但如果你自己不能准确了解客户或者用户到底想要什么，那么两个办法。自学成才，或者在创业团队中加入一个懂得用户需要的人。理解客户/用户的需要是一个技术性创业公司成功最重要的因素之一。大多数失败的创业公司都是因为没能准确了解客户的需要。</p>
+
+
+
+
+<p>到底客户需要什么</p>
+
+
+
+
+<p>并不只是创业公司担心这个问题。我相信大多数企业，失败的原因基本上都是他们不能给客户想要的东西。看看餐饮业就知道了，大概有四分之一的饭店在开业一年之内就倒闭了。但是你见到过一个做菜味道特别好的饭店倒闭的么？</p>
+
+
+
+
+<p>如果一个饭店菜的味道特别特别好，不管其它方面怎么样，基本上都十分火爆。也许东西会很贵，也许人太多，得排队，还很拥挤，没准还很吵，服务员也有可能对你爱搭不理的。但只要它的菜味道特别好吃，别担心，客人们还是蜂拥而至。一个装修的非常豪华，但味道很一般的餐厅也许在开业之初还可以，也可以弄巧来用一些优惠卷来吸引食客，但这些方法通常都不会长久。办好一个餐馆的最好方法还是给客人提供最好吃的食物。</p>
+
+
+
+
+<p>对于技术来说也是类似的。你一定听到了不少原因为什么那么多创业公司都失败了。但估计你可能从未听说一个公司的产品供不应求却倒闭了。</p>
+
+
+
+
+<p>基本上每一个创业失败的公司，根本原因都是因为没有给客户/用户想要的东西。大多数情况下，他们失败了是因为钱花完了，也没有人愿意投钱了。但那只是最直接的原因。为什么没有人再愿意投钱了呢？还不是因为开发出来的产品客户根本不感兴趣，或者根本就开发不出来？</p>
+
+
+
+
+<p>每次我在思考那些创业公司一定要做的事情时，我常想加加上第四个：软件发布的越早越好。    但我决定不把这个作为一个建议提出来。做好的办法是把开发原型在客户面前演示，广泛听取客户的反馈，然后加以提高，而不是要急功近利的进行软件发布。</p>
+
+
+
+
+<p>另一种在创业之初人们常使用的方法是：做一个非常详细具体的产品开发书和产品开发计划。然后雇用一些工程师（以这个方法创业的人常常叫我们工程师，而不是程序员），然后一年之后，花了两百万美金后，发现开发出来的产品根本就没人要。在互联网的泡沫时期，这种做法并不稀奇，特别是那么由商业人士来运作的公司，认为研发软件是一件比较可怕的事情，需要仔细周到的计划。</p>
+
+
+
+
+<p>我们从来都没有想到过用这种方法。作为一个LISP的程序员，我过去的传统就是快速拿出一个软件初始原型来。我没有说每一个软件都应该这么开发，但对一个创业型的公司来说，这一定是正确的方法。创业之初，你的计划几乎肯定是在某个方面是错误的，你的首选任务就是要找到哪里出错了。而唯一的办法就是先实现它，然后让客户去评价。</p>
+
+
+
+
+<p>在大多数的创业公司，计划是随着变化而变化的。以我的创业经历为例：一开始我们认为我们的客户是web咨询公司，但后来发现他们根本就不喜欢我们，因为我们把软件开发的太方便客户使用了，这些咨询公司的客户也能使用，而且网站是我们来维护的，这样他们就有可能会失去潜在的客户。我们还以为我们的客户中会有好多是靠卖产品目录杂志来赚钱的公司，因为在网上买应该是他们也感兴趣的，但在1996年的时候，还没有人愿意买我们的帐。和我们谈的管理层认为这不是在帮他们，而是给他们在找麻烦。</p>
+
+
+
+
+<p>最后我们还是找到了几家敢于吃螃蟹的目录广告公司，其中一个给的宝贵的教训就是你的服务器在大流量下一定要能正常工作。大多数我们的客户都是作小生意的，认为web是开拓生意的好方法，有些有自己的门脸，但大多数就是在网上来做生意。于是我们改变了我们服务的客户的定位，不再去满足目录广告公司和咨询公司的需求，而是集中来满足那些做小生意的客户的需求。让这些客户在使用我们的软件上尽可能的容易上手。</p>
+
+
+
+
+<p>从这个过程中我还学到了一个非常宝贵的经验。你一定要努力努力再努力把软件开发的简单好用。程序员每通常对电脑的各项操作太熟悉不过了，但是我们根本不知道其他普通人对电脑操作是多么的陌生，甚至恐惧。写《时间简史》的霍金说，他的编辑告诉他在他的书里每多加一个方程式，销量就有可能减少一半。当你做最大的努力把你的软件作的好用，易上手，软件的易用度每提高10%，你的销售额就有可能会提高100%。</p>
+
+
+
+
+<p>那么你怎么能知道客户/用户到底想要什么呢？一个最好的方法是去参加一些展会。虽然这些展会并不一定能让我们扩大用户群，但却能让我们对自己的产品做一些市场调查。我们当初去展会的时候，并不仅仅做一些预先准备好的市场宣传和报告。我们还在现场给客户演示如何使用我们的系统快速的搭建网上商店。而这么做后，我们就能观察客户如何使用我们的软件，然后和他们交流我们还需要做哪些方面的提高。</p>
+
+
+
+
+<p>不管你要开什么类型的创业公司，如何理解客户的需求对你来说一定不是一件容易的事。你能开发的唯一一种不需要了结客户需求的软件就是你自己已经是一个典型的用户。但作为程序员的你，常用的软件应该基本上都是哪些开源软件如操作系统，编程语言或者编辑器等。但如果你想开发的是商业软件，要赚钱的话，那么你面对的客户基本上不会和你一样。所以，在你创业之前，你想创业点子的时候，不妨按照这样的思路：那些不是程序员的普通用户到底需要什么样的技术能让他们的生活过的更好。</p>
+
+
+
+
+<p>当大多数人讨论创业公司的时候，基本上都会言必称yahoo或者google这些地球人都知道的名字。因为这些公司是面向终端消费者的，所以他们的商标妇孺皆知。但是并不是每一个创业公司都是和这两个公司类似的。如果你能成功的开创了一个公司，大多数情况下很有可能和google与yahoo一点也不象。</p>
+
+
+
+
+<p>让我再换一种说法来解释我的意思，如果你在创业之初瞄准的就是面向广大消费者，想要建立一个大的消费者商标，满足所有人的需要的话，那么你成功的可能性并不会很大。最好的办法可能是挑选一个细分的市场，一些创业公司的赢利方式就是按照这样的思路，他们在现有的基础上提供给客户一些技术上的改进，提供比以前更好更容易使用的产品。而最好的寻找方向就是看那个领域水平最差，最有提高的空间。在这个领域去开发你就最有可能获得成功。而水平最差的地方就是一个公司的IT部门了。 公司花在IT上的钱简直难以置信，而他们得到的东西基本上都是破烂一堆。这种投资和回报不平衡就给创业公司创造了机会。</p>
+
+
+
+
+<p>当你在寻找创业公司点子的时候，找一个中小型非技术的公司，在那里呆上几个礼拜，就是观察他们到底在怎么使用他们的电脑。一个优秀的程序员的感觉应该和一个亿万富翁在巴西贫民窟里的感觉是一样的。</p>
+
+
+
+
+<p>开发软件，应该从为小企业开发软件做起，因为向小企业买软件相对来说比较容易。大企业都被大的软件公司瞄准了，你有怎么可能去和一个武装到牙齿的甲骨文公司的销售人员去打大公司的单呢？所以如果你想以更好的技术来取胜，从小公司小客户入手。</p>
+
+
+
+
+<p>从小客户入手的方法从公司战略和市场拓展的角度来看也是有道理的。在技术层面上，低端总是不断蚕食高端的市场。开发一个底价位的产品，但功能更强大，比让一个高端产品减价要容易的多。因此一个产品，应该从开发之初就保证性价比高。哪怕功能简单，也要保证低端价位。慢慢的在此基础上添加功能，使之逐渐强大。当功能完善到一定程度的时候，就像水满金山一样，最后能把高端产品从市场中挤出去。太阳微系统公司就是这样打败的超大规模计算机。而Intel又是这样打败的太阳微系统。微软的word就是这样逐渐的把其他桌面文字处理软件打败的。廉价的数字相机也把高端的传统相机挤出了市场。市场的实践一次又一次的证明。如果你一开始建立的是一个廉价，功能简单的系统，不但你会发现你的产品会很好买，而且你处在征服剩下的广阔市场的有利位置。</p>
+
+
+
+
+<p>在市场和产品的角度，别人的产品比你的更好用，更便宜是一件很危险的事。你需要占领低端市场，如果你不这么做，你就会发现你周围危机四伏。</p>
+
+
+
+
+<p>融资</p>
+
+
+
+
+<p>前面讲了那么多，你要做的每一件事情，都需要钱。一些创业公司是自己掏钱创办的，如微软。 但大多数的公司都需要从投资者哪里拿到钱。我认为从投资者那里融资是一件明智的事情。如果你自己出钱，一开始只能是咨询公司，而从咨询公司转到产品公司不是一件容易的事。</p>
+
+
+
+
+<p>从金融上看，一个创业公司就是象大学里选一门课的评分只有过和不过。 通过创业开公司致富就是要想办法让公司尽可能的存活下来，而不是要在公司内尽可能多的多占股权。如果你能转让出一些股份让公司生存下来的可能性加大，那么如此作应该是一个明智的选择。</p>
+
+
+
+
+<p>对大多数程序员来说，说服投资人看上去是一个神秘而又让人恐惧的过程。实际上这个过程既不神秘也不恐惧，只不过比较繁琐，要花费一些精力， 下面我就给你解释一下这个过程到底是怎么样的。</p>
+
+
+
+
+<p>创业之初，你大概需要几万美金来把你的产品原型拿出来，这些钱是开发和其他相关的费用。这个叫做种子资本。因为这基本上不算什么钱，所以筹集起来应该不是什么困难的事情。</p>
+
+
+
+
+<p>通常情况下种子基金都是由一些有钱人叫“天使”提供的。这些天使投资人，大多数都是早期从技术开发中发了财的人。在这个阶段，天使投资人并不期望你能拿出一个精心准备的商业计划书。通常情况下他们做决定都很快。用半页纸就能换来天使投资人几万美元的一张支票并不是什么难得一见的事。</p>
+
+
+
+
+<p>我们当年创建viaWeb的时候，拿到的第一笔天使投资基金是一万美金，从我们的朋友julian哪里。 但他给我们的远远不止资金上面的支持，他以前就做过CEO, 还做过公司律师，因此他给了我们很多如何运作企业方面的建议，还为我们打理了所有法律方面的事务。而且他还给我们介绍了另外两个天使投资人，为我们下一轮融资打下了基础。</p>
+
+
+
+
+<p>一些天使投资人，尤其是那些做过技术的天使投资人，你只要把你的产品给他们演示以下，或者口头讲一下大概你想做什么就可以了。但还有很多希望要一份你的商业计划书的拷贝。也许有的时候只想留一份以作备忘录之用，以后可以想起来你到底想做什么。</p>
+
+
+
+
+<p>当时我们的天使投资人就向我们要了商业计划书。现在想起来我还好笑我当时有多紧张。商业计划书中有“商业”一词，所以我想我必须赶紧翻阅参考书看看如何写商业计划书。实际上后来知道了根本没必要。在这个创业的最初阶段，投资人想看到的就是你想做什么，怎么挣钱，还有创建者的简历。你就把你想和他们说的话写下来就行了，几个小时的时间就能解决问题。而且你会发现，在你把你的点子和计划写下来的时候，你往往会得到新的启发。</p>
+
+
+
+
+<p>而这个天使投资人写的支票要支付给一个公司，所以在接受这个支票之前你一定要有一个公司。把你自己加入这个公司并不难，但问题是，在所有的公司创建人都加入这个公司之后，股权如何分配呢？<br />
+如果公司内每个人出的钱，出的力都是平等的，那么股权一平均就得了。但如果每个人出的力并不相同，如何在不同成员之间分配股权就变成了一个有技巧的问题。而且一旦决定做出了，是不可更改的，所以分配股权一定要公平合理，小心谨慎。</p>
+
+
+
+
+<p>分配股权并没有什么技巧可言。我只能说，尽量做到公平合理。我有一个评价股权分配是否公平的原则：当所有人都认为他们分到的股权和他们在公司的作用相比应该还要多一点点的时候，这时股权分配就有可能是公平的和最优的。</p>
+
+
+
+
+<p>建立一个公司并不仅仅是分配股权那么简单，你还要给员工买保险，办执照，报税等等一系列的问题。</p>
+
+
+
+
+<p>如果你有了想法，想开公司，那么我的想法是公司开的越快越好。因为如果你推迟办公司，那么你的其他创建人有可能会离开你开一家类似的公司。类似的情况在现实中发生过。所以在创业之初，你应该让所有的公司开山元老们签署一份协议，保证所有人的点子和想法都属于这个公司，而所有人都不得在其它公司兼职。</p>
+
+
+
+
+<p>然后在你检查这些文件时，千万不要忘了问每个人他们在来公司之前都和别的公司或者人签署了什么协议。一个创业公司的最大噩梦之一就是陷入知识产权的纠纷。我们当初创业的时候就遇到了类似的麻烦，几乎让我们倒闭了。</p>
+
+
+
+
+<p>当时，已经有公司想收购我们了，收购过程也已经进行了一半，但我们发现，在早些时候，一个开发人员的点子实际上在知识产权上属于他从学校毕业之前工作过的一家大公司。理论上，这意味着这家大公司对我们公司拥有股权。因此收购工作就嘎然而止了。我们不得不竭尽全力来解决这个问题。问题是我们当时以为我们马上就要被收购了，所以现金储备很低，所以有不得不再融资来解决资金方面的问题。但因为你有了知识产权的案子在身，投资者都投鼠忌器了，因为不知道水到底有多深，麻烦到底有多大。</p>
+
+
+
+
+<p>我们当时的投资商，在知道我们需要钱又拿不到钱的时候，还趁火打劫，要挟我们。具体细节我不便透漏，但我告诉你所谓的“天使投资人”绝对不是天使。然后一个合伙人也退出了，他告诉我们如何管理他管理的服务器后就远走高飞了。想要收购我们的公司也以进度太慢为借口停止了收购。</p>
+
+
+
+
+<p>到最后奇迹还是发生了，投资者良心发现。我们又融了一点钱。那个大公司也声明他们对我们的软件没有所有权，六个月后雅虎业把我们给买了，付的钱比前一个买家价格还高。所以最后还是大团圆的结局。但老实说，经过了这么一番折腾，我肯定少活了好几年。</p>
+
+
+
+
+<p>所以千万不要重蹈我们的覆辙，当你开始为你的公司招兵买马的时候，把每一个人的知识产权的问题都搞清楚。</p>
+
+
+
+
+<p>当你已经把公司建立好并开始运作的时候，你有了只是一帮人，和几个点子。 如果你这个时候去敲那些有钱人的门，要求他们向你们投几十万美金的话，你也许认为一定会被富人家看家的保镖们轰出去。但如果你能从哪些手里有大把钞票但又不知道怎么花的人的角度来看这个问题，<br />
+你就会找回点信心。 大多数有钱人都在不断寻找投资的机会。如果你真的相信你能成功，你找到他们实际上上帮他们的忙。他们也许觉得你是在烦他们，但同时他们也会在暗暗猜想：这个会不会是下一个Google呢？</p>
+
+
+
+
+<p>通常情况下，天使投资人和公司创建者之间在股权上是对等的关希。他们投资换来一些股权，然后在以后的融资中股权被稀释。 你应该给这些天使投资人多少股权才合适呢？首先你要估计你的公司值多少钱，在此基础了才能算出天使投资人能占多少股权。例如，如果一个天使投资人投了１０万美金，拿到的是５％的股权的话，那么这意味着你认为你的公司值两百万美金。</p>
+
+
+
+
+<p>如何衡量你的公司到底值多少钱呢？　基本上没有什么理性的算法。你认为值多少钱就值多少钱。因为这个时候的公司看上去就是一场赌博。我在当初融资的时候并没有意识到这个问题。我的投资人认为公司至少应该值几百万美金。　但我当时觉得我们总共才写了3000-4000行程序，要值几百万美金，那不是公开抢投资人的钱么。最后我们定价成了一百万美金。因为我的投资人说如果价定的比这个还低的时候，不会再有投资者感兴趣了。</p>
+
+
+
+
+<p>当时我并没有理解，实际上公司的价值并不在哪几千行代码，而在于我们当时的点子和想法，最后被证明是正确的想法，而我们后来为它付出的劳动，后来证明远远不止几千行程序。</p>
+
+
+
+
+<p>天使投资后，下一轮的融资，你就要面对真正的风险投资公司了。但千万不要等到你没钱的时候才想起来去找VC, 他们做决定的过程很慢，有可能要好几个月。你最好不要等弹尽粮绝的时候才去和他们谈判。</p>
+
+
+
+
+<p>VC投的钱比天使投的钱要多很多，通常情况下以百万美金来计算，你的股权会进一步被稀释，而在公司头上的附加条件也会更加苛刻。</p>
+
+
+
+
+<p>有的时候VC 想给你的公司任命一个他们认可的新的CEO，通常的理由是你需要一个成熟和有经验的，熟悉商务运作的人来经营公司。在某种条件下这也许是正确的。但比尔盖茨当时也年纪轻轻，乳臭未干，后来证明他混得也不赖。苹果公司的乔布斯当初也被苹果公司的董事会轰出了苹果，而由一位所谓的商业人士取代了，后来这位商业人士几乎让苹果濒临倒闭。因此我觉得叫所谓的商业成功人士成熟而有经验是夸大其词了。我们通常叫他们新闻发言人，因未他们都打扮得油光水滑的象大尾巴狼，说话夸夸其谈，照本宣科。</p>
+
+
+
+
+<p>我们和几家风险投资商谈过了以后，决定我们所有的投资来自天使投资人。主要原因就是因为我们害怕一个大的风险投资公司会强加给我们一个类似新闻发言人一样的大尾巴狼CEO，如果这样人士的任务就是出席新闻发布会，那么我们没有什么问题，但如果他还要来对公司的运作指手画脚，那肯定会把我们引向灾难。因为当初我们软件的设计和实现十分复杂。我们唯一的生存希望就是以我们还不错的技术来和大公司竞争。几乎所有的决定和战略制定都是和技术有关的。所以我们并不需要这样一个人来运作我们的公司。</p>
+
+
+
+
+<p>这也是我们后来没有选择上市的原因。在1998年的时候我们的CFO曾经试图说服我把公司弄上市。当时对与我们这样一个既有产品又效益还不错的公司来说，上市简直是轻而易举。但后来我们还是没有选择上市，因为我担心上市以后就会被华尔街牵着鼻子走。</p>
+
+
+
+
+<p>其实后来Google上市时的一系列措施我是很佩服的，当他们上市的时候，他们并没有按华尔街的惯例来办。虽然当初华尔街并没有买他们的帐，但后来这些银行巨头们对Google的追捧可是所有的人都看到了。看样子当有大笔钱的诱惑的时候，华尔街的人还是很容易改变主意的。</p>
+
+
+
+
+<p>你也许没有意识到，你和VC谈判时筹码还是挺多的。原因就是其他的VC。我现在知道好几家VC了。当你和他们聊天的时候你会意识到，风险投资领域是一个卖方的市场。哪怕就是到了现在，资本市场的问题也是钱太多了，而好的点子和想法太少了。永远是大笔的钱象苍蝇一样来投一个好的项目。</p>
+
+
+
+
+<p>VC公司等级是很森严的。就像一个金字塔一样。在最高端是有名的VC例如Sequoia<br />
+和 Kleiner Perkins。　但下几级的VC们基本上你就从来没有听说过了。但不管级别如何，他们的共同之处就是谁的钱都是钱，没有谁的钱好，谁的钱不好之分。大多数的VC们都会和你说，除了钱，他们还能给你金融界的关系和商业方面的咨询。如果你是和Vinod Khosla 或者 John Doerr 或者 Mike Moritz,这些大家伙在谈的话，那么这肯定是真的。但是这些咨询和关系的代价是很大的。　金子塔底部的那些VC们的水平与智力也会随着他们级别的降低而迅速的下降。基本上就是手里有点钱的银行家们，读了几天科技杂志就来和你胡侃乱侃。所以当一个VC说能给你拉关系，给你建议的话，不要太当回事。因为VC就是VC，他对你来说不过是一个资金的来源。我的建议是，谁给你的钱最多，附加条件最少，你就挑谁。</p>
+
+
+
+
+<p>你也应该计划好你要把你的创业想法的细节告诉多少给VC们。因为以后其中的一些也许要给你的竞争者投钱呢。我觉得最好的办法是既不要遮遮掩掩，故作神秘，也不要毫无保留，和盘托出。其实VC在和你谈的时候对你的人比对你的想法更感兴趣。他们想看看你到底是个什么样的人。所以你只要让他们觉得你是一个干事情的人，知道你到底在做什么，不必要告诉他们所有的事。</p>
+
+
+
+
+<p>尽可能多的接触一些VC，　哪怕你并不想从他们哪里融资。因为一，他们之中也许有人在以后要收购你的公司的董事会里。二，如果你做的东西给他们印象很深，那么他们可能就不大想投资你的竞争对手了。最有效的接触VC的办法，尤其是在你只想让他们知道你的存在，而不是从他们哪里得到钱的话，就是参加一些有创业公司发起的一些会议，哪里会有很多VC们来看的。</p>
+
+
+
+
+<p>别花钱</p>
+
+
+
+
+<p>如果你的项目真的很好，投资者蜂拥而至，你马上筹到了钱，然后怎么办呢？如何花这些钱呢？答案很简单，那就是：不要花。 几乎每一个没有成功的创业公司，没成功的原因都和把钱花光了有关。当然还有更深层次的原因，但这种显而易见的死因是一定要避免的。</p>
+
+
+
+
+<p>在互联网泡沫时期，很多创业公司都想要快速发展 壮大。也就是说用户越多越好。而用户越多，你需要雇佣的人也就越多。</p>
+
+
+
+
+<p>当然，想要迅速扩张壮大，在一个新的领域迅速的跑马圈地， 第一个占领市场，并尽可能把所有用户都囊括在内，不给后来的竞争者留下任何可乘之机，这些都不是什么坏事。但我个人认为，在大多数商业领域，当了市场第一人并成为市场主导者并不是什么值得大书特书的事。<br />
+Google又可以做为一个好例子。当它进入搜索引擎市场的时候，这个市场已经很成熟了，有很多厂家已经花了上亿美元在打造他们的搜索品牌：Yahoo,<br />
+Lycos, Excite, Infoseek, Altavista, Inktomi。在1998年才进入搜索市场好像有点太晚了。</p>
+
+
+
+
+<p>但google 清楚，在搜索市场，品牌并不值多少钱。只要你能提供更好的服务，你可以在任何时候进入这个市场，并把用户一点一点的拉过来。而且值得提出的是，Google从来没有为自己做过任何广告，google 就像做买卖的商人一样，他们向你出售东西，但他们自己更知道如何使用这些东西。</p>
+
+
+
+
+<p>被google埋葬的那些竞争者们，如果他们能静下心来专心把他们的软件做好，性能和质量提高，也许会还有一搏。在你进行创业的时候，也一定要注意不要犯类似的错误。除非你要开拓的市场是哪些需要投入大量资金来做广告的消费品，如香烟，酒和洗衣粉等市场，铺天盖地的广告是唯一的方法能够证明你和别人不同。而建立网站这样的创业，技术是能够证明你和别人不同的方法。看哪些网上约会的网站，他们的广告铺天盖地，但一个能给客户更好的服务的网站完全可以把他们击倒。</p>
+
+
+
+
+<p>我们当初的创业公司，因为一些外在的原因，成长的并不是很快，现在看起来并不是坏事。所有的成员为公司的运作在开发软件的同时几乎都事必躬亲。 我还要管销售和客户支持。我得承认我不是一个好的销售人员。虽然我是公司的总裁，但我没有销售人员那么耐心和讨人喜欢的素质。我和客户说，你如果不把你的店搬到网山，那你可蠢的够可以的了，而如果你想把你的销售放到网上，如果你不用我们的软件开店，那么你也蠢的可以了。虽然我是实话实说，但基本上没人买我的帐。</p>
+
+
+
+
+<p>但我作为一个售后支持和客户服务还是很称职的。试想一下，一个售后，不但对产品了如指掌，如果客户报告发现了产品中的一个问题，我还能马上道歉并在和客户通电话的同时就马上就把它修好。客户们很满意，我们对客户也很满意。因为当你只依靠客户的口碑来发展你的业务时，你的第一批用户一定是哪些很聪明的人，至少他们聪明到能主动发现了你。在创业之初，最宝贵的东西就是能有一批聪明的用户。如果你能虚心听取他们的意见，他们会确切的告诉你如何开发一个成功的产品，不但他们把这些建议免费给你，他们还给你钱。</p>
+
+
+
+
+<p>我们在1996年之初正式发布了我们的产品，在年底我们有大概70个左右的用户。因为那个时候所有的人都想跑马圈地，用户越多越好，我还担心过我们太小，太微不足道了。但事实证明我们那个时候做的是正确的。一旦你发展的太快，你雇用的人越来越多，你的客户越来越多，那么你想改变你的产品就很困难。那年我们主要是在实验室里集中提高我们软件的性能和质量，最后，我们把所有的竞争对手都远远抛在后面，而且因为我们的程序员都在第一线直接和客户打交到，后来我们对互联网商业的理解比任何人都深刻。</p>
+
+
+
+
+<p>成功的创业有一点很关键，那就是你一定要对你所从事的领域有深刻的理解。你也许认为每一个公司都已经做到了这一点，实际上远远不是这样。Google的秘密武器就是他们对搜索理解的很深刻。Google的创业之初我在为雅虎工作，而当时雅虎对搜索的意义并不理解。我记得有一次我试图说服管理层来提高搜索的性能，而我得到的回答是：雅虎已经不仅仅是一个搜索引擎了，搜索服务已经占我们业务中很小的一部分。我们的目标是打造一个媒体公司，或门户。搜索业务会逐渐萎缩，并最终被砍掉。就像哪个阑尾一样。</p>
+
+
+
+
+<p>但实际上，虽然搜索的页面只占了网站页面很少的一部分，却是很重要的一部分，因为大多数人进入网站的方式都是从搜索开始的。我想雅虎现在应该明白这个道理了。</p>
+
+
+
+
+<p>和其他网站公司相比， Google对其他方面的理解也比他们深刻。其中最重要的一条就是用户是第一位的，广告商不是第一位的。虽然是你是从广告商身上来挣钱，而不是从用户身上。记得有一句谚语是：如果有人领导，就会有人跟随。把这个套用到电子商务上，就是如果你能吸引所有的用户，你就能吸引所有的广告商。所以好好设计你的产品，提高用户的满意度，然后再考虑如何赚到钱，只要你把用户是放在第一位的，在竞争当中你就会领先一步。</p>
+
+
+
+
+<p>开发一个用户喜欢的东西，你首先必须理解你的用户。当你的公司越大，业务越多，理解用户的需求就越困难。所以我说，要慢慢的变大。你融资的速度越慢，发展越慢，你在这个过程中学到的东西就越多。</p>
+
+
+
+
+<p>节约开支的另一个目的就是培养公司上下一种节俭的氛围。这一点当初雅虎理解的很好。当David Filo是雅虎总裁的时候，他的外号就叫“小气的雅虎”， 他还很以为荣。当我刚到雅虎的时候，就收到他的邮件，直接问我们用那些昂贵的硬盘阵列设备是不是必需的。当时给我的印象就很深，那个时候雅虎已经身价好几十亿美金了，但他们还能作到能省就省。</p>
+
+
+
+
+<p>当你真的从一个VC哪里拿到了几百万美金的时候，你常常有一下子富了起来的感觉。但这个时候保持清醒的头脑很重要。一个富有的公司是一个收入很多的公司，而那些钱不是公司的收入。那些钱是你的投资人给你让你创造收入的。因此虽然你可能在银行里有了几百万美金，但在你公司没有盈利之前，你还是穷小子一个。</p>
+
+
+
+
+<p>对多数创业公司来说，你的榜样应该是哪些在校苦读的穷学生们，而不是奢华的律师行。谦虚而且吝啬，不要昂贵和招摇。一个测试创业公司类型的好办法就是看这个公司的办公椅子是不是那种豪华的老板椅。在互联网泡沫时期，这种椅子非常常见。还有公司里面有很多小孩子玩的小型游乐场。我们当时的办公椅子非常的破旧，椅子把几乎都要掉下来了。当时我们还有点难为情。但现在回想起来，在创业之初过穷学生的生活又是一个明智的选择。</p>
+
+
+
+
+<p>我们的办公室是哈佛广场上的一个小木屋。在70年代就被作为公寓出租了。浴室里的浴盆还是那种老式的有四个脚的浴缸。公寓的墙壁上还莫名其妙的贴满了锡纸，好像是想防宇宙射线辐射一样。每当公司有贵客来访时，我们都觉得有点难为情，觉得这样的办公环境实在拿不出手。实际上那种环境在创业的时候是再合适不过了。我们觉得我们就是一匹黑马，在暗处跃跃欲试，要把在明处的竞争对手超过。而这种精神是创业的时候最需要的了。</p>
+
+
+
+
+<p>而公寓的氛围对与开发软件来说也很适合。办公室里的格子间对于程序员来说是糟糕透顶了，如果你是程序员，你一定也知道。你在家里编程比在办公室编程效率要高多了，所以为什么不把办公室布置的象家一样呢？</p>
+
+
+
+
+<p>当你为你的创业公司选址的时候，不要觉得一定要弄得很职业。你要做的是设计开发出好的软件，而不是需要公司里面有豪华电梯和大理石地面。我个人的建议是创业公司最好一开始不要租正规的办公地方，而就租一个公寓。你想吃住在办公室，那为什么不把你的办公室办的象个能吃能住能生活的地方呢？</p>
+
+
+
+
+<p>而且除了省钱以外，在一个有居家环境的公寓，干起活来也比办公室的格子间舒服。对于一个创业公司来说，工作环境和地点是非常重要的。吃了午饭后马上就回来工作能非常有效的提高工作效率。一个专注的，不受打扰的工作环境是成功开发出产品的关键之一。当一组员工在吃午饭时热烈的讨论技术和开发中的问题和想法，然后回到办公室后马上把它们实现的时候，你的产品会集中很多优秀的充满创造力的想法。所以如果有可能，尽量把公司设置在周围有好多餐馆的地方。当你一开始员工为了吃午饭都要开车出去吃的时候，你很有可能因为这个而失去了开发产品的很多天才的想法。如果是那样，开发不出来好的产品也怨不得谁了。</p>
+
+
+
+
+<p>如果我今天还想开始创业的话，地球上我只在三个地方创建我的公司：在哈佛大学的哈佛广场附近； 在加州斯坦福大学附近或者在加州博克利大学附近。这是我知道的唯一的三个洋溢着创造力的地方。</p>
+
+
+
+
+<p>省钱的最重要的一方面是不要盲目雇人。我也许在这方面有点走极端了。但我还是认为雇人是一家创业公司能做的最糟糕的事了。首先，雇人的费用是经常性支出，也是最要不得的支出。而且人多了你的地方就可能不够用了，<br />
+你要不得不搬到普通不是很酷的地方去。而更坏的是， 人多了会影响你的软件产品的开发  人多了办事效率和开发效率就会下降。你本可以探过头去和成员聊聊就能解决的问题，人多了就可能要郑重其时的开个小会来解决了。</p>
+
+
+
+
+<p>在互联网的泡沫时期，很多创业公司都是朝着相反的方向走。他们都想要人越多越好，市场，销售，人事，管理人员全部到位，就好像没了这些所谓的商业人士，你就开发不出产品了似的。这是大公司运作的传统思维，千万不要盲目模仿，设立一些等级和组织机构。你想雇人的唯一原因应该是你想做一些事情，可你自己做不了。</p>
+
+
+
+
+<p>既然盲目雇一些不需要的人既浪费钱又降低效率，为什么还有很多公司都这么做呢？我想主要的一条就是人们都喜欢有越多的人为他们干活越好。这种偏好可以一支追溯到CEO，　如果你有领导过一家公司的经历，你就会知道人们最常问你的一个问题就是：你公司有多少人啊？。这是人家评价你的指标。而且媒体记者也喜欢问类似的问题。如果你说你的公司只有十个人，而不是一千个人，他们就会很失望。</p>
+
+
+
+
+<p>其实这种看法是很荒谬的。如果两个公司的产值是一样的。那么哪个公司员工少，才证明哪个公司是更优秀的。当有人问我我的公司有多少员工而我回答他们有二十人的时候，我通常还加上一句，“我们的主要竞争者，经常被我们超过，而他的公司有一百四十个员工，　所以我们比他们要精干多了”。</p>
+
+
+
+
+<p>至于要招多少人，你可以大张旗鼓的招人来虚张声势，也可以少而精，保证队伍的战斗力。我想一个小学生也知道该选那个吧。而且一定要坚持这个原则，不能改变。</p>
+
+
+
+
+<p>你适合创业么？</p>
+
+
+
+
+<p>你该开公司么？你是开公司的类型么？如果你真的是，到底值不值呢？</p>
+
+
+
+
+<p>其实很多人都比他们想象中的自己更适合开公司创业。这也是我想写这篇文章的初衷之一。创业的人应该越多越好，这是一件好事情。</p>
+
+
+
+
+<p>我现在知道了，我这种人，是最适合创业的。但我一开始一想到创业开公司这个事情就有点害怕。我是迫不得已的。因为我当初是一个lisp程序员，而我当时工作的公司基本上已经活不下去了，使用lisp编程语言的人也不是很多，市场很小。我当时也根本学不下去其他的语言（当时是１９９５年，当时的另一门语言是　C++）。　我能想到的唯一出路就是自己开一个公司，而这个公司的产品使用Lisp.</p>
+
+
+
+
+<p>对当时的我来说，不到万不得已，走投无路我是不会开公司的。那么象我一样，其他也会有好多人会一谈创业就色变了。</p>
+
+
+
+
+<p>什么人到底能开公司呢？应该是一个优秀的程序员，在23岁和38岁之间。想用最短的时间来解决经济问题，再也不用为钱而愁。而不是在一个大公司里面熬日子和资历。</p>
+
+
+
+
+<p>判断一个程序员是不是一个优秀的程序员不是件容易的事。在一流的大学里，大概一半的计算机系的学生都养该是。当然你不必一定要计算机专业毕业才能成为一个优秀的程序员，我在大学的时候是哲学专业毕业的。</p>
+
+
+
+
+<p>怎么样知道自己是不是个好的程序员呢？通常一个创业的过程会聚集到一些好的程序员。因为大部分创业或者想创业的程序员，都是在观察或者使用某个技术时，常常会拍脑袋想：这个东西可以做x,y, 但我能更上一层楼，还能做Z. 有这种素质的程序员通常都是优秀的程序员。</p>
+
+
+
+
+<p>我把创业的最低年龄订到了23岁不是因为23岁以下的就不够聪明了。而是因为创业之初你最好有一点工作经验。不一定是你一定要开过公司，至少要在别的企业打过工。我大学毕业后在一个软件公司打工了一年，来偿还我的学生贷款。那是我生命中最糟糕的一年。但是哪怕是在这最糟糕的一年，我还是学到了很多开发软件产品的宝贵的经验，虽然我当时并没有意识到。当然学到的很多都是负面的教训，譬如不要陷入文山会海。不要让多个人来共同维护一段代码，不要上销售人员来运作公司，不要一开始就瞄准高端产品，不要让代码越写越大，不要指望着软件测试人员来找到软件的缺欠。不要让开发人员远离实际使用的客户等等。但是错误和教训对人的发展与成功和成就是同等重要的，也许还要更重要一点，谚语说：it's hard to repeat a brilliant performance, but it's straightforward to avoid errors.</p>
+
+
+
+
+<p>另一个在23岁之前最好不要自己创业的原因是很多人可能不把你当回事。VC不会信任你，也许会在你身边安插一个监护人来指导你来作为投资的条件之一。客户会担心如果出了事情，你会不会一走了之。而且除非你是特别老成出众的，你会发现领导一批比你年级大很多的人还是挺别扭的。而如果你只想雇用比你年纪小的人，那你能选的人的范围就小很多了。</p>
+
+
+
+
+<p>有些人在17，8就开公司了。 比尔盖次在和Paul Allen开公司的时候才19岁，当时Paull Allen是22岁。如果你坚持己见，一定要开公司，那么不要顾虑年龄什么的，你很有可能就能干成。记住，只有偏执狂才能成功。</p>
+
+
+
+
+<p>而开公司的最大年龄，38岁，也是有一定道理的。原因之一就是38岁后的人在创业的时候可能会因为身体原因而干不下去。我当初创业的时候每天工作到凌晨两三点是平常事，而且一周七天不休息。但现在让我再这么干，我肯定吃不消。</p>
+
+
+
+
+<p>而且，开公司创业在经济上也要冒很大的风险。如果你失败了，在26岁的时候身无分文。也不是什么大事，很多人在26岁的时候还一事无成呢。而到了38岁，有了孩子老婆，有了家，有了很多责任，上有老，下有小，就有可能冒不起这个风险了。</p>
+
+
+
+
+<p>最后，你还应该扪心自问，看看自己这一辈子到底想要干什么。 你真的想创业么，真的想开公司么？经济上，你可能要过最拮据的生活，与其在一个大公司里按部就班的工作40年，你要想疯了一样的工作4年，而4年之后，你很可能一无所获。</p>
+
+
+
+
+<p>在这段时间内，你除了工作就是工作。如果你不工作，你的竞争对手就会超过你。我当初创业的时候，我的唯一娱乐就是每天跑步，那还是因为我需要锻炼一点身体来继续工作。然后就是每天晚上读15分钟的书。在哪三年里我交过一个女朋友，但谈了两个月就吹了。每隔几个礼拜我去去书店，或者和朋友们聚聚，只回家过两次。仅此而已，其他的时间我都是在工作。</p>
+
+
+
+
+<p>做你喜欢做的事情也是一见很有意思的事情，而且很你一起工作的人都是你很好的朋友。但大部分我能记起的创业的时候有趣的事情都是和工作和技术无关的。例如一次我们在屋子里面鼓弄柴油发电机，结果把整个楼弄没电了6个小时，我以后再也不敢那么做了。</p>
+
+
+
+
+<p>很多人说创业开公司烦心的事太多，我并不这么认为。烦心的事实际上可能会比你在大公司里正常的工作要少。但是因为创业把巨大的工作量集中到了一个比较短的时间内，烦心的事情可能少了，但因为集中在一起而显得密度大了。如果你是想把经济问题一下子快刀斩乱麻式的解决，而不是在办公室按部就班的工作40年，那么你就应该试试创业。</p>
+
+
+
+
+<p>对很多人来说，一个两难的问题是创业还是继续读书之间的矛盾。研究生阶段是创业的最佳年龄，你也许怕如果选择了创业，可能在学术上就失掉了发展的机会。其实你可以在学校的时候就一边读书一边创业。我的公司里面，有两个创始人就是在读研究生，而且后来还都拿到学位毕业了。要记住，学生的力量和精力是无穷的，千万不要小看了自己。</p>
+
+
+
+
+<p>如果你真的需要离开学校全职去创业，最坏的情况也就是创业失败，你又回到了学校。但如果你成功了，你可能就会发现再寒窗苦读，发表论文，混一个副教授当当就没有那么大的吸引力了。</p>
+
+
+
+
+<p>想唱就唱，想喝就喝，想做就做。如果你想创业，就横下心来做。创业开公司的过程并不像看起来那么神秘。你也不需要知道所谓的“商业运作”来开一个公司。开发出一个客户/用户喜爱的产品，挣的比花的多。真的，就这么简单……</p>
+
+
+
+
+<p>原文链接：<a href="http://www.paulgraham.com/start.html" target="_blank">How to start a startup</a></p>
+
+
+
+
+<p>译文链接：<a href="http://www.lgao.org/download/start.html" target="_self">如何进行成功的创业</a> （需翻墙）</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[转]我的十年，交互之外的那些事]]></title>
+    <link href="http://NeoCN.github.com/其他/the-things-outside-the-interaction.html"/>
+    <updated>2010-11-24T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/the-things-outside-the-interaction</id>
+    <content type="html"><![CDATA[<p><div /></p>
+
+
+
+
+<p>前言：今年同时是我工作的第十个年头，今天也是我的生日，如果一路往上回顾，应该是有不少故事的，如果要 讲，我总是习惯性从我工作的第5个年头开始，一方面  5年前的工作经历很平庸，不为人知，缺乏戏剧性，基本在小公司，传统IT企业厮混而5年后的工作履历会被更多关注到，因为是在TX，因为有机会做大家都认 识的产品的体验设计，被曝光在一个明星岗位上，另外一方面因为我那时还叫阿标，在设计的江湖上，阿字辈说明还比较年轻，现在我被叫标叔很多年了，同时经常 能有幸被一拨拨新人设计师拉上，借公司培训的要求，在大家好奇的围观中，自愿或者半自愿地痛说革命家史。其 实神马都是浮云，这事第一年挺新鲜的，但讲了n次后，我觉得自己像个祥林嫂了，有种想吐的感觉，还不如写个履历示众好  ，在古代叫传，咱位卑言轻，等别人作传是不可能了，这事就只能自己动手，有几个好处，一方面可以“真诚”地赞美一下自己，就像TangJ做过的一样，更大 的好处是这样就不用每次都重复再重复，一次写好，甚至可以用好几年，就像杰斐逊写独立宣言一样，写得好，几百年都可供后来者一拨拨瞻仰，十年是个坎，借这 个机会，回顾一下我的工作十年，我做设计师的十年的一些片段，别太当真，就当看故事好了。</p>
+
+
+
+
+<p>2006年3月，一个很平常的工作日，我接到了一个自称tangmu的家伙给我电话，然后经过一轮饭局，一轮参观，一轮被面试，一个月左右的挣扎，加入到TX CDC的交互组，一直到现在。</p>
+
+
+
+
+<p><!--more-->06年算是一个临界点，之前的我一直都在所谓传统IT行业，工作按部就班，我按照流行说法，是真正进入新兴行业，这也让我有机会从两面来看，多 年后，我蓦然发现，正是这样一种前后反差，让我有机会有对比的机会，总结自己的设计理念和设计管理思路，也让我始终能很冷静看待互联网行业所谓日新月异的 “新理念”，“新思潮”。</p>
+
+
+
+
+<p>第一个想说的是做一个交互设计师挺好玩的，特别是在CDC，在早期团队规模不大的时候，大家有很多机会很容易凑在一起吃喝玩乐，印象中最深刻的 是，每天中午吃饭，要冒死横穿一条大马路，然后东拐西拐进入大冲的一家小饭馆，每每想起当时的场景，都是相当怀念，很快我也融入了这样的氛围，后来我在 想，这个也算是CDC的特色，大家都很本色，不装，而不装在职场上是相当难得的品质，也很容易让内心有同样认同感的人找到归属感，在后来自己有机会带领团 队时，我也会特别去找一些性格外向，充满生活情趣，能搞气氛的团队开心果，但也得承认这样的设计师挺少。</p>
+
+
+
+
+<p>在公司的第一个项目是TX  K系统的交互设计，当项目负责人S，第一次召集开项目会时，我惊奇发现这个项目竟然没有产品经理，没有项目经理，只有3位开发工程师，没有需求文档，只有 一个内部讨论了两次的feature  list，这个情况是我从来没有遇见过的，也就是在那时我见识到早期tx研发的风格有多“敏捷”，具体那个会如何开的我不记得了，我只记得在大家期望的眼 神中我站起来说，如果我们没有需求，那么让我们编一个用户使用我们软件故事吧，我尝试着将一个挺难理解的设计方式用一种大家能理解的形式在白板上写了下 来，一共花了2小时，主要是包括目标用户的典型环境，用户的task，用户的预期等，两年以后，团队扩大，记得有一阵子流行关于“信仰之战”的话题，不经 意间在我工作的第一个项目中，我貌似很轻易化解了这样的一种对立，后来想，其实大家不是有那么多的隔阂在，而是你采取的沟通方式是否有效，是否是团队喜闻 乐见的方式，讲故事也可以讲得有方法论的，讲故事也是可以快速拉近从抽象还原为具体的，我们习惯了归纳，把鲜活的用户场景浓缩为十几条干巴巴的需求，适时 演绎一下，你会发现大家简直灵感迸发，而且很有共同话题。</p>
+
+
+
+
+<p>工作一个月后，我开始有机会参与一个当时的保密项目H，第一次开会就从早上9点到了晚上9点，我不知道的术语，我似懂非懂的概念，笔记本上记了 2页，让我感到压力非常巨大，而且接下来一个月，时间非常紧凑，需要上午出设计方案，下午讨论，晚上汇总，一周找boss汇报一次，每天我的to do  list上都有  10个以上的大需求待讨论和输出，按照正常的进度，是绝不可能完成的，最猛的一次是一天推倒重来一个重大方案，同时晚上配合GUI同事，同时出三个方案， 第二天上午汇总设计，下午2点汇报，没有出错，效果很理想，这种硬仗打下来，如果有机会经历了，而且挺过来了，你会相当有自信。现在经常讲新人要吃苦，我 觉得就是大家得找机会打打硬仗，而不是打疲劳战，那这个苦痛过了，整个人的小宇宙能会升级不少。</p>
+
+
+
+
+<p>同时看到了有一种牛人，属于会议动物科，让我相当佩服，可以一边开会，一边上网处理邮件，RTX，一边滔滔不觉讲产品思路，他们的CPU转动快 到想开就开，想停就停，而且思路之缜密，抓谈话重点之快让人叹为观止，我一直在暗暗揣摩观察，这是怎么做到的，后来成为工作伙伴后，有幸得到传授几招，相 当受用，这是后话。</p>
+
+
+
+
+<p>说到牛人，在大型公司里，其实如果有心留意的话，有很多很对自己短板的良师，也未必是职务最高的修为最高深的那种，对我的职业生涯起重要作用的是碰到了几位良师益友，在那个懵懂无知，心高气傲的年代让我得到了收益终生的思想启蒙。</p>
+
+
+
+
+<p>一个java控件开发工程师D，D的牛体现在只要是我能找到的效果，即使java.lang里没有,最多1周，他总能实现出来，也就是在他的 字典里没有不可能实现的界面效果，和他合作的半年，我从一个似懂非懂的java门外汉，变成了一个对需要用到的38个控件了然于胸的界面规范制定者，而且 从以后来看，其实对界面的钻研，无非也是因为对这些最基础东西从底层开始的钻研，当时看起来很慢很枯燥，但一旦你一字一句去求证，去推敲后，以后你就不会 有很多概念上的困惑。</p>
+
+
+
+
+<p>一个写Table基础控件的开发工程师F，F的牛体现在：两年只写一个控件，那就是table，而且这个table跟excel很像，初看无论 是表现还是交互十分类似，但细细体验，你会发现有很多针对财务软件的优化，例如数字格式，例如循环嵌套，例如缩进扩展，例如大数据的换算导出的效率比 excel类封装的高几倍，  他给到我一个朴素的认识，要想做出类拔萃的软件，就要从底层技术开始，不要简单求快，找捷径，我后来发现我们的很多软件其实不会做得如此细致，一方面是时 间要求，一方面慢慢大家习惯了拿来主义，初一眼没什么不同，但在极限情况下，孰高孰低，很容易就看出来了，真正的底层的，原创性的研究和设计总是非常锻炼 人的，既具挑战性，现在来看，在交互设计领域我们这样的沉淀太少了，大家都忙于赶项目和需求，research的部分不够。</p>
+
+
+
+
+<p>一个负责协同软件的产品经理H，H的牛体验在他讲他的产品策略，产品方向，产品feature时，总是能有详实的数据并恰到好处地引用到一些方 法模型，并用流程结构很好展示出来，语气节奏掌握得相当到位，绘声绘色，很容易把你带入他营造的情景中，说服力强大的惊人，这个就是所谓的“气场”这个给 到我一个启示，产品设计也是要讲口才，要辨析就得思路清楚，如果能把一些很主观的东西用尽可能客观的方式呈现出来，那么方案也更容易推销成功，你也能一次 次通过这样的方式建立你在对方心目中的地位，有一种人叫  无冕之王，不是一定要有威权才有权威的，所谓的专业影响力是在你工作和周围同事的每一次接触中，所以从他那我能学习到的，就是保持倾听和足够的激情，珍惜 并善用每一次的工作接触机会，慢慢打造自己的专业影响力。</p>
+
+
+
+
+<p>这些牛人们常常给我很多启发，成为我的榜样，这种榜样不是说我一定要像他一样具备同样知识结构，而是说他达到他那样的深度，他是如何做到的，他 的方法，他的一切技巧，都是我学习揣摩的源泉，而且我还发现一个牛人们的通用特征就是  都很谦逊，不是装的那种，很本色，所以我自己坚信的是要想成为一个牛人，就是永远要很谦虚，得从心底有这个认识，不是做给人看的那种，是觉得自己真的有很 多不懂，而这种对自我的自然的低姿态有助于你心无旁骛追求到更高的学术境界。</p>
+
+
+
+
+<p>最近正在总结通道的交互设计师能力素质模型，其实抛开具体的条例，我心里其实只有一个图，就是这样的：</p>
+
+
+
+
+<p><img title="Pattern of HCI" src="http://cdc.tencent.com/wp-content/uploads/2010/11/1.png" alt="" width="454" height="340" /></p>
+
+
+
+
+<p>交互设计师的核心能力其实是三者的交集，这个也很容易看到，为什么交互其实是易学难精的，也就是你每放大一点点，你需要在每个维度上都放大很 多，产品维度而言，如果你知道商业目标，产品功能，运营策略是如何制定出来，那你从源头上就找到了和产品经理对话的能力，开发维度而言，核心来讲，是你得 知道技术的约束边界，知道可行性把握有多大，如果你还知道实现机制，，那你也能就找到了和开发工程师愉快合作的基石，设计维度，不多讲，具备足够的设计美 感和设计品味是应该的，对设计规范、用户习惯了解越多，越能知道设计不应该做什么，不干舍本逐末的事，从这个模型上，这也很容易解释，为什么一个好的交互 设计师要涉猎产品，开发，UI知识，做到最好比较全面的知识结构，我们经常讲用户体验，讲体验设计，其实有句话我一直很认同，谁讲的不记得了“体验是个人 的，体检设计不是”。</p>
+
+
+
+
+<p>顺便讲讲我觉得重要的交互设计师好习惯。</p>
+
+
+
+
+<p><strong>保持好奇心</strong></p>
+
+
+
+
+<p>我刚入行的时候，是做美术设计师，在广州一家公司，工作节奏不紧不慢，所有我有大量的闲暇时间，在那一年里我下载试玩了很多小工具，从常规的硬 盘分区，到3D渲染，只要是大众软件上有名字的，电脑报上推荐的，我都很努力把它们找下来，第一时间试玩，2000年的时候正是个人网站风起云涌的时代， 到01年6月的时候，那一年我收藏了差不多3000多个网站的截屏，2000多款软件，许多软件我今天还能使用，绝大多数网站已经烟消云散，也正是这段经 历，让我有了一个比较宽广的视野，我的当时的经理常常表扬我有很多新奇的想法在设计界面上，而同组的一位三年的设计师却总是给不到他惊喜，大约半年后，我 已经成为设计组的第一设计师了，其实他不知道的是我因为一个新人，在新的环境下人生地不熟，只能以司为家，天天与电脑相伴，借这个充裕的时间，大剂量地观 摩了很多别人没时间或者不屑关注的东西，并且有意识进行了一些粗维度的整理，形成了朴素但挺实用的设计想法，实用是因为这些想法都来自当时第一线的第一手 的资料，很感谢那时候互联网已经成为一般IT公司的标配了，同时感谢那个时代的个人网站和个人软件百花齐放，充满自由创新的精神。</p>
+
+
+
+
+<p><strong>保持同理心</strong></p>
+
+
+
+
+<p>很多人问过我，一个好的交互设计师最重要的潜质是什么？好几年了我都坚持说，同理心，简单来讲，就是对你周围发生的事，对你未曾经历过的人能设 身处事，感同身受，不漠然，不泰然，细心是源于你内心有关怀，有在意，否则是不太能真的细心，同时，同理心和同情心是有区别的，最大的区别在态度，一个中 立，一个带有偏向性，不是一回事。</p>
+
+
+
+
+<p><strong>保持对开发实现技术的关注度</strong></p>
+
+
+
+
+<p>我的第2份工作是重构工程师，最重要的目的是搭建一个市场研究公司的行业站点，以新闻，专业文章管理，论坛为主，在02年的时候，建站基本上是 jsp，PHP，asp三大流派，asp因为有很多完整的源代码可以参考，所以在一家小公司，在单打独斗的状况下，我选择了入门门槛最低的asp，因为只 需要HTML+Css+asp+mySQL及free的IIS即可开始构建及调试工作，我相信那时很多个人站点应该也是在这样简陋的条件下开始的，在那一 年里我有机会做网站重构的所有事情，一条龙，从UI+前端+后台，有一个MBA的海归MM配合我做运营，现在来看，技术粗糙得汗颜，但当时是真的很投入， 经常一次性搜罗一批开源代码，然后逐句逐句看，一个个调整参数，看界面表现效果，也就是在那个时候养成了炫耀特效的毛病，这个也是一个懵懂技术工程师很朴 素的毛病，恨不得整个网站都挂满javascript小插件，恨不得所有的表格都能用到我比较测试了十多种圆角实现方式，最后优化过的那个，网站体验口碑 可想而知，后来在几次改版调整中，我逐渐开始关注什么是合适的UI表现力，什么是好的版式设计，如何做到内容取胜，更重要的是如何在最恰当的时候用到最合 适的技术方式来表现，我一直有个挺固执的想法就是所有做交互的人入门应该先从coding开始，做测试一行，这样你做什么设计你脑子里考虑到维度会很丰 富，而且实际，同时你会很严谨，同时你会有机会去想如何利用到强大的开发工具开发平台为我所用，而不是只局限在ps，fw的框架下，在06年的时候，开始 有作ui designer工具的想法，其实也是因为当时在用dreamweaver urtal时产生的念头。</p>
+
+
+
+
+<p>保持独立思考和思辨精神，不盲从，不媚外很重要，注重实用性很重要，以upa为例，很多设计师都知道UPA，09年的大会是我第4次参加了，今 年没去了，越来越有感触，UPA上的主题嘉宾就像结婚喜宴上的烤乳猪（绝对没有不敬的意思，这个是不恰当的比方，只是我想不到更好的菜了），最贵，最体 面，但是否是最好吃就打个问号了，也许烤乳猪本身是好东西，但没有按照亚洲的口味来调过，可能最有价值的反而是乳猪下作为点缀的香菜，胡萝卜花，因为这个 花还比较新鲜  比方ideo的视频，比方各地的幸福指数  如果我没记错，基本上这几年的主题都是这样的范畴，“什么是设计？”"我们为什么要做体验设计？我们要考虑人的因素，要了解人的需求？要了解人的背景，文 化，社会因素我们要从多个纬度考虑设计”  我想说的是，我们为什么的问题我们已经没有疑问了，我想知道的是这些大师在行业中的最新创造，最新思考，最新观察，最新思考   不要他们几十年的经验！真正推动这个世界进步的不是经验，是鲜活思想，当然也不能全怪这些大师，他们老了，不再活跃于第一线，其实他们也是离互联网浪潮最 远的人。</p>
+
+
+
+
+<p>特别是在中国互联网行业，真正做的好其实都是本土企业，土生土长的设计师作出的最“土”的设计反而是最受市场欢迎的产品，无论是QQ还是淘宝. 原因也许很简单，因为我们每天都在面对着海量的用户在不停的test，test，test，在互联网行业没有谁是先知，产品规划甚至都没那么重要，关键是 要要改得够快，改的够贴近用户的心。</p>
+
+
+
+
+<p>07年的时候，有机会因为做了H项目，可以以此作为蓝图，领会thomas，Enya的精神，系统想想适合部门的完整的设计流程是什么？这个时 候，我发现在一个严谨的传统IT行业做过的好处，那就是对流程打造有着天然的亲近感，因为曾经感受到了一个优秀流程+工具带来的协同工作的巨大好处，所以 不需要动员，基本上就干劲十足，这里有必要提一下CMM软件能力成熟度模型)思想对我的影响，具体的我不想多说，其中提到  文档建设和知识管理是一项非常需要重视的工作，特别是软件开发的过程管理，是衡量一个团队研发质量的重要参考依据，因为最终做流程，做规范，做知识管理建 设，其实终极都可以归纳为三点，不犯同样的错误，做有价值的创新，进行有效率的沟通，也就是在做这个设计流程的过程中，我感觉部门的所有老大开始将知识体 系建设，做有规范的设计  认识提到了战略的高度，这个也是后来为何我们能去做比较完善设计师培养制度的基础，也因为做设计流程，经过很多次的碰撞，推敲，大家其实在是在设计方法论 方面逐渐达成共识了，后来的很多团队管理为何推行比较顺利，我觉得和做了这个研讨有很大关系，我也看到很多内部设计团队在沉淀很多方法很多流程管理方法， 但都对具体产品影响不大，在产品设计中中逐渐被边缘化或者被挤压得没什么话语权，现在结合当时自己做的经验来看，有两点是教训可能是他们疏忽了，第一，关 于设计流程的梳理，一定要从上往下达成共识，最好先做完整流程，再做细分流程，不要颠倒，这个跟先立宪再立法的道理类似，第二，一定要有一个相对成功的案 例做蓝图，不能只是关门来找，而且要有勇气和魄力将它绑定到公司的或者合作部门的主流程上，不能只是设计线内部自己玩。</p>
+
+
+
+
+<p>关于模块化设计和标准化设计，现在在CDC这个比较被推崇，也在默默在布局做的更好，也不是只是设计师一个角色的事，需要有开发，甚至是产品的 角色加入到这个生态链中来，这个不是很多人能理解，其实模块化和标准化设计都比较简单，想像积木就好了，如果是一副积木要摆多种样式的城堡，那就是模块 化，如果是多套积木要同时摆一个城堡，这就是标准化，当你把城堡想像成一个项目，把积木想像是你所有的设计模板时，作为一个设计管理者你就会有很多件事可 以做了，在09年的UPA大会上我分享了统一体验的设计，也正在做，实际上讲，应该算是做的有条不紊，就等最后两根大梁接上了，具体是什么，我先卖一个关 子，我一直有个愿望，希望在这个团队中沉淀的东西，最好是可以被复制操作的模型或者有效工具，而不仅仅是输出观点或者心得，越是务实的，越是花时间积攒 的，越是能造福所有设计师的，这也是TX.CDC.HCI team作为业界最大交互设计团队应该有的行业责任和意识。</p>
+
+
+
+
+<p>08年开始，团队进入快速发展期，团队逐渐扩大，手下的新人越来多，需要带领的人和主导或者评审的项目越来越多，往往是几个设计项目在同时做设 计，除了自己要做设计，还要审核别人的方案，时间和精力都是成倍付出的，但这些在个人绩效上通常又很难体现，看起来是吃亏了，其实正是这样才锻炼了自己的 多并发处理任务的能力，也让自己有机会从不同视角审视这个团队的全局。</p>
+
+
+
+
+<p>还有一个感触是在设计问责制下，会发现一个人的力量真是太渺茫了，也就是从那时起我有了培养设计团队骨干的想法，原来只是有朴素的师傅带徒弟的 想法，但发现速度太慢，另外就是良莠不齐，不同师傅带出来徒弟水准不一，而原来的师傅们坦白讲都太新了，在ERP领域，一个行业专家  10年以上，20年以上资历的比比皆是，而在互联网行业，4，6年还在一个公司做一线的资深设计师都挺少，一方面外面的诱惑太大，很多人在第2年，第三年 又有机会得到很优厚的跳槽机会，对于我这样的团队而言，更是被人时刻虎视眈眈着，其实一个交互设计师要成熟起来，三年是一个坎，最好踏踏实实做三年，然后 在说做管理或者做其他的事，再讲讲为什么以三年为期，这个有点武断，结合我自己的经验，我自认不是笨人，还有些小聪明，03年加入KD到06年离开，我一 直很感激这段经历，让我从一个交互门外汉，通过项目，观摩到什么是高效的流程管理，什么是大型团队作业，什么是真正的软件架构分层，那段时间里我就想一块 海绵，尽情吸收着各种对我有用的养分，我经常偷偷去听　销售同事的演讲分享，借项目的便利　听开发同事讲解最新的JAVA，C++　架构技术分析，用心揣 摩研发中心的年度规划ppt思路，虽然是个小兵，但我心里一直有个隐约的声音告诉我，当我有一天需要做这些事时，我不必毫无头绪，多年后我一直很庆幸自己 不务正业上了这么多杂七杂八的课，我的流程管理思想，我的文档管理意识，我对软件架构的理解，我对技术演讲的热爱，无不是在这潜移默化的影响中，没有3年 的历练，所谓的综合能力是不太能转化为真正的核心能力的，一个成熟的交互设计师核心能力是什么？就是在自己的专业内在复杂不确定的因素中能将设计“一次作 对”，并达到设计表达清晰，准确，完整，设计的方案结构最简，实现成本最低。这些都不简单只是交互设计专业本身精修能带来的。</p>
+
+
+
+
+<p>另外，一个成熟的交互设计师，最好能说，能写，能做，能做这个应该是基础要求，但要做好其实不容易，我自己有个体会，就是多写技术专题，最好当 论文来写，一般写技术专题，不仅能使自己进一步理清思路，也会加深对问题的理解，因为在写的时候才会发现，有些问题原来自己并不清楚，给别人讲课也是如 此，写和讲看起来都是在帮别人，实际上都是与己有益的事。</p>
+
+
+
+
+<p>关于做导师带新人的几点核心体会，很重要的一条培养他的专业自信，中国的企业里从事交互设计，或者以体验设计，可用性，产品设计名义做着类似设 计的从业人员越来越多，也许是我的偏见，我到目前为止仍然认为中国的交互设计师们仍然没有成功掌握深层次技术，这个和人员的组成来源有关系，多数的从业者 差不多都是学工业设计，甚至美术设计出生的人，很多公司是靠着这样一批没有开发，没有业务经验经验的新人开始“可用性”设计之路，加上交互设计这个行业其 实入门的门口很低，和产品经理的入门门槛类似，也正是如何，你会发现一大批的人被卡在进阶的路上，同时因为缺乏技术背景及业务知识，在团队作战中很轻易地 就沦为作图的工具，久而久之就被边缘化了，俗称跑龙套，这个不是这个职业的悲哀，而应是人的问题，没有实际经验，很多人纸上谈兵多了，自我感觉良好，一到 实际工作中就因为缺乏技术背景及业务知识，只能靠设计表达上的一点优势立足了，这个是很危险的，我总结我在上一家公司为何能工作自如，有极大的工作自信， 其实总结到最后，我觉得是因为我的杂，我做过美术，所有排版，布局，用色，细节到字体字号我都比较有经验，又因为我做过web开发，对于面向对象的开发模 式，包括基础但重要的软件分层，软件结构，控件的派生，重构，继承等知识都有了解，大学又是财经学院毕业，所以阴差阳错，找到了一个最佳的契合点，加上有 小半年时间，我一人潜心把整个软件的UI规范重写了一遍，反响很好，这样在在最需要树立职业自信的地方找到了信心，也坚定了我是一个合适的交互设计师的信 念。</p>
+
+
+
+
+<p>再深入说说自信的问题，很多设计师其实不自信自己是做交互设计师的“料”其实这个自信不是自己暗示的，是真的需要有一个个成功案例来佐证的，如 果你恰巧有公认的成功案例，那你一定不会怀疑自己的“天生资质”，这也给到我一个启发就是培养一个设计师的自信一定要因人设事，把他放在合适的位置，给到 机会，让他大胆去闯，鼓励他在自由状态下去悟，不要太干扰他，一旦他收获了真正的自信，一般人是打不倒他的，而且他会对这份职业有极大的认同感。</p>
+
+
+
+
+<p>设计师的工作是有层次的，现在越来越有感触，交互设计师的工作是需要分级分层的，我一直很喜欢ebay的一个模型，如图：</p>
+
+
+
+
+<p><img title="Pattern of alipay" src="http://cdc.tencent.com/wp-content/uploads/2010/11/21.png" alt="" width="454" height="340" /></p>
+
+
+
+
+<p>你可以从中看到自己的影响力到哪，一个设计师如果是精于designs，那你是个很好的设计助理，如果能能对frameworks提出成熟方 案，那应该是个很合格的交互设计师了，如果你对strategies有影响，甚至有一定决策权，那恭喜你，你理所当然应该得到所有HCIer的尊重。</p>
+
+
+
+
+<p>于丹说，人到中年是离自己最远的时候。因为年轻的时候可以随性，年老的时候可以宁静，只有中年，那是一种担当。现在来看,在十年的这个点上，其 实是我进入一个新的人生境界的开始，我不是很愿意讲自己的历史，以上说的也不完整，想到哪说到哪，但都是真话，如果能对正在路上和我同行的HCIer们有 些启发，我就很欣慰了。</p>
+
+
+
+
+<p>来源：<a href="http://cdc.tencent.com/?p=3218" target="_blank">我的十年，交互之外的那些事</a></p>
+
+
+
+
+<p></p>
 
 ]]></content>
   </entry>

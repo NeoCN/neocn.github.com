@@ -4,7 +4,7 @@
   <title><![CDATA[Category: DataBase | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/database/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:48:32+08:00</updated>
+  <updated>2012-11-27T22:42:13+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle EXP-00003 异常解决办法]]></title>
+    <link href="http://NeoCN.github.com/DataBase/Oracle/oracle-exp-00003-solutions.html"/>
+    <updated>2010-01-12T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/DataBase/Oracle/oracle-exp-00003-solutions</id>
+    <content type="html"><![CDATA[<p>今天下午，想在测试环境下进行数据库迁移的模拟测试，本机Oracle 版本为9.2.0.1 ，服务器Oracle版本为9.2.0.8 ，在使用EXP命令进行用户数据导出时，如果表中有数据类型是Lob的列，则会出现EXP-00003：未找到段×××的存储定义(EXP-00003 : no storage definition found for segment .....)。</p>
+
+
+
+
+<p>出现 EXP-00003异常，是Oracle数据库的一个Bug。当使用低版本的EXP从高版本(9.2.0.5或者更高)去导出含有Lob列的表的时候，就会遇到EXP-00003异常。</p>
+
+
+
+
+<p>为了解决这个问题，可以选择升级客户端，将客户端EXP升级到较高版本，可以解决这个Bug；当然有些人不想这么麻烦，那么可以用下面的临时解决方案(替换视图"exu9tne")：
+<p style="text-align: left;">EXP导出前，在SYS用户下执行下面的SQL：</p></p>
+
+
+
+
+<p><pre lang="sql">CREATE OR REPLACE VIEW exu9tne (
+tsno, fileno, blockno, length) AS
+SELECT ts#, segfile#, segblock#, length
+FROM sys.uet$
+WHERE ext# = 1
+UNION ALL
+SELECT * FROM SYS.EXU9TNEB
+/
+</pre>
+<p style="text-align: left;">EXP导出完成后，执行下面的SQL恢复视图定义(Metalink建议)：</p></p>
+
+
+
+
+<p><pre lang="sql">CREATE OR REPLACE VIEW exu9tne (
+tsno, fileno, blockno, length) AS
+SELECT ts#, segfile#, segblock#, length
+FROM sys.uet$
+WHERE ext# = 1
+/
+</pre>
+PS: 下午升级数据库后，服务起不来了，自己又是菜鸟一个，折腾N久还是不行，最后一狠心，重装……唉，可怜了我辛辛苦苦导进去的数据……</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[数据库JDBC连接方法总结]]></title>

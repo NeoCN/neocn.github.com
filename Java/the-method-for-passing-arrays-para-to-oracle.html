@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Java调用Oracle存储过程传入数组参数的方法 - DevX.Me</title>
+  <meta name="author" content="小马">
+
+  
+  <meta name="description" content="周四的时候，修改我们系统的代码，应另外一个公司的要求，要修改我们系统调用他们公司的提供的存储过程的调用方式。修改前，是通过配置的数据库用户名和密码直接访问到他们的数据库，再调用存储过程；现在要修改成从我们的数据库中直接访问他们授权的存储过程。以前之所以通过用户名密码访问他们的数据库后再调用， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://NeoCN.github.com/Java/the-method-for-passing-arrays-para-to-oracle.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DevX.Me</a></h1>
+  
+    <h2>My Coding Life!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Java调用Oracle存储过程传入数组参数的方法</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-22T00:00:00+08:00" pubdate data-updated="true">May 22<span>nd</span>, 2010</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>周四的时候，修改我们系统的代码，应另外一个公司的要求，要修改我们系统调用他们公司的提供的存储过程的调用方式。修改前，是通过配置的数据库用户名和密码直接访问到他们的数据库，再调用存储过程；现在要修改成从我们的数据库中直接访问他们授权的存储过程。以前之所以通过用户名密码访问他们的数据库后再调用，是因为储过程的一个输入参数是数组类型的，传递数组参数的时候，Connection的类型一定要是OracleConnection的，当时只知道使用用户名密码直接通过JDBC访问Oracle，获取连接，再传递参数进去是没有问题的，其他的方式试了下不行，时间紧，也就没去折腾。正好这次又要改，而且不允许直接JDBC访问拿Connection了，系统部署在WebLogic上，必须从WebLogic的连接池中获取连接。</p>
+
+<p>Java向Oracle传递数组参数的方法：
+<pre>ArrayDescriptor arraydesc = ArrayDescriptor.createDescriptor
+                                           (<em><code>sql_type_name</code></em>, <em><code>connection</code></em>);
+//<em><code>sql_type_name </code></em><code>是</code><code>Oracle数据库</code>中定义的数组类型的名称
+ARRAY array = new ARRAY(<em><code>arraydesc</code></em>, <em><code>connection</code></em>, <em><code>elements</code></em>);
+//<em><code>elements</code></em><code>是</code><code>Java数组类型的对象
+</code></pre>
+这里的array对象，就可以在调用存储过程时作为数组参数传入。需注意的是，connection必须是Native Connection，如果connection是通过JDBC建立数据库连接并获取的，就不会有问题，但是如果是通过JNDI数据源获取的，就不行，因为从数据源获取的Connection是Native Connection的代理类，比如Tomcat中通过配置的JNDI数据源获取连接，连接类型是org.apache.commons.dbcp.PoolableConnection类型的；在WebLogic、JBoss等其他服务器中，得到的Connection类型又是不同的。</p>
+
+<p>通过JNDI数据源获取连接的情况下，需要对获取到的连接进行一定的处理，获取到Native Connection。</p>
+
+<p>如果项目中使用了Spring，那么，在使用JNDI数据源获取数据库连接的情况下，可以方便地通过Spring的NativeJdbcExtractor获取Native Connection。Spring中所包含的NativeJdbcExtractor实现有：C3P0NativeJdbcExtractor、CommonsDbcpNativeJdbcExtractor、JBossNativeJdbcExtractor、NativeJdbcExtractor、SimpleNativeJdbcExtractor、WebLogicNativeJdbcExtractor、WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor，根据应用部署环境的不同选择相应的NativeJdbcExtractor实现。</p>
+
+<p>如果项目中没有使用Spring呢，大家可以去下载Spring的源码，找找这几个NativeJdbcExtractor的代码，参考一下就OK啦。 开源就是好嘛！</p>
+
+<p>在成功获得Native Connection后，运行代码，却没有出现预期的成功调用的结果，而是抛出如下异常：</p>
+
+<p><strong><em>java.lang.ClassCastException: oracle.jdbc.driver.T4CConnection cannot be cast to oracle.jdbc.OracleConnection</em></strong>
+at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:149)<br />
+at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:115)</p>
+
+<p>搞到这里，我就糊涂了，我拿到了Native Connection了啊，你还要我怎样啊……心里那个郁闷啊……</p>
+
+<p>郁闷归郁闷，还得抓点紧解决问题不是，结果又是一顿狂搜，还行，最终找到了解决方案：</p>
+
+<p><strong>部署环境下，删除WEB-INF/lib目录下的Oracle数据库驱动！</strong></p>
+
+<p>删除完毕，程序跑起来，果然这个异常没了……真TMD的不容易啊……感觉技术方面还是比较菜，需要多学习……</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小马</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-22T00:00:00+08:00" pubdate data-updated="true">May 22<span>nd</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>Java</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/Oracle/oracle-to_char-week-of-year.html" title="Previous Post: Oracle中使用to_char获取周次">&laquo; Oracle中使用to_char获取周次</a>
+      
+      
+        <a class="basic-alignment right" href="/Application Server/reset-weblogic-admin-console-password.html" title="Next Post: 重置WebLogic管理控制台密码">重置WebLogic管理控制台密码 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/其他/4-traps-a-startup-should-care.html">[转]4个造成创业失败的最重要陷阱</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/twelve-principles-of-agile-software.html">敏捷软件的十二条原则</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/stay-hungry-stay-foolish.html">Stay Hungry. Stay Foolish.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/how-to-start-a-startup.html">如何进行成功的创业</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Android/hierarchyviewer-bat-is-missing-from-android-sdk_r07-windows.html">Windows版本的Android SDK R07中缺少hierarchyviewer.bat文件</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - 小马 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://NeoCN.github.com/Java/the-method-for-passing-arrays-para-to-oracle.html';
+        var disqus_url = 'http://NeoCN.github.com/Java/the-method-for-passing-arrays-para-to-oracle.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

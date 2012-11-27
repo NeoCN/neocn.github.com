@@ -4,7 +4,7 @@
   <title><![CDATA[DevX.Me]]></title>
   <link href="http://NeoCN.github.com/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:48:32+08:00</updated>
+  <updated>2012-11-27T22:42:13+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -14,1120 +14,1622 @@
 
   
   <entry>
-    <title type="html"><![CDATA[8个正则表达式图解]]></title>
-    <link href="http://NeoCN.github.com/Java/8-regular-expressions-diagrammatic-explanation.html"/>
-    <updated>2009-12-02T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Java/8-regular-expressions-diagrammatic-explanation</id>
-    <content type="html"><![CDATA[]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[译]10个你应该知道的Java正则表达式的例子]]></title>
-    <link href="http://NeoCN.github.com/Java/10-java-regular-expression-examples-you-should-know.html"/>
-    <updated>2009-12-01T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Java/10-java-regular-expression-examples-you-should-know</id>
-    <content type="html"><![CDATA[<p>正则表达式，用于验证用户输入的合法性是非常方便的，正好在网上看到了这篇文章，顺手翻译一下。</p>
+    <title type="html"><![CDATA[[转]4个造成创业失败的最重要陷阱]]></title>
+    <link href="http://NeoCN.github.com/其他/4-traps-a-startup-should-care.html"/>
+    <updated>2011-09-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/4-traps-a-startup-should-care</id>
+    <content type="html"><![CDATA[<p>我常说创业跟棒球很像，即使是 全世界最厉害的打者 ，10次上场打击也有6次要摸摸鼻子下来，更何况你是刚刚开始拿球棒的新人。 所以身为一个创业人，你的目标不是避免失败，而是认知到你一定会失败，然后学会如何 从失败中获取教训 ，让你的打击率一次比一次更高。</p>
 
-<p>原文链接：<a title="10 Java Regular Expression Examples You Should Know " href="http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/" target="_blank">http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/</a></p>
+<p>不过虽然如此，就像上场打击一定要带球棒一样，有些创业失败的陷阱其实你大可以避免。这些可以说是创业必要的基本观念，很多前人已经经历过了，你们学到就好，不用自己尝试一次。 昨天刚好读到一篇Elad Gil (伊列‧盖优)写的「 4 Ways Startups Fail 」(4个新创团队失败的原因)，我认为写得非常好，按照惯例，原文不长，我鼓励你们去读读。 以下，则是我加入自己的经验后整理出来的版本：</p>
 
-<p>声明：原创翻译，不足之处请多多指正，转载请注明出处！</p>
+<p><strong>陷阱一：钱烧完了</strong></p>
 
-<p>正则表达式是一个编程的艺术，很难调试，学习和理解，但强大的功能，仍吸引不少开发者编写正则表达式。让我们探索一下下面10个实际应用中的正则表达式。
-<h3><strong>1. 用户名正则表达式模式</strong></h3>
-<pre>^[a-z0-9_-]{3,15}$</pre>
-<pre>^                         # 行开始
-  [a-z0-9_-]              # 匹配列表中的字符，a-z,0–9,下划线，连字符
-            {3,15}        # 长度至少3个字符，最大长度为15
-$                         # 行结束</pre>
-<h3>2. 密码正则表达式模式</h3>
-<pre>((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})</pre>
-<pre>(                        # 组开始
-    (?=.*\d)             # 必须包含一个数字 0-9
-    (?=.*[a-z])          # 必须包含一个小写字符
-    (?=.*[A-Z])          # 必须包含一个大写字符
-    (?=.*[@#$%])         # 必须包含一个列表中的特殊字符"@#$%"
-                .        # 检查所有字符串与前面的条件的匹配
-                 {6,20}  # 长度至少为6个字符，最大长度为20
-)                        # 组结束</pre>
-<h3><!--more-->3. 16进制颜色代码正则表达式模式</h3>
-<pre>^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$</pre>
-<pre>^                       # 行开始
- #                      #   必须包含一个"#"符号
-  (                     #   组#1开始
-   [A-Fa-f0-9]{6}       #     列表中的任意字符串,长度为6
-   |                    #     ..或者
-   [A-Fa-f0-9]{3}       #     列表中的任意字符串,长度为3
-  )                     #   组#1结束
-$                       # 行结束</pre>
-<h3>4. Email 正则表达式模式</h3>
-<pre>^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</pre>
-<pre>^                            # 行开始
-  [_A-Za-z0-9-]+             #   必须以中括号中的字符为起始字符[],必须包含一个或多个(+)
-  (                          #   组#1开始
-    \\.[_A-Za-z0-9-]+        #     接下来是一个点"."和中括号内的字符[],必须包含一个或者多个(+)
-  )*                         #   组#1结束, 这个组是可选的(*)
-    @                        #     必须包含一个"@"符号
-     [A-Za-z0-9]+            #       接下来是中括号内的字符[],必须包含一个或者多个(+)
-      (                      #         组 #2开始 – 一级TLD检查
-       \\.[A-Za-z0-9]+       #           接下来是一个点"."和中括号内的字符[],必须包含一个或者多个(+)
-      )*                     #         组#2结束,这个组是可选的(*)
-      (                      #         组#3开始 – 二级TLD检查
-       \\.[A-Za-z]{2,}       #           接下来是一个点"."和中括号内的字符[], 最小长度为2
-      )                      #         组#3结束
-$                            # 行结束</pre>
-<h3>5. 图像文件扩展名正则表达式模式</h3>
-<pre>([^\s]+(\.(?i)(jpg|png|gif|bmp))$)</pre>
-<pre>(                         # 组#1开始
- [^\s]+                   #   必须包含一个或更多的任意字符(除了空格)
-       (                  #     组#2开始
-        \.                #       接下来是一个点"."
-         (?i)             #       忽略后边字符的大小写检查
-             (            #         组#3开始
-              jpg         #           包含字符"jpg"
-              |           #           ..或者
-              png         #           包含字符"png"
-              |           #           .. 或者
-              gif         #           包含字符"gif"
-              |           #           .. 或者
-              bmp         #           包含字符"bmp"
-             )            #         组#3结束
-       )                  #     组#2结束
- $                        #   字符串的结束
-)                         # 组#1结束</pre>
-<h3>6. IP地址正则表达式模式</h3>
-<pre>^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.
-([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$</pre>
-<pre>^                  # 行开始
- (                 #   组#1开始
-  [01]?\\d\\d?     #     可以是1到2个数字. 如果出现3个数字, 必须以0或者1开始
-                   #     例如 ([0-9], [0-9][0-9],[0-1][0-9][0-9])
-    |              #     ...或者
-  2[0-4]\\d        #     以2开始, 紧跟着是0-4，并且以任意数字结尾(2[0-4][0-9])
-   |               #     ...或者
-  25[0-5]          #     以2开始, 紧跟着是5，并且以0-5结尾 (25[0-5])
- )                 #   组#1结束
-  \.               #   接下来是点"."
-....               #   重复3次 (3x)
-$                  # 行结束</pre>
-<h3>7. 时间格式正则表达式模式</h3>
-<h4>12-小时制时间正则表达式模式</h4>
-<pre>(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)</pre>
-<pre>(                                  # 组#1开始
- 1[012]                            #   以10, 11, 12开始
- |                                 #   或者
- [1-9]                             #   以1,2,...9开始
-)                                  # 组#1结束
- :                                 #   接下来是一个冒号 (:)
-  [0-5][0-9]                       #     接下来是0..5和0..9,意思是00到59
-            (\\s)?                 #       接下来是一个空格(可选)
-                  (?i)             #         下面的检查不区分大小写
-                      (am|pm)      #           接下来是AM或者PM</pre>
-<h4>24小时制时间正则表达式模式</h4>
-<pre>([01]?[0-9]|2[0-3]):[0-5][0-9]</pre>
-<pre>(                                  # 组#1开始
- [01]?[0-9]                        #   以0-9,1-9,00-09,10-19开始
- |                                 #   或者
- 2[0-3]                            #   以20-23开始
-)                                  # 组#1结束
- :                                 #   接下来是一个冒号(:)
-  [0-5][0-9]                       #     接下来是0..5和0..9,意思是00到59</pre>
-<h3>8. 日期格式 (dd/mm/yyyy) 正则表达式模式</h3>
-<pre>(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)</pre>
-<pre>(                          # 组#1开始
- 0?[1-9]                   #   01-09或者1-9
- |                         #   ..或者
- [12][0-9]                 #   10-19或者20-29
- |                         #   ..或者
- 3[01]                     #   30, 31
-)                          # 组#1结束
-  /                        #   接下来是一个"/"
-   (                       #     组#2开始
-    0?[1-9]                #       01-09或者1-9
-    |                      #       ..或者
-    1[012]                 #       10,11,12
-    )                      #     组#2结束
-     /                     #       接下来是一个"/"
-      (                    #         组#3开始
-       (19|20)\\d\\d       #           19[0-9][0-9]或者20[0-9][0-9]
-      )                    #         组#3结束</pre>
-<h3>9. HTML标签正则表达式模式</h3>
-<pre>&lt;("[^"]*"|'[^']*'|[^'"&gt;])*&gt;</pre>
-<pre>&lt;                # 以"&lt;"标签开始
- (               #   组#1开始
-  "[^"]*"        #     只允许两个双引号成对出现-"string"
-  |              #     ..或者
-  '[^']*'        #     只允许两个单引号成对出现- 'string'
-  |              #     ..或者
-  [^'"&gt;]         #     不能出现单独的双引号、单引号和"&gt;"
- )               #   组#1结束
- *               #   0次或多次
-&gt;                # 以结束标签"&gt;"结束</pre>
-<h3>10. HTML链接正则表达式模式</h3>
-<h4>HTML中的A标签正则表达式模式</h4>
-<pre>(?i)&lt;a([^&gt;]+)&gt;(.+?)&lt;/a&gt;</pre>
-<pre>(              # 组#1开始
- ?i            #   所有的检查区分大小写
-)              # 组#1结束
-&lt;a             # 以"&lt;a"开始
-  (            #   组#2开始
-   [^&gt;]+       #     除了("&gt;")之外的任意字符,至少一个字符
-  )            #   组#2结束
-  &gt;            #     接下来是"&gt;"
-   (.+?)       #       匹配所有
-        &lt;/a&gt;   #         以"&lt;/a&gt;结束</pre>
-<h4>提取HTML链接正则表达式模式</h4>
-<pre>\s*(?i)href\s*=\s*(\"([^"]*\")|'[^']*'|([^'"&gt;\s]+));</pre>
-<pre>\s*                          # 可以以空格开始
-  (?i)                       #   所有的检查是区分大小写的
-     href                    #     接下来是一个"href"字
-        \s*=\s*              #       等号两边都允许空格,
-              (              #         组#1开始
-               "([^"]*")     #           只允许2个双引号成对出现 - "string"
-               |             #           ..或者
-               '[^']*'       #           只允许2个单引号成对出现 - 'string'
-               |             #           ..或者
-               ([^'"&gt;]+)     #           或者不允许出现单独的单引号、双引号和"&gt;"
-               )             #         组#1结束</pre></p>
+<p>大多创业团队失败的原因，不是在募不到创投的资金，而是在募到钱后开始盲目的花费，搬新家、一股脑的雇用工程师、每个人一台最高档的MacBook Pro笔电。 在你发现之前，你的公司已经只剩下6个月的现金水位了，但是你根本还没找到 Product/Market Fit ，怎么办？ 只好再去跟创投伸手要钱，我问你，这时候谁会再给你钱？</p>
+
+<p>如何避免？</p>
+
+<p>精实创业 —只把钱 花在最有效率、生产力的地方 (我再说一次，精实指得是效率，不是抠门)</p>
+
+<p>Product/Market Fit优先 —大多时候找PMF是不需要(一大笔)钱的</p>
+
+<p>假如明天开始创投都垮了 —即使你拿到一些资金，你要当作你永远不会再拿到更多</p>
+
+<p>Hack Everything —管理、行销、人事、营运，所有的事情，都去想要怎么把钱花得更有效率</p>
+
+<p><strong>陷阱二：团队分裂</strong></p>
+
+<p>每个创业团队都会吵架，但是解决的方式大不同。 如果大家是就事论事，最后很快的做出结论，那还好。如果吵到不相往来，彼此看不顺眼，甚至公司变成两个党派，那就非常糟糕。</p>
+
+<p>如何避免？</p>
+
+<p>明确的分工 —共同创办人间要有明确的分工，一个事情就要有一个总负责人(Direct Responsible Individual)，关于这件事情，大家都要听他的话</p>
+
+<p>认清决策一定会有错误 —有些人一旦自己的意见不被采纳，就陷入一种看好戏的心态，等着看对方出糗。 这对于团队一点好处也没有，没有一个人知道什么会成功，什么会失败。如果这个决策最后失败了，原因往往也跟你预测的不一样。 全部的人都在同一条船上，如果团队决定了一个方向，那每个人都必须要尽全力让这个东西成功，失败也是每个人的责任，每个人的学习机会。</p>
+
+<p>开门见山的沟通 —团队这么小，就你们几个人，要养成什么话都说出来的习惯，如果连这么小的团队都有沟通上的障碍，那你们注定失败。</p>
+
+<p><strong>陷阱三：市场不对</strong></p>
+
+<p>很多创业失败的原因，是选了一个错误的市场。 大多数是太早，比较少是需要这样东西的人不多。</p>
+
+<p>如何避免？</p>
+
+<p>专注在找Product/Market Fit — PMF的重点是Market的需求，而不是产品本身的功能酷不酷，设计炫不炫， 千万别搞错了 。</p>
+
+<p>选一个大/成长/多金的市场 —千万别搞错了，大不一定要是几亿人，如果有300~500万人有这样的需求，而且每个人都有很高的付费意愿，那也是很棒的市场。</p>
+
+<p>适时Pivot —苗头不对，赶快 Pivot 吧！</p>
+
+<p><strong>陷阱四：找个不懂又爱管事的投资人</strong></p>
+
+<p>相信我，这世界上最恐怖的不是笨蛋投资人，而是「不懂又想要插手」的投资人。 他们会叫你赶快多雇一点员工、干预产品决策、没事叫你开董事会、做报告，甚至还想要把你开除，找「专业的人」进来「管理」，天啊！</p>
+
+<p>如何避免？</p>
+
+<p>只跟「你需要的人」拿钱 —在找到PMF前，其实你不太需要钱，所以如果你跟这个人拿钱，应该只是为了你需要他成为你的支持者，帮助你找到PMF。</p>
+
+<p>做好你的功课 —拿钱之前，先跟别人聊聊，确认这个投资人带来的是价值，而不是毁灭。</p>
+
+<p>过半 —找到PMF之前，你需要能够快速Pivot，在那之前让投资人过半，是很不好的架构。</p>
+
+<p>董事会 —在找到PMF之前，董事会其实没什么功能。</p>
+
+<p>以上，就是会造成创业失败的四个最重要陷阱，以及如何避免，提供给你们参考。 不过说穿了，其实也很简单，就是在找到Product/Market Fit 之前，请你什么事情都不要做，专心的找PMF，那就对了！</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[博客有Google PageRank值啦~~]]></title>
-    <link href="http://NeoCN.github.com/其他/blog-has-google-pagerank-value.html"/>
-    <updated>2009-11-26T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/blog-has-google-pagerank-value</id>
-    <content type="html"><![CDATA[<p>上个月的时候，还关注过自己网站的Google PageRank，嘛都没有，索性后边也没再看。几个月来一直被公司派驻移动，事情挺多，也挺杂的，也没怎么抽时间来弄博客，等这次WAP单点登录系统完成后，一定抽个时间好好总结总结……</p>
+    <title type="html"><![CDATA[敏捷软件的十二条原则]]></title>
+    <link href="http://NeoCN.github.com/其他/twelve-principles-of-agile-software.html"/>
+    <updated>2011-04-03T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/twelve-principles-of-agile-software</id>
+    <content type="html"><![CDATA[<p><span> 我们最重要的目标，是通过持续不断地及早交付有价值的软件使客户满意。</span></p>
 
-<p>不知道昨天老婆装什么软件把Google工具条给装上了，今天突然对这个工具条有了兴趣，发现安装了Google工具条后可以查看一个网站的Google PageRank，赶紧的，访问了自己的博客，居然，PageRank有值了，虽然仅仅是1，但也很兴奋，完全没想到啊！兴奋中……</p>
+<p><span> 欣然面对需求变化，即使在开发后期也一样。<br />
+为了客户的竞争优势，敏捷过程掌控变化。</span></p>
 
-<p>[caption id=&#8221;attachment_208&#8221; align=&#8221;aligncenter&#8221; width=&#8221;347&#8221; caption=&#8221;iJavaEE-PageRank&#8221;]<img class="size-full wp-image-208" title="iJavaEE-PageRank" src="http://www.devx.me/wp-content/uploads/2009/11/iJavaEE-PageRank.PNG" alt="iJavaEE-PageRank" width="347" height="82" />[/caption]</p>
+<p><span> 经常地交付可工作的软件，相隔几星期或一两个月，倾向于采取较短的周期。</span></p>
+
+<p><span> 业务人员和开发人员必须相互合作，项目中的每一天都不例外。</span></p>
+
+<p><span> 激发个体的斗志，以他们为核心搭建项目。<br />
+提供所需的环境和支援，辅以信任，从而达成目标。</span></p>
+
+<p><span> 不论团队内外，传递信息效果最好效率也最高的方式是面对面的交谈。</span></p>
+
+<p><span> 可工作的软件是进度的首要度量标准。</span></p>
+
+<p><span> 敏捷过程倡导可持续开发。<br />
+责任人、开发人员和用户要能够共同维持其步调稳定延续。</span></p>
+
+<p><span> 坚持不懈地追求技术卓越和良好设计，敏捷能力由此增强。</span></p>
+
+<p><span> 以简洁为本，它是极力减少不必要工作量的艺术。</span></p>
+
+<p><span> 最好的架构、需求和设计出自自组织团队。</span></p>
+
+<p><span> 团队定期地反思如何能提高成效，并依此调整自身的举止表现。</span></p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[WordPress自动更新超时]]></title>
-    <link href="http://NeoCN.github.com/其他/wordpress-auto-update-timeout.html"/>
-    <updated>2009-11-15T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/wordpress-auto-update-timeout</id>
-    <content type="html"><![CDATA[<p>WordPress 自动更新升级的时候，总是会出现类似下面的错误：
-<pre>Operation timed out after <span style="color: #ff0000;">60</span> seconds with <span style="color: #ff0000;">xxxxxx</span> out of <span style="color: #ff0000;">2593212</span> bytes receiveds 。</pre>
-解决办法如下：</p>
+    <title type="html"><![CDATA[Stay Hungry. Stay Foolish.]]></title>
+    <link href="http://NeoCN.github.com/其他/stay-hungry-stay-foolish.html"/>
+    <updated>2011-02-18T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/stay-hungry-stay-foolish</id>
+    <content type="html"><![CDATA[<p>You’ve got to find what you love,’ Jobs says</p>
 
-<p>打开 /wp-admin/includes/file.php 文件，找到如下代码：
-<pre lang="php">$response = wp_remote_get($url, array('timeout' = 60));</pre>
-修改超时时间60为600或更长。</p>
+<p><strong>Jobs说，你必须要找到你所爱的东西。</strong></p>
 
-<p>完成后，重新升级即可。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[PL SQL Developer v8.0.0.1480 KeyMaker]]></title>
-    <link href="http://NeoCN.github.com/Oracle/pl-sql-developer-v8-keymaker.html"/>
-    <updated>2009-11-11T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Oracle/pl-sql-developer-v8-keymaker</id>
-    <content type="html"><![CDATA[<p>晚上下班回家，整理桌面上的软件，发现9月份下载的 PL SQL Developer v8 还在那里，当时因为没法注册，丢在那里没管它，今天Google一搜，不错，ZWT小组已经放出了注册机了，并且很有意思的是，注册机中的图片是庆祝建国60周年相关的。ZWT小组的破解功力果然深厚。<img class="size-full wp-image-197 aligncenter" title="PLSQL Developer KeyMaker" src="http://www.devx.me/wp-content/uploads/2009/11/PLSQL-Developer-KeyMaker.PNG" alt="PLSQL Developer KeyMaker" width="407" height="372" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[JSF 2.0 相关资料]]></title>
-    <link href="http://NeoCN.github.com/JSP/jsf-2-tutorials.html"/>
-    <updated>2009-10-30T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/JSP/jsf-2-tutorials</id>
-    <content type="html"><![CDATA[<p>07年的这个时候，正折腾着JSF1.2呢，不过自打去年毕业后，就再也没碰过JSF了。转眼间，都2.0了，突然觉得，这技术咋就变化那么快呢。搞IT，尤其是搞Java EE ，真是，累就一个字啊～～ 据说这次的2.0有很大的变化，尤其是在自定义组件的开发方面，简化了很多；2.0中也直接对AJAX做了支持。</p>
+<p>This is the text of the Commencement address by Steve Jobs, CEO of  Apple Computer and of Pixar Animation Studios, delivered on June 12,  2005.</p>
 
-<p>随手Google了一下相关资料，整理一下列出来：</p>
+<p><strong>这是苹果公司和Pixar动画工作室的CEO Steve Jobs于2005年6月12号在斯坦福大学的毕业典礼上面的演讲稿。</strong></p>
 
-<p><a onmousedown="return clk(0,'','','res','2','','0CAsQFjAB')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu1/" target="_blank">JSF 2 简介，第1 部分: 流线化Web 应用程序开发</a></p>
+<p>I am honored to be with you today at your commencement from one of  the finest universities in the world. I never graduated from college.  Truth be told, this is the closest I’ve ever gotten to a college  graduation. Today I want to tell you three stories from my life. That’s  it. No big deal. Just three stories.</p>
 
-<p><a onmousedown="return clk(0,'','','res','2','','0CAoQFjAB')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu2/" target="_blank">JSF 2 简介，第2 部分: 模板及复合组件</a></p>
-
-<p><a onmousedown="return clk(0,'more-results','','result','1','','0CAMQxAEwAA')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu3/index.html" target="_blank">JSF 2 简介，第3 部分: 事件处理、JavaScript 和Ajax</a></p>
-
-<p><a onmousedown="return clk(0,'more-results','','result','3','','0CAcQxAEwAg')" href="http://www.ibm.com/developerworks/cn/web/wa-aj-gmaps/" target="_blank">JSF 2.0 Ajax 世界中的GMaps4JSF</a></p>
-
-<p><a title="JSF 2.0 Refcard " href="http://refcardz.dzone.com/refcardz/javaserver-faces-20">JSF 2.0 Refcard</a></p>
-
-<p><a title="JSF 2.0 Tutorials" href="http://www.coreservlets.com/JSF-Tutorial/jsf2/">JSF 2.0 Tutorials : JavaServer Faces 2.0 with Facelets and Ajax</a></p>
-
-<p>Sun的参考实现下载：<a title="JSF" href="https://javaserverfaces.dev.java.net/">https://javaserverfaces.dev.java.net/</a></p>
-
-<p>IceFaces和MyFaces的JSF2.0实现，也会很快的跟进的。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[李开复：人生中的十大启发]]></title>
-    <link href="http://NeoCN.github.com/其他/kai-fu-lee-ten-inspiration-in-life.html"/>
-    <updated>2009-10-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/kai-fu-lee-ten-inspiration-in-life</id>
-    <content type="html"><![CDATA[<p><ol>
-	<li>自信不失谦虚，谦虚不失自信；</li>
-	<li>兴趣就是天赋，天赋就是兴趣，</li>
-	<li>思考比传道更重要，观点比解惑更重要；</li>
-	<li>我不同意你，但是我支持你；</li>
-	<li>挫折不 是惩罚，而是学习的机会；</li>
-	<li>创新不重要，有用的创新才重要；</li>
-	<li>用勇气改变可以改变的事情，用胸怀接受不能接受的事情，用智慧分辨两者的不同；</li>
-	<li>求知若饥，虚心若愚；</li>
-	<li>追随你的心，用它引领你的一生，其他的一切都是次要的；</li>
-	<li>你的价值不是你拥有了多少，而是你留下多少。</li>
-</ol></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[WebLogic不同域的Cookie冲突问题]]></title>
-    <link href="http://NeoCN.github.com/Application Server/weblogic-domain-cookie-conflict.html"/>
-    <updated>2009-10-01T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Application Server/weblogic-domain-cookie-conflict</id>
-    <content type="html"><![CDATA[<p><strong>一、现象：</strong></p>
-
-<p>在WebLogic中，有两个不同域A（端口：9000）和B（端口：8000），应用CA在域A中，应用CB在域B中，进行如下操作：</p>
-
-<p>1、先登录应用CA，再登录应用CB，然后，切换回应用CA，发现应用CA的Session丢失；</p>
-
-<p>2、应用CA中有指向应用CB的链接，登录应用CA，点击指向应用CB的链接，应用CA的Session丢失；</p>
-
-<p><strong>二、原因：</strong></p>
-
-<p>因Cookie冲突导致Session丢失。</p>
-
-<p><strong>Cookie的覆盖机制：</strong>如果一个新的cookie与一个已存在的cookie的NAME、Domain和Path属性值均相同，则旧的cookie会被丢弃。（参考：<a href="http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies" target="_blank">http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</a>）</p>
-
-<p><strong>WebLogic的Cookie相关配置：</strong>
-<table border="0">
-<tbody>
-<tr>
-<td>
-<p style="text-align: left;">属性名</p>
-</td>
-<td>默认值</td>
-<td>值</td>
-</tr>
-<tr>
-<td>cookie-name</td>
-<td>JSESSIONID</td>
-<td>如未设置，默认为“JSESSIONID”</td>
-</tr>
-<tr>
-<td>cookie-path</td>
-<td>NULL</td>
-<td>如未设置，默认为“/”</td>
-</tr>
-<tr>
-<td>cookie-domain</td>
-<td>NULL</td>
-<td>如未设置，默认为发放cookie的服务器的域</td>
-</tr>
-</tbody></table>
-由于没有在Weblogic.xml配置文件中对cookie的相关属性值进行配置，因此应用CA和应用CB的cookie的Name、Domain和Path属性值均为默认值，即Name为JSESSIONID，Path为“/”，Domain为服务器的IP地址，三个属性值均相同，这就造成了应用CA的cookie与应用CB的cookie会互相覆盖，从而导致相应应用的session丢失。</p>
-
-<p><strong>三、解决办法：</strong></p>
-
-<p>在Weblogic.xml配置文件中增加Cookie的相应属性值的配置：<strong>
+<p><strong>我今天很荣幸能和你们一起参加毕业典礼，斯坦福大学是世界上最好的大学之一。我从来没有从大学中毕业。说实话,今天也许是在我的生命中离大学毕业最近的一天了。今天我想向你们讲述我生活中的三个故事。不是什么大不了的事情,只是三个故事而已。
 </strong></p>
 
-<p>方法1：设置各应用的cookie的Name属性为不同值</p>
+<p>The first story is about connecting the dots.</p>
 
-<p>方法2：设置各应用的cookie的Path属性为不同值（cookie的Path属性值需与context-root值保持一致，context-root若未在Weblogic.xml中指定则默认为部署的WAR包名或文件夹名，若同一Weblogic服务器不同域中的两应用context-root相同，则此方法不可行）</p>
+<p><strong>第一个故事是关于如何把生命中的点点滴滴串连起来。</strong></p>
 
-<p><strong>附注：</strong>虽然问题是在WebLogic下的不同域部署应用进行互访的情况下发现的，但是，从问题产生的原因来看，在同一个域中的不同应用的互访，如果未做cookie相关属性值的配置，也会出现cookie冲突的问题。</p>
+<p>I dropped out of Reed College after the first 6 months, but then  stayed around as a drop-in for another 18 months or so before I really  quit. So why did I drop out?
+<strong>
+我在Reed大学读了六个月之后就退学了,但是在十八个月以后——我真正的作出退学决定之前,我还经常去学校。我为什么要退学呢？</strong></p>
+
+<p>It started before I was born. My biological mother was a young, unwed  college graduate student, and she decided to put me up for adoption.  She felt very strongly that I should be adopted by college graduates, so  everything was all set for me to be adopted at birth by a lawyer and  his wife. Except that when I popped out they decided at the last minute  that they really wanted a girl. So my parents, who were on a waiting  list, got a call in the middle of the night asking: “We have an  unexpected baby boy; do you want him?” They said: “Of course.” My  biological mother later found out that my mother had never graduated  from college and that my father had never graduated from high school.  She refused to sign the final adoption papers. She only relented a few  months later when my parents promised that I would someday go to  college.
+<strong>
+故事从我出生的时候讲起。我的亲生母亲是一个年轻的,没有结婚的大学毕业生。她决定让别人收养我,  她十分想让我被大学毕业生收养。所以在我出生的时候，她已经做好了一切的准备工作，能使得我被一个律师和他的妻子所收养。但是她没有料到,当我出生之后, 律师夫妇突然决定他们想要一个女孩。  所以我的生养父母（他们还在我亲生父母的观察名单上）突然在半夜接到了一个电话:“我们现在这儿有一个不小心生出来的男婴,你们想要他吗？”他们回答道: “当然！”但是我亲生母亲随后发现，我的养母从来没有上过大学,我的父亲甚至从没有读过高中。她拒绝签这个收养合同。只是在几个月以后,我的父母答应她一 定要让我上大学,那个时候她才同意。</strong></p>
+
+<p>And 17 years later I did go to college. But I naively chose a college  that was almost as expensive as Stanford, and all of my working-class  parents’ savings were being spent on my college tuition. After six  months, I couldn’t see the value in it. I had no idea what I wanted to  do with my life and no idea how college was going to help me figure it  out. And here I was spending all of the money my parents had saved their  entire life. So I decided to drop out and trust that it would all work  out OK. It was pretty scary at the time, but looking back it was one of  the best decisions I ever made. The minute I dropped out I could stop  taking the required classes that didn’t interest me, and begin dropping  in on the ones that looked interesting.</p>
+
+<p><strong>在十七岁那年,我真的上了大学。但是我很愚蠢的选择了一个几乎和你们斯坦福大学一样贵的学校,  我父母还处于蓝领阶层，他们几乎把所有积蓄都花在了我的学费上面。在六个月后,  我已经看不到其中的价值所在。我不知道我想要在生命中做什么,我也不知道大学能帮助我找到怎样的答案。  但是在这里，我几乎花光了我父母这一辈子的所有积蓄。所以我决定要退学,我觉得这是个正确的决定。不能否认,我当时确实非常的害怕,  但是现在回头看看,那的确是我这一生中最棒的一个决定。在我做出退学决定的那一刻,  我终于可以不必去读那些令我提不起丝毫兴趣的课程了。然后我还可以去修那些看起来有点意思的课程。</strong></p>
+
+<p>It wasn’t all romantic. I didn’t have a dorm room, so I slept on the  floor in friends’ rooms, I returned coke bottles for the 5¢ deposits to  buy food with, and I would walk the 7 miles across town every Sunday  night to get one good meal a week at the Hare Krishna temple. I loved  it. And much of what I stumbled into by following my curiosity and  intuitio turned out to be priceless later on. Let me give you one  example:</p>
+
+<p><strong>但是这并不是那么罗曼蒂克。我失去了我的宿舍,所以我只能在朋友房间的地板上面睡觉,我去捡5美分的可乐瓶子，仅仅为了填饱肚子,  在星期天的晚上,我需要走七英里的路程，穿过这个城市到Hare  Krishna寺庙（注：位于纽约Brooklyn下城）,只是为了能吃上饭——这个星期唯一一顿好一点的饭。但是我喜欢这样。我跟着我的直觉和好奇心 走, 遇到的很多东西,此后被证明是无价之宝。让我给你们举一个例子吧：</strong></p>
+
+<p>Reed College at that time offered perhaps the best calligraphy  instruction in the country. Throughout the campus every poster, every  label on every drawer, was beautifully hand calligraphed. Because I had  dropped out and didn’t have to take the normal classes, I decided to  take a calligraphy class to learn how to do this. I learned about serif  and san serif typefaces, about varying the amount of space between  different letter combinations, about what makes great typography great.  It was beautiful, historical, artistically subtle in a way that science  can’t capture, and I found it fascinating.</p>
+
+<p><strong>Reed大学在那时提供也许是全美最好的美术字课程。在这个大学里面的每个海报,  每个抽屉的标签上面全都是漂亮的美术字。因为我退学了, 没有受到正规的训练, 所以我决定去参加这个课程，去学学怎样写出漂亮的美术字。我学到了san  serif 和serif字体, 我学会了怎么样在不同的字母组合之中改变空格的长度,  还有怎么样才能作出最棒的印刷式样。那是一种科学永远不能捕捉到的、美丽的、真实的艺术精妙, 我发现那实在是太美妙了。</strong></p>
+
+<p>None of this had even a hope of any practical application in my life.  But ten years later, when we were designing the first Macintosh  computer, it all came back to me. And we designed it all into the Mac.  It was the first computer with beautiful typography. If I had never  dropped in on that single course in college, the Mac would have never  had multiple typefaces or proportionally spaced fonts. And since Windows  just copied the Mac, its likely that no personal computer would have  them. If I had never dropped out, I would have never dropped in on this  calligraphy class, and personal computers might not have the wonderful  typography that they do. Of course it was impossible to connect the dots  looking forward when I was in college. But it was very, very clear  looking backwards ten years later.</p>
+
+<p><strong>当时看起来这些东西在我的生命中，好像都没有什么实际应用的可能。但是十年之后,当我们在设计第一台Macintosh电脑的时 候,就不是那样了。我把当时我学的那些家伙全都设计进了Mac。那是第一台使用了漂亮的印刷字体的电脑。如果我当时没有退学,  就不会有机会去参加这个我感兴趣的美术字课程,  Mac就不会有这么多丰富的字体，以及赏心悦目的字体间距。那么现在个人电脑就不会有现在这么美妙的字型了。当然我在大学的时候，还不可能把从前的点点滴 滴串连起来,但是当我十年后回顾这一切的时候,真的豁然开朗了。</strong></p>
+
+<p>Again, you can’t connect the dots looking forward; you can only  connect them looking backwards. So you have to trust that the dots will  somehow connect in your future. You have to trust in something – your  gut, destiny, life, karma, whatever. This approach has never let me  down, and it has made all the difference in my life.</p>
+
+<p><strong>再次说明的是,你在向前展望的时候不可能将这些片断串连起来；你只能在回顾的时候将点点滴滴串连起来。所以你必须相信这些片断会在 你未来的某一天串连起来。你必须要相信某些东西：你的勇气、目的、生命、因缘。这个过程从来没有令我失望（let me  down）,只是让我的生命更加地与众不同而已。</strong></p>
+
+<p>My second story is about love and loss.</p>
+
+<p><strong>我的第二个故事是关于爱和损失的。</strong></p>
+
+<p>I was lucky – I found what I loved to do early in life. Woz and I  started Apple in my parents garage when I was 20. We worked hard, and in  10 years Apple had grown from just the two of us in a garage into a $2  billion company with over 4000 employees. We had just released our  finest creation – the Macintosh – a year earlier, and I had just turned  30. And then I got fired. How can you get fired from a company you  started? Well, as Apple grew we hired someone who I thought was very  talented to run the company with me, and for the first year or so things  went well. But then our visions of the future began to diverge and  eventually we had a falling out. When we did, our Board of Directors  sided with him. So at 30 I was out. And very publicly out. What had been  the focus of my entire adult life was gone, and it was devastating.</p>
+
+<p><strong>我非常幸运,  因为我在很早的时候就找到了我钟爱的东西。Woz和我在二十岁的时候就在父母的车库里面开创了苹果公司。我们工作得很努力, 十年之后,  这个公司从那两个车库中的穷光蛋发展到了超过四千名的雇员、价值超过二十亿的大公司。在公司成立的第九年,我们刚刚发布了最好的产品,那就是 Macintosh。我也快要到三十岁了。在那一年, 我被炒了鱿鱼。你怎么可能被你自己创立的公司炒了鱿鱼呢?  嗯,在苹果快速成长的时候，我们雇用了一个很有天分的家伙和我一起管理这个公司, 在最初的几年,公司运转的很好。但是后来我们对未来的看法发生了分歧,  最终我们吵了起来。当争吵不可开交的时候, 董事会站在了他的那一边。所以在三十岁的时候,  我被炒了。在这么多人的眼皮下我被炒了。在而立之年，我生命的全部支柱离自己远去, 这真是毁灭性的打击。</strong></p>
+
+<p>I really didn’t know what to do for a few months. I felt that I had  let the previous generation of entrepreneurs down – that I had dropped  the baton as it was being passed to me. I met with David Packard and Bob  Noyce and tried to apologize for screwing up so badly. I was a very  public failure, and I even thought about running away from the valley.  But something slowly began to dawn on me – I still loved what I did. The  turn of events at Apple had not changed that one bit. I had been  rejected, but I was still in love. And so I decided to start over.</p>
+
+<p><strong>在最初的几个月里，我真是不知道该做些什么。我把从前的创业激情给丢了, 我觉得自己让与我一同创业的人都很沮丧。我和David  Pack和Bob Boyce见面，并试图向他们道歉。我把事情弄得糟糕透顶了。但是我渐渐发现了曙光,  我仍然喜爱我从事的这些东西。苹果公司发生的这些事情丝毫的没有改变这些, 一点也没有。我被驱逐了,但是我仍然钟爱它。所以我决定从头再来。</strong></p>
+
+<p>I didn’t see it then, but it turned out that getting fired from Apple  was the best thing that could have ever happened to me. The heaviness  of being successful was replaced by the lightness of being a beginner  again, less sure about everything. It freed me to enter one of the most  creative periods of my life.</p>
+
+<p><strong>我当时没有觉察, 但是事后证明, 从苹果公司被炒是我这辈子发生的最棒的事情。因为，作为一个成功者的极乐感觉被作为一个创业者的轻松感觉所重新代替: 对任何事情都不那么特别看重。这让我觉得如此自由, 进入了我生命中最有创造力的一个阶段。</strong></p>
+
+<p>During the next five years, I started a company named NeXT, another  company named Pixar, and fell in love with an amazing woman who would  become my wife. Pixar went on to create the worlds first computer  animated feature film, Toy Story, and is now the most successful  animation studio in the world. In a remarkable turn of events, Apple  bought NeXT, I retuned to Apple, and the technology we developed at NeXT  is at the heart of Apple’s current renaissance. And Laurene and I have a  wonderful family together.</p>
+
+<p><strong>在接下来的五年里, 我创立了一个名叫NeXT的公司, 还有一个叫Pixar的公司,  然后和一个后来成为我妻子优雅女人相识。Pixar  制作了世界上第一个用电脑制作的动画电影——“”玩具总动员”,Pixar现在也是世界上最成功的电脑制作工作室。在后来的一系列运转中,Apple收购 了NeXT, 然后我又回到了Apple公司。我们在NeXT发展的技术在Apple的复兴之中发挥了关键的作用。我还和Laurence  一起建立了一个幸福的家庭。</strong></p>
+
+<p>I’m pretty sure none of this would have happened if I hadn’t been  fired from Apple. It was awful tasting medicine, but I guess the patient  needed it. Sometimes life hits you in the head with a brick. Don’t lose  faith. I’m convinced that the only thing that kept me going was that I  loved what I did. You’ve got to find what you love. And that is as true  for your work as it is for your lovers. Your work is going to fill a  large part of your life, and the only way to be truly satisfied is to do  what you believe is great work. And the only way to do great work is to  love what you do. If you haven’t found it yet, keep looking. Don’t  settle. As with all matters of the heart, you’ll know when you find it.  And, like any great relationship, it just gets better and better as the  years roll on. So keep looking until you find it. Don’t settle.</p>
+
+<p><strong>我可以非常肯定,如果我不被Apple开除的话,  这其中一件事情也不会发生的。这个良药的味道实在是太苦了,但是我想病人需要这个药。有些时候,  生活会拿起一块砖头向你的脑袋上猛拍一下。不要失去信心。我很清楚唯一使我一直走下去的，就是我做的事情令我无比钟爱。你需要去找到你所爱的东西。对于工 作是如此, 对于你的爱人也是如此。你的工作将会占据生活中很大的一部分。你只有相信自己所做的是伟大的工作, 你才能怡然自得。如果你现在还没有找到,  那么继续找、不要停下来、全心全意的去找, 当你找到的时候你就会知道的。就像任何真诚的关系,  随着岁月的流逝只会越来越紧密。所以继续找，直到你找到它，不要停下来！</strong></p>
+
+<p>My third story is about death.</p>
+
+<p><strong>我的第三个故事是关于死亡的。</strong></p>
+
+<p>When I was 17, I read a quote that went something like: “If you live  each day as if it was your last, someday you’ll most certainly be  right.” It made an impression on me, and since then, for the past 33  years, I have looked in the mirror every morning and asked myself: “If  today were the last day of my life, would I want to do what I am about  to do today?” And whenever the answer has been “No” for too many days in  a row, I know I need to change something.</p>
+
+<p><strong>当我十七岁的时候,  我读到了一句话:“如果你把每一天都当作生命中最后一天去生活的话,那么有一天你会发现你是正确的。”这句话给我留下了深刻的印象。从那时开始,过了33 年,我在每天早晨都会对着镜子问自己:“如果今天是我生命中的最后一天, 你会不会完成你今天想做的事情呢？”当答案连续很多次被给予“不是”的时候,  我知道自己需要改变某些事情了。</strong></p>
+
+<p>Remembering that I’ll be dead soon is the most important tool I’ve  ever encountered to help me make the big choices in life. Because almost  everything – all external expectations, all pride, all fear of  embarrassment or failure – these things just fall away in the face of  death, leaving only what is truly important. Remembering that you are  going to die is the best way I know to avoid the trap of thinking you  have something to lose. You are already naked. There is no reason not to  follow your heart.</p>
+
+<p><strong>“记住你即将死去”是我一生中遇到的最重要箴言。它帮我指明了生命中重要的选择。因为几乎所有的事情,  包括所有的荣誉、所有的骄傲、所有对难堪和失败的恐惧,这些在死亡面前都会消失。我看到的是留下的真正重要的东西。你有时候会思考你将会失去某些东西, “记住你即将死去”是我知道的避免这些想法的最好办法。你已经赤身裸体了, 你没有理由不去跟随自己的心一起跳动。</strong></p>
+
+<p>About a year ago I was diagnosed with cancer. I had a scan at 7:30 in  the morning, and it clearly showed a tumor on my pancreas. I didn’t  even know what a pancreas was. The doctors told me this was almost  certainly a type of cancer that is incurable, and that I should expect  to live no longer than three to six months. My doctor advised me to go  home and get my affairs in order, which is doctor’s code for prepare to  die. It means to try to tell your kids everything you thought you’d have  the next 10 years to tell them in just a few months. It means to make  sure everything is buttoned up so that it will be as easy as possible  for your family. It means to say your goodbyes.</p>
+
+<p><strong>大概一年以前, 我被诊断出癌症。我在早晨七点半做了一个检查,  检查清楚的显示在我的胰腺有一个肿瘤。我当时都不知道胰腺是什么东西。医生告诉我那很可能是一种无法治愈的癌症,  我还有三到六个月的时间活在这个世界上。我的医生叫我回家, 然后整理好我的一切,  那就是医生准备死亡的程序。那意味着你将要把未来十年对你小孩说的话在几个月里面说完.；那意味着把每件事情都搞定,  让你的家人会尽可能轻松的生活；那意味着你要说“再见了”。
+</strong>
+I lived with that diagnosis all day. Later that evening I had a biopsy,  where they stuck an endoscope down my throat, through my stomach and  into my intestines, put a needle into my pancreas and got a few cells  from the tumor. I was sedated, but my wife, who was there, told me that  when they viewed the cells under a microscope the doctors started crying  because it turned out to be a very rare form of pancreatic cancer that  is curable with surgery. I had the surgery and I’m fine now.</p>
+
+<p><strong>我整天和那个诊断书一起生活。后来有一天早上我作了一个活切片检查，医生将一个内窥镜从我的喉咙伸进去,通过我的胃,  然后进入我的肠子, 用一根针在我的胰腺上的肿瘤上取了几个细胞。我当时很镇静,因为我被注射了镇定剂。但是我的妻子在那里,  后来告诉我，当医生在显微镜地下观察这些细胞的时候他们开始尖叫, 因为这些细胞最后竟然是一种非常罕见的可以用手术治愈的胰腺癌症。我做了这个手术,  现在我痊愈了。</strong></p>
+
+<p>This was the closest I’ve been to facing death, and I hope its the  closest I get for a few more decades. Having lived through it, I can now  say this to you with a bit more certainty than when death was a useful  but purely intellectual concept:</p>
+
+<p><strong>那是我最接近死亡的时候, 我还希望这也是以后的几十年最接近的一次。从死亡线上又活了过来, 死亡对我来说，只是一个有用但是纯粹是知识上的概念的时候，我可以更肯定一点地对你们说：
+</strong>
+No one wants to die. Even people who want to go to heaven don’t want to  die to get there. And yet death is the destination we all share. No one  has ever escaped it. And that is as it should be, because Death is very  likely the single best invention of Life. It is Life’s change agent. It  clears out the old to make way for the new. Right now the new is you,  but someday not too long from now, you will gradually become the old and  be cleared away. Sorry to be so dramatic, but it is quite true.</p>
+
+<p><strong>没有人愿意死, 即使人们想上天堂,  人们也不会为了去那里而死。但是死亡是我们每个人共同的终点。从来没有人能够逃脱它。也应该如此。  因为死亡就是生命中最好的一个发明。它将旧的清除以便给新的让路。你们现在是新的, 但是从现在开始不久以后,  你们将会逐渐的变成旧的然后被清除。我很抱歉这很戏剧性, 但是这十分的真实。</strong></p>
+
+<p>Your time is limited, so don’t waste it living someone else’s life.  Don’t be trapped by dogma – which is living with the results of other  people’s thinking. Don’t let the noise of other’s opinions drown out  your own inner voice. And most important, have the courage to follow  your heart and intuition. They somehow already know what you truly want  to become. Everything else is secondary.</p>
+
+<p><strong>你们的时间很有限,  所以不要将他们浪费在重复其他人的生活上。不要被教条束缚,那意味着你和其他人思考的结果一起生活。不要被其他人喧嚣的观点掩盖你真正的内心的声音。还有 最重要的是, 你要有勇气去听从你直觉和心灵的指示——它们在某种程度上知道你想要成为什么样子，所有其他的事情都是次要的。</strong></p>
+
+<p>When I was young, there was an amazing publication called The Whole  Earth Catalog,which was one of the bibles of my generation. It was  created by a fellow named Stewart Brand not far from here in Menlo Park,  and he brought it to life with his poetic touch. This was in the late  1960′s, before personal computers and desktop publishing, so it was all  made with typewriters, scissors, and polaroid cameras. It was sort of  like Google in paperback form, 35 years before Google came along: it was  idealistic, and overflowing with neat tools and great notions.</p>
+
+<p><strong>当我年轻的时候, 有一本叫做“整个地球的目录”振聋发聩的杂志，它是我们那一代人的圣经之一。它是一个叫Stewart  Brand的家伙在离这里不远的Menlo Park书写的, 他象诗一般神奇地将这本书带到了这个世界。那是六十年代后期, 在个人电脑出现之前,  所以这本书全部是用打字机,、剪刀还有偏光镜制造的。有点像用软皮包装的google, 在google出现三十五年之前：这是理想主义的，  其中有许多灵巧的工具和伟大的想法。</strong></p>
+
+<p>Stewart and his team put out several issues of The Whole Earth  Catalog, and then when it had run its course, they put out a final  issue. It was the mid-1970s, and I was your age. On the back cover of  their final issue was a photograph of an early morning country road, the  kind you might find yourself hitchhiking on if you were so adventurous.  Beneath it were the words: “Stay Hungry. Stay Foolish.” It was their  farewell message as they signed off. Stay Hungry. Stay Foolish. And I  have always wished that for myself. And now, as you graduate to begin  anew, I wish that for you.</p>
+
+<p><strong>Stewart和他的伙伴出版了几期的“整个地球的目录”,当它完成了自己使命的时候,  他们做出了最后一期的目录。那是在七十年代的中期,  你们的时代。在最后一期的封底上是清晨乡村公路的照片（如果你有冒险精神的话，你可以自己找到这条路的），在照片之下有这样一段话：“保持饥饿,保持愚 蠢。”这是他们停止了发刊的告别语。“保持饥饿,保持愚蠢。”我总是希望自己能够那样,现在, 在你们即将毕业，开始新的旅程的时候,  我也希望你们能这样：
+</strong>
+Stay Hungry. Stay Foolish.</p>
+
+<p><strong>保持饥饿，保持愚蠢。
+</strong>
+Thank you all very much.</p>
+
+<p><strong>非常感谢你们。</strong></p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Openfire License 切换至 Apache License 2.0]]></title>
-    <link href="http://NeoCN.github.com/Open Source/openfire-switches-to-apache-license.html"/>
-    <updated>2009-10-01T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Open Source/openfire-switches-to-apache-license</id>
-    <content type="html"><![CDATA[<p>Openfire已经在SVN中将GPL许可证切换为Apache许可证2.0版。下面是tweet上的一条消息：</p>
+    <title type="html"><![CDATA[如何进行成功的创业]]></title>
+    <link href="http://NeoCN.github.com/其他/how-to-start-a-startup.html"/>
+    <updated>2010-12-10T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/how-to-start-a-startup</id>
+    <content type="html"><![CDATA[<p>作者简介：<a href="http://www.paugraham.com" target="_blank">Paul Graham</a>是Y Combinator公司创始人，程序员，专栏作家。他在1995年创建了第一个基于Web的应用viaWeb，后来被雅虎收购。他的关于程序员与创造力，程序员与创业，程序员创造财富等方面的文章被上百万人收藏。</p>
 
-<p><img class="alignnone size-full wp-image-164" title="Openfire switches to Apache License 2.0" src="http://www.devx.me/wp-content/uploads/2009/10/matttucker.png" alt="Openfire switches to Apache License 2.0" width="542" height="81" /></p>
+<p>开篇</p>
 
-<p>Openfire主页并没有变化：</p>
+<p>如果你想进行一次成功的创业，你需要三件事情：<br />
+优秀的核心成员，<br />
+客户真正需要的产品，<br />
+花越少的钱越好。</p>
 
-<p><img class="alignnone size-full wp-image-166" title="Openfire" src="http://www.devx.me/wp-content/uploads/2009/10/Openfire.png" alt="Openfire" width="652" height="241" /></p>
+<p>大多数的创业公司失败的原因基本上都是这三个原因的一个。而一个成功了的创业公司大多数都是因为成功的完成了这三件事情。</p>
 
-<p>尽管如此，这至少是一条引人关注的新闻。当建立这些开源项目的公司更换协议的时候，常常也进行着商业模式的改变。或者难道是因为来自Google的压力（Google Wave 是基于XMPP协议的扩展，Google Wave服务器使用了Openfire XMPP服务器为载体，作为一个插件安装在OpenFire服务器上面）？</p>
+<p>其实如果你想想看，这三件事情并不是什么遥不可及的事情。都是可以操作的，是很难做到，但肯定是可以做地。如果成功的做到了这三个事情就意味着成功创业，从而发家致富的话，那么发财也不是什么遥不可及的事情，是可以一步一步的去操作的，当然很难，但是是可以做到的。</p>
 
-<p>还好Matt Tucker对此作了解释：
-<blockquote>I’m happy to announce that Openfire will be moving to a more liberal open source license — Apache 2.0. Apache 2.0 provides significantly more flexiblity than the GPL in virtually every way, so it should be a big win for the community all around. We expect to get all the source code headers updated for the next release. There were several motivations for making this change:
-<ol>
-	<li>The GPL license was preventing some companies from using Openfire due to corporate policies</li>
-	<li>There was no reason to keep using GPL and end-users generally seem to prefer Apache</li>
-	<li>We’d like to encourage a broader range of commercial companies to contribute to the project and the Apache license is a good way to help make that happen</li>
-</ol>
-</blockquote>
-大意如下：
-<blockquote>我很高兴地宣布Openfire将会迁移到一个更宽松的开源协议&#8212;-Apache 2.0。Apache 2.0意味着在各个方面比GPL更灵活，所以它应该是社区的一次大胜利。我们期望在下一次Release版中更新所有源代码的头部信息。促使我们做出改变的几个方面:
-<ol>
-	<li>GPL许可证使一些公司因策略问题无法使用Openfire</li>
-	<li>没有理由继续使用GPL而且最终用户看起来通常更喜欢Apache许可证</li>
-	<li>我们想要鼓励更多的商业公司向项目捐献代码，而Apache许可证是实现这一目标的一个很好的方法</li>
-</ol>
-</blockquote></p>
+<p>作为一个过来人，如果我只能给你一条创业忠告的话，那就是创业过程中没有什么不可以解决的超级困难问题。
+<!--more-->创业点子</p>
+
+<p>实际上，你并不需要一个超级天才的想法才能进行创业开公司。 大多数挣了钱的创业公司都是在现有的技术的基础上进行 提高，来满足人们更多的需要。实际上现在的技术可以提高的方面很多，并不需要一个天才才能在此基础上进行提高。</p>
+
+<p>举个例子。Google的商业计划很简单，就是创建一个还不赖的搜索网站。他们有三个点子：对web进行索；根据链接来对搜索结果进行排序；简洁的页面和不让人生厌的关键词广告。在这个基础上，他们还下定决心让网站尽可能好用。当然背后一定还有一些技术问题和技巧，但总的商业计划是很简明扼要的。虽然他们现在的胃口要比搜索本身大多了，但只搜索一项就能为他们每年带来10亿美金的收入。</p>
+
+<p>很多点子的风格都和Google当初的风格相似。我可以想出好几个创业公司点子应该具有的特征，但最重要的一点是：看看大家都在解决什么问题，然后想到一个解决这个问题的还不赖的方法。比现在的解决方法要好一点。</p>
+
+<p>例如，目前的网上约会服务比Google诞生之前的搜索服务水平还要糟糕。他们都基于简单的数据库匹配算法。和现实生活中人们如何约会简直是风马牛不相及。一个本科生的毕业设计都有可能设计出更好的约会网站来。而在这个领域人们投资的钱又很多。在线约会的生意现在很火，但如果现在的约会网站能向Goolge<br />
+对搜索的提高那样进行提高，可能服务状况可能会比现在还要好上一百倍。</p>
+
+<p>然而，有了创业的点子，只是创业道路万里长征的第一步。很多跃跃欲试想创业的人都认为一个创业的点子是最重要的，有了点子，剩下的就是如何去执行去实现的问题了。但风险投资商们可不这么认为，但是如果你跑到风险投资商哪里，说你有一个天才的想法，只要他们同意签署不扩散协议（NDA）， 你就可以告诉他们你想要做什么，他们基本上连理都不会理你。这时你就可以看出，一个点子到底值多少钱。如果你只有一个点子，风险投资商们来签署一个NDA的功夫都懒的出。</p>
+
+<p>而且很多创业公司在创业的时候就已经在改变他们的创业计划和点子了，从这一点你也可以看出一个点子是多么的不值钱。 微软当初创业的想法是靠卖编程语言赚钱，创业的五年内没有任何起色，直到有一天 IBM决定使用他们的操作系统。</p>
+
+<p>当然，点子也是重要的，但问题是，你不可能把它转移给别人去执行。点子的价值与作用就是作为一个开始， 可以在创业之初按照这个一直思考下去。</p>
+
+<p>记住，重要的不是点子，而是能想出点子的人来。优秀的人才可以把坏点子变成好点子。而多天才的想法放到庸人手里也会变得一钱不值。</p>
+
+<p>人才</p>
+
+<p>好的人才到底是什么样的？我在创业之初，定下了一条规则，决定我是不是要雇佣这个人，后来被证明是一个不错的技巧。在大学里，我们说某个人在某个方面出色是常说：这个人是牛人，象牲口一样。美国也有同样的说法。意思是这个人对他的工作有点太当真了，已经超过了职业了范围，变成一种爱好，甚至偏执了。</p>
+
+<p>这种象牲口一样的人因工作的不同而异：一个销售人员，不把对方搞定拿下决不罢休。一个程序员可以工作到凌晨4点，因为他不能容忍修不好一个bug。一个市场推广人员可以够胆子给纽约时报的记者打手机来推广自己的公司。一个网页设计者对网页上图片2毫米的偏移会觉得浑身不自在。</p>
+
+<p>几乎和我们工作过的每一个人都符合“牲口”的定义。我当时的公司里，负责销售的女士对潜在的客户是那么不达目的，誓不罢休，在电话上时而循循善诱，时而晓之亿理，动之以情。让我都有的时候挺可怜那个客户的。</p>
+
+<p>看一个人到底是不是 “牲口”型的人，有一个简单的测试方法。和他谈话，然后把你认为怎么做是牲口的一个工作方法形容出来。如果你觉得这种工作方法疯狂的有点可笑，而他觉得很自然，那么他基本上就是一个牲口型的选手。在按部就班的大公司里，你可能不需要牲口型的选手，但在创业公司里，是多多益善。</p>
+
+<p>对程序员来说，我们还做其他三个附加的测试：这个人是否真的很聪明，如果是，他能按时保质完成任务么？最后，既然大多数天才型的程序员都有点古怪脾气，那你能和他工作到一块儿么？</p>
+
+<p>实际上，也许出乎你的意外，最后一个测试基本上筛不下去什么程序员。如果一个程序员非常聪明的话，我们基本上都能和他合作。我们不能合作的人常常是态度很牛，可干起活来却不拿么牛的人。所以最后一个测试基本上和第一个测试是重复的。</p>
+
+<p>大多数情况下，当一个程序员太不可合作时，基本上都是因为他太想让别人觉得他聪明了，太自以为是了。但规律是，一个程序员越聪明能干，他就越没有压力要表现出他聪明能干。因为他并不需要得到你的认可，在他心里知道的很清楚他很能干。而且他可能会变得很谦虚。有一个规律来看一个人是否聪明与能干与否是看这个人是不是经常说：“我不知道啊；我觉得你可能是对的”；或者“我对这个方面不是很了解”。。。。</p>
+
+<p>这个技巧并不是百试百灵。在麻省理工学院的计算机系，几乎每个人都染上了“我无所不知”的毛病。但是有一个人例外，他就是Robert Morris， 他几乎是我见到的人中说“我不知道啊”次数最多的人了（至少是在他成为MIT教授之前）。但没有人敢在他面前装腔作势，因为几乎每个人都知道他是这里最聪明的人，却谦虚的到家。</p>
+
+<p>在大多数情况下，一个创业公司都由一组朋友发起。其他的雇员基本上都是靠熟人介绍。这个和正规大公司有很大不同。以朋友的方式交往对人的了解，比大公司正规的面试，广度和深度都要大得多。</p>
+
+<p>创业公司大多数都在大学的周围并不是偶然的。那里是聪明人和天才聚集的地方。并不是因为麻省理工或者斯坦福课程设置的好，周围才有那么多创业公司。而是因为这些大学只招聪明和天才的学生。这些学生哪怕天天旷课，也照样能开创业公司。</p>
+
+<p>如果你开始创业了，那么很有可能你最初的创业伙伴是你大学或者研究生时候的同学。因此从理论上来说，当你读书时，尽可能多认识一些天才学生是对的，是吧？ 但是，能认识天才程序员的方法并不像交普通朋友那么简单。</p>
+
+<p>在学校的时候，你应该尽可能的多去做项目，这是一个程序员学会编程的唯一真正方法。有的时候你会和其他同学一起做项目，这就是你认识天才程序员最好的方法，就是通过作项目来结识彼此。一起做的项目有可能会成为一个创业公司的开始。但是，不要为了开公司而去做项目，做你喜欢做的事情是最重要的。</p>
+
+<p>最理想的情况，你应该选二到四个公司创始人。一个人创业是件很困难的事情。一个人创业要肩负难以想象的精神上的压力。但同时，你也不想公司创业之初有太多的创始人。首先你一开始的时候不需要那么多人。更重要的是：人越多，越难统一意见。如果一开始就两三个人，如果有不同意见，基本上也能很快达成一致。如果有七到八个人，每个人都要发表一下意见，不同意见很不容易消除，而且有的时候会造成内部的小帮派。创业之初，最好不要总是用投票来解决问题，你更需要的是创业元老们的齐心协力。</p>
+
+<p>基本上现在大多数的创业公司都是技术型的创业公司。这样的公司，创业元老应该要包括技术人员。在互联网泡沫的时候，有那么一些公司，发起人就是一些所谓的商业人士，然后这些商业人士去雇一些程序员来为他们做事。对于技术型的公司，这样做并不是好事，商人不懂技术，当涉及到需要在技术方面做一些决定时，商人的决定通常都是错的，因为他们不知道技术上哪些问题很难，哪些问题容易。而且当商人去雇佣程序员，面试程序员时，他基本上无法判断哪些程序员是编程高手，哪些只是夸夸其谈，只有真正做过工程的人才能知道。有的时候，做过工程的人都无法百分百的判断一个人是不是一个好程序员，更别说对技术一窍不通的商人了。</p>
+
+<p>那么，创业元老中要不要包括商人，或者懂商业的人呢？ 我的意见是：未必。当年在我们创业之初，我们以为我们一定需要一个商业人士，然后问了好几个我们认为他们对所谓的神秘的“商业运作”很精通的人愿意不愿意做我们公司的总裁。结果没有一个人答应的。所以不得已，我自己做了公司的总裁。在以后公司的运作中我发现，所谓的商业运作并不是想我想象中那么神秘，并不需要什么特别专业的知识，你做的只不过是花钱雇人来干活。</p>
+
+<p>后来我进行了一下反思，发现之所以我认为“商业运作”是那么神秘和困难，是因为我一直认为我应该做纯技术的工作，写优秀的软件是我的专长。所以不知不觉中，我在我周围设置了一个心理保护层，从心理上一开始就不想，不敢，和不愿意去想这些事情。但一旦突破了这些心理障碍后，我发现所谓的商业运作既不难，也不可怕，更不乏味。当然，如果你从事的是税法或者对冲基金，商业上还是有很多有关的专业知识。但在创业公司里你并不需要这些知识。你只要按照一些常识就好了，这些大众常识不用去商学院，甚至不用上大学也能在生活中学到。</p>
+
+<p>看一下福布斯全球企业排行榜吧。你就会知道一个工商管理硕士的头衔对一个企业家到底有多重要。你要数到第22才能看到一个人有工商管理硕士的学位。就是奈克的CEO。 前50名里，只有四个人是从商学院毕业的。而且你能看到，很多里面的人的背景都是和技术有关的。例如比尔-盖茨，Steve Jobs, Larry Ellison, Michael Dell, Jeff Bezos,<br />
+Gordon Moore。技术型企业是从技术起家的，而不是从商业运作起家的。因此如果你想投入你生命中宝贵的两年时间来学点东西帮助你成功创业的话，学编程序比拿一个工商管理硕士的学位要有用多了。</p>
+
+<p>在一个条件下你也许应该让一个商人加入你的创业团队：那就是，你需要一个人来专注于如何提高顾客的满意度。有些人认为一个商人比一个程序员更能知道客户需要什么，程序员只会编软件，不会设计软件。这根本就是无稽之谈。会编程序的程序员想要了解客户需求并不是什么难事。也不要假设一个对编程一窍不通的商人就一定能对客户想要什么知道的一清二楚。</p>
+
+<p>但如果你自己不能准确了解客户或者用户到底想要什么，那么两个办法。自学成才，或者在创业团队中加入一个懂得用户需要的人。理解客户/用户的需要是一个技术性创业公司成功最重要的因素之一。大多数失败的创业公司都是因为没能准确了解客户的需要。</p>
+
+<p>到底客户需要什么</p>
+
+<p>并不只是创业公司担心这个问题。我相信大多数企业，失败的原因基本上都是他们不能给客户想要的东西。看看餐饮业就知道了，大概有四分之一的饭店在开业一年之内就倒闭了。但是你见到过一个做菜味道特别好的饭店倒闭的么？</p>
+
+<p>如果一个饭店菜的味道特别特别好，不管其它方面怎么样，基本上都十分火爆。也许东西会很贵，也许人太多，得排队，还很拥挤，没准还很吵，服务员也有可能对你爱搭不理的。但只要它的菜味道特别好吃，别担心，客人们还是蜂拥而至。一个装修的非常豪华，但味道很一般的餐厅也许在开业之初还可以，也可以弄巧来用一些优惠卷来吸引食客，但这些方法通常都不会长久。办好一个餐馆的最好方法还是给客人提供最好吃的食物。</p>
+
+<p>对于技术来说也是类似的。你一定听到了不少原因为什么那么多创业公司都失败了。但估计你可能从未听说一个公司的产品供不应求却倒闭了。</p>
+
+<p>基本上每一个创业失败的公司，根本原因都是因为没有给客户/用户想要的东西。大多数情况下，他们失败了是因为钱花完了，也没有人愿意投钱了。但那只是最直接的原因。为什么没有人再愿意投钱了呢？还不是因为开发出来的产品客户根本不感兴趣，或者根本就开发不出来？</p>
+
+<p>每次我在思考那些创业公司一定要做的事情时，我常想加加上第四个：软件发布的越早越好。    但我决定不把这个作为一个建议提出来。做好的办法是把开发原型在客户面前演示，广泛听取客户的反馈，然后加以提高，而不是要急功近利的进行软件发布。</p>
+
+<p>另一种在创业之初人们常使用的方法是：做一个非常详细具体的产品开发书和产品开发计划。然后雇用一些工程师（以这个方法创业的人常常叫我们工程师，而不是程序员），然后一年之后，花了两百万美金后，发现开发出来的产品根本就没人要。在互联网的泡沫时期，这种做法并不稀奇，特别是那么由商业人士来运作的公司，认为研发软件是一件比较可怕的事情，需要仔细周到的计划。</p>
+
+<p>我们从来都没有想到过用这种方法。作为一个LISP的程序员，我过去的传统就是快速拿出一个软件初始原型来。我没有说每一个软件都应该这么开发，但对一个创业型的公司来说，这一定是正确的方法。创业之初，你的计划几乎肯定是在某个方面是错误的，你的首选任务就是要找到哪里出错了。而唯一的办法就是先实现它，然后让客户去评价。</p>
+
+<p>在大多数的创业公司，计划是随着变化而变化的。以我的创业经历为例：一开始我们认为我们的客户是web咨询公司，但后来发现他们根本就不喜欢我们，因为我们把软件开发的太方便客户使用了，这些咨询公司的客户也能使用，而且网站是我们来维护的，这样他们就有可能会失去潜在的客户。我们还以为我们的客户中会有好多是靠卖产品目录杂志来赚钱的公司，因为在网上买应该是他们也感兴趣的，但在1996年的时候，还没有人愿意买我们的帐。和我们谈的管理层认为这不是在帮他们，而是给他们在找麻烦。</p>
+
+<p>最后我们还是找到了几家敢于吃螃蟹的目录广告公司，其中一个给的宝贵的教训就是你的服务器在大流量下一定要能正常工作。大多数我们的客户都是作小生意的，认为web是开拓生意的好方法，有些有自己的门脸，但大多数就是在网上来做生意。于是我们改变了我们服务的客户的定位，不再去满足目录广告公司和咨询公司的需求，而是集中来满足那些做小生意的客户的需求。让这些客户在使用我们的软件上尽可能的容易上手。</p>
+
+<p>从这个过程中我还学到了一个非常宝贵的经验。你一定要努力努力再努力把软件开发的简单好用。程序员每通常对电脑的各项操作太熟悉不过了，但是我们根本不知道其他普通人对电脑操作是多么的陌生，甚至恐惧。写《时间简史》的霍金说，他的编辑告诉他在他的书里每多加一个方程式，销量就有可能减少一半。当你做最大的努力把你的软件作的好用，易上手，软件的易用度每提高10%，你的销售额就有可能会提高100%。</p>
+
+<p>那么你怎么能知道客户/用户到底想要什么呢？一个最好的方法是去参加一些展会。虽然这些展会并不一定能让我们扩大用户群，但却能让我们对自己的产品做一些市场调查。我们当初去展会的时候，并不仅仅做一些预先准备好的市场宣传和报告。我们还在现场给客户演示如何使用我们的系统快速的搭建网上商店。而这么做后，我们就能观察客户如何使用我们的软件，然后和他们交流我们还需要做哪些方面的提高。</p>
+
+<p>不管你要开什么类型的创业公司，如何理解客户的需求对你来说一定不是一件容易的事。你能开发的唯一一种不需要了结客户需求的软件就是你自己已经是一个典型的用户。但作为程序员的你，常用的软件应该基本上都是哪些开源软件如操作系统，编程语言或者编辑器等。但如果你想开发的是商业软件，要赚钱的话，那么你面对的客户基本上不会和你一样。所以，在你创业之前，你想创业点子的时候，不妨按照这样的思路：那些不是程序员的普通用户到底需要什么样的技术能让他们的生活过的更好。</p>
+
+<p>当大多数人讨论创业公司的时候，基本上都会言必称yahoo或者google这些地球人都知道的名字。因为这些公司是面向终端消费者的，所以他们的商标妇孺皆知。但是并不是每一个创业公司都是和这两个公司类似的。如果你能成功的开创了一个公司，大多数情况下很有可能和google与yahoo一点也不象。</p>
+
+<p>让我再换一种说法来解释我的意思，如果你在创业之初瞄准的就是面向广大消费者，想要建立一个大的消费者商标，满足所有人的需要的话，那么你成功的可能性并不会很大。最好的办法可能是挑选一个细分的市场，一些创业公司的赢利方式就是按照这样的思路，他们在现有的基础上提供给客户一些技术上的改进，提供比以前更好更容易使用的产品。而最好的寻找方向就是看那个领域水平最差，最有提高的空间。在这个领域去开发你就最有可能获得成功。而水平最差的地方就是一个公司的IT部门了。 公司花在IT上的钱简直难以置信，而他们得到的东西基本上都是破烂一堆。这种投资和回报不平衡就给创业公司创造了机会。</p>
+
+<p>当你在寻找创业公司点子的时候，找一个中小型非技术的公司，在那里呆上几个礼拜，就是观察他们到底在怎么使用他们的电脑。一个优秀的程序员的感觉应该和一个亿万富翁在巴西贫民窟里的感觉是一样的。</p>
+
+<p>开发软件，应该从为小企业开发软件做起，因为向小企业买软件相对来说比较容易。大企业都被大的软件公司瞄准了，你有怎么可能去和一个武装到牙齿的甲骨文公司的销售人员去打大公司的单呢？所以如果你想以更好的技术来取胜，从小公司小客户入手。</p>
+
+<p>从小客户入手的方法从公司战略和市场拓展的角度来看也是有道理的。在技术层面上，低端总是不断蚕食高端的市场。开发一个底价位的产品，但功能更强大，比让一个高端产品减价要容易的多。因此一个产品，应该从开发之初就保证性价比高。哪怕功能简单，也要保证低端价位。慢慢的在此基础上添加功能，使之逐渐强大。当功能完善到一定程度的时候，就像水满金山一样，最后能把高端产品从市场中挤出去。太阳微系统公司就是这样打败的超大规模计算机。而Intel又是这样打败的太阳微系统。微软的word就是这样逐渐的把其他桌面文字处理软件打败的。廉价的数字相机也把高端的传统相机挤出了市场。市场的实践一次又一次的证明。如果你一开始建立的是一个廉价，功能简单的系统，不但你会发现你的产品会很好买，而且你处在征服剩下的广阔市场的有利位置。</p>
+
+<p>在市场和产品的角度，别人的产品比你的更好用，更便宜是一件很危险的事。你需要占领低端市场，如果你不这么做，你就会发现你周围危机四伏。</p>
+
+<p>融资</p>
+
+<p>前面讲了那么多，你要做的每一件事情，都需要钱。一些创业公司是自己掏钱创办的，如微软。 但大多数的公司都需要从投资者哪里拿到钱。我认为从投资者那里融资是一件明智的事情。如果你自己出钱，一开始只能是咨询公司，而从咨询公司转到产品公司不是一件容易的事。</p>
+
+<p>从金融上看，一个创业公司就是象大学里选一门课的评分只有过和不过。 通过创业开公司致富就是要想办法让公司尽可能的存活下来，而不是要在公司内尽可能多的多占股权。如果你能转让出一些股份让公司生存下来的可能性加大，那么如此作应该是一个明智的选择。</p>
+
+<p>对大多数程序员来说，说服投资人看上去是一个神秘而又让人恐惧的过程。实际上这个过程既不神秘也不恐惧，只不过比较繁琐，要花费一些精力， 下面我就给你解释一下这个过程到底是怎么样的。</p>
+
+<p>创业之初，你大概需要几万美金来把你的产品原型拿出来，这些钱是开发和其他相关的费用。这个叫做种子资本。因为这基本上不算什么钱，所以筹集起来应该不是什么困难的事情。</p>
+
+<p>通常情况下种子基金都是由一些有钱人叫“天使”提供的。这些天使投资人，大多数都是早期从技术开发中发了财的人。在这个阶段，天使投资人并不期望你能拿出一个精心准备的商业计划书。通常情况下他们做决定都很快。用半页纸就能换来天使投资人几万美元的一张支票并不是什么难得一见的事。</p>
+
+<p>我们当年创建viaWeb的时候，拿到的第一笔天使投资基金是一万美金，从我们的朋友julian哪里。 但他给我们的远远不止资金上面的支持，他以前就做过CEO, 还做过公司律师，因此他给了我们很多如何运作企业方面的建议，还为我们打理了所有法律方面的事务。而且他还给我们介绍了另外两个天使投资人，为我们下一轮融资打下了基础。</p>
+
+<p>一些天使投资人，尤其是那些做过技术的天使投资人，你只要把你的产品给他们演示以下，或者口头讲一下大概你想做什么就可以了。但还有很多希望要一份你的商业计划书的拷贝。也许有的时候只想留一份以作备忘录之用，以后可以想起来你到底想做什么。</p>
+
+<p>当时我们的天使投资人就向我们要了商业计划书。现在想起来我还好笑我当时有多紧张。商业计划书中有“商业”一词，所以我想我必须赶紧翻阅参考书看看如何写商业计划书。实际上后来知道了根本没必要。在这个创业的最初阶段，投资人想看到的就是你想做什么，怎么挣钱，还有创建者的简历。你就把你想和他们说的话写下来就行了，几个小时的时间就能解决问题。而且你会发现，在你把你的点子和计划写下来的时候，你往往会得到新的启发。</p>
+
+<p>而这个天使投资人写的支票要支付给一个公司，所以在接受这个支票之前你一定要有一个公司。把你自己加入这个公司并不难，但问题是，在所有的公司创建人都加入这个公司之后，股权如何分配呢？<br />
+如果公司内每个人出的钱，出的力都是平等的，那么股权一平均就得了。但如果每个人出的力并不相同，如何在不同成员之间分配股权就变成了一个有技巧的问题。而且一旦决定做出了，是不可更改的，所以分配股权一定要公平合理，小心谨慎。</p>
+
+<p>分配股权并没有什么技巧可言。我只能说，尽量做到公平合理。我有一个评价股权分配是否公平的原则：当所有人都认为他们分到的股权和他们在公司的作用相比应该还要多一点点的时候，这时股权分配就有可能是公平的和最优的。</p>
+
+<p>建立一个公司并不仅仅是分配股权那么简单，你还要给员工买保险，办执照，报税等等一系列的问题。</p>
+
+<p>如果你有了想法，想开公司，那么我的想法是公司开的越快越好。因为如果你推迟办公司，那么你的其他创建人有可能会离开你开一家类似的公司。类似的情况在现实中发生过。所以在创业之初，你应该让所有的公司开山元老们签署一份协议，保证所有人的点子和想法都属于这个公司，而所有人都不得在其它公司兼职。</p>
+
+<p>然后在你检查这些文件时，千万不要忘了问每个人他们在来公司之前都和别的公司或者人签署了什么协议。一个创业公司的最大噩梦之一就是陷入知识产权的纠纷。我们当初创业的时候就遇到了类似的麻烦，几乎让我们倒闭了。</p>
+
+<p>当时，已经有公司想收购我们了，收购过程也已经进行了一半，但我们发现，在早些时候，一个开发人员的点子实际上在知识产权上属于他从学校毕业之前工作过的一家大公司。理论上，这意味着这家大公司对我们公司拥有股权。因此收购工作就嘎然而止了。我们不得不竭尽全力来解决这个问题。问题是我们当时以为我们马上就要被收购了，所以现金储备很低，所以有不得不再融资来解决资金方面的问题。但因为你有了知识产权的案子在身，投资者都投鼠忌器了，因为不知道水到底有多深，麻烦到底有多大。</p>
+
+<p>我们当时的投资商，在知道我们需要钱又拿不到钱的时候，还趁火打劫，要挟我们。具体细节我不便透漏，但我告诉你所谓的“天使投资人”绝对不是天使。然后一个合伙人也退出了，他告诉我们如何管理他管理的服务器后就远走高飞了。想要收购我们的公司也以进度太慢为借口停止了收购。</p>
+
+<p>到最后奇迹还是发生了，投资者良心发现。我们又融了一点钱。那个大公司也声明他们对我们的软件没有所有权，六个月后雅虎业把我们给买了，付的钱比前一个买家价格还高。所以最后还是大团圆的结局。但老实说，经过了这么一番折腾，我肯定少活了好几年。</p>
+
+<p>所以千万不要重蹈我们的覆辙，当你开始为你的公司招兵买马的时候，把每一个人的知识产权的问题都搞清楚。</p>
+
+<p>当你已经把公司建立好并开始运作的时候，你有了只是一帮人，和几个点子。 如果你这个时候去敲那些有钱人的门，要求他们向你们投几十万美金的话，你也许认为一定会被富人家看家的保镖们轰出去。但如果你能从哪些手里有大把钞票但又不知道怎么花的人的角度来看这个问题，<br />
+你就会找回点信心。 大多数有钱人都在不断寻找投资的机会。如果你真的相信你能成功，你找到他们实际上上帮他们的忙。他们也许觉得你是在烦他们，但同时他们也会在暗暗猜想：这个会不会是下一个Google呢？</p>
+
+<p>通常情况下，天使投资人和公司创建者之间在股权上是对等的关希。他们投资换来一些股权，然后在以后的融资中股权被稀释。 你应该给这些天使投资人多少股权才合适呢？首先你要估计你的公司值多少钱，在此基础了才能算出天使投资人能占多少股权。例如，如果一个天使投资人投了１０万美金，拿到的是５％的股权的话，那么这意味着你认为你的公司值两百万美金。</p>
+
+<p>如何衡量你的公司到底值多少钱呢？　基本上没有什么理性的算法。你认为值多少钱就值多少钱。因为这个时候的公司看上去就是一场赌博。我在当初融资的时候并没有意识到这个问题。我的投资人认为公司至少应该值几百万美金。　但我当时觉得我们总共才写了3000-4000行程序，要值几百万美金，那不是公开抢投资人的钱么。最后我们定价成了一百万美金。因为我的投资人说如果价定的比这个还低的时候，不会再有投资者感兴趣了。</p>
+
+<p>当时我并没有理解，实际上公司的价值并不在哪几千行代码，而在于我们当时的点子和想法，最后被证明是正确的想法，而我们后来为它付出的劳动，后来证明远远不止几千行程序。</p>
+
+<p>天使投资后，下一轮的融资，你就要面对真正的风险投资公司了。但千万不要等到你没钱的时候才想起来去找VC, 他们做决定的过程很慢，有可能要好几个月。你最好不要等弹尽粮绝的时候才去和他们谈判。</p>
+
+<p>VC投的钱比天使投的钱要多很多，通常情况下以百万美金来计算，你的股权会进一步被稀释，而在公司头上的附加条件也会更加苛刻。</p>
+
+<p>有的时候VC 想给你的公司任命一个他们认可的新的CEO，通常的理由是你需要一个成熟和有经验的，熟悉商务运作的人来经营公司。在某种条件下这也许是正确的。但比尔盖茨当时也年纪轻轻，乳臭未干，后来证明他混得也不赖。苹果公司的乔布斯当初也被苹果公司的董事会轰出了苹果，而由一位所谓的商业人士取代了，后来这位商业人士几乎让苹果濒临倒闭。因此我觉得叫所谓的商业成功人士成熟而有经验是夸大其词了。我们通常叫他们新闻发言人，因未他们都打扮得油光水滑的象大尾巴狼，说话夸夸其谈，照本宣科。</p>
+
+<p>我们和几家风险投资商谈过了以后，决定我们所有的投资来自天使投资人。主要原因就是因为我们害怕一个大的风险投资公司会强加给我们一个类似新闻发言人一样的大尾巴狼CEO，如果这样人士的任务就是出席新闻发布会，那么我们没有什么问题，但如果他还要来对公司的运作指手画脚，那肯定会把我们引向灾难。因为当初我们软件的设计和实现十分复杂。我们唯一的生存希望就是以我们还不错的技术来和大公司竞争。几乎所有的决定和战略制定都是和技术有关的。所以我们并不需要这样一个人来运作我们的公司。</p>
+
+<p>这也是我们后来没有选择上市的原因。在1998年的时候我们的CFO曾经试图说服我把公司弄上市。当时对与我们这样一个既有产品又效益还不错的公司来说，上市简直是轻而易举。但后来我们还是没有选择上市，因为我担心上市以后就会被华尔街牵着鼻子走。</p>
+
+<p>其实后来Google上市时的一系列措施我是很佩服的，当他们上市的时候，他们并没有按华尔街的惯例来办。虽然当初华尔街并没有买他们的帐，但后来这些银行巨头们对Google的追捧可是所有的人都看到了。看样子当有大笔钱的诱惑的时候，华尔街的人还是很容易改变主意的。</p>
+
+<p>你也许没有意识到，你和VC谈判时筹码还是挺多的。原因就是其他的VC。我现在知道好几家VC了。当你和他们聊天的时候你会意识到，风险投资领域是一个卖方的市场。哪怕就是到了现在，资本市场的问题也是钱太多了，而好的点子和想法太少了。永远是大笔的钱象苍蝇一样来投一个好的项目。</p>
+
+<p>VC公司等级是很森严的。就像一个金字塔一样。在最高端是有名的VC例如Sequoia<br />
+和 Kleiner Perkins。　但下几级的VC们基本上你就从来没有听说过了。但不管级别如何，他们的共同之处就是谁的钱都是钱，没有谁的钱好，谁的钱不好之分。大多数的VC们都会和你说，除了钱，他们还能给你金融界的关系和商业方面的咨询。如果你是和Vinod Khosla 或者 John Doerr 或者 Mike Moritz,这些大家伙在谈的话，那么这肯定是真的。但是这些咨询和关系的代价是很大的。　金子塔底部的那些VC们的水平与智力也会随着他们级别的降低而迅速的下降。基本上就是手里有点钱的银行家们，读了几天科技杂志就来和你胡侃乱侃。所以当一个VC说能给你拉关系，给你建议的话，不要太当回事。因为VC就是VC，他对你来说不过是一个资金的来源。我的建议是，谁给你的钱最多，附加条件最少，你就挑谁。</p>
+
+<p>你也应该计划好你要把你的创业想法的细节告诉多少给VC们。因为以后其中的一些也许要给你的竞争者投钱呢。我觉得最好的办法是既不要遮遮掩掩，故作神秘，也不要毫无保留，和盘托出。其实VC在和你谈的时候对你的人比对你的想法更感兴趣。他们想看看你到底是个什么样的人。所以你只要让他们觉得你是一个干事情的人，知道你到底在做什么，不必要告诉他们所有的事。</p>
+
+<p>尽可能多的接触一些VC，　哪怕你并不想从他们哪里融资。因为一，他们之中也许有人在以后要收购你的公司的董事会里。二，如果你做的东西给他们印象很深，那么他们可能就不大想投资你的竞争对手了。最有效的接触VC的办法，尤其是在你只想让他们知道你的存在，而不是从他们哪里得到钱的话，就是参加一些有创业公司发起的一些会议，哪里会有很多VC们来看的。</p>
+
+<p>别花钱</p>
+
+<p>如果你的项目真的很好，投资者蜂拥而至，你马上筹到了钱，然后怎么办呢？如何花这些钱呢？答案很简单，那就是：不要花。 几乎每一个没有成功的创业公司，没成功的原因都和把钱花光了有关。当然还有更深层次的原因，但这种显而易见的死因是一定要避免的。</p>
+
+<p>在互联网泡沫时期，很多创业公司都想要快速发展 壮大。也就是说用户越多越好。而用户越多，你需要雇佣的人也就越多。</p>
+
+<p>当然，想要迅速扩张壮大，在一个新的领域迅速的跑马圈地， 第一个占领市场，并尽可能把所有用户都囊括在内，不给后来的竞争者留下任何可乘之机，这些都不是什么坏事。但我个人认为，在大多数商业领域，当了市场第一人并成为市场主导者并不是什么值得大书特书的事。<br />
+Google又可以做为一个好例子。当它进入搜索引擎市场的时候，这个市场已经很成熟了，有很多厂家已经花了上亿美元在打造他们的搜索品牌：Yahoo,<br />
+Lycos, Excite, Infoseek, Altavista, Inktomi。在1998年才进入搜索市场好像有点太晚了。</p>
+
+<p>但google 清楚，在搜索市场，品牌并不值多少钱。只要你能提供更好的服务，你可以在任何时候进入这个市场，并把用户一点一点的拉过来。而且值得提出的是，Google从来没有为自己做过任何广告，google 就像做买卖的商人一样，他们向你出售东西，但他们自己更知道如何使用这些东西。</p>
+
+<p>被google埋葬的那些竞争者们，如果他们能静下心来专心把他们的软件做好，性能和质量提高，也许会还有一搏。在你进行创业的时候，也一定要注意不要犯类似的错误。除非你要开拓的市场是哪些需要投入大量资金来做广告的消费品，如香烟，酒和洗衣粉等市场，铺天盖地的广告是唯一的方法能够证明你和别人不同。而建立网站这样的创业，技术是能够证明你和别人不同的方法。看哪些网上约会的网站，他们的广告铺天盖地，但一个能给客户更好的服务的网站完全可以把他们击倒。</p>
+
+<p>我们当初的创业公司，因为一些外在的原因，成长的并不是很快，现在看起来并不是坏事。所有的成员为公司的运作在开发软件的同时几乎都事必躬亲。 我还要管销售和客户支持。我得承认我不是一个好的销售人员。虽然我是公司的总裁，但我没有销售人员那么耐心和讨人喜欢的素质。我和客户说，你如果不把你的店搬到网山，那你可蠢的够可以的了，而如果你想把你的销售放到网上，如果你不用我们的软件开店，那么你也蠢的可以了。虽然我是实话实说，但基本上没人买我的帐。</p>
+
+<p>但我作为一个售后支持和客户服务还是很称职的。试想一下，一个售后，不但对产品了如指掌，如果客户报告发现了产品中的一个问题，我还能马上道歉并在和客户通电话的同时就马上就把它修好。客户们很满意，我们对客户也很满意。因为当你只依靠客户的口碑来发展你的业务时，你的第一批用户一定是哪些很聪明的人，至少他们聪明到能主动发现了你。在创业之初，最宝贵的东西就是能有一批聪明的用户。如果你能虚心听取他们的意见，他们会确切的告诉你如何开发一个成功的产品，不但他们把这些建议免费给你，他们还给你钱。</p>
+
+<p>我们在1996年之初正式发布了我们的产品，在年底我们有大概70个左右的用户。因为那个时候所有的人都想跑马圈地，用户越多越好，我还担心过我们太小，太微不足道了。但事实证明我们那个时候做的是正确的。一旦你发展的太快，你雇用的人越来越多，你的客户越来越多，那么你想改变你的产品就很困难。那年我们主要是在实验室里集中提高我们软件的性能和质量，最后，我们把所有的竞争对手都远远抛在后面，而且因为我们的程序员都在第一线直接和客户打交到，后来我们对互联网商业的理解比任何人都深刻。</p>
+
+<p>成功的创业有一点很关键，那就是你一定要对你所从事的领域有深刻的理解。你也许认为每一个公司都已经做到了这一点，实际上远远不是这样。Google的秘密武器就是他们对搜索理解的很深刻。Google的创业之初我在为雅虎工作，而当时雅虎对搜索的意义并不理解。我记得有一次我试图说服管理层来提高搜索的性能，而我得到的回答是：雅虎已经不仅仅是一个搜索引擎了，搜索服务已经占我们业务中很小的一部分。我们的目标是打造一个媒体公司，或门户。搜索业务会逐渐萎缩，并最终被砍掉。就像哪个阑尾一样。</p>
+
+<p>但实际上，虽然搜索的页面只占了网站页面很少的一部分，却是很重要的一部分，因为大多数人进入网站的方式都是从搜索开始的。我想雅虎现在应该明白这个道理了。</p>
+
+<p>和其他网站公司相比， Google对其他方面的理解也比他们深刻。其中最重要的一条就是用户是第一位的，广告商不是第一位的。虽然是你是从广告商身上来挣钱，而不是从用户身上。记得有一句谚语是：如果有人领导，就会有人跟随。把这个套用到电子商务上，就是如果你能吸引所有的用户，你就能吸引所有的广告商。所以好好设计你的产品，提高用户的满意度，然后再考虑如何赚到钱，只要你把用户是放在第一位的，在竞争当中你就会领先一步。</p>
+
+<p>开发一个用户喜欢的东西，你首先必须理解你的用户。当你的公司越大，业务越多，理解用户的需求就越困难。所以我说，要慢慢的变大。你融资的速度越慢，发展越慢，你在这个过程中学到的东西就越多。</p>
+
+<p>节约开支的另一个目的就是培养公司上下一种节俭的氛围。这一点当初雅虎理解的很好。当David Filo是雅虎总裁的时候，他的外号就叫“小气的雅虎”， 他还很以为荣。当我刚到雅虎的时候，就收到他的邮件，直接问我们用那些昂贵的硬盘阵列设备是不是必需的。当时给我的印象就很深，那个时候雅虎已经身价好几十亿美金了，但他们还能作到能省就省。</p>
+
+<p>当你真的从一个VC哪里拿到了几百万美金的时候，你常常有一下子富了起来的感觉。但这个时候保持清醒的头脑很重要。一个富有的公司是一个收入很多的公司，而那些钱不是公司的收入。那些钱是你的投资人给你让你创造收入的。因此虽然你可能在银行里有了几百万美金，但在你公司没有盈利之前，你还是穷小子一个。</p>
+
+<p>对多数创业公司来说，你的榜样应该是哪些在校苦读的穷学生们，而不是奢华的律师行。谦虚而且吝啬，不要昂贵和招摇。一个测试创业公司类型的好办法就是看这个公司的办公椅子是不是那种豪华的老板椅。在互联网泡沫时期，这种椅子非常常见。还有公司里面有很多小孩子玩的小型游乐场。我们当时的办公椅子非常的破旧，椅子把几乎都要掉下来了。当时我们还有点难为情。但现在回想起来，在创业之初过穷学生的生活又是一个明智的选择。</p>
+
+<p>我们的办公室是哈佛广场上的一个小木屋。在70年代就被作为公寓出租了。浴室里的浴盆还是那种老式的有四个脚的浴缸。公寓的墙壁上还莫名其妙的贴满了锡纸，好像是想防宇宙射线辐射一样。每当公司有贵客来访时，我们都觉得有点难为情，觉得这样的办公环境实在拿不出手。实际上那种环境在创业的时候是再合适不过了。我们觉得我们就是一匹黑马，在暗处跃跃欲试，要把在明处的竞争对手超过。而这种精神是创业的时候最需要的了。</p>
+
+<p>而公寓的氛围对与开发软件来说也很适合。办公室里的格子间对于程序员来说是糟糕透顶了，如果你是程序员，你一定也知道。你在家里编程比在办公室编程效率要高多了，所以为什么不把办公室布置的象家一样呢？</p>
+
+<p>当你为你的创业公司选址的时候，不要觉得一定要弄得很职业。你要做的是设计开发出好的软件，而不是需要公司里面有豪华电梯和大理石地面。我个人的建议是创业公司最好一开始不要租正规的办公地方，而就租一个公寓。你想吃住在办公室，那为什么不把你的办公室办的象个能吃能住能生活的地方呢？</p>
+
+<p>而且除了省钱以外，在一个有居家环境的公寓，干起活来也比办公室的格子间舒服。对于一个创业公司来说，工作环境和地点是非常重要的。吃了午饭后马上就回来工作能非常有效的提高工作效率。一个专注的，不受打扰的工作环境是成功开发出产品的关键之一。当一组员工在吃午饭时热烈的讨论技术和开发中的问题和想法，然后回到办公室后马上把它们实现的时候，你的产品会集中很多优秀的充满创造力的想法。所以如果有可能，尽量把公司设置在周围有好多餐馆的地方。当你一开始员工为了吃午饭都要开车出去吃的时候，你很有可能因为这个而失去了开发产品的很多天才的想法。如果是那样，开发不出来好的产品也怨不得谁了。</p>
+
+<p>如果我今天还想开始创业的话，地球上我只在三个地方创建我的公司：在哈佛大学的哈佛广场附近； 在加州斯坦福大学附近或者在加州博克利大学附近。这是我知道的唯一的三个洋溢着创造力的地方。</p>
+
+<p>省钱的最重要的一方面是不要盲目雇人。我也许在这方面有点走极端了。但我还是认为雇人是一家创业公司能做的最糟糕的事了。首先，雇人的费用是经常性支出，也是最要不得的支出。而且人多了你的地方就可能不够用了，<br />
+你要不得不搬到普通不是很酷的地方去。而更坏的是， 人多了会影响你的软件产品的开发  人多了办事效率和开发效率就会下降。你本可以探过头去和成员聊聊就能解决的问题，人多了就可能要郑重其时的开个小会来解决了。</p>
+
+<p>在互联网的泡沫时期，很多创业公司都是朝着相反的方向走。他们都想要人越多越好，市场，销售，人事，管理人员全部到位，就好像没了这些所谓的商业人士，你就开发不出产品了似的。这是大公司运作的传统思维，千万不要盲目模仿，设立一些等级和组织机构。你想雇人的唯一原因应该是你想做一些事情，可你自己做不了。</p>
+
+<p>既然盲目雇一些不需要的人既浪费钱又降低效率，为什么还有很多公司都这么做呢？我想主要的一条就是人们都喜欢有越多的人为他们干活越好。这种偏好可以一支追溯到CEO，　如果你有领导过一家公司的经历，你就会知道人们最常问你的一个问题就是：你公司有多少人啊？。这是人家评价你的指标。而且媒体记者也喜欢问类似的问题。如果你说你的公司只有十个人，而不是一千个人，他们就会很失望。</p>
+
+<p>其实这种看法是很荒谬的。如果两个公司的产值是一样的。那么哪个公司员工少，才证明哪个公司是更优秀的。当有人问我我的公司有多少员工而我回答他们有二十人的时候，我通常还加上一句，“我们的主要竞争者，经常被我们超过，而他的公司有一百四十个员工，　所以我们比他们要精干多了”。</p>
+
+<p>至于要招多少人，你可以大张旗鼓的招人来虚张声势，也可以少而精，保证队伍的战斗力。我想一个小学生也知道该选那个吧。而且一定要坚持这个原则，不能改变。</p>
+
+<p>你适合创业么？</p>
+
+<p>你该开公司么？你是开公司的类型么？如果你真的是，到底值不值呢？</p>
+
+<p>其实很多人都比他们想象中的自己更适合开公司创业。这也是我想写这篇文章的初衷之一。创业的人应该越多越好，这是一件好事情。</p>
+
+<p>我现在知道了，我这种人，是最适合创业的。但我一开始一想到创业开公司这个事情就有点害怕。我是迫不得已的。因为我当初是一个lisp程序员，而我当时工作的公司基本上已经活不下去了，使用lisp编程语言的人也不是很多，市场很小。我当时也根本学不下去其他的语言（当时是１９９５年，当时的另一门语言是　C++）。　我能想到的唯一出路就是自己开一个公司，而这个公司的产品使用Lisp.</p>
+
+<p>对当时的我来说，不到万不得已，走投无路我是不会开公司的。那么象我一样，其他也会有好多人会一谈创业就色变了。</p>
+
+<p>什么人到底能开公司呢？应该是一个优秀的程序员，在23岁和38岁之间。想用最短的时间来解决经济问题，再也不用为钱而愁。而不是在一个大公司里面熬日子和资历。</p>
+
+<p>判断一个程序员是不是一个优秀的程序员不是件容易的事。在一流的大学里，大概一半的计算机系的学生都养该是。当然你不必一定要计算机专业毕业才能成为一个优秀的程序员，我在大学的时候是哲学专业毕业的。</p>
+
+<p>怎么样知道自己是不是个好的程序员呢？通常一个创业的过程会聚集到一些好的程序员。因为大部分创业或者想创业的程序员，都是在观察或者使用某个技术时，常常会拍脑袋想：这个东西可以做x,y, 但我能更上一层楼，还能做Z. 有这种素质的程序员通常都是优秀的程序员。</p>
+
+<p>我把创业的最低年龄订到了23岁不是因为23岁以下的就不够聪明了。而是因为创业之初你最好有一点工作经验。不一定是你一定要开过公司，至少要在别的企业打过工。我大学毕业后在一个软件公司打工了一年，来偿还我的学生贷款。那是我生命中最糟糕的一年。但是哪怕是在这最糟糕的一年，我还是学到了很多开发软件产品的宝贵的经验，虽然我当时并没有意识到。当然学到的很多都是负面的教训，譬如不要陷入文山会海。不要让多个人来共同维护一段代码，不要上销售人员来运作公司，不要一开始就瞄准高端产品，不要让代码越写越大，不要指望着软件测试人员来找到软件的缺欠。不要让开发人员远离实际使用的客户等等。但是错误和教训对人的发展与成功和成就是同等重要的，也许还要更重要一点，谚语说：it&#8217;s hard to repeat a brilliant performance, but it&#8217;s straightforward to avoid errors.</p>
+
+<p>另一个在23岁之前最好不要自己创业的原因是很多人可能不把你当回事。VC不会信任你，也许会在你身边安插一个监护人来指导你来作为投资的条件之一。客户会担心如果出了事情，你会不会一走了之。而且除非你是特别老成出众的，你会发现领导一批比你年级大很多的人还是挺别扭的。而如果你只想雇用比你年纪小的人，那你能选的人的范围就小很多了。</p>
+
+<p>有些人在17，8就开公司了。 比尔盖次在和Paul Allen开公司的时候才19岁，当时Paull Allen是22岁。如果你坚持己见，一定要开公司，那么不要顾虑年龄什么的，你很有可能就能干成。记住，只有偏执狂才能成功。</p>
+
+<p>而开公司的最大年龄，38岁，也是有一定道理的。原因之一就是38岁后的人在创业的时候可能会因为身体原因而干不下去。我当初创业的时候每天工作到凌晨两三点是平常事，而且一周七天不休息。但现在让我再这么干，我肯定吃不消。</p>
+
+<p>而且，开公司创业在经济上也要冒很大的风险。如果你失败了，在26岁的时候身无分文。也不是什么大事，很多人在26岁的时候还一事无成呢。而到了38岁，有了孩子老婆，有了家，有了很多责任，上有老，下有小，就有可能冒不起这个风险了。</p>
+
+<p>最后，你还应该扪心自问，看看自己这一辈子到底想要干什么。 你真的想创业么，真的想开公司么？经济上，你可能要过最拮据的生活，与其在一个大公司里按部就班的工作40年，你要想疯了一样的工作4年，而4年之后，你很可能一无所获。</p>
+
+<p>在这段时间内，你除了工作就是工作。如果你不工作，你的竞争对手就会超过你。我当初创业的时候，我的唯一娱乐就是每天跑步，那还是因为我需要锻炼一点身体来继续工作。然后就是每天晚上读15分钟的书。在哪三年里我交过一个女朋友，但谈了两个月就吹了。每隔几个礼拜我去去书店，或者和朋友们聚聚，只回家过两次。仅此而已，其他的时间我都是在工作。</p>
+
+<p>做你喜欢做的事情也是一见很有意思的事情，而且很你一起工作的人都是你很好的朋友。但大部分我能记起的创业的时候有趣的事情都是和工作和技术无关的。例如一次我们在屋子里面鼓弄柴油发电机，结果把整个楼弄没电了6个小时，我以后再也不敢那么做了。</p>
+
+<p>很多人说创业开公司烦心的事太多，我并不这么认为。烦心的事实际上可能会比你在大公司里正常的工作要少。但是因为创业把巨大的工作量集中到了一个比较短的时间内，烦心的事情可能少了，但因为集中在一起而显得密度大了。如果你是想把经济问题一下子快刀斩乱麻式的解决，而不是在办公室按部就班的工作40年，那么你就应该试试创业。</p>
+
+<p>对很多人来说，一个两难的问题是创业还是继续读书之间的矛盾。研究生阶段是创业的最佳年龄，你也许怕如果选择了创业，可能在学术上就失掉了发展的机会。其实你可以在学校的时候就一边读书一边创业。我的公司里面，有两个创始人就是在读研究生，而且后来还都拿到学位毕业了。要记住，学生的力量和精力是无穷的，千万不要小看了自己。</p>
+
+<p>如果你真的需要离开学校全职去创业，最坏的情况也就是创业失败，你又回到了学校。但如果你成功了，你可能就会发现再寒窗苦读，发表论文，混一个副教授当当就没有那么大的吸引力了。</p>
+
+<p>想唱就唱，想喝就喝，想做就做。如果你想创业，就横下心来做。创业开公司的过程并不像看起来那么神秘。你也不需要知道所谓的“商业运作”来开一个公司。开发出一个客户/用户喜爱的产品，挣的比花的多。真的，就这么简单……</p>
+
+<p>原文链接：<a href="http://www.paulgraham.com/start.html" target="_blank">How to start a startup</a></p>
+
+<p>译文链接：<a href="http://www.lgao.org/download/start.html" target="_self">如何进行成功的创业</a> （需翻墙）</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Larry Ellison：We are in it to win it.]]></title>
-    <link href="http://NeoCN.github.com/其他/we-are-in-it-to-win-it.html"/>
-    <updated>2009-09-10T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/we-are-in-it-to-win-it</id>
-    <content type="html"><![CDATA[<p>Oracle以74亿美元收购Sun公司，这项并购已经被美国司法部批准，但欧盟于北京时间9月3日晚宣布对Oracle 74亿美元收购SUN一案展开反垄断调查，计划对竞争力影响进行深入的审核。欧盟的调查重点是该收购案对MySQL数据库的影响。</p>
+    <title type="html"><![CDATA[Windows版本的Android SDK R07中缺少hierarchyviewer.bat文件]]></title>
+    <link href="http://NeoCN.github.com/Android/hierarchyviewer-bat-is-missing-from-android-sdk_r07-windows.html"/>
+    <updated>2010-11-26T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Android/hierarchyviewer-bat-is-missing-from-android-sdk_r07-windows</id>
+    <content type="html"><![CDATA[<p>昨天改 <a href="http://www.dev123.net" target="_blank">YiBo客户端</a> 中的一个UI，调来调去总也达不到想要的效果，便想看看其他的客户端是怎么做的，官方的开发指南说可以用Hierarchy Viewer来查看应用程序的UI布局结构，于是乎，按着官方指南开始做，“From a terminal, launch hierarchyviewer from your SDK/tools directory.” 。 第一步就卡住了，没hierarchyviewer.bat 这个文件。 以为是下载的SDK不完整，重新下载，打开，还是没有。无奈，Google，原来是个Bug(<a href="http://code.google.com/p/android/issues/detail?id=11214" target="_blank">http://code.google.com/p/android/issues/detail?id=11214</a>) 。</p>
 
-<p>这项收购案中，人们最担心的，也许是Sun的Sparc处理器和Solars操作系统的命运。Oracle会如何处理Sun的硬件部门，会如何对待Solars操作系统呢？下面的这张图片也许会让Sun的客户吃下一个定心丸：
-<p style="text-align: center;"><img class="size-full wp-image-155 aligncenter" title="sun_customers_lg" src="http://www.devx.me/wp-content/uploads/2009/09/sun_customers_lg.gif" alt="sun_customers_lg" width="370" height="552" /></p></p>
+<p>目前此问题的解决方法是：</p>
 
-<p>内容大致翻译如下：</p>
+<p>1、从老版本的SDK中拷贝hierarchyviewer.bat文件放到tools目录下即可；</p>
 
-<p>Sun的客户们，Oracle计划：</p>
-
-<p>1、投入更多的资金开发SPARC</p>
-
-<p>2、投入更多的资金开发Solars</p>
-
-<p>3、拥有超过Sun 2倍的硬件专家来销售和服务SPARC/Solars系统</p>
-
-<p>4、通过紧密集成Oracle的软件和Sun的硬件显著提高Sun的硬件性能</p>
-
-<p><strong>我们志在必得。IBM，我们期待着在硬件业务上与你一较高下。 &#8211; 拉里.埃里森</strong></p>
-
-<p>埃里森的这句话，把他的个性体现的淋漓尽致，也显现出了Oracle在硬件业务上的巨大野心。</p>
+<p>2、从官方的源码库中下载一份，下载地址：<a href="http://goo.gl/lVRLO" target="_blank">http://goo.gl/lVRLO</a> ；</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[有史以来最狂妄的演讲 -- Larry Ellison]]></title>
-    <link href="http://NeoCN.github.com/其他/commencement-speech-larry-ellison.html"/>
-    <updated>2009-09-10T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/commencement-speech-larry-ellison</id>
-    <content type="html"><![CDATA[<p>下面是Oracle  CEO Larry Ellison 在耶鲁大学2000届毕业典礼上发表的世人看来最为狂妄、不受欢迎但又是现实真实状况的演讲：</p>
+    <title type="html"><![CDATA[[转]我的十年，交互之外的那些事]]></title>
+    <link href="http://NeoCN.github.com/其他/the-things-outside-the-interaction.html"/>
+    <updated>2010-11-24T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/the-things-outside-the-interaction</id>
+    <content type="html"><![CDATA[<p><div /></p>
 
-<p>耶鲁的毕业生们，我很抱歉——如果你们不喜欢这样的开场。我想请你们为我做一件事。请你——好好看一看周围，看一看站在你左边的同学，看一看站在你右边的同学。</p>
+<p>前言：今年同时是我工作的第十个年头，今天也是我的生日，如果一路往上回顾，应该是有不少故事的，如果要 讲，我总是习惯性从我工作的第5个年头开始，一方面  5年前的工作经历很平庸，不为人知，缺乏戏剧性，基本在小公司，传统IT企业厮混而5年后的工作履历会被更多关注到，因为是在TX，因为有机会做大家都认 识的产品的体验设计，被曝光在一个明星岗位上，另外一方面因为我那时还叫阿标，在设计的江湖上，阿字辈说明还比较年轻，现在我被叫标叔很多年了，同时经常 能有幸被一拨拨新人设计师拉上，借公司培训的要求，在大家好奇的围观中，自愿或者半自愿地痛说革命家史。其 实神马都是浮云，这事第一年挺新鲜的，但讲了n次后，我觉得自己像个祥林嫂了，有种想吐的感觉，还不如写个履历示众好  ，在古代叫传，咱位卑言轻，等别人作传是不可能了，这事就只能自己动手，有几个好处，一方面可以“真诚”地赞美一下自己，就像TangJ做过的一样，更大 的好处是这样就不用每次都重复再重复，一次写好，甚至可以用好几年，就像杰斐逊写独立宣言一样，写得好，几百年都可供后来者一拨拨瞻仰，十年是个坎，借这 个机会，回顾一下我的工作十年，我做设计师的十年的一些片段，别太当真，就当看故事好了。</p>
 
-<p>请你设想这样的情况：从现在起5年之后，10年之后，或30年之后，今天站在你左边的这个人会是一个失败者；右边的这个人，同样，也是个失败者。而你，站在中间的家伙，你以为会怎样？一样是失败者。失败的经历。失败的优等生。</p>
+<p>2006年3月，一个很平常的工作日，我接到了一个自称tangmu的家伙给我电话，然后经过一轮饭局，一轮参观，一轮被面试，一个月左右的挣扎，加入到TX CDC的交互组，一直到现在。</p>
 
-<p>说实话，今天我站在这里，并没有看到一千个毕业生的灿烂未来。我没有看到一千个行业的一千名卓越领导者，我只看到了一千个失败者。你们感到沮丧，这是可以理解的。为什么，我，埃里森，一个退学生，竟然在美国最具声望的学府里这样厚颜地散布异端？我来告诉你原因。因为，我，埃里森，这个行星上第二富有的人，是个退学生，而你不是。因为比尔·盖茨，这个行星上最富有的人——就目前而言——是个退学生，而你不是。因为艾伦，这个行星上第三富有的人，也退了学，而你没有。再来一点证据吧，因为戴尔，这个行星上第九富有的人——他的排位还在不断上升，也是个退学生。而你，不是。
-<!--more-->
-&#8230;&#8230;你们非常沮丧，这是可以理解的。</p>
+<p><!--more-->06年算是一个临界点，之前的我一直都在所谓传统IT行业，工作按部就班，我按照流行说法，是真正进入新兴行业，这也让我有机会从两面来看，多 年后，我蓦然发现，正是这样一种前后反差，让我有机会有对比的机会，总结自己的设计理念和设计管理思路，也让我始终能很冷静看待互联网行业所谓日新月异的 “新理念”，“新思潮”。</p>
 
-<p>你们将来需要这些有用的工作习惯。你将来需要这种“治疗”。你需要它们，因为你没辍学，所以你永远不会成为世界上最富有的人。哦，当然，你可以，也许，以你的方式进步到第10位，第11位，就像Steve。但，我没有告诉你他在为谁工作，是吧？</p>
+<p>第一个想说的是做一个交互设计师挺好玩的，特别是在CDC，在早期团队规模不大的时候，大家有很多机会很容易凑在一起吃喝玩乐，印象中最深刻的 是，每天中午吃饭，要冒死横穿一条大马路，然后东拐西拐进入大冲的一家小饭馆，每每想起当时的场景，都是相当怀念，很快我也融入了这样的氛围，后来我在 想，这个也算是CDC的特色，大家都很本色，不装，而不装在职场上是相当难得的品质，也很容易让内心有同样认同感的人找到归属感，在后来自己有机会带领团 队时，我也会特别去找一些性格外向，充满生活情趣，能搞气氛的团队开心果，但也得承认这样的设计师挺少。</p>
 
-<p>根据记载，他是研究生时辍的学，开化得稍晚了些。</p>
+<p>在公司的第一个项目是TX  K系统的交互设计，当项目负责人S，第一次召集开项目会时，我惊奇发现这个项目竟然没有产品经理，没有项目经理，只有3位开发工程师，没有需求文档，只有 一个内部讨论了两次的feature  list，这个情况是我从来没有遇见过的，也就是在那时我见识到早期tx研发的风格有多“敏捷”，具体那个会如何开的我不记得了，我只记得在大家期望的眼 神中我站起来说，如果我们没有需求，那么让我们编一个用户使用我们软件故事吧，我尝试着将一个挺难理解的设计方式用一种大家能理解的形式在白板上写了下 来，一共花了2小时，主要是包括目标用户的典型环境，用户的task，用户的预期等，两年以后，团队扩大，记得有一阵子流行关于“信仰之战”的话题，不经 意间在我工作的第一个项目中，我貌似很轻易化解了这样的一种对立，后来想，其实大家不是有那么多的隔阂在，而是你采取的沟通方式是否有效，是否是团队喜闻 乐见的方式，讲故事也可以讲得有方法论的，讲故事也是可以快速拉近从抽象还原为具体的，我们习惯了归纳，把鲜活的用户场景浓缩为十几条干巴巴的需求，适时 演绎一下，你会发现大家简直灵感迸发，而且很有共同话题。</p>
 
-<p>现在，我猜想你们中间很多人，也许是绝大多数人，正在琢磨，“我能做什么？  我究竟有没有前途？”，当然没有。太晚了，你们已经吸收了太多东西，以为自己懂得太多。你们再也不是19岁了。你们有了“内置”的帽子，哦，我指的可不是你们脑袋上的学位帽。</p>
+<p>工作一个月后，我开始有机会参与一个当时的保密项目H，第一次开会就从早上9点到了晚上9点，我不知道的术语，我似懂非懂的概念，笔记本上记了 2页，让我感到压力非常巨大，而且接下来一个月，时间非常紧凑，需要上午出设计方案，下午讨论，晚上汇总，一周找boss汇报一次，每天我的to do  list上都有  10个以上的大需求待讨论和输出，按照正常的进度，是绝不可能完成的，最猛的一次是一天推倒重来一个重大方案，同时晚上配合GUI同事，同时出三个方案， 第二天上午汇总设计，下午2点汇报，没有出错，效果很理想，这种硬仗打下来，如果有机会经历了，而且挺过来了，你会相当有自信。现在经常讲新人要吃苦，我 觉得就是大家得找机会打打硬仗，而不是打疲劳战，那这个苦痛过了，整个人的小宇宙能会升级不少。</p>
 
-<p>嗯&#8230;&#8230;你们已经非常沮丧啦。这是可以理解的。所以，现在可能是讨论实质的时候啦——</p>
+<p>同时看到了有一种牛人，属于会议动物科，让我相当佩服，可以一边开会，一边上网处理邮件，RTX，一边滔滔不觉讲产品思路，他们的CPU转动快 到想开就开，想停就停，而且思路之缜密，抓谈话重点之快让人叹为观止，我一直在暗暗揣摩观察，这是怎么做到的，后来成为工作伙伴后，有幸得到传授几招，相 当受用，这是后话。</p>
 
-<p>绝不是为了你们，2000年毕业生。你们已经被报销，不予考虑了。我想，你们就偷偷摸摸去干那年薪20万的可怜工作吧，在那里，工资单是由你两年前辍学的同班同学签字开出来的。事实上，我是寄希望于眼下还没有毕业的同学。我要对他们说，离开这里。收拾好你的东西，带着你的点子，别再回来。退学吧，开始行动。</p>
+<p>说到牛人，在大型公司里，其实如果有心留意的话，有很多很对自己短板的良师，也未必是职务最高的修为最高深的那种，对我的职业生涯起重要作用的是碰到了几位良师益友，在那个懵懂无知，心高气傲的年代让我得到了收益终生的思想启蒙。</p>
 
-<p>我要告诉你，一顶帽子一套学位服必然要让你沦落&#8230;&#8230;就像这些保安马上要把我从这个讲台上撵走一样必然&#8230;&#8230;（此时，Larry被带离了讲台）</p>
+<p>一个java控件开发工程师D，D的牛体现在只要是我能找到的效果，即使java.lang里没有,最多1周，他总能实现出来，也就是在他的 字典里没有不可能实现的界面效果，和他合作的半年，我从一个似懂非懂的java门外汉，变成了一个对需要用到的38个控件了然于胸的界面规范制定者，而且 从以后来看，其实对界面的钻研，无非也是因为对这些最基础东西从底层开始的钻研，当时看起来很慢很枯燥，但一旦你一字一句去求证，去推敲后，以后你就不会 有很多概念上的困惑。</p>
 
-<p>Graduates  of Yale University, I apologize if you have endured this type of prologue  before, but I want you to do something for me. Please, take a ood look around  you. Look at the classmate on your left. Look at the classmate on your right.  Now, consider this: five years from now, 10 years from now, even 30 years from  now, odds are the person on your left is going to be a loser. The person on your  right, meanwhile, will also be a loser. And you, in the middle? What can you  expect? Loser. Loserhood. Loser Cum Laude.</p>
+<p>一个写Table基础控件的开发工程师F，F的牛体现在：两年只写一个控件，那就是table，而且这个table跟excel很像，初看无论 是表现还是交互十分类似，但细细体验，你会发现有很多针对财务软件的优化，例如数字格式，例如循环嵌套，例如缩进扩展，例如大数据的换算导出的效率比 excel类封装的高几倍，  他给到我一个朴素的认识，要想做出类拔萃的软件，就要从底层技术开始，不要简单求快，找捷径，我后来发现我们的很多软件其实不会做得如此细致，一方面是时 间要求，一方面慢慢大家习惯了拿来主义，初一眼没什么不同，但在极限情况下，孰高孰低，很容易就看出来了，真正的底层的，原创性的研究和设计总是非常锻炼 人的，既具挑战性，现在来看，在交互设计领域我们这样的沉淀太少了，大家都忙于赶项目和需求，research的部分不够。</p>
 
-<p>In fact, as I look out before  me today, I don&#8217;t see a thousand hopes for a bright tomorrow. I don&#8217;t see a  thousand future leaders in a thousand industries. I see a thousand  losers.</p>
+<p>一个负责协同软件的产品经理H，H的牛体验在他讲他的产品策略，产品方向，产品feature时，总是能有详实的数据并恰到好处地引用到一些方 法模型，并用流程结构很好展示出来，语气节奏掌握得相当到位，绘声绘色，很容易把你带入他营造的情景中，说服力强大的惊人，这个就是所谓的“气场”这个给 到我一个启示，产品设计也是要讲口才，要辨析就得思路清楚，如果能把一些很主观的东西用尽可能客观的方式呈现出来，那么方案也更容易推销成功，你也能一次 次通过这样的方式建立你在对方心目中的地位，有一种人叫  无冕之王，不是一定要有威权才有权威的，所谓的专业影响力是在你工作和周围同事的每一次接触中，所以从他那我能学习到的，就是保持倾听和足够的激情，珍惜 并善用每一次的工作接触机会，慢慢打造自己的专业影响力。</p>
 
-<p>You&#8217;re upset. That&#8217;s understandable. After all, how can I,  Lawrence &#8216;Larry&#8217; Ellison, college dropout, have the audacity to spout such  heresy to the graduating class of one of the nation&#8217;s most prestigious  institutions? I&#8217;ll tell you why. Because I, Lawrence &#8220;Larry&#8221; Ellison, second  richest man on the planet, am a college dropout, and you are  not.</p>
+<p>这些牛人们常常给我很多启发，成为我的榜样，这种榜样不是说我一定要像他一样具备同样知识结构，而是说他达到他那样的深度，他是如何做到的，他 的方法，他的一切技巧，都是我学习揣摩的源泉，而且我还发现一个牛人们的通用特征就是  都很谦逊，不是装的那种，很本色，所以我自己坚信的是要想成为一个牛人，就是永远要很谦虚，得从心底有这个认识，不是做给人看的那种，是觉得自己真的有很 多不懂，而这种对自我的自然的低姿态有助于你心无旁骛追求到更高的学术境界。</p>
 
-<p>Because Bill Gates, richest man on the planet &#8211; for now, anyway &#8211;  is a college dropout, and you are not.</p>
+<p>最近正在总结通道的交互设计师能力素质模型，其实抛开具体的条例，我心里其实只有一个图，就是这样的：</p>
 
-<p>Because Paul Allen, the third  richest man on the planet, dropped out of college, and you did not.</p>
+<p><img title="Pattern of HCI" src="http://cdc.tencent.com/wp-content/uploads/2010/11/1.png" alt="" width="454" height="340" /></p>
 
-<p>And  for good measure, because Michael Dell, No. 9 on the list and moving up fast, is  a college dropout, and you, yet again, are not.</p>
+<p>交互设计师的核心能力其实是三者的交集，这个也很容易看到，为什么交互其实是易学难精的，也就是你每放大一点点，你需要在每个维度上都放大很 多，产品维度而言，如果你知道商业目标，产品功能，运营策略是如何制定出来，那你从源头上就找到了和产品经理对话的能力，开发维度而言，核心来讲，是你得 知道技术的约束边界，知道可行性把握有多大，如果你还知道实现机制，，那你也能就找到了和开发工程师愉快合作的基石，设计维度，不多讲，具备足够的设计美 感和设计品味是应该的，对设计规范、用户习惯了解越多，越能知道设计不应该做什么，不干舍本逐末的事，从这个模型上，这也很容易解释，为什么一个好的交互 设计师要涉猎产品，开发，UI知识，做到最好比较全面的知识结构，我们经常讲用户体验，讲体验设计，其实有句话我一直很认同，谁讲的不记得了“体验是个人 的，体检设计不是”。</p>
 
-<p>Hmm &#8230; you&#8217;re very  upset. That&#8217;s understandable. So let me stroke your egos for a moment by  pointing out, quite sincerely, that your diplomas were not attained in vain.  Most of you, I imagine, have spent four to five years here, and in many ways  what you&#8217;ve learned and endured will serve you well in the years ahead. You&#8217;ve  established good work habits. You&#8217;ve established a network of people that will  help you down the road. And you&#8217;ve established what will be lifelong  relationships with the word &#8216;therapy.&#8217; All that of is good. For in truth, you  will need that network. You will need those strong work habits. You will need  that therapy.</p>
+<p>顺便讲讲我觉得重要的交互设计师好习惯。</p>
 
-<p>You will need them because you didn&#8217;t drop out, and so you  will never be among the richest people in the world. Oh sure, you may, perhaps,  work your way up to No. 10 or No. 11, like Steve Ballmer. But then, I don&#8217;t have  to tell you who he really works for, do I? And for the record, he dropped out of  grad school. Bit of a late bloomer.</p>
+<p><strong>保持好奇心</strong></p>
 
-<p>Finally, I realize that many of you,  and hopefully by now most of you, are wondering, &#8216;Is there anything I can do? Is  there any hope for me at all?&#8217; Actually, no. It&#8217;s too late. You&#8217;ve absorbed too  much, think you know too much. You&#8217;re not 19 anymore. You have a built-in cap,  and I&#8217;m not referring to the mortar boards on your heads.</p>
+<p>我刚入行的时候，是做美术设计师，在广州一家公司，工作节奏不紧不慢，所有我有大量的闲暇时间，在那一年里我下载试玩了很多小工具，从常规的硬 盘分区，到3D渲染，只要是大众软件上有名字的，电脑报上推荐的，我都很努力把它们找下来，第一时间试玩，2000年的时候正是个人网站风起云涌的时代， 到01年6月的时候，那一年我收藏了差不多3000多个网站的截屏，2000多款软件，许多软件我今天还能使用，绝大多数网站已经烟消云散，也正是这段经 历，让我有了一个比较宽广的视野，我的当时的经理常常表扬我有很多新奇的想法在设计界面上，而同组的一位三年的设计师却总是给不到他惊喜，大约半年后，我 已经成为设计组的第一设计师了，其实他不知道的是我因为一个新人，在新的环境下人生地不熟，只能以司为家，天天与电脑相伴，借这个充裕的时间，大剂量地观 摩了很多别人没时间或者不屑关注的东西，并且有意识进行了一些粗维度的整理，形成了朴素但挺实用的设计想法，实用是因为这些想法都来自当时第一线的第一手 的资料，很感谢那时候互联网已经成为一般IT公司的标配了，同时感谢那个时代的个人网站和个人软件百花齐放，充满自由创新的精神。</p>
 
-<p>Hmm&#8230; you&#8217;re  really very upset. That&#8217;s understandable. So perhaps this would be a good time  to bring up the silver lining. Not for you, Class of &#8216;00. You are a write-off,  so I&#8217;ll let you slink off to your pathetic $200,000-a-year jobs, where your  checks will be signed by former classmates who dropped out two years  ago.</p>
+<p><strong>保持同理心</strong></p>
 
-<p>Instead, I want to give hope to any underclassmen here today. I say  to you, and I can&#8217;t stress this enough: leave. Pack your things and your ideas  and don&#8217;t come back. Drop out. Start up.</p>
+<p>很多人问过我，一个好的交互设计师最重要的潜质是什么？好几年了我都坚持说，同理心，简单来讲，就是对你周围发生的事，对你未曾经历过的人能设 身处事，感同身受，不漠然，不泰然，细心是源于你内心有关怀，有在意，否则是不太能真的细心，同时，同理心和同情心是有区别的，最大的区别在态度，一个中 立，一个带有偏向性，不是一回事。</p>
 
-<p>For I can tell you that a cap  and gown will keep you down just as surely as these security guards dragging me  off this stage are keeping me down &#8230;</p>
+<p><strong>保持对开发实现技术的关注度</strong></p>
 
-<p>(At this point The Oracle CEO  was ushered off stage.)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Google App Engine 部署异常]]></title>
-    <link href="http://NeoCN.github.com/Java/google-application-engine-deploy-exception.html"/>
-    <updated>2009-09-07T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Java/google-application-engine-deploy-exception</id>
-    <content type="html"><![CDATA[<p>今天开始尝试着做Google Application Engine  应用程序开发（Java版），第一次部署还比较正常，除了在文件超过1M时频繁出现：java.net.SocketException: Unexpected end of file from server；</p>
+<p>我的第2份工作是重构工程师，最重要的目的是搭建一个市场研究公司的行业站点，以新闻，专业文章管理，论坛为主，在02年的时候，建站基本上是 jsp，PHP，asp三大流派，asp因为有很多完整的源代码可以参考，所以在一家小公司，在单打独斗的状况下，我选择了入门门槛最低的asp，因为只 需要HTML+Css+asp+mySQL及free的IIS即可开始构建及调试工作，我相信那时很多个人站点应该也是在这样简陋的条件下开始的，在那一 年里我有机会做网站重构的所有事情，一条龙，从UI+前端+后台，有一个MBA的海归MM配合我做运营，现在来看，技术粗糙得汗颜，但当时是真的很投入， 经常一次性搜罗一批开源代码，然后逐句逐句看，一个个调整参数，看界面表现效果，也就是在那个时候养成了炫耀特效的毛病，这个也是一个懵懂技术工程师很朴 素的毛病，恨不得整个网站都挂满javascript小插件，恨不得所有的表格都能用到我比较测试了十多种圆角实现方式，最后优化过的那个，网站体验口碑 可想而知，后来在几次改版调整中，我逐渐开始关注什么是合适的UI表现力，什么是好的版式设计，如何做到内容取胜，更重要的是如何在最恰当的时候用到最合 适的技术方式来表现，我一直有个挺固执的想法就是所有做交互的人入门应该先从coding开始，做测试一行，这样你做什么设计你脑子里考虑到维度会很丰 富，而且实际，同时你会很严谨，同时你会有机会去想如何利用到强大的开发工具开发平台为我所用，而不是只局限在ps，fw的框架下，在06年的时候，开始 有作ui designer工具的想法，其实也是因为当时在用dreamweaver urtal时产生的念头。</p>
 
-<p>在了解了文件大小限制并成功部署之后，再次重新部署时，却出现如下异常，让人非常头疼：</p>
+<p>保持独立思考和思辨精神，不盲从，不媚外很重要，注重实用性很重要，以upa为例，很多设计师都知道UPA，09年的大会是我第4次参加了，今 年没去了，越来越有感触，UPA上的主题嘉宾就像结婚喜宴上的烤乳猪（绝对没有不敬的意思，这个是不恰当的比方，只是我想不到更好的菜了），最贵，最体 面，但是否是最好吃就打个问号了，也许烤乳猪本身是好东西，但没有按照亚洲的口味来调过，可能最有价值的反而是乳猪下作为点缀的香菜，胡萝卜花，因为这个 花还比较新鲜  比方ideo的视频，比方各地的幸福指数  如果我没记错，基本上这几年的主题都是这样的范畴，“什么是设计？”&#8221;我们为什么要做体验设计？我们要考虑人的因素，要了解人的需求？要了解人的背景，文 化，社会因素我们要从多个纬度考虑设计”  我想说的是，我们为什么的问题我们已经没有疑问了，我想知道的是这些大师在行业中的最新创造，最新思考，最新观察，最新思考   不要他们几十年的经验！真正推动这个世界进步的不是经验，是鲜活思想，当然也不能全怪这些大师，他们老了，不再活跃于第一线，其实他们也是离互联网浪潮最 远的人。</p>
 
-<p>Another transaction by user XXXXXX is already in progress for this app and major version. That user can undo the transaction with appcfg.py&#8217;s &#8220;rollback&#8221; command.</p>
+<p>特别是在中国互联网行业，真正做的好其实都是本土企业，土生土长的设计师作出的最“土”的设计反而是最受市场欢迎的产品，无论是QQ还是淘宝. 原因也许很简单，因为我们每天都在面对着海量的用户在不停的test，test，test，在互联网行业没有谁是先知，产品规划甚至都没那么重要，关键是 要要改得够快，改的够贴近用户的心。</p>
 
-<p>解决办法如下：</p>
+<p>07年的时候，有机会因为做了H项目，可以以此作为蓝图，领会thomas，Enya的精神，系统想想适合部门的完整的设计流程是什么？这个时 候，我发现在一个严谨的传统IT行业做过的好处，那就是对流程打造有着天然的亲近感，因为曾经感受到了一个优秀流程+工具带来的协同工作的巨大好处，所以 不需要动员，基本上就干劲十足，这里有必要提一下CMM软件能力成熟度模型)思想对我的影响，具体的我不想多说，其中提到  文档建设和知识管理是一项非常需要重视的工作，特别是软件开发的过程管理，是衡量一个团队研发质量的重要参考依据，因为最终做流程，做规范，做知识管理建 设，其实终极都可以归纳为三点，不犯同样的错误，做有价值的创新，进行有效率的沟通，也就是在做这个设计流程的过程中，我感觉部门的所有老大开始将知识体 系建设，做有规范的设计  认识提到了战略的高度，这个也是后来为何我们能去做比较完善设计师培养制度的基础，也因为做设计流程，经过很多次的碰撞，推敲，大家其实在是在设计方法论 方面逐渐达成共识了，后来的很多团队管理为何推行比较顺利，我觉得和做了这个研讨有很大关系，我也看到很多内部设计团队在沉淀很多方法很多流程管理方法， 但都对具体产品影响不大，在产品设计中中逐渐被边缘化或者被挤压得没什么话语权，现在结合当时自己做的经验来看，有两点是教训可能是他们疏忽了，第一，关 于设计流程的梳理，一定要从上往下达成共识，最好先做完整流程，再做细分流程，不要颠倒，这个跟先立宪再立法的道理类似，第二，一定要有一个相对成功的案 例做蓝图，不能只是关门来找，而且要有勇气和魄力将它绑定到公司的或者合作部门的主流程上，不能只是设计线内部自己玩。</p>
 
-<p>从控制台进入Google App Engine的SDK目录下的bin目录，执行：“appcfg.cmd rollback  项目war目录路径”即可。</p>
+<p>关于模块化设计和标准化设计，现在在CDC这个比较被推崇，也在默默在布局做的更好，也不是只是设计师一个角色的事，需要有开发，甚至是产品的 角色加入到这个生态链中来，这个不是很多人能理解，其实模块化和标准化设计都比较简单，想像积木就好了，如果是一副积木要摆多种样式的城堡，那就是模块 化，如果是多套积木要同时摆一个城堡，这就是标准化，当你把城堡想像成一个项目，把积木想像是你所有的设计模板时，作为一个设计管理者你就会有很多件事可 以做了，在09年的UPA大会上我分享了统一体验的设计，也正在做，实际上讲，应该算是做的有条不紊，就等最后两根大梁接上了，具体是什么，我先卖一个关 子，我一直有个愿望，希望在这个团队中沉淀的东西，最好是可以被复制操作的模型或者有效工具，而不仅仅是输出观点或者心得，越是务实的，越是花时间积攒 的，越是能造福所有设计师的，这也是TX.CDC.HCI team作为业界最大交互设计团队应该有的行业责任和意识。</p>
 
-<p>例如：</p>
+<p>08年开始，团队进入快速发展期，团队逐渐扩大，手下的新人越来多，需要带领的人和主导或者评审的项目越来越多，往往是几个设计项目在同时做设 计，除了自己要做设计，还要审核别人的方案，时间和精力都是成倍付出的，但这些在个人绩效上通常又很难体现，看起来是吃亏了，其实正是这样才锻炼了自己的 多并发处理任务的能力，也让自己有机会从不同视角审视这个团队的全局。</p>
 
-<p>D:\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.2.5.v200909021031\appengine-java-sdk-1.2.5\bin&gt;appcfg.cmd rollback D:\eclipse\workspace\XXXXXX\war</p>
+<p>还有一个感触是在设计问责制下，会发现一个人的力量真是太渺茫了，也就是从那时起我有了培养设计团队骨干的想法，原来只是有朴素的师傅带徒弟的 想法，但发现速度太慢，另外就是良莠不齐，不同师傅带出来徒弟水准不一，而原来的师傅们坦白讲都太新了，在ERP领域，一个行业专家  10年以上，20年以上资历的比比皆是，而在互联网行业，4，6年还在一个公司做一线的资深设计师都挺少，一方面外面的诱惑太大，很多人在第2年，第三年 又有机会得到很优厚的跳槽机会，对于我这样的团队而言，更是被人时刻虎视眈眈着，其实一个交互设计师要成熟起来，三年是一个坎，最好踏踏实实做三年，然后 在说做管理或者做其他的事，再讲讲为什么以三年为期，这个有点武断，结合我自己的经验，我自认不是笨人，还有些小聪明，03年加入KD到06年离开，我一 直很感激这段经历，让我从一个交互门外汉，通过项目，观摩到什么是高效的流程管理，什么是大型团队作业，什么是真正的软件架构分层，那段时间里我就想一块 海绵，尽情吸收着各种对我有用的养分，我经常偷偷去听　销售同事的演讲分享，借项目的便利　听开发同事讲解最新的JAVA，C++　架构技术分析，用心揣 摩研发中心的年度规划ppt思路，虽然是个小兵，但我心里一直有个隐约的声音告诉我，当我有一天需要做这些事时，我不必毫无头绪，多年后我一直很庆幸自己 不务正业上了这么多杂七杂八的课，我的流程管理思想，我的文档管理意识，我对软件架构的理解，我对技术演讲的热爱，无不是在这潜移默化的影响中，没有3年 的历练，所谓的综合能力是不太能转化为真正的核心能力的，一个成熟的交互设计师核心能力是什么？就是在自己的专业内在复杂不确定的因素中能将设计“一次作 对”，并达到设计表达清晰，准确，完整，设计的方案结构最简，实现成本最低。这些都不简单只是交互设计专业本身精修能带来的。</p>
 
-<p>输出如下：</p>
+<p>另外，一个成熟的交互设计师，最好能说，能写，能做，能做这个应该是基础要求，但要做好其实不容易，我自己有个体会，就是多写技术专题，最好当 论文来写，一般写技术专题，不仅能使自己进一步理清思路，也会加深对问题的理解，因为在写的时候才会发现，有些问题原来自己并不清楚，给别人讲课也是如 此，写和讲看起来都是在帮别人，实际上都是与己有益的事。</p>
 
-<p>Reading application configuration data&#8230;<br />
-Beginning server interaction for XXXXXX&#8230;<br />
-0% Rolling back the update.<br />
-Success.<br />
-Cleaning up temporary files&#8230;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Weblogic 10.3 连接 Oracle 8i]]></title>
-    <link href="http://NeoCN.github.com/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html"/>
-    <updated>2009-08-14T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Application Server/Oracle/weblogic10-3-connect-to-oracle8i</id>
-    <content type="html"><![CDATA[<p>最近做一个项目与统一接入的集成，修改完配置文件后，需要部署到正式环境中去，应用服务器是WebLogic 10.3，在新建JNDI数据源的时候无法建立成功，出现如下错误：</p>
+<p>关于做导师带新人的几点核心体会，很重要的一条培养他的专业自信，中国的企业里从事交互设计，或者以体验设计，可用性，产品设计名义做着类似设 计的从业人员越来越多，也许是我的偏见，我到目前为止仍然认为中国的交互设计师们仍然没有成功掌握深层次技术，这个和人员的组成来源有关系，多数的从业者 差不多都是学工业设计，甚至美术设计出生的人，很多公司是靠着这样一批没有开发，没有业务经验经验的新人开始“可用性”设计之路，加上交互设计这个行业其 实入门的门口很低，和产品经理的入门门槛类似，也正是如何，你会发现一大批的人被卡在进阶的路上，同时因为缺乏技术背景及业务知识，在团队作战中很轻易地 就沦为作图的工具，久而久之就被边缘化了，俗称跑龙套，这个不是这个职业的悲哀，而应是人的问题，没有实际经验，很多人纸上谈兵多了，自我感觉良好，一到 实际工作中就因为缺乏技术背景及业务知识，只能靠设计表达上的一点优势立足了，这个是很危险的，我总结我在上一家公司为何能工作自如，有极大的工作自信， 其实总结到最后，我觉得是因为我的杂，我做过美术，所有排版，布局，用色，细节到字体字号我都比较有经验，又因为我做过web开发，对于面向对象的开发模 式，包括基础但重要的软件分层，软件结构，控件的派生，重构，继承等知识都有了解，大学又是财经学院毕业，所以阴差阳错，找到了一个最佳的契合点，加上有 小半年时间，我一人潜心把整个软件的UI规范重写了一遍，反响很好，这样在在最需要树立职业自信的地方找到了信心，也坚定了我是一个合适的交互设计师的信 念。</p>
 
-<p>java.lang.ArrayIndexOutOfBoundsException: 4</p>
+<p>再深入说说自信的问题，很多设计师其实不自信自己是做交互设计师的“料”其实这个自信不是自己暗示的，是真的需要有一个个成功案例来佐证的，如 果你恰巧有公认的成功案例，那你一定不会怀疑自己的“天生资质”，这也给到我一个启发就是培养一个设计师的自信一定要因人设事，把他放在合适的位置，给到 机会，让他大胆去闯，鼓励他在自由状态下去悟，不要太干扰他，一旦他收获了真正的自信，一般人是打不倒他的，而且他会对这份职业有极大的认同感。</p>
 
-<p>数组下标越界？很是让人摸不着头脑，这建数据源跟数组下标越界有什么关系？？？</p>
+<p>设计师的工作是有层次的，现在越来越有感触，交互设计师的工作是需要分级分层的，我一直很喜欢ebay的一个模型，如图：</p>
 
-<p>数据库的版本是Oracle 8i，经过查找资料，发现问题的根源是WebLogic 10.3不再支持Oracle 8i。</p>
+<p><img title="Pattern of alipay" src="http://cdc.tencent.com/wp-content/uploads/2010/11/21.png" alt="" width="454" height="340" /></p>
 
-<p>WebLogic 10.3所支持的数据库：<a title="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" href="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" target="_blank">http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245</a></p>
+<p>你可以从中看到自己的影响力到哪，一个设计师如果是精于designs，那你是个很好的设计助理，如果能能对frameworks提出成熟方 案，那应该是个很合格的交互设计师了，如果你对strategies有影响，甚至有一定决策权，那恭喜你，你理所当然应该得到所有HCIer的尊重。</p>
 
-<p>目前暂时没有解决办法，只能升级Oracle数据库，或者，如果是付费用户的话可寻求官方技术支持！</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cygwin Bash Shell 中文显示]]></title>
-    <link href="http://NeoCN.github.com/Cygwin/Linux/cygwin-bash-shell-chinese.html"/>
-    <updated>2009-08-14T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Cygwin/Linux/cygwin-bash-shell-chinese</id>
-    <content type="html"><![CDATA[<p>昨天，在XP上安装了Cygwin，移动的网速还是不错的，很快就安装完成了，只是，发现中文全部显示为问号，而且，ls和dir命令，也没有对目录等的进行着色，以下是解决办法：</p>
+<p>于丹说，人到中年是离自己最远的时候。因为年轻的时候可以随性，年老的时候可以宁静，只有中年，那是一种担当。现在来看,在十年的这个点上，其 实是我进入一个新的人生境界的开始，我不是很愿意讲自己的历史，以上说的也不完整，想到哪说到哪，但都是真话，如果能对正在路上和我同行的HCIer们有 些启发，我就很欣慰了。</p>
 
-<p>1、解决中文文件和目录名显示问题</p>
-
-<p>修改.inputrc文件，打开以下设置：
-<pre lang="bash">set meta-flag on
-# 关闭bash命令行8字节字符转义符的转换
-set convert-meta off
-# 使bash命令行支持8字节字符输入
-set input-meta on
-# 使bash命令行支持8字节字符输出
-set output-meta on</pre>
-<!--more--></p>
-
-<p>2、修改.bashrc文件中，添加如下代码，解决目录着色问题
-<pre lang="bash">alias ls='ls --color --show-control-chars'</pre>
-3、修改.bash_profile，增加语言相关环境变量
-<pre lang="bash">export LC_ALL=zh_CN.GBK
-export LC_CTYPE=zh_CN.GBK
-export LANG=zh_CN.GBK
-export XMODIFIERS="@im=Chinput"3
-stty cs8 -istrip
-stty pass8
-export LESSCHARSET=latin1</pre>
-完成以上修改以后，重新启动Cygwin即可。</p>
-
-<p><img class="size-full wp-image-142" title="Cygwin Chinese Test" src="http://www.devx.me/wp-content/uploads/2009/08/Cygwin-Chinese-Test.PNG" alt="Cygwin中文测试" height="294" /></p>
-
-<p><img class="size-full wp-image-133" title="Cygwin GCC Help" src="http://www.devx.me/wp-content/uploads/2009/08/Cygwin-GCC-Help1.PNG" alt="Cygwin GCC 中文帮助信息" height="439" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[jQuery小贴士]]></title>
-    <link href="http://NeoCN.github.com/jQuery/jquery-tips.html"/>
-    <updated>2009-07-31T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/jQuery/jquery-tips</id>
-    <content type="html"><![CDATA[<p>本文译自：<a title="Things you may not know about jQuery" href="http://james.padolsey.com/javascript/things-you-may-not-know-about-jquery/" target="_blank">http://james.padolsey.com/javascript/things-you-may-not-know-about-jquery/</a></p>
-
-<p>声明：原创翻译，不当之处还请多多指正，转载请注明出处。
-<ul>
-	<li> $.fn仅仅是jQuery.prototype 的一个快捷方式。</li>
-	<li> 您可以通过尝试访问jQuery集合的第一个元素来测试jQuery集合是否包含某些内容，例如： if($(selector)[0]){…} 。</li>
-	<li> jQuery在所有浏览器中标准化了事件对象！可以到这里查看所有可用的属性/方法： http://docs.jquery.com/Events/jQuery.Event 。</li>
-	<li> 当您创建一个插件时，您可以使用的jQuery的链式调用访问前面的对象：</li><!--more-->
-</ul>
-<pre lang="javascript">
-      jQuery.fn.doSomething = function() {
-          this; // => $('a')
-          this.prevObject; // => $('li')
-          // 记得在你的插件中使用链式代码
-          return this;
-      };
-       
-      jQuery('li').show().find('a').doSomething();
-       
-      // 你甚至可以从创建一个新的“根”插件:
-      // (返回这个链的“根”)
-      jQuery.fn.root = function() {
-          // 根永远都是Document所以我们不得不
-          // 回到最后一个的前一个：
-          var root = this;
-          while(root.prevObject.prevObject) {
-              root = root.prevObject;
-          }
-          return root;
-      };
-       
-      $('li').find('a').children().root(); // <= $('li') 被返回
-      //在这种情况下使用root()与使用end()是一样的
-</pre>
-<ul>
-	<li> 您可以对事件应用命名空间！这对于插件开发是特别有用的：</li>
-</ul>
-<pre lang="javascript">
-      jQuery.fn.myPlugin = function() {</pre></p>
-
-<p>          //自己做一些清理 <br />
-          jQuery.myPlugin = {<br />
-              cleanUp: function() { </p>
-
-<p>                  // 该插件的作用是移除所有已绑定的click事件处理器<br />
-                  jQuery(&#8216;*&#8217;).unbind(&#8216;click.myPlugin&#8217;); </p>
-
-<p>                  //或者，删除所有事件：<br />
-                  jQuery(&#8216;*&#8217;).unbind(&#8216;.myPlugin&#8217;); </p>
-
-<p>              }<br />
-          }; <br />
-          return this.bind(&#8216;click.myPlugin&#8217;, function() {<br />
-              //做些什么&#8230;<br />
-          });<br />
-      };<br />
-       <br />
-      //请注意，您也可以为数据定义命名空间：<br />
-      // 例如. $(elem).data(&#8216;whatever.myPlugin&#8217;,value);
-
-<ul>
-	<li> 您可以通过jQuery的事件存储机制访问所有绑定到一个元素（或任何对象）的所有事件处理器：</li>
-</ul>
-<pre lang="javascript">
-      //列表已绑定的事件：
-      console.dir( jQuery('#elem').data('events') ); 
-      //记录所有事件的处理程序：
-      jQuery.each($('#elem').data('events'), function(i, event){
-          jQuery.each(event, function(i, handler){
-              console.log( handler.toString() );
-          });
-      }); 
-      //你可以看到某个事件发生时真正执行的方法，
-      //对调试非常有用！
-</pre></p>
-
-<p><ul>
-	<li> jQuery原生支持JSONP （&#8217;JSON with padding&#8217;），它实际上意味着可以做跨域“Ajax”请求（虽然严格意义上来讲并不是Ajax，因为它没有使用XHR ）。JSONP需要被请求域必须有一些相应的JSONP的API（它必须能够封装JSON数据与指定的回调函数）。一个例子：</li>
-</ul>
-<pre lang="javascript">
-      function getLatestFlickrPics(tag,callback) {
-          var flickrFeed = 'http://api.flickr.com/services/feeds/photos_public.gne?tags='
-                         + tag + '&tagmode=any&format=json&jsoncallback=?';
-          jQuery.getJSON(flickrFeed, callback);
-      }
-       
-      //用法
-      getLatestFlickrPics('ferrari', function(data){
-          jQuery.each(data.items, function(i, item){
-              $("</pre><img />&#8221;).attr(&#8220;src&#8221;, item.media.m).appendTo(&#8216;body&#8217;);<br />
-          });<br />
-      });
-</p>
-
-<p><ul>
-	<li> 您可能会发现它有点混乱，但jQuery使我们能够在一个链式代码中建立一个完整的DOM结构：</li>
-</ul>
-<pre lang="javascript">
-      //创建或注入一个链：
-      jQuery('<div>')
-          .append('<p><a href="#">Foo</a></p>')
-          .find('p a')
-              .click(function(){
-                  // 做些什么...
-                  return false;
-              })
-              .end()
-          .append('<p><a href="#">Bar</a></p>')
-          .find('p:eq(1) a')
-              .click(function(){
-                  //做些别的事情...
-                  return false;
-              })
-              .end()
-          .appendTo('body');
-</div></pre></p>
-
-<p><ul>
-	<li> 访问一个jQuery集合内部的DOM元素是非常简单的：</li>
-</ul>
-<pre lang="javascript">
-     var HTMLCollection = $('div').get(); </pre></p>
-
-<p>      //或者，如果您只想获取第一个元素：<br />
-      $(&#8216;div&#8217;).get(0);<br />
-      $(&#8216;div&#8217;).get()[0];<br />
-      $(&#8216;div&#8217;)[0];
-</p>
-
-<p><ul>
-	<li> 您不仅可以绑定事件到DOM元素;您也可以绑定一个自定义事件到任何对象！</li>
-</ul>
-<pre lang="javascript">
-      function Widget() {
-          //做些什么...
-      };</pre></p>
-
-<p>      var myPhotoWidget = new Widget(&#8216;photos&#8217;);  <br />
-      var myPhotoWidget = new Widget(&#8216;photos&#8217;);  <br />
-      jQuery(myPhotoWidget).bind(&#8216;photoAdd&#8217;, function() {<br />
-            //自定义的事件处理&#8230;<br />
-      });<br />
-      //触发事件：<br />
-      jQuery(myPhotoWidget).trigger(&#8216;photoAdd&#8217;);
-</p>
-
-<p><ul>
-	<li> 获取所选中的元素的索引值是非常容易的， jQuery给我们提供了一个&#8217;index&#8217;方法：</li>
-</ul>
-<pre lang="javascript">
-    $('table tr').click(function(){
-       //查找点击的表格行索引：
-       var index = $('table tr').index(this);
-    });
-</pre>
-<ul>
-	<li> 您可以创建自己的过滤选择器。下面是一个例子：</li>
-</ul>
-<pre lang="javascript">
-      $.expr[':'].external = function(elem,index,match) {
-          var url = elem.href || elem.src, loc = window.location; 
-              loc = window.location;
-          return !!url.match(new RegExp('^' + loc.protocol + '//' + '(?!' + loc.hostname + ')' ));}; 
-      }; 
-      //现在您可以在您的选择器使用它： 
-      //查找所有的外部链接：
-      $('a:external');  
-      //查找所有外部脚本元素：
-      $('script:external');  
-      //判断是否是外部链接：
-      $('a#mylink').is(':external'); // true/false
-</pre>
-<ul>
-	<li> 我看到不少人仍然在他们的jQuery脚本中使用JavaScript的FOR或者WHILE结构来创建循环。这样做没有什么不对，但请注意， jQuery的&#8217;each&#8217;方法也能够迭代数组和对象！</li>
-</ul>
-<pre lang="javascript">
-    var myArr = ['apple','banana','orange'];  
-      $.each(myArr, function(index, item) {
-          //做些什么
-          //返回False来终止循环
-          //返回True来继续下一次循环
-      });
-</pre></p>
-
-<p><ul>
-	<li> &#8216;过滤器&#8217;方法接受一个字符串选择器或者一个函数。当和函数一起使用的时候，您必须返回false来从堆栈中删除这个元素，返回true来保留它：</li>
-</ul>
-<pre lang="javascript">
-      $('div').filter(function(){
-          return this.childNodes.length > 10; // 必须返回一个Boolean类型的值   
-      });
-</pre></p>
-
-<p><ul>
-	<li> 您没有必要为一个新的元素的指定ID或classes以便于以后对其进行引用，只需将他们缓存到一个变量就可以了：</li>
-</ul>
-<pre lang="javascript">
-     var myInjectedDiv = $('<div>').appendTo('body'); </div></pre></p>
-
-<p>      //使用&#8217; myInjectedDiv &#8216;来引用这个元素：<br />
-      myInjectedDiv.bind(&#8216;click&#8217;, function(){<br />
-          // &#8230;<br />
-      });
-</p>
-
-<p><ul>
-	<li> jQuery的&#8217;map&#8217;方法是非常有用的，参数中传递过来的函数将会对传递过来的数组（或对象）中的每一个元素进行操作，并且将每一次的函数返回值添加到新的数组中去，我们来看一看：</li>
-</ul>
-<pre lang="javascript">
-      //创建一个包含所有锚点HREF属性的数组：
-      var URLs = $.map($('a'), function(elem, index){
-          return elem.href;
-      });
-       
-      // URLs = ['http://google.com', 'http://whatever.com', 'http://yahoo.com']
-</pre></p>
-
-<p><ul>
-	<li> 这一个不是jQuery相关的，但它是非常有用的。当您需要比较做一些工作的不同方法时（为了获得更好的性能）您可以使用Firebug控制台来记录每一段代码的执行时间，例如：</li>
-<pre lang="javascript">
-      console.time('My first method');
-      //做些什么...
-      console.time('My first method'); </pre></ul></p>
-
-<p>      console.time(&#8216;My second method&#8217;);<br />
-      //做些别的事情&#8230;<br />
-      console.time(&#8216;My second method&#8217;); </p>
-
-<p>      //Firebug会记录完成每块代码所用的时间（以毫秒为单位）
-
-</p>
+<p>来源：<a href="http://cdc.tencent.com/?p=3218" target="_blank">我的十年，交互之外的那些事</a></p>
 
 <p></p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[[译] PL/SQL 格式化指南 (PL/SQL Formatting Guide)]]></title>
-    <link href="http://NeoCN.github.com/Oracle/plsql-formatting-guide.html"/>
-    <updated>2009-07-23T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Oracle/plsql-formatting-guide</id>
-    <content type="html"><![CDATA[<p>最近一直在修改以前同事写的Oracle存储过程，由于编码不规范，修改起来相当费神，于是乎，翻译了这篇 PL/SQL Formatting Guide （Oracle PL/ SQL by Example，Appendix A），费了九牛二虎之力，终于翻译完了，也终于知道自己的英语有多烂了，呜呜。</p>
+    <title type="html"><![CDATA[[转]从0到1亿美元 ---- PopCap创始人John Vechey自述]]></title>
+    <link href="http://NeoCN.github.com/其他/how_john_vechey_the_founder_of_popcap_did_it.html"/>
+    <updated>2010-10-25T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/how_john_vechey_the_founder_of_popcap_did_it</id>
+    <content type="html"><![CDATA[<p><div /></p>
 
-<p>声明：原创翻译，不足之处请多多指正，转载请注明出处！</p>
+<p>作者： <a href="http://www.ruanyifeng.com/">阮一峰</a></p>
 
-<p><strong>一、大小写</strong><strong> </strong></p>
+<p>著名游戏<a href="http://en.wikipedia.org/wiki/Plants_vs._Zombies" target="_blank">&#8220;植物大战僵尸&#8221;</a>，是<a href="http://www.popcap.com/" target="_blank">PopCap</a>软件公司的作品。</p>
 
-<p>就像在SQL中一样，PL / SQL中是不区分大小写的。其一般准则如下：
+<p>这家公司今年的收入，有望达到1亿美元。可是10年前，它刚刚成立的时候，只是一个辍学生与两个好友开的软件工作室。</p>
+
+<p>它如何做到从0到1亿美元的飞跃？下面就是创始人非常诚恳的自述，我看了以后实在难忘，就把它译了出来。</p>
+
+<p>========================================</p>
+
+<p><strong>PopCap创始人John Vechey自述</strong></p>
+
+<p>译者：阮一峰</p>
+
+<p>原文网址：<a href="http://www.inc.com/magazine/20101001/how-i-did-it-john-vechey-founder-of-popcap.html" target="_blank">inc.com</a></p>
+
+<p>1.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102401.jpg" alt="" /></p>
+
+<p>我在威斯康辛州长大。我爸是炼钢工人，他深受嬉皮士运动的影响，把朋友、家庭、女人看得比钱重要，所以他从不接受全职工作，只在需要钱的时候才干一些兼职。</p>
+
+<p><!--more--></p>
+
+<p>2.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102402.jpg" alt="" /></p>
+
+<p>我很小的时候，父母就离婚了。我跟着我妈，后来一共有7个继父。那时家里非常穷，我看见别人有好吃的就很羡慕。课余时间我都在打工，所以我的青少年时代几乎没有课外活动。</p>
+
+<p>3.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102403.jpg" alt="" /></p>
+
+<p>1996年，我进了普渡大学。虽然我还没有自己的电脑，但我想成为程序员，所以就选修了编程课。那门课所有考试的第一名，总是一个叫做Brian Fiete的人，我就去问他，愿不愿意一起编个游戏。这就是我们的第一个游戏ARC的由来。</p>
+
+<p>4.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102404.jpg" alt="" /></p>
+
+<p>ARC是一个彩弹游戏，放上网以后，吸引了许多人玩。开发游戏需要大量时间，而我的大学GPA（绩点）只有1.67，所以我就退学了，全身心投入开发工作。有一次网上聊天，一个叫做Jason Kapalka的人要求加入我们，他后来成了PopCap的第三个创始人。那是1997年的事。</p>
+
+<p>5.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102405.jpg" alt="" /></p>
+
+<p>Jason Kapalka说服一家游戏公司，向我们购买ARC运营许可证，价格是45000美元。那一年，我只有19岁，突然有这么一笔钱，感觉像百万富翁一样。后来，我们又把ARC的所有权卖给了Sierra游戏公司，又拿到了10万美元，我们三个就开始成立自己的公司了。</p>
+
+<p>6.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102406.jpg" alt="" /></p>
+
+<p>最初，我们只打算为别人开发游戏，没想过直接以自己的品牌向玩家推出游戏。我们第一个开发出来的游戏，被代理商拒绝了。然后，我们就做了Bejeweled（钻石迷情）。那个游戏的诞生纯属偶然，我回老家的时候，看见人们在网上玩一种纸牌游戏，觉得很有意思，就发Email告诉Brian Fiete，他第二天就写出了游戏的原型，而Jason Kapalka在第三天找来了许多钻石图案，第四天Bejeweled的第一版就成型了。</p>
+
+<p>7.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102407.jpg" alt="" /></p>
+
+<p>我们带着Bejeweled去找游戏网站，Yahoo表示没兴趣代理，Microsoft表示可以把它放到MSN上，但是条件很苛刻，出于无奈，我们还是接受了。结果，它在MSN上大受欢迎，一天有6万个人来玩，可是我们的报酬仅仅是每月1500美元。</p>
+
+<p>8.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102408.jpg" alt="" /></p>
+
+<p>到了2000年，用户要求获得Bejeweled的可下载版本，因为那时大家都是拨号上网，网费很贵，而且上网时电话打不进来。于是，我不得不说服Yahoo（它也开始代理Bejeweled了）和MSN，在继续提供免费的线上版本的同时，允许我们推出售价20美元的功能更强的可下载版本，所获得的利润，我们与销售网站对半分。我们从此有了一种新的商业模式。</p>
+
+<p>9.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102409.jpg" alt="" /></p>
+
+<p>2001年，Bejeweled上线销售的第一个月，我们赚到了35000美元，第二个月40000美元。我们知道，这种状况不会持续很久，不过这些钱已经足够了。我和Brian拿着钱去阿根廷度假了，我们在那里天天喝酒，一连过了4个月。直到Yahoo聘请我们开发新游戏时，才重新回到美国。</p>
+
+<p>10.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102410.jpg" alt="" /></p>
+
+<p>我们决定，我们开发的游戏一定要非常有趣、容易上手、能够吸引全家老小。果然，此后开发的35款游戏都赚到了钱。2004年，我们有15个雇员，有人愿意出6000万美元收购我们，我们拒绝了。我们找到David Roberts担任CEO，他曾经为Apple和 Adobe工作。我们告诉他，他的任务就是做大销售额，游戏创意方面的事情，他不用管。</p>
+
+<p>11.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102411.jpg" alt="" /></p>
+
+<p>David Roberts上任以后，改变的第一件事，就是让同一款游戏可以长期产生收入，而不是像我们以前那样，通过不断开发新游戏获得收入。如今，单单Bejeweled的收入就占到总收入的30%以上，因为我们让它可以在所有平台上运行：PC/Mac、 Xbox、PlayStation、Wii、DS、PalmPilot、iPhone、iPad等等。</p>
+
+<p>12.</p>
+
+<p><img src="http://image.beekka.com/blog/201010/bg2010102412.jpg" alt="" /></p>
+
+<p>2006年开始，我们用了三年时间，不断完善《植物大战僵尸》这款新游戏，最后获得了巨大成功。我们始终有一个信念，那就是一定要做出顶尖游戏，那样才能赚到大钱，如果一个游戏只是勉强可玩，那就一分钱也赚不到。</p>
+
+<p>（完）</p>
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[转]创业者需要知道的50句话]]></title>
+    <link href="http://NeoCN.github.com/其他/50_things_every_startup_should_know.html"/>
+    <updated>2010-10-25T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/50_things_every_startup_should_know</id>
+    <content type="html"><![CDATA[<p><div /></p>
+
+<p>作者：<a href="http://davidcummings.org/2010/09/05/50-things-every-startup-should-know/" target="_blank">David Cummings</a></p>
+
+<p>译者：<a href="http://www.ruanyifeng.com/blog/2010/09/50_things_every_startup_should_know.html" target="_blank">阮一峰</a></p>
+
+<p><img src="http://image.beekka.com/blog/201009/bg2010090801.jpg" alt="" /></p>
+
+<p>1.</p>
+
+<p>只管去做。</p>
+
+<p>Just do it</p>
+
+<p>2.</p>
+
+<p>99%的决策，都可以更改。</p>
+
+<p>99% of decisions aren&#8217;t permanent</p>
+
+<p>3.</p>
+
+<p>招人要慎重，解雇要快速。</p>
+
+<p>Be slow to hire and quick to fire</p>
+
+<p>4.</p>
+
+<p>工作成效必须有评估。</p>
+
+<p>Measure what you manage</p>
+
+<p>5.</p>
+
+<p>客户比竞争对手更重要。</p>
+
+<p>Competition isn&#8217;t as important as the customer</p>
+
+<p>6.</p>
+
+<p>95%的创业公司不应该融资。</p>
+
+<p>95% of startups shouldn&#8217;t raise money</p>
+
+<p>7.</p>
+
+<p>加入创业者团体。</p>
+
+<p>Join a startup peer group</p>
+
+<p>8.</p>
+
+<p>快速增长带来的最大挑战，就是如何让每个员工找到合适自己的位置。</p>
+
+<p>The biggest challenge with growth is keeping everyone aligned</p>
+
+<p>9.</p>
+
+<p>价格战走不远，客户服务才是根本。</p>
+
+<p>Price differentiation doesn&#8217;t last long but customer service does</p>
+
+<p>10.</p>
+
+<p>成功的最重要因素，就是选对了时机。</p>
+
+<p>Market timing is the most important factor for homeruns</p>
+
+<p><!--more--></p>
+
+<p>11.</p>
+
+<p>让客户成为你的销售员。</p>
+
+<p>Empower customers to help sell new customers</p>
+
+<p>12.</p>
+
+<p>为你的团队创造最好的工作环境。</p>
+
+<p>Create the best environment you can for your team</p>
+
+<p>13.</p>
+
+<p>与其乱猜答案，不如提出正确的问题。</p>
+
+<p>Asking good questions is more important than guessing the answer</p>
+
+<p>14.</p>
+
+<p>建立各种人际关系，日后会帮到你。</p>
+
+<p>Build relationships before you need them</p>
+
+<p>15.</p>
+
+<p>开始谈判前，就做好不成功的准备。</p>
+
+<p>Always consider the best alternative outcome before beginning a negotiation</p>
+
+<p>16.</p>
+
+<p>在经营外部业务和管理内部运作之间，正确分配时间。</p>
+
+<p>Consciously balance time working in the business vs working on the business</p>
+
+<p>17.</p>
+
+<p>你只有一次机会，得到他人对你的第一印象。</p>
+
+<p>You only get one first impression</p>
+
+<p>18.</p>
+
+<p>你一开始做的事情，可能不是最终让你成功的事情。</p>
+
+<p>What you start out doing isn&#8217;t likely where you&#8217;ll find success</p>
+
+<p>19.</p>
+
+<p>搞对公司文化，一切就会井然有序。</p>
+
+<p>Get the corporate culture right and everything will fall into place</p>
+
+<p>20.</p>
+
+<p>不要去想将来如何退出，这就是最佳退出战略。</p>
+
+<p>The best exit strategy is to not need one</p>
+
+<p>21.</p>
+
+<p>网站最大的敌人，就是浏览器的&#8221;后退&#8221;按钮。</p>
+
+<p>The biggest enemy of websites is the browser Back button</p>
+
+<p>22.</p>
+
+<p>经常性收入是收入的最好形式。</p>
+
+<p>Recurring revenue is the best form of revenue</p>
+
+<p>23.</p>
+
+<p>不要过河拆桥，世界很小，你会有报应的。</p>
+
+<p>Don&#8217;t burn any bridges as it is a small world</p>
+
+<p>24.</p>
+
+<p>建立一个针对性很强的品牌，然后围绕它把各方面都做好。</p>
+
+<p>Build a niche brand and curate all aspects of it</p>
+
+<p>25.</p>
+
+<p>创业公司的循环往复，是健康的迹象。</p>
+
+<p>Pivoting and iterating is healthy in a startup</p>
+
+<p>26.</p>
+
+<p>永远要求供货商提供折扣价。</p>
+
+<p>Always ask for a discount</p>
+
+<p>27.</p>
+
+<p>不要以为，天底下只有你想到了这个主意。</p>
+
+<p>Your idea isn&#8217;t unique</p>
+
+<p>28.</p>
+
+<p>与他人分享创意，会让你得到意料之外的好处。</p>
+
+<p>Sharing your idea with others will lead to benefits you can&#8217;t predict</p>
+
+<p>29.</p>
+
+<p>越简单越好。</p>
+
+<p>Keep it as simple as possible</p>
+
+<p>30.</p>
+
+<p>人们认同公司，甚于认同产品。</p>
+
+<p>People identify with companies more so than products</p>
+
+<p>31.</p>
+
+<p>只有第一次，才值得花钱请专业人员（律师、会计师等）帮忙。</p>
+
+<p>It&#8217;s worth paying a professional (lawyer, accountant, etc) to do it right the first time</p>
+
+<p>32.</p>
+
+<p>制定一个目标，然后习惯于你得到的决策信息永远在变。</p>
+
+<p>Set goals and adapt to changing information</p>
+
+<p>33.</p>
+
+<p>讲故事是最有力的推销手段。</p>
+
+<p>Storytelling is more powerful than marketing</p>
+
+<p>34.</p>
+
+<p>大多数创业公司，最初为自己的产品定价时，都定得太低。</p>
+
+<p>Most startups initially price their product/service too low</p>
+
+<p>35.</p>
+
+<p>一定要有思考的时间。</p>
+
+<p>Make time to think</p>
+
+<p>36.</p>
+
+<p>关注公司的节奏、统计数据和优先任务。</p>
+
+<p>Focus on rhythm, data, and priorities</p>
+
+<p>37.</p>
+
+<p>不要把你的业务说成全新模式，而要用传统行业的例子描述。</p>
+
+<p>Develop offline analogies to describe your startup</p>
+
+<p>38.</p>
+
+<p>开公司不仅仅是为了钱。</p>
+
+<p>Companies aren&#8217;t just about profits</p>
+
+<p>39.</p>
+
+<p>即使小小的胜利，也值得庆祝。</p>
+
+<p>Celebrate the small victories</p>
+
+<p>40.</p>
+
+<p>你要扬长避短。</p>
+
+<p>Play to your strengths</p>
+
+<p>41.</p>
+
+<p>不要被用户的意见左右。</p>
+
+<p>Be opinionated about your product when considering customer suggestions</p>
+
+<p>42.</p>
+
+<p>知道自己的特点何在，然后清晰地表达出来。</p>
+
+<p>Know why you&#8217;re different and clearly articulate it</p>
+
+<p>43.</p>
+
+<p>不要闭门造车。</p>
+
+<p>Don&#8217;t develop products in a vacuum</p>
+
+<p>44.</p>
+
+<p>与雇员、客户、投资者和社区，保持经常性的沟通。</p>
+
+<p>Regularly communicate with employees, customers, investors, and the community</p>
+
+<p>45.</p>
+
+<p>所有对你至关重要的人，你都要保持良好关系。</p>
+
+<p>Remove friction for all stakeholders</p>
+
+<p>46.</p>
+
+<p>找不到决策依据，人们会自行编造。</p>
+
+<p>Absent information people make up reasons</p>
+
+<p>47.</p>
+
+<p>人的精力有限，同一时间最多只能干三件事。</p>
+
+<p>It is difficult to concentrate on more than three things at any one time</p>
+
+<p>48.</p>
+
+<p>你雇到什么人，决定了一切。</p>
+
+<p>Employees are the most important stakeholder</p>
+
+<p>49.</p>
+
+<p>没有完美无缺的计划。</p>
+
+<p>No plan is perfect</p>
+
+<p>50.</p>
+
+<p>是你&#8221;玩&#8221;创业，而不是创业&#8221;玩&#8221;你。</p>
+
+<p>Consume the startup but don&#8217;t let it consume you</p>
+
+<p>（完）</p>
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google重新推出Instantiations的开发工具 -- 现在全部免费]]></title>
+    <link href="http://NeoCN.github.com/Java/google-relaunches-instantiations-tools-and-free-of-charge.html"/>
+    <updated>2010-09-17T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/google-relaunches-instantiations-tools-and-free-of-charge</id>
+    <content type="html"><![CDATA[<p>Google这次又让我们这些程序员欢呼雀跃了……</p>
+
+<p>8月初，Google收购了Instantiations，现在，Google重新发布了Instantiations的开发工具，并且对所有开发人员免费:
 <ul>
-	<li>关键字(BEGIN, EXCEPTION, END, IF THEN ELSE,LOOP, END LOOP)、数据类型(VARCHAR2, NUMBER)、内部函数(LEAST, SUBSTR)和用户定义的子程序(procedures, functions,packages)，使用大写。</li>
-	<li>变量名以及SQL中的列名和表名，使用小写。<!--more--></li>
+	<li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-gwtdesigner.html" target="_blank">GWT Designer</a>
+强大的基于 Eclipse的开发工具，使Java开发者能够使用Google Web Toolkit (GWT)快速创建Ajax用户界面。</li>
+	<li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-codepro.html" target="_blank">CodePro AnalytiX</a>
+全面自动化的软件代码质量及安全性分析工具，用于提高软件质量、可靠性和可维护性。</li>
+	<li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-wbpro.html" target="_blank">WindowBuilder Pro</a>
+Java图形界面设计器，支持Swing, SWT, GWT, RCP, 和 XWT UI 框架</li>
+	<li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-wintester.html" target="_blank">WindowTester Pro</a>
+使用Java富客户端应用测试GUI交互，支持SWT 和 Swing UI框架</li>
 </ul>
-<strong>二、空白</strong><strong> </strong>
-<p align="left">空白（空行和空格）在PL/SQL中如同在SQL中一样重要，因为它是提高代码可读性的一个重要因素。换句话说，可以通过在代码中使用缩进来体现程序的逻辑结构。以下是一些建议：</p></p>
+<a href="http://www.devx.me/wp-content/uploads/2010/09/Gwt-Designer.png"><img class="aligncenter size-full wp-image-429" title="Gwt Designer" src="http://www.devx.me/wp-content/uploads/2010/09/Gwt-Designer.png" alt="" width="640" height="411" /></a></p>
 
-<p><ul>
-	<li>在等号或比较操作符的左右各留一个空格；</li>
-	<li>结构词（DECLARE, BEGIN, EXCEPTION, END,IF 和 END IF, LOOP 和 END LOOP）居左排列。另外，结构中的嵌套结构要缩进三个空格（使用空格键，而不是Tab键）；</li>
-	<li>主要代码段之间用空行隔开；</li>
-	<li>把同一结构的不同逻辑部分分开写在独立的行，即使这个结构很短。例如，IF和THEN被放在同一行，而ELSE 和END IF则放在独立的行。</li>
+<p>官方博客上这样写到：
+<pre>下一步的是将这些开发工具更深的整合到GWT开发工具家族中去，将神奇的Instantiations技术融合进
+Eclipse Google 插件(Google Plugin for Eclipse ，GPE) 。 所以，后续还有更多值得期待的内容，
+包括我们认为你肯定喜欢的一些东西，比如在GWT Designer中支持UiBinder 。</pre>
+大家拭目以待吧……</p>
+
+<p>开发工具下载地址：<a href="http://code.google.com/intl/zh-CN/webtoolkit/download.html" target="_blank">http://code.google.com/intl/zh-CN/webtoolkit/download.html</a></p>
+
+<p>订阅Google开发工具更新地址：<a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/optin.html" target="_blank">http://code.google.com/intl/zh-CN/webtoolkit/tools/optin.html</a></p>
+
+<p>官方博客：<a href="http://googlewebtoolkit.blogspot.com/2010/09/google-relaunches-instantiations.html">http://googlewebtoolkit.blogspot.com/2010/09/google-relaunches-instantiations.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[转]你第一步要做的是开始去做]]></title>
+    <link href="http://NeoCN.github.com/其他/the-first-step-is-to-start.html"/>
+    <updated>2010-09-14T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/the-first-step-is-to-start</id>
+    <content type="html"><![CDATA[<p>早上7点多就爬起来了，不上班的几个月，每天的睡眠时间基本都控制在7个半小时，虽然有的时候会困。刚起床那会儿上不了网，就看看一些视频教程，全英的讲解听得迷迷糊糊，不禁感慨，自己的英语水平真是一日不如一日，每况愈下。裸考过了四六级，也只能算是运气，靠高中时的底子。大学四年基本上是英语荒废的四年，工作两年英语继续荒废，基本Over了…… 为什么会荒废，主要的原因是没有坚持。想想这么多年来荒废了什么浪费了什么错过了什么，更是感慨万千。</p>
+
+<p>关于做事，有的时候有很多想法，但大多数时候，仅仅是停留在想法这个层面，经常会想，做这个有好多东西不会呢，等都会了再开始着手吧，时间长了，也就将这些事抛至脑后，不再提起。看到有人在这方面做出了点成绩的时候，才猛然想起，当时自己也是有这样的想法的，不同的是，别人开始着手干，而我是在等……任何一件事都是从无到有，慢慢做起来的，任何一个伟大的人并不是一开始就伟大，而是不断的坚持，不断的积累。滴水穿石是可以的，问题是有没有毅力坚持到穿透的那一刻；铁杵成针也是可以的，问题是有没有毅力坚持磨下去直至成针。
+<h5><strong><span style="color: #008000;">开始与坚持，勇气与毅力，要有勇气去开始，要有毅力去坚持！</span></strong></h5>
+网络通了的时候，看到了《你第一步要做的是开始去做》这篇博文，读来很有感触，所以转发出来，全文如下：<!--more--></p>
+
+<p>—————————————————————————————————————————————————————————————————————————————————</p>
+
+<p>很多人都问我，“我想做web设计，如何入手？”或“我要开发web应用程序，需要学哪些技术？”，当然，推荐他们一摞书籍或十几篇关于55条超越竞争对手115%的技巧文章是最简单的，但问题的实际情况是，如果你想开始做某件事，你并不需要先去学会什么新知识。对你来说，最重要的却是立即着手去做。</p>
+
+<p>行动起来，着手去做。如果你想学web设计，那就去做个网站。如果你想成为企业家、在网上买你的产品，那就去做个电子商务应用程序。也许你现在还不具备这些开发技能，但何必为这些担心？也许你根本不知道你究竟缺少哪些技能呢。
+<h3>从你能做的开始做</h3>
+如果你想在web上做点什么，不要担心着需要去学HTML，CSS，Ruby，PHP，SQL等知识。它们对于完成一个最终的产品是必要的，但开始时你并不需要它们。你可以在Keynote或Powerpoint里把你的想法的物理模型模拟出来。用方框把一个个表单域表示出来，标上说明，把一个个页面用线关联起来。你可以利用现有的软件知识制作出一个非常健壮的用户界面交互原型。根本没有任何计算机知识？那就用你的铅笔和纸和便利贴。画出一个个屏幕样式，把它们贴在墙上，试试各个界面的流程。
+<blockquote>你也许甚至连需要什么技能都不知道，所以就不要忧虑这些了。从你已经知道的着手。</blockquote>
+你可以用草图或幻灯片做很多事情。你可以看到你的想法形象化了，这样可以去评价它是否是一个真正具有价值的东西。到了这一步，你才可以进行下一步，去学习些HTML知识，把你的原型在浏览器里实现。此时，你要尽可能的发挥你所具有的知识和工具，把事情做的最好。
+<h3>防止不自信</h3>
+很多时候我们不能开始做事、无可作为的原因是缺少技术、资源、和工具。但这真正阻挡我们的却是自我挑剔和找借口。在<a href="http://en.wikipedia.org/wiki/Drawing_on_the_Right_Side_of_the_Brain"><em>Drawing on the Right Side of the Brain</em></a>这本优秀的书中，作者贝蒂·爱德华讨论了为什么当还是孩子时喜欢写写画画而到了青春期大部分人都停止了开发这种能力。
+<blockquote>“跟据很多成人的绘画技能来看，进入青春期标志着人们在艺术才能方面发展的突然中止。作为孩子，他们面临一个艺术危机，面临着他们对周围这世界日益增长的复杂的意识和自身艺术技能水平的冲突。”</blockquote>
+孩子们的自我批判意识会逐渐增强，他们同样喜欢绘画，但当他们意识到画不好时，就完全放弃了绘画。</p>
+
+<p>这种感觉会持续到成年。我们想起设计一个网站，或去开发一个应用程序时，如果我们拥有的资源和工具达不到我们预设的要求和水平，我们永远不会开始去做。即使互联网让我们看到了那些无数的伟大作品、天才个人和优秀的操作过程作为样板，也无济于事。人们很容易跟那些最好的比较起来发现自己的各种不充分和缺失，但从来没想过，任何人都不是天生都拥有这些技能的，如果他们不从开始做起，永远也走不到这一天。
+<h3>去干——无须试</h3>
+成功的人会找到一种方法让自己坚持做下去——尽管疑虑不满。艺术家文森特·梵高，只是在他的人生的后十年才称得上是艺术家。我们都因他的伟大艺术作品而认识他，但他并非一开始就是大师。对比一下<em>Drawing on the Right Side of the Brain</em>这本书里提供的两幅画，一副是其早期的作品，一副是两年后的作品：</p>
+
+<p>[caption id=&#8221;attachment_418&#8221; align=&#8221;aligncenter&#8221; width=&#8221;530&#8221; caption=&#8221;文森特·梵高 木匠， 1880 和 Woman Mourning, 1882&#8221;]<a href="http://www.devx.me/wp-content/uploads/2010/09/Vincent-Van-Gogh-Carpenter-1880-and-Woman-Mourning-1882.jpg"><img class="size-full wp-image-418" title="Vincent Van Gogh Carpenter, 1880 and Woman Mourning, 1882" src="http://www.devx.me/wp-content/uploads/2010/09/Vincent-Van-Gogh-Carpenter-1880-and-Woman-Mourning-1882.jpg" alt="文森特·梵高 木匠， 1880 和 Woman Mourning, 1882" width="530" height="361" /></a>[/caption]</p>
+
+<p>他不是什么神童（27岁才开始学画），他通过艰苦努力练就了一身技艺。如果当他感觉到技术水平比不上保罗·高更时，他屈服了自己的疑虑和绝望，他很有可能就放弃了自己的前程。</p>
+
+<p>所有的这些，都是想说一个道理，有很多本来该成的事情因为我们没有去做而没有成。如果是由于认为你自己不够好，不具备技能、知识、经验，而放弃追逐自己的梦想，那简直就是浪费。事实上，事情中存在问题正是一种驱动和鞭策。它会给你巨大的挑战同时巨大的回报。为什么要不厌其烦的做那些已经做过一百遍的事情呢，你已经从中学不到什么了。不要再担心为了完成一个任务你需要知道哪些东西，你已经拥有了开始去做所需要的任何东西了。</p>
+
+<p>————————————————————————————————————————————————————————————————————————————————</p>
+
+<p>原文出处：<a href="http://37signals.com/svn/posts/2538-the-first-step-is-to-start" target="_balnk">The first step is to start</a>
+译文出处：<a title="你第一要做的是开始去做的永久链接" href="http://www.aqee.net/2010/09/14/the-first-step-is-to-start/" target="_balnk">你第一要做的是开始去做</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[译]8个你应该知道的Java领域的牛人]]></title>
+    <link href="http://NeoCN.github.com/Java/top-8-java-people-you-should-know.html"/>
+    <updated>2010-09-12T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/top-8-java-people-you-should-know</id>
+    <content type="html"><![CDATA[<p>这里是8个Java领域的牛人，他们创建了框架，产品，工具或者书籍，并将其捐献给Java社区，改变了Java编程方式。
+<strong>P.S.</strong> 排序仅基于个人观点。</p>
+
+<p><strong>8. Tomcat &amp; Ant 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="James Duncan Davidson" src="http://www.mkyong.com/wp-content/uploads/2010/08/James-Duncan-Davidson-150.png" alt="James Duncan Davidson" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>James Duncan Davidson</strong></span>，在他作为软件工程师在Sun公司工作期间(1997-2001)，创建了Tomcat，一个基于Java的Web服务器，现在仍广泛应用于Java Web项目中，同时还有Ant，一个使用XML描述构建过程与依赖呃构建工具，现在仍是基于Java的Web项目构建的事实标准。</p>
+
+<p><strong>相关链接：</strong>
+<ol>
+	<li><a href="http://twitter.com/duncan" target="_blank">James Duncan Davidson Twitter</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/James_Duncan_Davidson" target="_blank">James Duncan Davidson Wiki</a></li>
+	<li><a href="http://blog.duncandavidson.com/about/" target="_blank">James Duncan Davidson personal blog</a></li>
+	<li><a href="http://ant.apache.org/" target="_blank">Apache Ant</a></li>
+	<li><a href="http://tomcat.apache.org/" target="_blank">Apache Tomcat</a></li>
+</ol>
+<!--more--></p>
+
+<p><strong>7. Test Driven Development &amp; JUnit 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Kent Beck" src="http://www.mkyong.com/wp-content/uploads/2010/08/Kent-Beck-150.png" alt="Kent Beck" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Kent Beck</strong></span>，是极限编程(Extreme Programming，XP)和测试驱动软件开发方法学(Test Driven Development，TDD)的创造者，同时还与Erich Gamma一起创建了JUnit，一个简单的测试框架，JUnit现在已成为Java项目测试的事实标准。JUnit与TDD的结合，与以往Java编程方式有很大不同，这导致了很大一部分开发者并不愿意遵循它。</p>
+
+<p><strong>相关链接：</strong>
+<ol>
+	<li><a href="http://twitter.com/kentbeck" target="_blank">Kent Beck Twitter</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/Kent_Beck" target="_blank">Kent Beck Wiki</a></li>
+	<li><a href="http://www.threeriversinstitute.org/blog/" target="_blank">Kent Beck Blog</a></li>
+	<li><a href="http://www.junit.org/" target="_blank">JUnit Testing Framework</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/Extreme_Programming" target="_blank">Extreme Programming Wiki</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/Test_Driven_Development" target="_blank">Test Driven Development Wiki</a></li>
+</ol>
+<strong> 新闻采访：</strong>
+<ol>
+	<li><a href="http://www.zdnet.com/blog/burnette/kent-beck-we-thought-we-were-just-programming-on-an-airplane/118" target="_blank">Kent Beck: “We thought we were just programming on an airplane”</a></li>
+	<li><a href="http://www.informit.com/articles/article.aspx?p=20972" target="_blank">Interview with Kent Beck and Martin Fowler</a></li>
+	<li><a href="http://accu.org/index.php/journals/509" target="_blank">eXtreme Programming An interview with Kent Beck</a></li>
+</ol>
+<strong> Kent Beck 著作：</strong>
+<ol>
+	<li><a href="http://www.amazon.com/gp/product/0321278658?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321278658">Extreme Programming Explained: Embrace Change (2nd Edition)</a></li>
+	<li><a href="http://www.amazon.com/gp/product/0201485672?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0201485672" target="_blank">Refactoring: Improving the Design of Existing Code</a></li>
+	<li><a href="http://www.amazon.com/gp/product/0596007434?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596007434" target="_blank">JUnit Pocket Guide</a></li>
+</ol>
+<strong>6. Java Collections Framework创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Joshua Bloch" src="http://www.mkyong.com/wp-content/uploads/2010/08/Joshua-Bloch-150.png" alt="Joshua Bloch" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Joshua Bloch</strong></span>，领导众多Java平台特性的设计与实现，包括JDK 5.0的语言增强和获奖的Java集合框架。2004年6月他离开Sun公司并成为Google公司的首席Java架构师，并且因《Effective Java》赢得了来自Software Development Magazine的著名的Jolt大奖，这本书可以说是必读的Java书。</p>
+
+<p><strong>相关链接：</strong>
+<ol>
+	<li><a href="http://twitter.com/joshbloch" target="_blank">Joshua Bloch Twitter</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/Joshua_Bloch" target="_blank">Joshua Bloch Wiki</a></li>
+</ol>
+新闻采访：
+<a href="http://java.dzone.com/articles/effective-java-an-interview-wi" target="_blank"> Effective Java: An Interview with Joshua Bloch</a>
+<a href="http://java.sun.com/javaone/sf/2007/articles/rockstar_bloch.jsp" target="_blank"> Rock Star Josh Bloch</a>
+Joshua Bloch 著作：
+<a href="http://www.amazon.com/gp/product/0321356683?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321356683" target="_blank"> Effective Java (2nd Edition)</a>
+<a href="http://www.amazon.com/gp/product/0321349601?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321349601" target="_blank"> Java Concurrency in Practice</a></p>
+
+<p><strong>5. JBoss 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Marc Fleury" src="http://www.mkyong.com/wp-content/uploads/2010/08/Marc-Fleury-150.png" alt="Marc Fleury" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Marc Fleury</strong></span>, 2001年创建JBoss, 一个开源的Java应用服务器，可以说是部署基于Java的Web应用的事实标准。后来他将JBoss卖给了Red Hat并为继续支持JBoss开发加入Red Hat。 2007年2月9日，他决定离开Red Hat去追求其他的个人兴趣，比如教学，生物研究、音乐及家庭。</p>
+
+<p><strong>相关链接：</strong>
+<ol>
+	<li><a href="http://en.wikipedia.org/wiki/Marc_Fleury" target="_blank">Marc Fleury Wiki</a></li>
+	<li><a href="http://www.thedelphicfuture.org/" target="_blank">Marc Fleury Blog</a></li>
+	<li><a href="http://www.jboss.org/" target="_blank">JBoss Application Server</a></li>
+</ol>
+<strong> 新闻采访：</strong>
+<ol>
+	<li><a href="http://news.cnet.com/Could-Red-Hat-lose-JBoss-founder/2100-7344_3-6147300.html" target="_blank">Could Red Hat lose JBoss founder?</a></li>
+	<li><a href="http://www.zdnet.com/blog/burnette/jboss-founder-marc-fleury-leaves-red-hat-now-what/258" target="_blank">JBoss founder Marc Fleury leaves Red Hat, now what?</a></li>
+	<li><a href="http://www.zdnet.com/blog/gardner/jbosss-marc-fleury-on-soa-esb-and-oss/2300" target="_blank">JBoss’s Marc Fleury on SOA, ESB and OSS</a></li>
+	<li><a href="http://news.cnet.com/8301-13505_3-9753687-16.html" target="_blank">Resurrecting Marc Fleury</a></li>
+</ol>
+<strong>4. Struts 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Craig Mcclanahan" src="http://www.mkyong.com/wp-content/uploads/2010/08/Craig-McClanahan-150.png" alt="Craig Mcclanahan" width="150" height="150" /></dt> </dl></div>
+<strong><span style="color: #ff0000;">Craig R. McClanahan</span></strong>，Struts的创始人，Struts是一个开源的用于开发Java Web应用的MVC框架，可以说几乎每个Java程序员都知道如何应用Struts编写代码。随着早期Struts的巨大成功，他被广泛应用于旧的Java Web应用中。</p>
+
+<p><strong>相关链接：</strong>
+<ol>
+	<li><a href="http://en.wikipedia.org/wiki/Craig_McClanahan" target="_blank">Craig Mcclanahan Wiki</a></li>
+	<li><a href="http://blogs.sun.com/craigmcc/" target="_blank">Craig Mcclanahan Blog</a></li>
+	<li><a href="http://struts.apache.org/" target="_blank">Apache Struts</a></li>
+</ol>
+<strong>新闻采访：</strong>
+<ol>
+	<li><a href="http://www.jsfcentral.com/articles/mcclanahan-05-05.html" target="_blank">Interview with Craig McClanahan</a></li>
+	<li><a href="http://blogs.sun.com/craigmcc/date/20040927#struts_or_jsf_struts_and" target="_blank">Struts Or JSF?</a></li>
+</ol>
+<strong>3. Spring 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Rod Johnson" src="http://www.mkyong.com/wp-content/uploads/2010/08/Rod-Johnson-150.png" alt="Rod Johnson" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Rod Johnson</strong></span>，Spring Framework的创始人与创造者，SpringSource的CEO。Rod的畅销书《Expert One-on-One J2EE Design and Development》是J2EE方面最有影响的著作之一。</p>
+
+<p><strong>相关链接：</strong>
+<ol>
+	<li><a href="http://twitter.com/springrod" target="_blank">Rod Johnson Twitter</a></li>
+	<li><a href="http://blog.springsource.com/author/rodj/" target="_blank">Rod Johnson Blog</a></li>
+	<li><a href="http://www.springsource.org/" target="_blank">SpringSource</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/Spring_Framework" target="_blank">Spring Framework Wiki</a></li>
+</ol>
+<strong> 新闻采访：</strong>
+<ol>
+	<li><a href="http://blogs.vmware.com/console/2009/08/vmware-acquires-springsource.html" target="_blank">VMware.com : VMware to acquire SpringSource</a></li>
+	<li><a href="http://blog.springsource.com/2009/08/10/springsource-chapter-two/" target="_blank">Rod Johnson : VMware to acquire SpringSource</a></li>
+	<li><a href="http://howsoftwareisbuilt.com/2007/09/10/interview-with-rod-johnson-ceo-interface21/" target="_blank">Interview with Rod Johnson – CEO – Interface21</a></li>
+	<li><a href="http://java.dzone.com/news/qa-with-rod-johnson-over-sprin" target="_blank">Q&amp;A with Rod Johnson over Spring’s maintenance policy changes</a></li>
+	<li><a href="http://www.theserverside.com/news/1364653/Expert-One-on-One-J2EE-Design-and-Development-Interview-with-Rod-Johnson" target="_blank">Expert One-on-One J2EE Design and Development: Interview with Rod Johnson</a></li>
+</ol>
+<strong>Rod Johnson 著作</strong>
+<ol>
+	<li><a href="http://www.amazon.com/gp/product/0764543857?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0764543857">Expert One-on-One J2EE Design and Development (Programmer to Programmer)</a></li>
+	<li><a href="http://www.amazon.com/gp/product/0764558315?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0764558315">Expert One-on-One J2EE Development without EJB</a></li>
+</ol>
+<strong>2. Hibernate 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Gavin King" src="http://www.mkyong.com/wp-content/uploads/2010/08/gravin-king-150.png" alt="Gavin King" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Gavin King<span style="color: #000000;">，</span></strong></span> Hibernate项目的创始人，Hibernate是一个流行的Java对象/关系持久化解决方案。他同时还创建了Seam，一个Java EE 5的应用程序框架，同时还对EJB 3.0 和 JPA 的设计做出了很大贡献。</p>
+
+<p><strong>相关链接：</strong>
+<ol>
+	<li><a href="http://relation.to/Bloggers/Gavin" target="_blank">Gavin King Blog</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/Hibernate_%28Java%29" target="_blank">Hibernate Wiki</a></li>
+	<li><a href="http://www.hibernate.org/" target="_blank">Hibernate Framework</a></li>
+	<li><a href="http://www.jboss.com/products/seam/" target="_blank">JBoss seam</a></li>
+</ol>
+<strong>新闻采访：</strong>
+<ol>
+	<li><a href="http://java.dzone.com/videos/gavin-king-jsr299" target="_blank">Tech Chat: Gavin King on Contexts and Dependency Injection, Weld, Java EE 6</a></li>
+	<li><a href="http://www.javaperformancetuning.com/news/interview041.shtml" target="_blank">JPT : The Interview: Gavin King, Hibernate</a></li>
+	<li><a href="http://javafree.uol.com.br/artigo/871462/" target="_blank">JavaFree : Interview with Gavin King, founder of Hibernate</a></li>
+	<li><a href="http://www.jsfcentral.com/articles/king-06-08.html" target="_blank">Seam in Depth with Gavin King</a></li>
+</ol>
+<strong>Gavin King 著作：</strong>
+<ol>
+	<li><a href="http://www.amazon.com/gp/product/1932394885?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1932394885">Java Persistence with Hibernate</a></li>
+	<li><a href="http://www.amazon.com/gp/product/193239415X?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=193239415X">Hibernate in Action (In Action series)</a></li>
+</ol>
+<strong>1. Java之父</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="James Gosling" src="http://www.mkyong.com/wp-content/uploads/2010/08/James-Gosling-150.png" alt="James Gosling" width="150" height="150" /></dt> </dl></div>
+<strong><span style="color: #ff0000;">James Gosling</span></strong>，因其在1994年发明Java编程语言而广受赞誉。他创建了Java的最初设计与实现，开发了最初的Java编译器与Java虚拟机。他也因此当选美国国家工程院院士。2010年4月2日，他离开了被Oracle收购的Sun公司。至于他为什么离开，戈斯林在他的博客中写道：  “我只能说精确与诚实有害无益。”</p>
+
+<p><strong> 相关链接：</strong>
+<ol>
+	<li><a href="http://nighthacks.com/roller/jag/" target="_blank">James Gosling Blog</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/James_Gosling" target="_blank">James Gosling Wiki</a></li>
+</ol>
+<strong> 新闻采访：</strong>
+<ol>
+	<li><a href="http://www.gotw.ca/publications/c_family_interview.htm" target="_blank">Interview with Dennis Ritchie, Bjarne Stroustrup, and James Gosling</a></li>
+	<li><a href="http://itmanagement.earthweb.com/osrc/article.php/3706426/Interview-James-Gosling-the-Father-of-Java.htm" target="_blank">Interview: James Gosling, ‘the Father of Java’</a></li>
+	<li><a href="http://www.builderau.com.au/program/java/soa/Developer-Interview-James-Gosling/0,339024620,320282876,00.htm" target="_blank">Developer Interview: James Gosling</a></li>
+</ol>
+原文地址：<a href="http://www.mkyong.com/featured/top-8-java-people-you-should-know/" target="_blank">http://www.mkyong.com/featured/top-8-java-people-you-should-know/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mojarra 2.1(JSF 2.1官方参考实现)将放弃支持JavaSE 5.0]]></title>
+    <link href="http://NeoCN.github.com/Java/drop-support-for-javase-5-in-ongoing-mojarra-2-1.html"/>
+    <updated>2010-08-17T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/drop-support-for-javase-5-in-ongoing-mojarra-2-1</id>
+    <content type="html"><![CDATA[<p>Mojarra是Oracle(曾经是Sun)针对JSF标准的官方参考实现。</p>
+
+<p>据悉，为使Mojarra的测试矩阵能够更符合Oracle目前的工程投资，针对即将到来的JSF 2.1标准的未来所有Mojarra构建将仅支持JavaSE 6.0及更新版本。所有2.0.x和1.2版本将仍然继续使用JavaSE 5.0构建。</p>
+
+<p>原文链接：<a href="http://www.java.net/blog/edburns/archive/2010/08/16/decision-drop-support-javase-5-ongoing-oracle-mojarra-21-development">Decision: Drop support for JavaSE 5 in ongoing Oracle Mojarra 2.1 development efforts</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google收购Instantiations]]></title>
+    <link href="http://NeoCN.github.com/Java/google-has-acquired-instantiations.html"/>
+    <updated>2010-08-05T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/google-has-acquired-instantiations</id>
+    <content type="html"><![CDATA[<p>继谷歌上半年11亿美元收购22家公司之后，谷歌仍继续疯狂收购……<br />
+最新消息，谷歌收购Instantiations，具体收购金额未知，Instantiations官方网站已放出声明：
+<pre>We’re excited to announce that Instantiations is now part of Google!
+Yes it’s true. Instantiations’ award-winning Java and Ajax development tools and our
+incredible Eclipse team have been acquired by Google. We are all very excited about
+taking our technology and team to the next level - and there is no bigger step up
+than Google!
+We very much appreciate your patronage and interest through the years. As part of
+Google, we look forward to continuing to work with you. <span style="color: #008000;">Please stay tuned for exciting
+new announcements coming soon on the Google Web Toolkit blog</span>.
+Instantiations Java development products and people have a new home at  Google, but VA
+Smalltalk™ is staying put - with the same people, same  products, and same dedication
+to our customers and to Smalltalk.
+</pre>
+Instantiations主要产品为基于Eclipse的Java、SmallTalk商业开发工具，比如GWT/Swing/SWT/RCP Designer、Window Builder Pro、CodePro、Window Tester Pro等，Google此次收购，未包含SmallTalk产品线及相关开发团队。“新的”Instantiations公司继续保持独立，主要进行SmallTalk相关产品线相关业务，其原Java/AJAX开发工具产品线及开发团队将通过此次收购进入Google。</p>
+
+<p>个人认为Google的主要目的在于该公司的GWT Designer，这将为GWT提供强大的可视化开发工具，而通过此次收购，Google不仅仅是收获了GWT Designer及其团队，更是得到了一个强大的可视化开发工具开发团队。难道你不期待或者希望有Android Designer吗？</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTTP 417 Expectation Failed与Expect:100-Continue]]></title>
+    <link href="http://NeoCN.github.com/Java/http-417-expectation-failed-and-expect-100-continue.html"/>
+    <updated>2010-07-21T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/http-417-expectation-failed-and-expect-100-continue</id>
+    <content type="html"><![CDATA[<p>这两天写代码，调用新浪微博的Rest API，使用HttpClient 4.0，以Post方式提交，请求参数以UrlEncodedFormEntity的形式设置到HttpPost对象中，提交到API时，出现如下异常：
+<pre lang="xml" escape="true">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;417 Expectation Failed&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Error 417 Expectation Failed&lt;/h1&gt;
+        &lt;p&gt;Expectation Failed&lt;/p&gt;
+        &lt;h3&gt;Guru Meditation:&lt;/h3&gt;
+        &lt;p&gt;XID: 2734998565&lt;/p&gt;
+        &lt;address&gt;
+            &lt;a href="http://www.varnish-cache.org/"&gt;Varnish&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<br />
+刚开始有点莫名其妙，这是哪门子错误，没见过啊，于是去查HTTP状态字定义，得到如下描述：
+<pre>
+The expectation given in an Expect request-header field (see section 
+14.20) could not be met by this server, or, if the server is a proxy,    
+the server has unambiguous evidence that the request could not be met    
+by the next-hop server.
+</pre>
+大致的意思是：
+<pre>服务器不支持Expect请求头部域，或者，如果服务器是代理服务器的话，
+服务器有明确的证据表明请求不能到达下一跳服务器。</pre>
+<br />
+那，到底什么是Expect请求头部域呢？以前完全没用过，也很少见，跟踪浏览器的HTTP请求的时候也很少见这个头部域，继续查吧，根据HTTP请求头部Expect域的定义，得到如下信息：
+<pre>The Expect request-header field is used to indicate that particular
+server behaviors are required by the client.
+      Expect       =  "Expect" ":" 1#expectation
+      expectation  =  "100-continue" | expectation-extension
+      expectation-extension =  token [ "=" ( token | quoted-string )
+                               *expect-params ]
+      expect-params =  ";" token [ "=" ( token | quoted-string ) ]
+A server that does not understand or is unable to comply with any of 
+the expectation values in the Expect field of a request MUST respond
+ with appropriate error status. The server MUST respond with a 
+417(Expectation Failed) status if any of the expectations cannot be met 
+or, if there are other problems with the request, some other 4xx status.
+This header field is defined with extensible syntax to allow for 
+future extensions. If a server receives a request containing an 
+Expect field that includes an expectation-extension that it does not 
+support, it MUST respond with a 417 (Expectation Failed) status.
+Comparison of expectation values is case-insensitive for unquoted 
+tokens (including the 100-continue token), and is case-sensitive for 
+quoted-string expectation-extensions.
+The Expect mechanism is hop-by-hop: that is, an HTTP/1.1 proxy MUST 
+return a 417 (Expectation Failed) status if it receives a request 
+with an expectation that it cannot meet. However, the Expect 
+request-header itself is end-to-end; it MUST be forwarded if the 
+request is forwarded.
+Many older HTTP/1.0 and HTTP/1.1 applications do not understand the   
+Expect header.</pre>
+大致意思如下：
+<pre>Expect请求头部域，用于指出客户端要求的特殊服务器行为。若服务器不能理解或者满足
+Expect域中的任何期望值，则必须返回417(Expectation Failed)状态，或者如果请求
+有其他问题，返回4xx状态。
+这个头部域使用可扩展语法定义，以方便将来扩展。如果服务器收到包含Expect头部域的
+请求且包含一个它不支持的期望值扩展，则必须返回417(Expectation Failed)状态。
+期望值的比较，对于非引用符号(包括100-continue)是大小写无关的，对于引用字符串
+的期望值扩展，则是大小写敏感的。
+Expect域的机制是逐跳进行的，也就是说如果一个代理服务器收到包含不能满足的期望
+的请求时，必须返回417(Expectation Failed)状态。而Expect请求头部域自身，
+却是端到端的，如果请求被转发，则它也必须被转发。
+很多旧的HTTP/1.0和HTTP/1.1应用不支持Expect头部。
+</pre>
+到这里，基本明白了为什么会出现这样的错误，说明代码最后生成的HTTP请求，包含了服务器不能处理的Expect头部，到底是什么？装上Wireshark，监听一下请求内容，发现出现异常时的请求中的Expect头部是这样的：<strong>Expect:100-Continue</strong>，难道是它引起的？继续查……
+<br />
+对于Expect:100-Continue，HttpClient的官方文档是这样描述的：
+<pre>
+The purpose of the Expect: 100-Continue handshake is to allow the client that 
+is sending a request message with a request body to determine if the origin 
+server is willing to accept the request (based on the request headers) before
+ the client sends the request body.
+Expect: 100-continue handshake should be used with caution, as it may cause
+problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
+</pre>
+大意如下：
+<pre>
+Expect:100-Continue握手的目的，是为了允许客户端在发送请求内容之前，判断源服务器是否愿意接受
+请求（基于请求头部）。
+Expect:100-Continue握手需谨慎使用，因为遇到不支持HTTP/1.1协议的服务器或者代理时会引起问题。
+</pre>
+<br />
+而HttpClient 4.0中，是否激活Expect:100-Continue，是由HTTP请求执行参数<strong>http.protocol.expect-continue</strong>来控制的，通过设置参数值为true或者false，可以相应的激活或者关闭Expect:100-Continue握手。注意，在HttpClient中，默认是激活的。<br />
+HttpClient 4 中关闭Expect:100-Continue握手的代码如下：
+<pre lang="java">
+HttpPost httpPost = new HttpPost(url);
+httpPost.getParams().setBooleanParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE,
+false);
+</pre>
+关闭HttpClient中的Expect:100-Continue握手之后，再执行程序，顺利地通过微博API发出了一条消息。
+<br />
+总结：通过这次的问题解决，可以看出，对于HTTP协议不够熟悉，底层了解不够，同时没有认真阅读HttpClient开发文档。我想，现在从事软件开发行业的大部分人都或多或少有这样的问题，即忽视底层协议及原理的学习。真正的了解底层原理，借以开源代码及开发文档的辅助，这样才会能够实现快速、高效、稳定的程序开发。
+<br />
+<strong>参考文献：</strong>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.1.1" target="_blank">100 Continue</a>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.3" target="_blank">Use of the 100 (Continue) Status</a>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.20" target="_blank">Expect Header Field Definition</a>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.18" target="_blank">417 Expectation Failed</a>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616.html" target="_blank">Hypertext Transfer Protocol &#8211; HTTP/1.1 </a>
+<a href="http://hc.apache.org/httpcomponents-client-4.0.1/tutorial/html/fundamentals.html" target="_blank">HttpClient Tutorial &#8211; 1. Fundamentals </a></p>
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java 4-Ever]]></title>
+    <link href="http://NeoCN.github.com/Java/java-4-ever.html"/>
+    <updated>2010-06-28T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/java-4-ever</id>
+    <content type="html"><![CDATA[<p><p style="text-align: left;">由JavaZone制作的恶搞微软.Net的小电影，影片通过叛逆小伙的成长历程描述了在微软帝国下Java所给人们带来的新思维和新方向，拍摄的非常具备专业水准。</p></p>
+
+<p><p style="text-align: center;"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="400" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="align" value="middle" /><param name="src" value="http://player.youku.com/player.php/sid/XMTg0NTczMTg0/v.swf" /><param name="quality" value="high" /><embed type="application/x-shockwave-flash" width="480" height="400" src="http://player.youku.com/player.php/sid/XMTg0NTczMTg0/v.swf" quality="high" align="middle"></embed></object></p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[重置WebLogic管理控制台密码]]></title>
+    <link href="http://NeoCN.github.com/Application Server/reset-weblogic-admin-console-password.html"/>
+    <updated>2010-06-14T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Application Server/reset-weblogic-admin-console-password</id>
+    <content type="html"><![CDATA[<p>1、关掉WebLogic；<br />
+2、进入需要重置密码的域的security目录下(例如: $WL_HOME/user_projects/domains/base_domain/security)，备份DefaultAuthenticatorInit.ldift文件为DefaultAuthenticatorInit.ldift_old；<br />
+3、命令行下，进入域的bin目录，运行setDomainEnv脚本，设置环境变量；<br />
+4、在操作3之后，运行如下命令：</p>
+
+<p><strong><span style="color: #00ff00;">java weblogic.security.utils.AdminAccount admin_user admin_pass .</span></strong></p>
+
+<p><strong></strong>记得修改“admin_user”和“admin_pass”为你所需要的用户名和密码，并且，<span style="color: #ff0000;">不要忘了最后的那个“.”和前面的空格，是必须的，不然会报参数非法</span>；</p>
+
+<p>5、运行4中的命令后, 文件“DefaultAuthenticatorInit.ldift”会被更新；<br />
+6、进入域的AdminServer目录下，重命名data文件夹为data_old；<br />
+7、进入域的AdminServer目录下的security子目录，备份boot.properties文件为boot.properties_old，同时修改原boot.properties文件中的username和password为你所需要的用户名和密码；<br />
+7、运行域的startWebLogic脚本，启动WebLogic；<br />
+8、现在，就可以用你设置的用户名和密码登录Console控制台了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java调用Oracle存储过程传入数组参数的方法]]></title>
+    <link href="http://NeoCN.github.com/Java/the-method-for-passing-arrays-para-to-oracle.html"/>
+    <updated>2010-05-22T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/the-method-for-passing-arrays-para-to-oracle</id>
+    <content type="html"><![CDATA[<p>周四的时候，修改我们系统的代码，应另外一个公司的要求，要修改我们系统调用他们公司的提供的存储过程的调用方式。修改前，是通过配置的数据库用户名和密码直接访问到他们的数据库，再调用存储过程；现在要修改成从我们的数据库中直接访问他们授权的存储过程。以前之所以通过用户名密码访问他们的数据库后再调用，是因为储过程的一个输入参数是数组类型的，传递数组参数的时候，Connection的类型一定要是OracleConnection的，当时只知道使用用户名密码直接通过JDBC访问Oracle，获取连接，再传递参数进去是没有问题的，其他的方式试了下不行，时间紧，也就没去折腾。正好这次又要改，而且不允许直接JDBC访问拿Connection了，系统部署在WebLogic上，必须从WebLogic的连接池中获取连接。</p>
+
+<p>Java向Oracle传递数组参数的方法：
+<pre>ArrayDescriptor arraydesc = ArrayDescriptor.createDescriptor
+                                           (<em><code>sql_type_name</code></em>, <em><code>connection</code></em>);
+//<em><code>sql_type_name </code></em><code>是</code><code>Oracle数据库</code>中定义的数组类型的名称
+ARRAY array = new ARRAY(<em><code>arraydesc</code></em>, <em><code>connection</code></em>, <em><code>elements</code></em>);
+//<em><code>elements</code></em><code>是</code><code>Java数组类型的对象
+</code></pre>
+这里的array对象，就可以在调用存储过程时作为数组参数传入。需注意的是，connection必须是Native Connection，如果connection是通过JDBC建立数据库连接并获取的，就不会有问题，但是如果是通过JNDI数据源获取的，就不行，因为从数据源获取的Connection是Native Connection的代理类，比如Tomcat中通过配置的JNDI数据源获取连接，连接类型是org.apache.commons.dbcp.PoolableConnection类型的；在WebLogic、JBoss等其他服务器中，得到的Connection类型又是不同的。</p>
+
+<p>通过JNDI数据源获取连接的情况下，需要对获取到的连接进行一定的处理，获取到Native Connection。</p>
+
+<p>如果项目中使用了Spring，那么，在使用JNDI数据源获取数据库连接的情况下，可以方便地通过Spring的NativeJdbcExtractor获取Native Connection。Spring中所包含的NativeJdbcExtractor实现有：C3P0NativeJdbcExtractor、CommonsDbcpNativeJdbcExtractor、JBossNativeJdbcExtractor、NativeJdbcExtractor、SimpleNativeJdbcExtractor、WebLogicNativeJdbcExtractor、WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor，根据应用部署环境的不同选择相应的NativeJdbcExtractor实现。</p>
+
+<p>如果项目中没有使用Spring呢，大家可以去下载Spring的源码，找找这几个NativeJdbcExtractor的代码，参考一下就OK啦。 开源就是好嘛！</p>
+
+<p>在成功获得Native Connection后，运行代码，却没有出现预期的成功调用的结果，而是抛出如下异常：</p>
+
+<p><strong><em>java.lang.ClassCastException: oracle.jdbc.driver.T4CConnection cannot be cast to oracle.jdbc.OracleConnection</em></strong>
+at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:149)<br />
+at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:115)</p>
+
+<p>搞到这里，我就糊涂了，我拿到了Native Connection了啊，你还要我怎样啊……心里那个郁闷啊……</p>
+
+<p>郁闷归郁闷，还得抓点紧解决问题不是，结果又是一顿狂搜，还行，最终找到了解决方案：</p>
+
+<p><strong>部署环境下，删除WEB-INF/lib目录下的Oracle数据库驱动！</strong></p>
+
+<p>删除完毕，程序跑起来，果然这个异常没了……真TMD的不容易啊……感觉技术方面还是比较菜，需要多学习……</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle中使用to_char获取周次]]></title>
+    <link href="http://NeoCN.github.com/Oracle/oracle-to_char-week-of-year.html"/>
+    <updated>2010-05-08T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Oracle/oracle-to_char-week-of-year</id>
+    <content type="html"><![CDATA[<p>昨天，照惯例统计了移动系统的访问情况，也没仔细看就提交给移动方面了，大概20分钟后，移动那边的负责人电话就过来了：
+<pre>移动负责人：你统计的是什么时候的访问情况？
+我：本周啊！
+移动负责人：这结果不对啊，我怎么可能本周只访问过2个系统而且只有一次呢？
+           我自己记得就有很多次了，也绝对不止2个系统！
+我：……这样啊，不好意思，我检查下看……</pre>
+统计系统访问情况的脚本是我写的，用它统计都有半年多了，这是第一次客户提出质疑；以前自己发现过结果不太对劲，但认为是正常浮动，没管它……</p>
+
+<p>仔细检查了下脚本，统计本周访问情况，选择条件中关于时间判断是这样写的：to_char(create_date,&#8217;ww&#8217;) = to_char(sysdate,&#8217;ww&#8217;)，难道是这里有问题？</p>
+
+<p>先做做测试看看：
+<pre lang="sql">select to_char(to_date('2010-5-6','yyyy-mm-dd'),'ww') from dual;               --结果是18
+select t0_char(to_date('2010-5-7','yyyy-mm-dd'),'ww') from dual;               --结果是19</pre>
+汗……统计本周访问情况应是统计2010-5-3～2010-5-7 ，但是，使用to_char函数的ww参数获取周数，5.6和5.7都不在一个值上，这哪里能统计出正确结果呢……暴寒……</p>
+
+<p><strong>问题原因</strong>：
+<pre>WW参数：一年中的周次（1～53），第一周为一年的第一天至第七天；
+IW参数：一年中的周次（1～52或1～53），基于ISO标准；</pre>
+而我们平时所说的某一周是第几周，基本都是指自然周的周次，也就是基于ISO标准的周次，我的统计脚本里却用WW，太汗了……基础知识啊，需要恶补……半年多了啊，今天才知道……呃！！！这半年多的统计数据有多少是对的呢？不敢想！罪过啊罪过</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTML 5 中的文件操作]]></title>
+    <link href="http://NeoCN.github.com/Web/html-5-file-operation.html"/>
+    <updated>2010-04-17T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Web/html-5-file-operation</id>
+    <content type="html"><![CDATA[<p>Gmail的附件添加，已经支持拖拽操作，可以直接从文件系统中拖拽文件至Gmail附件区域，完成文件上传操作，并且支持多文件操作，如下图所示：</p>
+
+<p><a href="http://www.devx.me/wp-content/uploads/2010/04/File-Drag-Drop.png"><img class="size-full wp-image-326 " title="GMail文件拖拽操作" src="http://www.devx.me/wp-content/uploads/2010/04/File-Drag-Drop.png" alt="GMail文件拖拽操作" /></a></p>
+
+<p><a href="http://www.devx.me/wp-content/uploads/2010/04/File-Uploading.png"><img class="size-full wp-image-327 " title="GMail附件上传" src="http://www.devx.me/wp-content/uploads/2010/04/File-Uploading.png" alt="GMail附件上传" /></a></p>
+
+<p>文件拖拽操作，在Firefox 3.6 和 Chrome 4.1中均被支持，IE 8中无效……同时，我们可以注意到，附件在上传前，我们已经可以获取到附件的一些更具体信息，比如文件大小，不需要任何的浏览器插件来支持。这些特性，是很多Web应用开发者所期待的，所需要的……</p>
+
+<p>Google正在努力推进HTML 5 标准的应用和普及，而微软，看来又慢了一步……</p>
+
+<p>Gmail的附件拖拽上传，正是基于HTML 5 的文件API所实现，提供了相当不错的用户体验；只是对于我们这些做企业应用的开发者来说，如何推动客户升级浏览器或者更换浏览器，成了一个大问题，国内的浏览器市场，IE6仍然占据着很大的份额，正所谓，死而不僵……而面对一个企业，想推进系统或者浏览器升级，也是个不小的挑战……</p>
+
+<p>HTML 5 中我所感兴趣的文件操作特性：</p>
+
+<p>1、多文件序列支持；</p>
+
+<p>2、结合XMLHttpRequest，获取文件上传进度；</p>
+
+<p>3、获取所选择文件的信息，包括名称、大小、MIME类型等；</p>
+
+<p>4、文件拖放选择支持；</p>
+
+<p>参考文档：</p>
+
+<p>1、<a href="https://developer.mozilla.org/en/Using_files_from_web_applications">Using files from web applications</a></p>
+
+<p>2、<a href="http://www.w3.org/TR/FileAPI/">File API</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[卸载Microsoft .NET Framework Assistant For Firefox]]></title>
+    <link href="http://NeoCN.github.com/其他/remove-the-dot-net-framework-assistant-for-firefox.html"/>
+    <updated>2010-03-14T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/其他/remove-the-dot-net-framework-assistant-for-firefox</id>
+    <content type="html"><![CDATA[<p>最近升级Firefox到3.6，部分插件出现了兼容问题：比如IE Tab，听说已经停止更新了，索性换用Core IE Tab；也卸载了不兼容的MediaWrap 插件，然后就突然发现一个名为<strong><span style="font-weight: normal;">Microsoft .</span><em><span style="font-weight: normal;"><span style="font-style: normal;">NET Framework  Assistant 1.0</span><span style="font-style: normal;">的</span></span></em><span style="font-weight: normal;">插件，无法卸载，且与Firefox 3.6不兼容……看着是相当的碍眼，可以肯定自己没装过这个插件，看来微软一贯的风格果然很牛B……</span></strong></p>
+
+<p>官方共两种解决办法：</p>
+
+<p>方案一、安装 <a href="http://www.microsoft.com/downloads/details.aspx?displaylang=zh-cn&amp;FamilyID=cecc62dc-96a7-4657-af91-6383ba034eab" target="_blank">用于 Firefox 的 .NET Framework Assistant 1.0 的 .NET Framework 3.5 SP1 更新</a>，然后即可正常卸载插件(如果已经安装了Firefox 3.6或者更高版本而且<strong>.NET  Framework Assistant 0.0.0</strong>已经出现在Firefox附加组件列表中，那么请使用方案二删除该插件)；</p>
+
+<p>该更新的描述如下：在 .NET Framework 3.5 SP1 中，.NET Framework Assistant 使 Firefox 可以使用  .NET Framework 中所包含的 ClickOnce 技术。.NET Framework Assistant  是在计算机级别添加的，支持计算机的所有用户使用其功能。因而，<strong>Firefox  加载项列表中的“卸载”按钮显示为不可用，这是因为不允许标准用户卸载计算机级别的组件</strong>。在此 .NET Framework 3.5 SP1 更新和  Windows 7 中，将基于每个用户安装 .NET Framework Assistant。这样，<strong>Firefox  加载项列表中的“卸载”按钮将可用</strong>。此外，此更新还将使用于 Firefox 的此版本的 .NET Framework Assistant 与将来的  Firefox 浏览器版本兼容。  此更新还将使用于 Firefox 的此版本的 .NET Framework Assistant 与将来的 Firefox  浏览器版本兼容。为了正确地更新 .NET Framework Assistant，必须先在 Firefox  中启用该扩展，然后才能应用此更新。若要修正因在禁用该扩展时安装此更新所造成的后果，请卸载更新，重新启用该扩展，然后重新安装此更新。.NET  Framework Assistant 的更新可能包含用于 Firefox 的 Windows Presentation Foundation  插件，从而能够在首次更新时启用该扩展。</p>
+
+<p>方案二、手动删除。
+<ol>
+	<li>删除注册表项为扩展。若要执行此操作，使用下列方法之一。
+<ul>
+	<li>使用注册表编辑器：
+<ol>
+	<li>使用具有 管理员权限的帐户登录。</li>
+	<li>单击 <strong>开始</strong>、 单击 <strong>运行</strong>，键入 <strong>regedit</strong>，然后 按 ENTER 键。</li>
+	<li>找到并单击以下注册表子项。<br />
+对于基于 x86 的计算机：<br />
+HKEY_LOCAL_MACHINE\SOFTWARE\Mozilla\Firefox\Extensions<br />
+对于基于 x64 的计算机：<br />
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Mozilla\Firefox\Extensions</li>
+	<li>删除 <strong>{20a82645-c095-46ed-80e3-08825760534b}</strong> 子项。</li>
+</ol>
+</li>
+	<li>使用命令提示符：
+<ol>
+	<li>使用具有管理员权限的帐户登录。</li>
+	<li>单击 <strong>开始</strong>，单击 <strong>运 行</strong>，键入 <strong>cmd</strong>，然后按 ENTER 键。</li>
+	<li>命令提示符键入相应的命令，然后按 ENTER 键。<br />
+对于基于 x86 的计算机：<br />
+reg DELETE  /&#8221;HKLM\SOFTWARE\Mozilla\Firefox\Extensions&#8221;v&#8221;{20a82645-c095-46ed-80e3-08825760534b}&#8221;/  f<br />
+对于基于 x64 的计算机<strong><span style="font-weight: normal;">：<br />
+reg  DELETE&#8221;HKLM\SOFTWARE\Wow6432Node\Mozilla\Firefox\Extensions&#8221;/  v&#8221;{20a82645-c095-46ed-80e3-08825760534b}&#8221;/ f</span></strong></li>
+</ol>
+</li>
 </ul>
-<p align="left"><strong>三、命名约定</strong><strong> </strong></p>
-<p align="left">使用以下前缀对于避免与关键字和表名列名相冲突是很有帮助的：</p></p>
-
-<p><ul>
-	<li>v_变量名</li>
-	<li>con_常量名</li>
-	<li>i_输入参数名，o_输出参数名，io_输入输出参数名</li>
-	<li>c_游标名 或者 游标名_cur</li>
-	<li>rc_<em> Ref Cursor</em>名</li>
-	<li>r_<em>Record</em>名 或者 <em>Record</em>名_rec</li>
-	<li>FOR r_stud IN c_stud LOOP&#8230;</li>
-	<li>FOR stud_rec IN stud_cur LOOP</li>
-	<li>type_名称，名称_type (用户定义的类型)</li>
-	<li>t_表名，表名_tab （PL/SQL 表）</li>
-	<li>rec_<em>Record</em>名，<em>Record</em>名_rec （<em>Record</em>变量）</li>
-	<li>e_异常名 （用户定义的异常）</li>
-</ul>
-<p align="left">包的名称应该描述包内的存储过程和函数主要所完成的功能</p>
-<p align="left">存储过程的名称应该描述该存储过程所执行的动作</p>
-<p align="left">函数的名称应该描述所返回的变量</p>
-<p align="left">例如：</p>
-<p align="left"></p></p>
-
-<p><pre lang="plsql">PACKAGE student_admin
--- admin 后缀可能是用于表示管理功能.
-PROCEDURE remove_student (i_student_id IN student.studid%TYPE);</pre></p>
-
-<p>FUNCTION student_enroll_count (i_student_id student.studid%TYPE)<br />
-RETURN INTEGER;
-<p align="left"><strong>四、注释</strong></p>
-<p align="left">PL/SQL中的注释如同SQL中的注释一样重要。他们应该解释程序的主要部分和所有关键的逻辑步骤。</p>
-<p align="left">使用单行注释(&#8211;)而不是多行注释(/*)。即使PL/SQL对这些注释做同样处理，这样在代码完成后进行调试也会容易些，因为你不能在多行注释中嵌入多行注释。换句话说，单行注释代码中可以部分取消注释，而在多行注释代码中则不行。</p>
-<p align="left"><strong>五、其他的建议</strong></p>
-<p align="left">对于PL/SQL中嵌入的SQL声明，使用相同的格式化指南来决定这些声明应该如何在代码块中出现</p>
-<p align="left">提供一个头部注释，用于说明代码块的用途并列出创建日期和作者名字。并且每个修订版都要有一行注释，包含作者名、日期和修订版描述。</p>
-<p align="left">例如：下面的这个示例体现了上述建议。请注意该示例还使用了等宽字体（Courier New），因为每个字体占据同等宽度可以使格式化更加简便。等比例空格字体会隐藏空格使得行间对齐比较困难。多数文本和程序编辑器默认使用等宽字体。</p></p>
-
-<p><pre lang="plsql">REM ********************************************************
-REM * 文件名：coursediscount01.sql
-REM * 版本：1
-REM * 用途：对于至少有一部分超过十个学生登记的课程给予折扣
-REM * 参数：无
-REM *
-REM * 作者：s.tashi  时间：2000.1.1
-REM * 修改者：y.sonam 时间：2000.2.1
-REM * 描述：修正游标，添加缩进和注释。
-REM ********************************************************
-DECLARE
-   -- C_DISCOUNT_COURSE 找出那些至少有一部分超过十个学生登记的课程
-   CURSOR c_discount_course IS
-      SELECT DISTINCT course_no
-      FROM section sect
-      WHERE 10 &lt;= (SELECT COUNT(*)
-                    FROM enrollment enr
-                   WHERE enr.section_id = sect.section_id
-                   );
-   -- 费用超过 $2000.00的课程的折扣率
-   con_discount_2000 CONSTANT NUMBER := .90;
-   -- 费用在$1001.00和$2000.00之间的课程的折扣率
-   con_discount_other CONSTANT NUMBER := .95;</pre></p>
-
-<p>   v_current_course_cost course.cost%TYPE;<br />
-   v_discount_all NUMBER;<br />
-   e_update_is_problematic EXCEPTION;<br />
-BEGIN<br />
-   &#8211; 对于那些要打折的课程, 确定当前费用和新的费用<br />
-   FOR r_discount_course in c_discount_course LOOP<br />
-       SELECT cost<br />
-       INTO v_current_course_cost<br />
-       FROM course<br />
-       WHERE course_no = r_discount_course.course_no;</p>
-
-<p>       IF v_current_course_cost &gt; 2000 THEN<br />
-          v_discount_all := con_discount_2000;<br />
-       ELSE<br />
-          IF v_current_course_cost &gt; 1000 THEN<br />
-             v_discount_all := con_discount_other;<br />
-          ELSE<br />
-             v_discount_all := 1;<br />
-          END IF;<br />
-       END IF;</p>
-
-<p>       BEGIN<br />
-          UPDATE course<br />
-          SET cost = cost * v_discount_all<br />
-          WHERE course_no = r_discount_course.course_no;<br />
-       EXCEPTION<br />
-          WHEN OTHERS THEN<br />
-             RAISE e_update_is_problematic;<br />
-       END; &#8211; 更新记录的子代码块结束</p>
-
-<p>   END LOOP;&#8211; 主循环结束</p>
-
-<p>   COMMIT;</p>
-
-<p>EXCEPTION<br />
-   WHEN e_update_is_problematic THEN<br />
-   &#8211; 事务回滚<br />
-   ROLLBACK;<br />
-   DBMS_OUTPUT.PUT_LINE<br />
-      (&#8216;There was a problem updating a course cost.&#8217;);<br />
-   WHEN OTHERS THEN<br />
-      NULL;<br />
-END;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[数据库JDBC连接方法总结]]></title>
-    <link href="http://NeoCN.github.com/DataBase/jdbc-connection-code-snippets.html"/>
-    <updated>2009-07-20T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/DataBase/jdbc-connection-code-snippets</id>
-    <content type="html"><![CDATA[<p>好久之前整理的资料了，忘了在哪里搜集的，发出来跟大家分享：
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td width="115" valign="top">
-<p align="left">数据库名称</p>
-</td>
-<td width="641" valign="top">
-<p align="left">连接串</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>MySQL</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName(&#8220;org.gjt.mm.mysql.Driver&#8221;);</p>
-<p align="left">DriverManager.getConnection(   &#8220;jdbc:mysql://MyDbComputerNameOrIP:3306/myDatabaseName&#8221;, sUsr, sPwd   );</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>PostgreSQL</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName(&#8220;org.postgresql.Driver&#8221;);</p>
-<p align="left">DriverManager.getConnection(&#8220;jdbc:postgresql://MyDbComputerNameOrIP/myDatabaseName&#8221;,   sUsr, sPwd );</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>Oracle</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName( &#8220;oracle.jdbc.driver.OracleDriver&#8221; );</p>
-<p align="left">DriverManager.getConnection( &#8220;jdbc:oracle:thin::1521:ORCL&#8221;,   sUsr, sPwd );</p>
-</td>
-</tr>
-<tr>
-<td colspan="2"><!--more--></td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>Sybase</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName(&#8220;com.sybase.jdbc2.jdbc.SybDriver&#8221;);</p>
-<p align="left">DriverManager.getConnection(   &#8220;jdbc:sybase:Tds:MyDbComputerNameOrIP:2638&#8221;, sUsr, sPwd );</p>
-<p align="left">//(Default-Username/Password: &#8220;dba&#8221;/&#8221;sql&#8221;)</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>SQLServer</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName( &#8220;net.sourceforge.jtds.jdbc.Driver&#8221; );</p>
-<p align="left">DriverManager.getConnection(   &#8220;jdbc:jtds:sqlserver://MyDbComputerNameOrIP:1433/master&#8221;, sUsr,   sPwd );</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>ODBC</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName( &#8220;sun.jdbc.odbc.JdbcOdbcDriver&#8221; );</p>
-<p align="left">DriverManager.getConnection( &#8220;jdbc:odbc:&#8221; + sDsn, sUsr,   sPwd );</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>DB2</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName(&#8220;com.ibm.db2.jdbc.net.DB2Driver&#8221;);</p>
-<p align="left">DriverManager.getConnection(&#8220;jdbc:db2://192.9.200.108:6789/SAMPLE&#8221;,   sUsr, sPwd );</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>SAP DB</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName (&#8220;com.sap.dbtech.jdbc.DriverSapDB&#8221;);</p>
-<p align="left">DriverManager.getConnection ( &#8220;jdbc:sapdb://&#8221; + host +   &#8220;/&#8221; + database_name,user_name, password)</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>InterBase</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName(&#8220;interbase.interclient.Driver&#8221;);</p>
-<p align="left">DriverManager.getConnection(&#8220;jdbc:interbase://localhost/e:/testbed/database/employee.gdb&#8221;,   &#8220;sysdba&#8221;, &#8220;masterkey&#8221; );</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left">Microsoft <strong>SQL Server </strong>series (6.5, 7.x and 2000) and Sybase 10</p>
-</td>
-<td width="641" valign="top">
-<p align="left">JDBC Name: jTDS</p>
-<p align="left">Class.forName(&#8220;net.sourceforge.jtds.jdbc.Driver &#8220;);</p>
-<p align="left">DriverManager.getConnection(&#8220;jdbc:jtds:sqlserver://host:port/database&#8221;,&#8221;user&#8221;,&#8221;password&#8221;);or</p>
-<p align="left">DriverManager.getConnection(&#8220;jdbc:jtds:sybase://host:port/database&#8221;,&#8221;user&#8221;,&#8221;password&#8221;);</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>IBM AS400</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">装V4R4以上版本的Client Access Express可以在C:Program FilesIBMClient Accessjt400ib找到 driver 档案 jt400.zip，并更改扩展名成为 jt400.jar语法</p>
-<p align="left">java.sql.DriverManager.registerDriver (new   com.ibm.as400.access.AS400JDBCDriver ());</p>
-<p align="left">Class.forName(&#8220;com.ibm.as400.access.AS400JDBCConnection&#8221;);con   = DriverManager.getConnection(&#8220;jdbc:as400://IP&#8221;,&#8221;user&#8221;,&#8221;password&#8221;);</p>
-</td>
-</tr>
-<tr>
-<td width="115" valign="top">
-<p align="left"><strong>Informix</strong></p>
-</td>
-<td width="641" valign="top">
-<p align="left">Class.forName(&#8220;com.informix.jdbc.IfxDriver&#8221;).newInstance();</p>
-<p align="left">String url =   &#8220;jdbc:informix-sqli://123.45.67.89:1533/testDB:INFORMIXSERVER=myserver;   user=testuser;password=testpassword&#8221;;</p>
-</td>
-</tr>
-</tbody></table>
-<p align="left"></p></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[去掉“是否要关闭本窗口”的提示]]></title>
-    <link href="http://NeoCN.github.com/Javascript/window-close-with-no-prompt.html"/>
-    <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Javascript/window-close-with-no-prompt</id>
-    <content type="html"><![CDATA[<p>想要在javascript里调用window.close(); 关且闭窗口时不提示“是否要关闭本窗口？”有以下两种方法可以实现这样的效果：</p>
-
-<p>方法一、</p>
-
-<p><pre lang="javascript">
-window.opener = null;
-window.close();
-</pre></p>
-
-<p>方法二、</p>
-
-<p><pre lang="javascript">
-window.opener = window;
-window.self.close();
-</pre></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[WebLogic的antlr包冲突问题]]></title>
-    <link href="http://NeoCN.github.com/Application Server/weblogic-antlr-conflict-solution.html"/>
-    <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Application Server/weblogic-antlr-conflict-solution</id>
-    <content type="html"><![CDATA[<p>使用Hibernate的系统在WebLogic下部署经常会出现ClassNotFoundException: org.hibernate.hql.ast.HqlToken的问题，出现该问题的原因主要由于WebLogic已经集成了antlr包 ，在使用Hibernate时，会先加载其本身所带的antlr包， 所以会和Hibernate 捆绑的antlr-2.7.5.jar冲突，导致上述错误。</p>
-
-<p>解决方法是：在WebLogic启动类路径先加载最新的antlr包。<!--more--></p>
-
-<p>具体方法，以WebLogic 10.3 为例：</p>
-
-<p>Windows下修改<br />
-安装目录：D:\bea\<br />
-将最新antlr包拷贝到D:\bea\wlserver_10.0\common\lib\<br />
-修改：D:\bea\user_projects\domains\base_domain\bin\startWebLogic.cmd</p>
-
-<p>添加如下内容：
-<pre>set CLASSPATH=D:\bea\wlserver_10.0\common\lib\antlr-2.7.6.jar%CLASSPATH%;
-%MEDREC_WEBLOGIC_CLASSPATH%</pre>
-Linux下修改<br />
-安装目录：/home/bea<br />
-将 antlr包拷贝到 /home/bea/wlserver_10.3/common/lib/<br />
-修改：/home/bea/user_projects/domains/xmyd/bin/startWebLogic.sh</p>
-
-<p>添加如下内容：
-<pre>export HIBERNATE_CLASSPATH="/home/bea/wlserver_10.3/common/lib/antlr-2.7.6.jar"
-CLASSPATH="${HIBERNATE_CLASSPATH}${SAVE_CLASSPATH}"</pre>
-这样系统部署在AdminServer上就可以正常运行<br />
-但是如果weblogic有多个server时，我们将系统部署到非AdminServer时，上述错误又出来了，折腾了很久终于找到了解决方法</p>
-
-<p>我们需要在部署系统的war包中，添加（*.war/web/WEB-INF/）weblogic.xml<br />
-其内容如下：</p>
-
-<p>[xml]<br />
-&lt;weblogic-web-app&gt;<br />
-    &lt;container-descriptor&gt;<br />
-        &lt;prefer-web-inf-classes&gt;true&lt;/prefer-web-inf-classes&gt;<br />
-    &lt;/container-descriptor&gt;<br />
-&lt;/weblogic-web-app&gt;<br />
-[/xml]</p>
-
-<p>要求Web应用优先加载应用系统WEB-INF下的Jar，上述问题得以解决。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[一个超牛的日期时间判断正则表达式]]></title>
-    <link href="http://NeoCN.github.com/其他/super-date-time-validate-regular-expressions.html"/>
-    <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/其他/super-date-time-validate-regular-expressions</id>
-    <content type="html"><![CDATA[<p>这里是判断YYYY-MM-DD这种格式的，基本上把闰年和2月等的情况都考虑进去了：</p>
-
-<p>^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-))$</p>
-
-<p>下面的是加了时间验证的：格式为YYYY-MM-DD HH:MM:SS</p>
-
-<p>^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-)) (20|21|22|23|[0-1]?\d):[0-5]?\d:[0-5]?\d$</p>
+</li>
+	<li>在  Firefox 在用户代理重置您在步骤 1 中所做的更改。若要这样做，请按照下列步骤操作：
+<ol>
+	<li>启动  Firefox ，在 地址栏中输入about:config</li>
+	<li>向下滚动，或者使用 <strong>过滤器</strong> 查找以下的首选项项目：
+<div><strong>general.useragent.extra.microsoftdotnet</strong></div></li>
+	<li>用鼠标右键单击此的项目，然后单击 <strong>重置</strong>。</li>
+	<li>重新启动 Firefox</li>
+</ol>
+</li>
+	<li>删除.Net 扩展文件。若要这样做，请按照下列步骤操作：
+<ol>
+	<li>使用具有管理员权限的帐户登录。</li>
+	<li>单击 <strong>开始</strong>、  单击 <strong>运行</strong>，键入 <strong>explorer</strong>， 然后按 ENTER 键。</li>
+	<li>打开以下文件夹：
+<div>%SYSTEMDRIVE%\Windows\Microsoft.NET\Framework\v3.5\Windows Presentation Foundation\DotNetAssistantExtension\</div></li>
+	<li>删除 DotNetAssistantExtension 文件夹及其所有内容</li>
+</ol>
+</li>
+</ol>
+原文链接：<a href="http://support.microsoft.com/kb/963707/en-us" target="_blank">How to remove the .NET Framework Assistant for Firefox</a></p>
 ]]></content>
   </entry>
   

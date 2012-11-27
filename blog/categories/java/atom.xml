@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:48:32+08:00</updated>
+  <updated>2012-11-27T22:42:13+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -14,317 +14,414 @@
 
   
   <entry>
-    <title type="html"><![CDATA[8个正则表达式图解]]></title>
-    <link href="http://NeoCN.github.com/Java/8-regular-expressions-diagrammatic-explanation.html"/>
-    <updated>2009-12-02T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Java/8-regular-expressions-diagrammatic-explanation</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[译]10个你应该知道的Java正则表达式的例子]]></title>
-    <link href="http://NeoCN.github.com/Java/10-java-regular-expression-examples-you-should-know.html"/>
-    <updated>2009-12-01T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Java/10-java-regular-expression-examples-you-should-know</id>
-    <content type="html"><![CDATA[<p>正则表达式，用于验证用户输入的合法性是非常方便的，正好在网上看到了这篇文章，顺手翻译一下。</p>
+    <title type="html"><![CDATA[Google重新推出Instantiations的开发工具 -- 现在全部免费]]></title>
+    <link href="http://NeoCN.github.com/Java/google-relaunches-instantiations-tools-and-free-of-charge.html"/>
+    <updated>2010-09-17T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/google-relaunches-instantiations-tools-and-free-of-charge</id>
+    <content type="html"><![CDATA[<p>Google这次又让我们这些程序员欢呼雀跃了……</p>
 
 
 
 
-<p>原文链接：<a title="10 Java Regular Expression Examples You Should Know " href="http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/" target="_blank">http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/</a></p>
+<p>8月初，Google收购了Instantiations，现在，Google重新发布了Instantiations的开发工具，并且对所有开发人员免费:
+<ul>
+    <li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-gwtdesigner.html" target="_blank">GWT Designer</a>
+强大的基于 Eclipse的开发工具，使Java开发者能够使用Google Web Toolkit (GWT)快速创建Ajax用户界面。</li>
+    <li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-codepro.html" target="_blank">CodePro AnalytiX</a>
+全面自动化的软件代码质量及安全性分析工具，用于提高软件质量、可靠性和可维护性。</li>
+    <li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-wbpro.html" target="_blank">WindowBuilder Pro</a>
+Java图形界面设计器，支持Swing, SWT, GWT, RCP, 和 XWT UI 框架</li>
+    <li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-wintester.html" target="_blank">WindowTester Pro</a>
+使用Java富客户端应用测试GUI交互，支持SWT 和 Swing UI框架</li>
+</ul>
+<a href="http://www.devx.me/wp-content/uploads/2010/09/Gwt-Designer.png"><img class="aligncenter size-full wp-image-429" title="Gwt Designer" src="http://www.devx.me/wp-content/uploads/2010/09/Gwt-Designer.png" alt="" width="640" height="411" /></a></p>
 
 
 
 
-<p>声明：原创翻译，不足之处请多多指正，转载请注明出处！</p>
+<p>官方博客上这样写到：
+<pre>下一步的是将这些开发工具更深的整合到GWT开发工具家族中去，将神奇的Instantiations技术融合进
+Eclipse Google 插件(Google Plugin for Eclipse ，GPE) 。 所以，后续还有更多值得期待的内容，
+包括我们认为你肯定喜欢的一些东西，比如在GWT Designer中支持UiBinder 。</pre>
+大家拭目以待吧……</p>
 
 
 
 
-<p>正则表达式是一个编程的艺术，很难调试，学习和理解，但强大的功能，仍吸引不少开发者编写正则表达式。让我们探索一下下面10个实际应用中的正则表达式。
-<h3><strong>1. 用户名正则表达式模式</strong></h3>
-<pre>^[a-z0-9_-]{3,15}$</pre>
-<pre>^                         # 行开始
-  [a-z0-9_-]              # 匹配列表中的字符，a-z,0–9,下划线，连字符
-            {3,15}        # 长度至少3个字符，最大长度为15
-$                         # 行结束</pre>
-<h3>2. 密码正则表达式模式</h3>
-<pre>((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})</pre>
-<pre>(                        # 组开始
-    (?=.*\d)             # 必须包含一个数字 0-9
-    (?=.*[a-z])          # 必须包含一个小写字符
-    (?=.*[A-Z])          # 必须包含一个大写字符
-    (?=.*[@#$%])         # 必须包含一个列表中的特殊字符"@#$%"
-                .        # 检查所有字符串与前面的条件的匹配
-                 {6,20}  # 长度至少为6个字符，最大长度为20
-)                        # 组结束</pre>
-<h3><!--more-->3. 16进制颜色代码正则表达式模式</h3>
-<pre>^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$</pre>
-<pre>^                       # 行开始
- #                      #   必须包含一个"#"符号
-  (                     #   组#1开始
-   [A-Fa-f0-9]{6}       #     列表中的任意字符串,长度为6
-   |                    #     ..或者
-   [A-Fa-f0-9]{3}       #     列表中的任意字符串,长度为3
-  )                     #   组#1结束
-$                       # 行结束</pre>
-<h3>4. Email 正则表达式模式</h3>
-<pre>^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</pre>
-<pre>^                            # 行开始
-  [_A-Za-z0-9-]+             #   必须以中括号中的字符为起始字符[],必须包含一个或多个(+)
-  (                          #   组#1开始
-    \\.[_A-Za-z0-9-]+        #     接下来是一个点"."和中括号内的字符[],必须包含一个或者多个(+)
-  )*                         #   组#1结束, 这个组是可选的(*)
-    @                        #     必须包含一个"@"符号
-     [A-Za-z0-9]+            #       接下来是中括号内的字符[],必须包含一个或者多个(+)
-      (                      #         组 #2开始 – 一级TLD检查
-       \\.[A-Za-z0-9]+       #           接下来是一个点"."和中括号内的字符[],必须包含一个或者多个(+)
-      )*                     #         组#2结束,这个组是可选的(*)
-      (                      #         组#3开始 – 二级TLD检查
-       \\.[A-Za-z]{2,}       #           接下来是一个点"."和中括号内的字符[], 最小长度为2
-      )                      #         组#3结束
-$                            # 行结束</pre>
-<h3>5. 图像文件扩展名正则表达式模式</h3>
-<pre>([^\s]+(\.(?i)(jpg|png|gif|bmp))$)</pre>
-<pre>(                         # 组#1开始
- [^\s]+                   #   必须包含一个或更多的任意字符(除了空格)
-       (                  #     组#2开始
-        \.                #       接下来是一个点"."
-         (?i)             #       忽略后边字符的大小写检查
-             (            #         组#3开始
-              jpg         #           包含字符"jpg"
-              |           #           ..或者
-              png         #           包含字符"png"
-              |           #           .. 或者
-              gif         #           包含字符"gif"
-              |           #           .. 或者
-              bmp         #           包含字符"bmp"
-             )            #         组#3结束
-       )                  #     组#2结束
- $                        #   字符串的结束
-)                         # 组#1结束</pre>
-<h3>6. IP地址正则表达式模式</h3>
-<pre>^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.
-([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$</pre>
-<pre>^                  # 行开始
- (                 #   组#1开始
-  [01]?\\d\\d?     #     可以是1到2个数字. 如果出现3个数字, 必须以0或者1开始
-                   #     例如 ([0-9], [0-9][0-9],[0-1][0-9][0-9])
-    |              #     ...或者
-  2[0-4]\\d        #     以2开始, 紧跟着是0-4，并且以任意数字结尾(2[0-4][0-9])
-   |               #     ...或者
-  25[0-5]          #     以2开始, 紧跟着是5，并且以0-5结尾 (25[0-5])
- )                 #   组#1结束
-  \.               #   接下来是点"."
-....               #   重复3次 (3x)
-$                  # 行结束</pre>
-<h3>7. 时间格式正则表达式模式</h3>
-<h4>12-小时制时间正则表达式模式</h4>
-<pre>(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)</pre>
-<pre>(                                  # 组#1开始
- 1[012]                            #   以10, 11, 12开始
- |                                 #   或者
- [1-9]                             #   以1,2,...9开始
-)                                  # 组#1结束
- :                                 #   接下来是一个冒号 (:)
-  [0-5][0-9]                       #     接下来是0..5和0..9,意思是00到59
-            (\\s)?                 #       接下来是一个空格(可选)
-                  (?i)             #         下面的检查不区分大小写
-                      (am|pm)      #           接下来是AM或者PM</pre>
-<h4>24小时制时间正则表达式模式</h4>
-<pre>([01]?[0-9]|2[0-3]):[0-5][0-9]</pre>
-<pre>(                                  # 组#1开始
- [01]?[0-9]                        #   以0-9,1-9,00-09,10-19开始
- |                                 #   或者
- 2[0-3]                            #   以20-23开始
-)                                  # 组#1结束
- :                                 #   接下来是一个冒号(:)
-  [0-5][0-9]                       #     接下来是0..5和0..9,意思是00到59</pre>
-<h3>8. 日期格式 (dd/mm/yyyy) 正则表达式模式</h3>
-<pre>(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)</pre>
-<pre>(                          # 组#1开始
- 0?[1-9]                   #   01-09或者1-9
- |                         #   ..或者
- [12][0-9]                 #   10-19或者20-29
- |                         #   ..或者
- 3[01]                     #   30, 31
-)                          # 组#1结束
-  /                        #   接下来是一个"/"
-   (                       #     组#2开始
-    0?[1-9]                #       01-09或者1-9
-    |                      #       ..或者
-    1[012]                 #       10,11,12
-    )                      #     组#2结束
-     /                     #       接下来是一个"/"
-      (                    #         组#3开始
-       (19|20)\\d\\d       #           19[0-9][0-9]或者20[0-9][0-9]
-      )                    #         组#3结束</pre>
-<h3>9. HTML标签正则表达式模式</h3>
-<pre>&lt;("[^"]*"|'[^']*'|[^'"&gt;])*&gt;</pre>
-<pre>&lt;                # 以"&lt;"标签开始
- (               #   组#1开始
-  "[^"]*"        #     只允许两个双引号成对出现-"string"
-  |              #     ..或者
-  '[^']*'        #     只允许两个单引号成对出现- 'string'
-  |              #     ..或者
-  [^'"&gt;]         #     不能出现单独的双引号、单引号和"&gt;"
- )               #   组#1结束
- *               #   0次或多次
-&gt;                # 以结束标签"&gt;"结束</pre>
-<h3>10. HTML链接正则表达式模式</h3>
-<h4>HTML中的A标签正则表达式模式</h4>
-<pre>(?i)&lt;a([^&gt;]+)&gt;(.+?)&lt;/a&gt;</pre>
-<pre>(              # 组#1开始
- ?i            #   所有的检查区分大小写
-)              # 组#1结束
-&lt;a             # 以"&lt;a"开始
-  (            #   组#2开始
-   [^&gt;]+       #     除了("&gt;")之外的任意字符,至少一个字符
-  )            #   组#2结束
-  &gt;            #     接下来是"&gt;"
-   (.+?)       #       匹配所有
-        &lt;/a&gt;   #         以"&lt;/a&gt;结束</pre>
-<h4>提取HTML链接正则表达式模式</h4>
-<pre>\s*(?i)href\s*=\s*(\"([^"]*\")|'[^']*'|([^'"&gt;\s]+));</pre>
-<pre>\s*                          # 可以以空格开始
-  (?i)                       #   所有的检查是区分大小写的
-     href                    #     接下来是一个"href"字
-        \s*=\s*              #       等号两边都允许空格,
-              (              #         组#1开始
-               "([^"]*")     #           只允许2个双引号成对出现 - "string"
-               |             #           ..或者
-               '[^']*'       #           只允许2个单引号成对出现 - 'string'
-               |             #           ..或者
-               ([^'"&gt;]+)     #           或者不允许出现单独的单引号、双引号和"&gt;"
-               )             #         组#1结束</pre></p>
+<p>开发工具下载地址：<a href="http://code.google.com/intl/zh-CN/webtoolkit/download.html" target="_blank">http://code.google.com/intl/zh-CN/webtoolkit/download.html</a></p>
+
+
+
+
+<p>订阅Google开发工具更新地址：<a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/optin.html" target="_blank">http://code.google.com/intl/zh-CN/webtoolkit/tools/optin.html</a></p>
+
+
+
+
+<p>官方博客：<a href="http://googlewebtoolkit.blogspot.com/2010/09/google-relaunches-instantiations.html">http://googlewebtoolkit.blogspot.com/2010/09/google-relaunches-instantiations.html</a></p>
 
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Google App Engine 部署异常]]></title>
-    <link href="http://NeoCN.github.com/Java/google-application-engine-deploy-exception.html"/>
-    <updated>2009-09-07T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Java/google-application-engine-deploy-exception</id>
-    <content type="html"><![CDATA[<p>今天开始尝试着做Google Application Engine  应用程序开发（Java版），第一次部署还比较正常，除了在文件超过1M时频繁出现：java.net.SocketException: Unexpected end of file from server；</p>
+    <title type="html"><![CDATA[[译]8个你应该知道的Java领域的牛人]]></title>
+    <link href="http://NeoCN.github.com/Java/top-8-java-people-you-should-know.html"/>
+    <updated>2010-09-12T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/top-8-java-people-you-should-know</id>
+    <content type="html"><![CDATA[<p>这里是8个Java领域的牛人，他们创建了框架，产品，工具或者书籍，并将其捐献给Java社区，改变了Java编程方式。
+<strong>P.S.</strong> 排序仅基于个人观点。</p>
 
 
 
 
-<p>在了解了文件大小限制并成功部署之后，再次重新部署时，却出现如下异常，让人非常头疼：</p>
+<p><strong>8. Tomcat &amp; Ant 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="James Duncan Davidson" src="http://www.mkyong.com/wp-content/uploads/2010/08/James-Duncan-Davidson-150.png" alt="James Duncan Davidson" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>James Duncan Davidson</strong></span>，在他作为软件工程师在Sun公司工作期间(1997-2001)，创建了Tomcat，一个基于Java的Web服务器，现在仍广泛应用于Java Web项目中，同时还有Ant，一个使用XML描述构建过程与依赖呃构建工具，现在仍是基于Java的Web项目构建的事实标准。</p>
 
 
 
 
-<p>Another transaction by user XXXXXX is already in progress for this app and major version. That user can undo the transaction with appcfg.py's "rollback" command.</p>
+<p><strong>相关链接：</strong>
+<ol>
+    <li><a href="http://twitter.com/duncan" target="_blank">James Duncan Davidson Twitter</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/James_Duncan_Davidson" target="_blank">James Duncan Davidson Wiki</a></li>
+    <li><a href="http://blog.duncandavidson.com/about/" target="_blank">James Duncan Davidson personal blog</a></li>
+    <li><a href="http://ant.apache.org/" target="_blank">Apache Ant</a></li>
+    <li><a href="http://tomcat.apache.org/" target="_blank">Apache Tomcat</a></li>
+</ol>
+<!--more--></p>
 
 
 
 
-<p>解决办法如下：</p>
+<p><strong>7. Test Driven Development &amp; JUnit 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Kent Beck" src="http://www.mkyong.com/wp-content/uploads/2010/08/Kent-Beck-150.png" alt="Kent Beck" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Kent Beck</strong></span>，是极限编程(Extreme Programming，XP)和测试驱动软件开发方法学(Test Driven Development，TDD)的创造者，同时还与Erich Gamma一起创建了JUnit，一个简单的测试框架，JUnit现在已成为Java项目测试的事实标准。JUnit与TDD的结合，与以往Java编程方式有很大不同，这导致了很大一部分开发者并不愿意遵循它。</p>
 
 
 
 
-<p>从控制台进入Google App Engine的SDK目录下的bin目录，执行：“appcfg.cmd rollback  项目war目录路径”即可。</p>
+<p><strong>相关链接：</strong>
+<ol>
+    <li><a href="http://twitter.com/kentbeck" target="_blank">Kent Beck Twitter</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/Kent_Beck" target="_blank">Kent Beck Wiki</a></li>
+    <li><a href="http://www.threeriversinstitute.org/blog/" target="_blank">Kent Beck Blog</a></li>
+    <li><a href="http://www.junit.org/" target="_blank">JUnit Testing Framework</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/Extreme_Programming" target="_blank">Extreme Programming Wiki</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/Test_Driven_Development" target="_blank">Test Driven Development Wiki</a></li>
+</ol>
+<strong> 新闻采访：</strong>
+<ol>
+    <li><a href="http://www.zdnet.com/blog/burnette/kent-beck-we-thought-we-were-just-programming-on-an-airplane/118" target="_blank">Kent Beck: “We thought we were just programming on an airplane”</a></li>
+    <li><a href="http://www.informit.com/articles/article.aspx?p=20972" target="_blank">Interview with Kent Beck and Martin Fowler</a></li>
+    <li><a href="http://accu.org/index.php/journals/509" target="_blank">eXtreme Programming An interview with Kent Beck</a></li>
+</ol>
+<strong> Kent Beck 著作：</strong>
+<ol>
+    <li><a href="http://www.amazon.com/gp/product/0321278658?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321278658">Extreme Programming Explained: Embrace Change (2nd Edition)</a></li>
+    <li><a href="http://www.amazon.com/gp/product/0201485672?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0201485672" target="_blank">Refactoring: Improving the Design of Existing Code</a></li>
+    <li><a href="http://www.amazon.com/gp/product/0596007434?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0596007434" target="_blank">JUnit Pocket Guide</a></li>
+</ol>
+<strong>6. Java Collections Framework创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Joshua Bloch" src="http://www.mkyong.com/wp-content/uploads/2010/08/Joshua-Bloch-150.png" alt="Joshua Bloch" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Joshua Bloch</strong></span>，领导众多Java平台特性的设计与实现，包括JDK 5.0的语言增强和获奖的Java集合框架。2004年6月他离开Sun公司并成为Google公司的首席Java架构师，并且因《Effective Java》赢得了来自Software Development Magazine的著名的Jolt大奖，这本书可以说是必读的Java书。</p>
 
 
 
 
-<p>例如：</p>
+<p><strong>相关链接：</strong>
+<ol>
+    <li><a href="http://twitter.com/joshbloch" target="_blank">Joshua Bloch Twitter</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/Joshua_Bloch" target="_blank">Joshua Bloch Wiki</a></li>
+</ol>
+新闻采访：
+<a href="http://java.dzone.com/articles/effective-java-an-interview-wi" target="_blank"> Effective Java: An Interview with Joshua Bloch</a>
+<a href="http://java.sun.com/javaone/sf/2007/articles/rockstar_bloch.jsp" target="_blank"> Rock Star Josh Bloch</a>
+Joshua Bloch 著作：
+<a href="http://www.amazon.com/gp/product/0321356683?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321356683" target="_blank"> Effective Java (2nd Edition)</a>
+<a href="http://www.amazon.com/gp/product/0321349601?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321349601" target="_blank"> Java Concurrency in Practice</a></p>
 
 
 
 
-<p>D:\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.2.5.v200909021031\appengine-java-sdk-1.2.5\bin&gt;appcfg.cmd rollback D:\eclipse\workspace\XXXXXX\war</p>
+<p><strong>5. JBoss 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Marc Fleury" src="http://www.mkyong.com/wp-content/uploads/2010/08/Marc-Fleury-150.png" alt="Marc Fleury" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Marc Fleury</strong></span>, 2001年创建JBoss, 一个开源的Java应用服务器，可以说是部署基于Java的Web应用的事实标准。后来他将JBoss卖给了Red Hat并为继续支持JBoss开发加入Red Hat。 2007年2月9日，他决定离开Red Hat去追求其他的个人兴趣，比如教学，生物研究、音乐及家庭。</p>
 
 
 
 
-<p>输出如下：</p>
+<p><strong>相关链接：</strong>
+<ol>
+    <li><a href="http://en.wikipedia.org/wiki/Marc_Fleury" target="_blank">Marc Fleury Wiki</a></li>
+    <li><a href="http://www.thedelphicfuture.org/" target="_blank">Marc Fleury Blog</a></li>
+    <li><a href="http://www.jboss.org/" target="_blank">JBoss Application Server</a></li>
+</ol>
+<strong> 新闻采访：</strong>
+<ol>
+    <li><a href="http://news.cnet.com/Could-Red-Hat-lose-JBoss-founder/2100-7344_3-6147300.html" target="_blank">Could Red Hat lose JBoss founder?</a></li>
+    <li><a href="http://www.zdnet.com/blog/burnette/jboss-founder-marc-fleury-leaves-red-hat-now-what/258" target="_blank">JBoss founder Marc Fleury leaves Red Hat, now what?</a></li>
+    <li><a href="http://www.zdnet.com/blog/gardner/jbosss-marc-fleury-on-soa-esb-and-oss/2300" target="_blank">JBoss’s Marc Fleury on SOA, ESB and OSS</a></li>
+    <li><a href="http://news.cnet.com/8301-13505_3-9753687-16.html" target="_blank">Resurrecting Marc Fleury</a></li>
+</ol>
+<strong>4. Struts 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Craig Mcclanahan" src="http://www.mkyong.com/wp-content/uploads/2010/08/Craig-McClanahan-150.png" alt="Craig Mcclanahan" width="150" height="150" /></dt> </dl></div>
+<strong><span style="color: #ff0000;">Craig R. McClanahan</span></strong>，Struts的创始人，Struts是一个开源的用于开发Java Web应用的MVC框架，可以说几乎每个Java程序员都知道如何应用Struts编写代码。随着早期Struts的巨大成功，他被广泛应用于旧的Java Web应用中。</p>
 
 
 
 
-<p>Reading application configuration data...<br />
-Beginning server interaction for XXXXXX...<br />
-0% Rolling back the update.<br />
-Success.<br />
-Cleaning up temporary files...</p>
+<p><strong>相关链接：</strong>
+<ol>
+    <li><a href="http://en.wikipedia.org/wiki/Craig_McClanahan" target="_blank">Craig Mcclanahan Wiki</a></li>
+    <li><a href="http://blogs.sun.com/craigmcc/" target="_blank">Craig Mcclanahan Blog</a></li>
+    <li><a href="http://struts.apache.org/" target="_blank">Apache Struts</a></li>
+</ol>
+<strong>新闻采访：</strong>
+<ol>
+    <li><a href="http://www.jsfcentral.com/articles/mcclanahan-05-05.html" target="_blank">Interview with Craig McClanahan</a></li>
+    <li><a href="http://blogs.sun.com/craigmcc/date/20040927#struts_or_jsf_struts_and" target="_blank">Struts Or JSF?</a></li>
+</ol>
+<strong>3. Spring 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Rod Johnson" src="http://www.mkyong.com/wp-content/uploads/2010/08/Rod-Johnson-150.png" alt="Rod Johnson" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Rod Johnson</strong></span>，Spring Framework的创始人与创造者，SpringSource的CEO。Rod的畅销书《Expert One-on-One J2EE Design and Development》是J2EE方面最有影响的著作之一。</p>
+
+
+
+
+<p><strong>相关链接：</strong>
+<ol>
+    <li><a href="http://twitter.com/springrod" target="_blank">Rod Johnson Twitter</a></li>
+    <li><a href="http://blog.springsource.com/author/rodj/" target="_blank">Rod Johnson Blog</a></li>
+    <li><a href="http://www.springsource.org/" target="_blank">SpringSource</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/Spring_Framework" target="_blank">Spring Framework Wiki</a></li>
+</ol>
+<strong> 新闻采访：</strong>
+<ol>
+    <li><a href="http://blogs.vmware.com/console/2009/08/vmware-acquires-springsource.html" target="_blank">VMware.com : VMware to acquire SpringSource</a></li>
+    <li><a href="http://blog.springsource.com/2009/08/10/springsource-chapter-two/" target="_blank">Rod Johnson : VMware to acquire SpringSource</a></li>
+    <li><a href="http://howsoftwareisbuilt.com/2007/09/10/interview-with-rod-johnson-ceo-interface21/" target="_blank">Interview with Rod Johnson – CEO – Interface21</a></li>
+    <li><a href="http://java.dzone.com/news/qa-with-rod-johnson-over-sprin" target="_blank">Q&amp;A with Rod Johnson over Spring’s maintenance policy changes</a></li>
+    <li><a href="http://www.theserverside.com/news/1364653/Expert-One-on-One-J2EE-Design-and-Development-Interview-with-Rod-Johnson" target="_blank">Expert One-on-One J2EE Design and Development: Interview with Rod Johnson</a></li>
+</ol>
+<strong>Rod Johnson 著作</strong>
+<ol>
+    <li><a href="http://www.amazon.com/gp/product/0764543857?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0764543857">Expert One-on-One J2EE Design and Development (Programmer to Programmer)</a></li>
+    <li><a href="http://www.amazon.com/gp/product/0764558315?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0764558315">Expert One-on-One J2EE Development without EJB</a></li>
+</ol>
+<strong>2. Hibernate 创始人</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="Gavin King" src="http://www.mkyong.com/wp-content/uploads/2010/08/gravin-king-150.png" alt="Gavin King" width="150" height="150" /></dt> </dl></div>
+<span style="color: #ff0000;"><strong>Gavin King<span style="color: #000000;">，</span></strong></span> Hibernate项目的创始人，Hibernate是一个流行的Java对象/关系持久化解决方案。他同时还创建了Seam，一个Java EE 5的应用程序框架，同时还对EJB 3.0 和 JPA 的设计做出了很大贡献。</p>
+
+
+
+
+<p><strong>相关链接：</strong>
+<ol>
+    <li><a href="http://relation.to/Bloggers/Gavin" target="_blank">Gavin King Blog</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/Hibernate_%28Java%29" target="_blank">Hibernate Wiki</a></li>
+    <li><a href="http://www.hibernate.org/" target="_blank">Hibernate Framework</a></li>
+    <li><a href="http://www.jboss.com/products/seam/" target="_blank">JBoss seam</a></li>
+</ol>
+<strong>新闻采访：</strong>
+<ol>
+    <li><a href="http://java.dzone.com/videos/gavin-king-jsr299" target="_blank">Tech Chat: Gavin King on Contexts and Dependency Injection, Weld, Java EE 6</a></li>
+    <li><a href="http://www.javaperformancetuning.com/news/interview041.shtml" target="_blank">JPT : The Interview: Gavin King, Hibernate</a></li>
+    <li><a href="http://javafree.uol.com.br/artigo/871462/" target="_blank">JavaFree : Interview with Gavin King, founder of Hibernate</a></li>
+    <li><a href="http://www.jsfcentral.com/articles/king-06-08.html" target="_blank">Seam in Depth with Gavin King</a></li>
+</ol>
+<strong>Gavin King 著作：</strong>
+<ol>
+    <li><a href="http://www.amazon.com/gp/product/1932394885?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1932394885">Java Persistence with Hibernate</a></li>
+    <li><a href="http://www.amazon.com/gp/product/193239415X?ie=UTF8&amp;tag=progrlife-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=193239415X">Hibernate in Action (In Action series)</a></li>
+</ol>
+<strong>1. Java之父</strong>
+<div class="mceTemp"><dl class="wp-caption alignleft" style="width: 160px;"> <dt class="wp-caption-dt"><img title="James Gosling" src="http://www.mkyong.com/wp-content/uploads/2010/08/James-Gosling-150.png" alt="James Gosling" width="150" height="150" /></dt> </dl></div>
+<strong><span style="color: #ff0000;">James Gosling</span></strong>，因其在1994年发明Java编程语言而广受赞誉。他创建了Java的最初设计与实现，开发了最初的Java编译器与Java虚拟机。他也因此当选美国国家工程院院士。2010年4月2日，他离开了被Oracle收购的Sun公司。至于他为什么离开，戈斯林在他的博客中写道：  “我只能说精确与诚实有害无益。”</p>
+
+
+
+
+<p><strong> 相关链接：</strong>
+<ol>
+    <li><a href="http://nighthacks.com/roller/jag/" target="_blank">James Gosling Blog</a></li>
+    <li><a href="http://en.wikipedia.org/wiki/James_Gosling" target="_blank">James Gosling Wiki</a></li>
+</ol>
+<strong> 新闻采访：</strong>
+<ol>
+    <li><a href="http://www.gotw.ca/publications/c_family_interview.htm" target="_blank">Interview with Dennis Ritchie, Bjarne Stroustrup, and James Gosling</a></li>
+    <li><a href="http://itmanagement.earthweb.com/osrc/article.php/3706426/Interview-James-Gosling-the-Father-of-Java.htm" target="_blank">Interview: James Gosling, ‘the Father of Java’</a></li>
+    <li><a href="http://www.builderau.com.au/program/java/soa/Developer-Interview-James-Gosling/0,339024620,320282876,00.htm" target="_blank">Developer Interview: James Gosling</a></li>
+</ol>
+原文地址：<a href="http://www.mkyong.com/featured/top-8-java-people-you-should-know/" target="_blank">http://www.mkyong.com/featured/top-8-java-people-you-should-know/</a></p>
 
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[IP地址与长整型互转]]></title>
-    <link href="http://NeoCN.github.com/Java/ip-address-long-exchange.html"/>
-    <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Java/ip-address-long-exchange</id>
-    <content type="html"><![CDATA[<p><pre lang="java" /></p>
+    <title type="html"><![CDATA[Mojarra 2.1(JSF 2.1官方参考实现)将放弃支持JavaSE 5.0]]></title>
+    <link href="http://NeoCN.github.com/Java/drop-support-for-javase-5-in-ongoing-mojarra-2-1.html"/>
+    <updated>2010-08-17T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/drop-support-for-javase-5-in-ongoing-mojarra-2-1</id>
+    <content type="html"><![CDATA[<p>Mojarra是Oracle(曾经是Sun)针对JSF标准的官方参考实现。</p>
 
 
 
 
-<p>import java.net.InetAddress;<br />
-import java.net.UnknownHostException;</p>
+<p>据悉，为使Mojarra的测试矩阵能够更符合Oracle目前的工程投资，针对即将到来的JSF 2.1标准的未来所有Mojarra构建将仅支持JavaSE 6.0及更新版本。所有2.0.x和1.2版本将仍然继续使用JavaSE 5.0构建。</p>
 
 
 
 
-<p>public class IPUtil {<br />
- /**<br />
- * @param ip<br />
- *            ip的字符串表示<br />
- * @return ip地址的数值表示<br />
- * @throws UnknownHostException<br />
- */<br />
- public static long ipToLong(String ip) <br />
-     throws UnknownHostException {<br />
-     InetAddress ipAddress = InetAddress.getByName(ip);<br />
-     return ipToLong(ipAddress);<br />
- }</p>
+<p>原文链接：<a href="http://www.java.net/blog/edburns/archive/2010/08/16/decision-drop-support-javase-5-ongoing-oracle-mojarra-21-development">Decision: Drop support for JavaSE 5 in ongoing Oracle Mojarra 2.1 development efforts</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google收购Instantiations]]></title>
+    <link href="http://NeoCN.github.com/Java/google-has-acquired-instantiations.html"/>
+    <updated>2010-08-05T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/google-has-acquired-instantiations</id>
+    <content type="html"><![CDATA[<p>继谷歌上半年11亿美元收购22家公司之后，谷歌仍继续疯狂收购……<br />
+最新消息，谷歌收购Instantiations，具体收购金额未知，Instantiations官方网站已放出声明：
+<pre>We’re excited to announce that Instantiations is now part of Google!
+Yes it’s true. Instantiations’ award-winning Java and Ajax development tools and our
+incredible Eclipse team have been acquired by Google. We are all very excited about
+taking our technology and team to the next level - and there is no bigger step up
+than Google!
+We very much appreciate your patronage and interest through the years. As part of
+Google, we look forward to continuing to work with you. <span style="color: #008000;">Please stay tuned for exciting
+new announcements coming soon on the Google Web Toolkit blog</span>.
+Instantiations Java development products and people have a new home at  Google, but VA
+Smalltalk™ is staying put - with the same people, same  products, and same dedication
+to our customers and to Smalltalk.
+</pre>
+Instantiations主要产品为基于Eclipse的Java、SmallTalk商业开发工具，比如GWT/Swing/SWT/RCP Designer、Window Builder Pro、CodePro、Window Tester Pro等，Google此次收购，未包含SmallTalk产品线及相关开发团队。“新的”Instantiations公司继续保持独立，主要进行SmallTalk相关产品线相关业务，其原Java/AJAX开发工具产品线及开发团队将通过此次收购进入Google。</p>
 
 
 
 
-<p> /**<br />
- * IP地址转换到长整型<br />
- * @param ipAddress<br />
- *            InetAddress对象<br />
- * @return ip地址的数值表示<br />
- * @throws UnknownHostException<br />
- */<br />
- public static long ipToLong(InetAddress ipAddress) <br />
-     throws UnknownHostException {<br />
-     byte[] ipBytes = ipAddress.getAddress();<br />
-     Long ipLong = (ipBytes[0] << 24 & 0xff000000L)<br />
-                 | (ipBytes[1] << 16 & 0xff0000L)<br />
-                 | (ipBytes[2] <<  8 & 0xff00L)<br />
-                 | (ipBytes[3] <<  0 & 0xffL);<br />
-     return ipLong;<br />
- }</p>
+<p>个人认为Google的主要目的在于该公司的GWT Designer，这将为GWT提供强大的可视化开发工具，而通过此次收购，Google不仅仅是收获了GWT Designer及其团队，更是得到了一个强大的可视化开发工具开发团队。难道你不期待或者希望有Android Designer吗？</p>
 
-<p> /**<br />
- * 由低32位二进制数构成InetAddress对象<br />
- *<br />
- * @param ip<br />
- *            ip地址的数值表示<br />
- * @return InetAddress对象<br />
- * @throws UnknownHostException<br />
- */<br />
- public static InetAddress longToIP(long ip) <br />
-     throws UnknownHostException {<br />
-     byte[] ipBytes = new byte[4];<br />
-     int i = (int) ip;// 低32位<br />
-     ipBytes[0] = (byte) ((i >> 24) & 0x000000ff);<br />
-     ipBytes[1] = (byte) ((i >> 16) & 0x000000ff);<br />
-     ipBytes[2] = (byte) ((i >> 8 ) & 0x000000ff);<br />
-     ipBytes[3] = (byte) ((i >> 0 ) & 0x000000ff);<br />
-     return InetAddress.getByAddress(ipBytes);<br />
- }</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTTP 417 Expectation Failed与Expect:100-Continue]]></title>
+    <link href="http://NeoCN.github.com/Java/http-417-expectation-failed-and-expect-100-continue.html"/>
+    <updated>2010-07-21T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Java/http-417-expectation-failed-and-expect-100-continue</id>
+    <content type="html"><![CDATA[<p>这两天写代码，调用新浪微博的Rest API，使用HttpClient 4.0，以Post方式提交，请求参数以UrlEncodedFormEntity的形式设置到HttpPost对象中，提交到API时，出现如下异常：
+<pre lang="xml" escape="true">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;417 Expectation Failed&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Error 417 Expectation Failed&lt;/h1&gt;
+        &lt;p&gt;Expectation Failed&lt;/p&gt;
+        &lt;h3&gt;Guru Meditation:&lt;/h3&gt;
+        &lt;p&gt;XID: 2734998565&lt;/p&gt;
+        &lt;address&gt;
+            &lt;a href="http://www.varnish-cache.org/"&gt;Varnish&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<br />
+刚开始有点莫名其妙，这是哪门子错误，没见过啊，于是去查HTTP状态字定义，得到如下描述：
+<pre>
+The expectation given in an Expect request-header field (see section 
+14.20) could not be met by this server, or, if the server is a proxy,    
+the server has unambiguous evidence that the request could not be met    
+by the next-hop server.
+</pre>
+大致的意思是：
+<pre>服务器不支持Expect请求头部域，或者，如果服务器是代理服务器的话，
+服务器有明确的证据表明请求不能到达下一跳服务器。</pre>
+<br />
+那，到底什么是Expect请求头部域呢？以前完全没用过，也很少见，跟踪浏览器的HTTP请求的时候也很少见这个头部域，继续查吧，根据HTTP请求头部Expect域的定义，得到如下信息：
+<pre>The Expect request-header field is used to indicate that particular
+server behaviors are required by the client.
+      Expect       =  "Expect" ":" 1#expectation
+      expectation  =  "100-continue" | expectation-extension
+      expectation-extension =  token [ "=" ( token | quoted-string )
+                               *expect-params ]
+      expect-params =  ";" token [ "=" ( token | quoted-string ) ]
+A server that does not understand or is unable to comply with any of 
+the expectation values in the Expect field of a request MUST respond
+ with appropriate error status. The server MUST respond with a 
+417(Expectation Failed) status if any of the expectations cannot be met 
+or, if there are other problems with the request, some other 4xx status.
+This header field is defined with extensible syntax to allow for 
+future extensions. If a server receives a request containing an 
+Expect field that includes an expectation-extension that it does not 
+support, it MUST respond with a 417 (Expectation Failed) status.
+Comparison of expectation values is case-insensitive for unquoted 
+tokens (including the 100-continue token), and is case-sensitive for 
+quoted-string expectation-extensions.
+The Expect mechanism is hop-by-hop: that is, an HTTP/1.1 proxy MUST 
+return a 417 (Expectation Failed) status if it receives a request 
+with an expectation that it cannot meet. However, the Expect 
+request-header itself is end-to-end; it MUST be forwarded if the 
+request is forwarded.
+Many older HTTP/1.0 and HTTP/1.1 applications do not understand the   
+Expect header.</pre>
+大致意思如下：
+<pre>Expect请求头部域，用于指出客户端要求的特殊服务器行为。若服务器不能理解或者满足
+Expect域中的任何期望值，则必须返回417(Expectation Failed)状态，或者如果请求
+有其他问题，返回4xx状态。
+这个头部域使用可扩展语法定义，以方便将来扩展。如果服务器收到包含Expect头部域的
+请求且包含一个它不支持的期望值扩展，则必须返回417(Expectation Failed)状态。
+期望值的比较，对于非引用符号(包括100-continue)是大小写无关的，对于引用字符串
+的期望值扩展，则是大小写敏感的。
+Expect域的机制是逐跳进行的，也就是说如果一个代理服务器收到包含不能满足的期望
+的请求时，必须返回417(Expectation Failed)状态。而Expect请求头部域自身，
+却是端到端的，如果请求被转发，则它也必须被转发。
+很多旧的HTTP/1.0和HTTP/1.1应用不支持Expect头部。
+</pre>
+到这里，基本明白了为什么会出现这样的错误，说明代码最后生成的HTTP请求，包含了服务器不能处理的Expect头部，到底是什么？装上Wireshark，监听一下请求内容，发现出现异常时的请求中的Expect头部是这样的：<strong>Expect:100-Continue</strong>，难道是它引起的？继续查……
+<br />
+对于Expect:100-Continue，HttpClient的官方文档是这样描述的：
+<pre>
+The purpose of the Expect: 100-Continue handshake is to allow the client that 
+is sending a request message with a request body to determine if the origin 
+server is willing to accept the request (based on the request headers) before
+ the client sends the request body.
+Expect: 100-continue handshake should be used with caution, as it may cause
+problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
+</pre>
+大意如下：
+<pre>
+Expect:100-Continue握手的目的，是为了允许客户端在发送请求内容之前，判断源服务器是否愿意接受
+请求（基于请求头部）。
+Expect:100-Continue握手需谨慎使用，因为遇到不支持HTTP/1.1协议的服务器或者代理时会引起问题。
+</pre>
+<br />
+而HttpClient 4.0中，是否激活Expect:100-Continue，是由HTTP请求执行参数<strong>http.protocol.expect-continue</strong>来控制的，通过设置参数值为true或者false，可以相应的激活或者关闭Expect:100-Continue握手。注意，在HttpClient中，默认是激活的。<br />
+HttpClient 4 中关闭Expect:100-Continue握手的代码如下：
+<pre lang="java">
+HttpPost httpPost = new HttpPost(url);
+httpPost.getParams().setBooleanParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE,
+false);
+</pre>
+关闭HttpClient中的Expect:100-Continue握手之后，再执行程序，顺利地通过微博API发出了一条消息。
+<br />
+总结：通过这次的问题解决，可以看出，对于HTTP协议不够熟悉，底层了解不够，同时没有认真阅读HttpClient开发文档。我想，现在从事软件开发行业的大部分人都或多或少有这样的问题，即忽视底层协议及原理的学习。真正的了解底层原理，借以开源代码及开发文档的辅助，这样才会能够实现快速、高效、稳定的程序开发。
+<br />
+<strong>参考文献：</strong>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.1.1" target="_blank">100 Continue</a>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.2.3" target="_blank">Use of the 100 (Continue) Status</a>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.20" target="_blank">Expect Header Field Definition</a>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.18" target="_blank">417 Expectation Failed</a>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616.html" target="_blank">Hypertext Transfer Protocol -- HTTP/1.1 </a>
+<a href="http://hc.apache.org/httpcomponents-client-4.0.1/tutorial/html/fundamentals.html" target="_blank">HttpClient Tutorial -- 1. Fundamentals </a></p>
 
-<p>}</p>
+
+
 
 <p></p>
 

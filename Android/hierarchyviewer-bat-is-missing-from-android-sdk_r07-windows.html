@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Windows版本的Android SDK R07中缺少hierarchyviewer.bat文件 - DevX.Me</title>
+  <meta name="author" content="小马">
+
+  
+  <meta name="description" content="昨天改 YiBo客户端 中的一个UI，调来调去总也达不到想要的效果，便想看看其他的客户端是怎么做的，官方的开发指南说可以用Hierarchy Viewer来查看应用程序的UI布局结构，于是乎，按着官方指南开始做，“From a terminal, launch hierarchyviewer &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://NeoCN.github.com/Android/hierarchyviewer-bat-is-missing-from-android-sdk_r07-windows.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DevX.Me</a></h1>
+  
+    <h2>My Coding Life!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Windows版本的Android SDK R07中缺少hierarchyviewer.bat文件</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-26T00:00:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2010</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>昨天改 <a href="http://www.dev123.net" target="_blank">YiBo客户端</a> 中的一个UI，调来调去总也达不到想要的效果，便想看看其他的客户端是怎么做的，官方的开发指南说可以用Hierarchy Viewer来查看应用程序的UI布局结构，于是乎，按着官方指南开始做，“From a terminal, launch hierarchyviewer from your SDK/tools directory.” 。 第一步就卡住了，没hierarchyviewer.bat 这个文件。 以为是下载的SDK不完整，重新下载，打开，还是没有。无奈，Google，原来是个Bug(<a href="http://code.google.com/p/android/issues/detail?id=11214" target="_blank">http://code.google.com/p/android/issues/detail?id=11214</a>) 。</p>
+
+<p>目前此问题的解决方法是：</p>
+
+<p>1、从老版本的SDK中拷贝hierarchyviewer.bat文件放到tools目录下即可；</p>
+
+<p>2、从官方的源码库中下载一份，下载地址：<a href="http://goo.gl/lVRLO" target="_blank">http://goo.gl/lVRLO</a> ；</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小马</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-26T00:00:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>Android</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/其他/the-things-outside-the-interaction.html" title="Previous Post: [转]我的十年，交互之外的那些事">&laquo; [转]我的十年，交互之外的那些事</a>
+      
+      
+        <a class="basic-alignment right" href="/其他/how-to-start-a-startup.html" title="Next Post: 如何进行成功的创业">如何进行成功的创业 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/其他/4-traps-a-startup-should-care.html">[转]4个造成创业失败的最重要陷阱</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/twelve-principles-of-agile-software.html">敏捷软件的十二条原则</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/stay-hungry-stay-foolish.html">Stay Hungry. Stay Foolish.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/how-to-start-a-startup.html">如何进行成功的创业</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Android/hierarchyviewer-bat-is-missing-from-android-sdk_r07-windows.html">Windows版本的Android SDK R07中缺少hierarchyviewer.bat文件</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - 小马 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://NeoCN.github.com/Android/hierarchyviewer-bat-is-missing-from-android-sdk_r07-windows.html';
+        var disqus_url = 'http://NeoCN.github.com/Android/hierarchyviewer-bat-is-missing-from-android-sdk_r07-windows.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Oracle | DevX.Me]]></title>
   <link href="http://NeoCN.github.com/blog/categories/oracle/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-11-25T22:48:32+08:00</updated>
+  <updated>2012-11-27T22:42:13+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -12,6 +12,90 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle中使用to_char获取周次]]></title>
+    <link href="http://NeoCN.github.com/Oracle/oracle-to_char-week-of-year.html"/>
+    <updated>2010-05-08T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/Oracle/oracle-to_char-week-of-year</id>
+    <content type="html"><![CDATA[<p>昨天，照惯例统计了移动系统的访问情况，也没仔细看就提交给移动方面了，大概20分钟后，移动那边的负责人电话就过来了：
+<pre>移动负责人：你统计的是什么时候的访问情况？
+我：本周啊！
+移动负责人：这结果不对啊，我怎么可能本周只访问过2个系统而且只有一次呢？
+           我自己记得就有很多次了，也绝对不止2个系统！
+我：……这样啊，不好意思，我检查下看……</pre>
+统计系统访问情况的脚本是我写的，用它统计都有半年多了，这是第一次客户提出质疑；以前自己发现过结果不太对劲，但认为是正常浮动，没管它……</p>
+
+
+
+
+<p>仔细检查了下脚本，统计本周访问情况，选择条件中关于时间判断是这样写的：to_char(create_date,'ww') = to_char(sysdate,'ww')，难道是这里有问题？</p>
+
+
+
+
+<p>先做做测试看看：
+<pre lang="sql">select to_char(to_date('2010-5-6','yyyy-mm-dd'),'ww') from dual;               --结果是18
+select t0_char(to_date('2010-5-7','yyyy-mm-dd'),'ww') from dual;               --结果是19</pre>
+汗……统计本周访问情况应是统计2010-5-3～2010-5-7 ，但是，使用to_char函数的ww参数获取周数，5.6和5.7都不在一个值上，这哪里能统计出正确结果呢……暴寒……</p>
+
+
+
+
+<p><strong>问题原因</strong>：
+<pre>WW参数：一年中的周次（1～53），第一周为一年的第一天至第七天；
+IW参数：一年中的周次（1～52或1～53），基于ISO标准；</pre>
+而我们平时所说的某一周是第几周，基本都是指自然周的周次，也就是基于ISO标准的周次，我的统计脚本里却用WW，太汗了……基础知识啊，需要恶补……半年多了啊，今天才知道……呃！！！这半年多的统计数据有多少是对的呢？不敢想！罪过啊罪过</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle EXP-00003 异常解决办法]]></title>
+    <link href="http://NeoCN.github.com/DataBase/Oracle/oracle-exp-00003-solutions.html"/>
+    <updated>2010-01-12T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/DataBase/Oracle/oracle-exp-00003-solutions</id>
+    <content type="html"><![CDATA[<p>今天下午，想在测试环境下进行数据库迁移的模拟测试，本机Oracle 版本为9.2.0.1 ，服务器Oracle版本为9.2.0.8 ，在使用EXP命令进行用户数据导出时，如果表中有数据类型是Lob的列，则会出现EXP-00003：未找到段×××的存储定义(EXP-00003 : no storage definition found for segment .....)。</p>
+
+
+
+
+<p>出现 EXP-00003异常，是Oracle数据库的一个Bug。当使用低版本的EXP从高版本(9.2.0.5或者更高)去导出含有Lob列的表的时候，就会遇到EXP-00003异常。</p>
+
+
+
+
+<p>为了解决这个问题，可以选择升级客户端，将客户端EXP升级到较高版本，可以解决这个Bug；当然有些人不想这么麻烦，那么可以用下面的临时解决方案(替换视图"exu9tne")：
+<p style="text-align: left;">EXP导出前，在SYS用户下执行下面的SQL：</p></p>
+
+
+
+
+<p><pre lang="sql">CREATE OR REPLACE VIEW exu9tne (
+tsno, fileno, blockno, length) AS
+SELECT ts#, segfile#, segblock#, length
+FROM sys.uet$
+WHERE ext# = 1
+UNION ALL
+SELECT * FROM SYS.EXU9TNEB
+/
+</pre>
+<p style="text-align: left;">EXP导出完成后，执行下面的SQL恢复视图定义(Metalink建议)：</p></p>
+
+
+
+
+<p><pre lang="sql">CREATE OR REPLACE VIEW exu9tne (
+tsno, fileno, blockno, length) AS
+SELECT ts#, segfile#, segblock#, length
+FROM sys.uet$
+WHERE ext# = 1
+/
+</pre>
+PS: 下午升级数据库后，服务起不来了，自己又是菜鸟一个，折腾N久还是不行，最后一狠心，重装……唉，可怜了我辛辛苦苦导进去的数据……</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[PL SQL Developer v8.0.0.1480 KeyMaker]]></title>
@@ -229,87 +313,6 @@ BEGIN<br />
    WHEN OTHERS THEN<br />
       NULL;<br />
 END;</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Oracle执行exp出现Oracle942错误]]></title>
-    <link href="http://NeoCN.github.com/Oracle/oracle-export-ora-00942.html"/>
-    <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Oracle/oracle-export-ora-00942</id>
-    <content type="html"><![CDATA[<p>在公司新借的笔记本上安装Oracle 9i 9.2.0.1，看到有个升级补丁9.2.0.6，就顺手给装上了，结果，升级补丁安装完后，使用exp命令连接到其他电脑上的9.2.0.1版本的数据库进行数据导出是出现以下错误：</p>
-
-
-
-
-<p>EXP-00056: 遇到 ORACLE 错误 942<br />
-ORA-00942: 表或视图不存在<br />
-EXP-00024: 未安装导出视图，请通知您的DBA<!--more--></p>
-
-
-
-
-<p>出现该错误的原因是：由于exp的版本与数据库的版本不相同，所以～～</p>
-
-
-
-
-<p>Oracle不同版本间数据导入导出的规则：
-<pre>规则一：从Oracle 低版本的Export数据可以Import到Oracle高版本中，但限于Oracle的相邻版本，
-       如从Oracle 7 到 Oracle 8。对于两个不相邻版本间进行转换，如从Oracle 6 到 Oracle 8，
-       则应先将数据输入到中间版本—Oracle 7，再从中间数据库转入更高版本。</pre>
-<pre>规则二：Oracle的Export/Import工具只能连接到拥更高或者一样的Export/Import版本的数据库，
-       如Oracle 8.0.5的Export/Import 可连接到Oracle 8.1.6数据库。
-       高版本的Export导出来的转储文件，低版本的Import读不了；
-       低版本的Export导出来的转储文件，高版本的Import可以进行读取。</pre>
-我从9.2.0.6连接到9.2.0.1去exp数据，当然是没办法导出了！</p>
-
-
-
-
-<p>另外，虽然9.2.0.1到9.2.0.6的补丁已经安装成功，但是数据字典表中的相关信息并未更新，<br />
-通过该语句查看：select comp_id,version from dba_registry;</p>
-
-
-
-
-<p>解决方法：<br />
-使用SQL Plus，以DBA的身份登录；<br />
-执行以下语句：<br />
-Shutdown immediate  //关掉数据库<br />
-startup migrate  //启动到migrate模式<br />
-@"%oracle_home%\rdbms\admin\catpatch.sql"   //迁移到新版本的字典</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Oracle异常]]></title>
-    <link href="http://NeoCN.github.com/Oracle/oracle-exception-ora.html"/>
-    <updated>2009-07-19T00:00:00+08:00</updated>
-    <id>http://NeoCN.github.com/Oracle/oracle-exception-ora</id>
-    <content type="html"><![CDATA[<p>1、ORA-01791：不是 SELECTed 表达式<br />
-如果SELECT中用到DISTINCT关键字，还要使用ORDER BY 子句，那么排序的列必须是包含在SELECT列表中的字段，否则会报ORA-01791 不是SELECTed表达式。</p>
-
-
-
-
-<p>2、ORA-00979：不是GROUP BY 表达式<br />
-聚集函数前面几个列就要在group by后面出现几列，否则出现“不是 GROUP BY 表达式”。</p>
-
-
-
-
-<p>3、ORA-22858:：数据类型的更改无效<br />
-Oracle 数据库表字段类型直接从varchar2 修改为clob时报错：ORA-22858: 数据类型的更改无效<br />
-解决办法：可以先修改为Long类型，清空该列数据，然后再从Long修改为clob类型</p>
-
-
-
-
-<p>4、ORA-00972：identifier is too long  标识过长<br />
-Oracle 数据库 模式对象的名字长度上限为30个字符，因此数据库表名、字段名都不能超过30个字符</p>
 
 ]]></content>
   </entry>

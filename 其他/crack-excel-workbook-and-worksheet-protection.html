@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>破解Excel的工作簿和工作表保护 - DevX.Me</title>
+  <meta name="author" content="小马">
+
+  
+  <meta name="description" content="Excel的工作簿和工作表的保护口令，保存的是经过转换的密码，用户输入的任何长度的保护口令都会被转换为12字符长的字符串，其中前11个字符均是某两个特定字符中的一个，最后一位有95种可能值，那么，这个转换后的保护密码共计有 2^11×95 = 194560 种组合。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://NeoCN.github.com/其他/crack-excel-workbook-and-worksheet-protection.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="DevX.Me" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19855289-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">DevX.Me</a></h1>
+  
+    <h2>My Coding Life!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">破解Excel的工作簿和工作表保护</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-26T00:00:00+08:00" pubdate data-updated="true">Dec 26<span>th</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Excel的工作簿和工作表的保护口令，保存的是经过转换的密码，用户输入的任何长度的保护口令都会被转换为12字符长的字符串，其中前11个字符均是某两个特定字符中的一个，最后一位有95种可能值，那么，这个转换后的保护密码共计有 2^11×95 = 194560 种组合。</p>
+
+<p>这样的组合对现在的计算机来说只是小儿科，几秒钟就可以全部尝试一遍，给出两个比较数字：一个包含小写字母的4字符长度的密码，总计有456976种组合；一个包含小写字母、大写字母和数字的3字符长度的密码，将会有238328种组合。</p>
+
+<p>强调一下：无论初始密码是什么，194560个组合中的一个，将解锁受保护的工作簿或者工作表。
+<!--more-->
+下面是一个宏代码，用于破解这个密码，有效的密码将以“AAABABBABABX”这样的形式返回，前11个字符是A或者B，最后一位X是ASCII码值为32到126之间的任意字符。
+<pre lang="macro" escape="0">Public Sub AllInternalPasswords()
+      ' Breaks worksheet and workbook structure passwords. Bob McCormick
+      '  probably originator of base code algorithm modified for coverage
+      '  of workbook structure / windows passwords and for multiple passwords
+      '
+      ' Norman Harker and JE McGimpsey 27-Dec-2002 (Version 1.1)
+      ' Modified 2003-Apr-04 by JEM: All msgs to constants, and
+      '   eliminate one Exit Sub (Version 1.1.1)
+      ' Reveals hashed passwords NOT original passwords
+      Const DBLSPACE As String = vbNewLine &amp; vbNewLine
+      Const AUTHORS As String = DBLSPACE &amp; vbNewLine &amp; _
+              "Adapted from Bob McCormick base code by" &amp; _
+              "Norman Harker and JE McGimpsey"
+      Const HEADER As String = "AllInternalPasswords User Message"
+      Const VERSION As String = DBLSPACE &amp; "Version 1.1.1 2003-Apr-04"
+      Const REPBACK As String = DBLSPACE &amp; "Please report failure " &amp; _
+              "to the microsoft.public.excel.programming newsgroup."
+      Const ALLCLEAR As String = DBLSPACE &amp; "The workbook should " &amp; _
+              "now be free of all password protection, so make sure you:" &amp; _
+              DBLSPACE &amp; "SAVE IT NOW!" &amp; DBLSPACE &amp; "and also" &amp; _
+              DBLSPACE &amp; "BACKUP!, BACKUP!!, BACKUP!!!" &amp; _
+              DBLSPACE &amp; "Also, remember that the password was " &amp; _
+              "put there for a reason. Don't stuff up crucial formulas " &amp; _
+              "or data." &amp; DBLSPACE &amp; "Access and use of some data " &amp; _
+              "may be an offense. If in doubt, don't."
+      Const MSGNOPWORDS1 As String = "There were no passwords on " &amp; _
+              "sheets, or workbook structure or windows." &amp; AUTHORS &amp; VERSION
+      Const MSGNOPWORDS2 As String = "There was no protection to " &amp; _
+              "workbook structure or windows." &amp; DBLSPACE &amp; _
+              "Proceeding to unprotect sheets." &amp; AUTHORS &amp; VERSION
+      Const MSGTAKETIME As String = "After pressing OK button this " &amp; _
+              "will take some time." &amp; DBLSPACE &amp; "Amount of time " &amp; _
+              "depends on how many different passwords, the " &amp; _
+              "passwords, and your computer's specification." &amp; DBLSPACE &amp; _
+              "Just be patient! Make me a coffee!" &amp; AUTHORS &amp; VERSION
+      Const MSGPWORDFOUND1 As String = "You had a Worksheet " &amp; _
+              "Structure or Windows Password set." &amp; DBLSPACE &amp; _
+              "The password found was: " &amp; DBLSPACE &amp; "$$" &amp; DBLSPACE &amp; _
+              "Note it down for potential future use in other workbooks by " &amp; _
+              "the same person who set this password." &amp; DBLSPACE &amp; _
+              "Now to check and clear other passwords." &amp; AUTHORS &amp; VERSION
+      Const MSGPWORDFOUND2 As String = "You had a Worksheet " &amp; _
+              "password set." &amp; DBLSPACE &amp; "The password found was: " &amp; _
+              DBLSPACE &amp; "$$" &amp; DBLSPACE &amp; "Note it down for potential " &amp; _
+              "future use in other workbooks by same person who " &amp; _
+              "set this password." &amp; DBLSPACE &amp; "Now to check and clear " &amp; _
+              "other passwords." &amp; AUTHORS &amp; VERSION
+      Const MSGONLYONE As String = "Only structure / windows " &amp; _
+              "protected with the password that was just found." &amp; _
+               ALLCLEAR &amp; AUTHORS &amp; VERSION &amp; REPBACK
+      Dim w1 As Worksheet, w2 As Worksheet
+      Dim i As Integer, j As Integer, k As Integer, l As Integer
+      Dim m As Integer, n As Integer, i1 As Integer, i2 As Integer
+      Dim i3 As Integer, i4 As Integer, i5 As Integer, i6 As Integer
+      Dim PWord1 As String
+      Dim ShTag As Boolean, WinTag As Boolean</pre></p>
+
+<p>      Application.ScreenUpdating = False<br />
+      With ActiveWorkbook<br />
+          WinTag = .ProtectStructure Or .ProtectWindows<br />
+      End With<br />
+        ShTag = False<br />
+        For Each w1 In Worksheets<br />
+                ShTag = ShTag Or w1.ProtectContents<br />
+        Next w1<br />
+        If Not ShTag And Not WinTag Then<br />
+            MsgBox MSGNOPWORDS1, vbInformation, HEADER<br />
+            Exit Sub<br />
+        End If<br />
+        MsgBox MSGTAKETIME, vbInformation, HEADER<br />
+        If Not WinTag Then<br />
+            MsgBox MSGNOPWORDS2, vbInformation, HEADER<br />
+        Else<br />
+          On Error Resume Next<br />
+          Do      &#8216;dummy do loop<br />
+            For i = 65 To 66: For j = 65 To 66: For k = 65 To 66<br />
+            For l = 65 To 66: For m = 65 To 66: For i1 = 65 To 66<br />
+            For i2 = 65 To 66: For i3 = 65 To 66: For i4 = 65 To 66<br />
+            For i5 = 65 To 66: For i6 = 65 To 66: For n = 32 To 126<br />
+            With ActiveWorkbook<br />
+              .Unprotect Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; _<br />
+                 Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; _<br />
+                 Chr(i3) &amp; Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)<br />
+              If .ProtectStructure = False And _<br />
+              .ProtectWindows = False Then<br />
+                  PWord1 = Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; Chr(l) &amp; _<br />
+                    Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; _<br />
+                    Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)<br />
+                  MsgBox Application.Substitute(MSGPWORDFOUND1, _<br />
+                        &#8220;$$&#8221;, PWord1), vbInformation, HEADER<br />
+                  Exit Do  &#8216;Bypass all for&#8230;nexts<br />
+              End If<br />
+            End With<br />
+            Next: Next: Next: Next: Next: Next<br />
+            Next: Next: Next: Next: Next: Next<br />
+          Loop Until True<br />
+          On Error GoTo 0<br />
+        End If<br />
+        If WinTag And Not ShTag Then<br />
+          MsgBox MSGONLYONE, vbInformation, HEADER<br />
+          Exit Sub<br />
+        End If<br />
+        On Error Resume Next<br />
+        For Each w1 In Worksheets<br />
+          &#8216;Attempt clearance with PWord1<br />
+          w1.Unprotect PWord1<br />
+        Next w1<br />
+        On Error GoTo 0<br />
+        ShTag = False<br />
+        For Each w1 In Worksheets<br />
+          &#8216;Checks for all clear ShTag triggered to 1 if not.<br />
+          ShTag = ShTag Or w1.ProtectContents<br />
+        Next w1<br />
+        If ShTag Then<br />
+            For Each w1 In Worksheets<br />
+              With w1<br />
+                If .ProtectContents Then<br />
+                  On Error Resume Next<br />
+                  Do      &#8216;Dummy do loop<br />
+                    For i = 65 To 66: For j = 65 To 66: For k = 65 To 66<br />
+                    For l = 65 To 66: For m = 65 To 66: For i1 = 65 To 66<br />
+                    For i2 = 65 To 66: For i3 = 65 To 66: For i4 = 65 To 66<br />
+                    For i5 = 65 To 66: For i6 = 65 To 66: For n = 32 To 126<br />
+                    .Unprotect Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; _<br />
+                      Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; _<br />
+                      Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)<br />
+                    If Not .ProtectContents Then<br />
+                      PWord1 = Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; Chr(l) &amp; _<br />
+                        Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; _<br />
+                        Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)<br />
+                      MsgBox Application.Substitute(MSGPWORDFOUND2, _<br />
+                            &#8220;$$&#8221;, PWord1), vbInformation, HEADER<br />
+                      &#8216;leverage finding Pword by trying on other sheets<br />
+                      For Each w2 In Worksheets<br />
+                        w2.Unprotect PWord1<br />
+                      Next w2<br />
+                      Exit Do  &#8216;Bypass all for&#8230;nexts<br />
+                    End If<br />
+                    Next: Next: Next: Next: Next: Next<br />
+                    Next: Next: Next: Next: Next: Next<br />
+                  Loop Until True<br />
+                  On Error GoTo 0<br />
+                End If<br />
+              End With<br />
+            Next w1<br />
+        End If<br />
+        MsgBox ALLCLEAR &amp; AUTHORS &amp; VERSION &amp; REPBACK, vbInformation, HEADER<br />
+    End Sub
+
+以上宏代码，使用方法如下：</p>
+
+<p>1、打开受保护的Excel文件；</p>
+
+<p>2、依次通过菜单 “工具”  &#8211;&gt; “宏” &#8211;&gt; “录制新宏” 打开新建宏的窗口 ，在“宏名(M)”处输入宏名，比如Crack；</p>
+
+<p>3、新建宏后，立即停止宏录制；通过菜单 “工具”  &#8211;&gt; “宏” &#8211;&gt; “宏”打开宏列表，选择刚新建的宏，点击“编辑”按钮打开宏代码编辑窗口；</p>
+
+<p>4、用上面的宏代码替换编辑窗口内的代码，然后，关闭编辑窗口；</p>
+
+<p>5、通过菜单 “工具”  &#8211;&gt; “宏” &#8211;&gt; “宏”打开宏列表，选择“AllInternalPasswords”，点击“执行”按钮，执行宏代码；</p>
+
+<p>6、剩下的，就是等待结果了，只需大概2分钟左右，就可以找到能够解锁工作簿/工作表的字符串了(注意阅读弹出窗口内容)，同时也移除了保护，直接保存就可以得到没有保护的文件。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小马</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-26T00:00:00+08:00" pubdate data-updated="true">Dec 26<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/其他/'>其他</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/Java/java-ee-6-releas.html" title="Previous Post: Java EE 6 发布！">&laquo; Java EE 6 发布！</a>
+      
+      
+        <a class="basic-alignment right" href="/DataBase/Oracle/oracle-exp-00003-solutions.html" title="Next Post: Oracle EXP-00003 异常解决办法">Oracle EXP-00003 异常解决办法 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/其他/4-traps-a-startup-should-care.html">[转]4个造成创业失败的最重要陷阱</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/twelve-principles-of-agile-software.html">敏捷软件的十二条原则</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/stay-hungry-stay-foolish.html">Stay Hungry. Stay Foolish.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/其他/how-to-start-a-startup.html">如何进行成功的创业</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Android/hierarchyviewer-bat-is-missing-from-android-sdk_r07-windows.html">Windows版本的Android SDK R07中缺少hierarchyviewer.bat文件</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - 小马 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devx_me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://NeoCN.github.com/其他/crack-excel-workbook-and-worksheet-protection.html';
+        var disqus_url = 'http://NeoCN.github.com/其他/crack-excel-workbook-and-worksheet-protection.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
