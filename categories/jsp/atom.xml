@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: JSP | DevX.Me]]></title>
+  <link href="http://NeoCN.github.com//categories/jsp/atom.xml" rel="self"/>
+  <link href="http://NeoCN.github.com/"/>
+  <updated>2012-12-01T16:47:20+08:00</updated>
+  <id>http://NeoCN.github.com/</id>
+  <author>
+    <name><![CDATA[小马]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JSF 2.0 相关资料]]></title>
+    <link href="http://NeoCN.github.com/JSP/jsf-2-tutorials.html"/>
+    <updated>2009-10-30T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/JSP/jsf-2-tutorials</id>
+    <content type="html"><![CDATA[<p>07年的这个时候，正折腾着JSF1.2呢，不过自打去年毕业后，就再也没碰过JSF了。转眼间，都2.0了，突然觉得，这技术咋就变化那么快呢。搞IT，尤其是搞Java EE ，真是，累就一个字啊～～ 据说这次的2.0有很大的变化，尤其是在自定义组件的开发方面，简化了很多；2.0中也直接对AJAX做了支持。</p>
+
+
+
+
+<p>随手Google了一下相关资料，整理一下列出来：</p>
+
+
+
+
+<p><a onmousedown="return clk(0,'','','res','2','','0CAsQFjAB')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu1/" target="_blank">JSF 2 简介，第1 部分: 流线化Web 应用程序开发</a></p>
+
+
+
+
+<p><a onmousedown="return clk(0,'','','res','2','','0CAoQFjAB')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu2/" target="_blank">JSF 2 简介，第2 部分: 模板及复合组件</a></p>
+
+
+
+
+<p><a onmousedown="return clk(0,'more-results','','result','1','','0CAMQxAEwAA')" href="http://www.ibm.com/developerworks/cn/java/j-jsf2fu3/index.html" target="_blank">JSF 2 简介，第3 部分: 事件处理、JavaScript 和Ajax</a></p>
+
+
+
+
+<p><a onmousedown="return clk(0,'more-results','','result','3','','0CAcQxAEwAg')" href="http://www.ibm.com/developerworks/cn/web/wa-aj-gmaps/" target="_blank">JSF 2.0 Ajax 世界中的GMaps4JSF</a></p>
+
+
+
+
+<p><a title="JSF 2.0 Refcard " href="http://refcardz.dzone.com/refcardz/javaserver-faces-20">JSF 2.0 Refcard</a></p>
+
+
+
+
+<p><a title="JSF 2.0 Tutorials" href="http://www.coreservlets.com/JSF-Tutorial/jsf2/">JSF 2.0 Tutorials : JavaServer Faces 2.0 with Facelets and Ajax</a></p>
+
+
+
+
+<p>Sun的参考实现下载：<a title="JSF" href="https://javaserverfaces.dev.java.net/">https://javaserverfaces.dev.java.net/</a></p>
+
+
+
+
+<p>IceFaces和MyFaces的JSF2.0实现，也会很快的跟进的。</p>
+
+]]></content>
+  </entry>
+  
+</feed>

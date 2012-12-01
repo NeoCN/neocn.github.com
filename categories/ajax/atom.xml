@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: AJAX | DevX.Me]]></title>
+  <link href="http://NeoCN.github.com//categories/ajax/atom.xml" rel="self"/>
+  <link href="http://NeoCN.github.com/"/>
+  <updated>2012-12-01T16:47:20+08:00</updated>
+  <id>http://NeoCN.github.com/</id>
+  <author>
+    <name><![CDATA[小马]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[兼容IE与Firefox的异步请求创建]]></title>
+    <link href="http://NeoCN.github.com/AJAX/ie-firefox-ajax-request-creation.html"/>
+    <updated>2009-07-19T00:00:00+08:00</updated>
+    <id>http://NeoCN.github.com/AJAX/ie-firefox-ajax-request-creation</id>
+    <content type="html"><![CDATA[<p><pre lang="javascript">
+var xmlHttp;
+function createXMLHttpRequest(){
+    try{
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }catch(e){
+        try{
+            xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+        }catch(e){
+            xmlHttp = null;
+        }
+    }
+    if ( !xmlHttp && typeof XMLHttpRequest != "undefined" ){
+        xmlHttp=new XMLHttpRequest();
+    }
+}
+</pre></p>
+
+]]></content>
+  </entry>
+  
+</feed>
