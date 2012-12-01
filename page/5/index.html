@@ -9,7 +9,9 @@
   <meta name="author" content="小马">
 
   
-  <meta name="description" content="今天开始尝试着做Google Application Engine  应用程序开发（Java版），第一次部署还比较正常，除了在文件超过1M时频繁出现：java.net.SocketException: Unexpected end of file from server； &hellip;">
+  <meta name="description" content="昨天，在XP上安装了Cygwin，移动的网速还是不错的，很快就安装完成了，只是，发现中文全部显示为问号，而且，ls和dir命令，也没有对目录等的进行着色，以下是解决办法： 1、解决中文文件和目录名显示问题 修改.inputrc文件，打开以下设置：
+set meta-flag on
+# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,112 +71,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/Java/google-application-engine-deploy-exception.html">Google App Engine 部署异常</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-09-07T00:00:00+08:00" pubdate data-updated="true">Sep 7<span>th</span>, 2009</time>
-        
-         | <a href="/Java/google-application-engine-deploy-exception.html#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天开始尝试着做Google Application Engine  应用程序开发（Java版），第一次部署还比较正常，除了在文件超过1M时频繁出现：java.net.SocketException: Unexpected end of file from server；</p>
-
-<p>在了解了文件大小限制并成功部署之后，再次重新部署时，却出现如下异常，让人非常头疼：</p>
-
-<p>Another transaction by user XXXXXX is already in progress for this app and major version. That user can undo the transaction with appcfg.py&#8217;s &#8220;rollback&#8221; command.</p>
-
-<p>解决办法如下：</p>
-
-<p>从控制台进入Google App Engine的SDK目录下的bin目录，执行：“appcfg.cmd rollback  项目war目录路径”即可。</p>
-
-<p>例如：</p>
-
-<p>D:\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.2.5.v200909021031\appengine-java-sdk-1.2.5\bin&gt;appcfg.cmd rollback D:\eclipse\workspace\XXXXXX\war</p>
-
-<p>输出如下：</p>
-
-<p>Reading application configuration data&#8230;<br />
-Beginning server interaction for XXXXXX&#8230;<br />
-0% Rolling back the update.<br />
-Success.<br />
-Cleaning up temporary files&#8230;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html">Weblogic 10.3 连接 Oracle 8i</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-14T00:00:00+08:00" pubdate data-updated="true">Aug 14<span>th</span>, 2009</time>
-        
-         | <a href="/Application Server/Oracle/weblogic10-3-connect-to-oracle8i.html#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近做一个项目与统一接入的集成，修改完配置文件后，需要部署到正式环境中去，应用服务器是WebLogic 10.3，在新建JNDI数据源的时候无法建立成功，出现如下错误：</p>
-
-<p>java.lang.ArrayIndexOutOfBoundsException: 4</p>
-
-<p>数组下标越界？很是让人摸不着头脑，这建数据源跟数组下标越界有什么关系？？？</p>
-
-<p>数据库的版本是Oracle 8i，经过查找资料，发现问题的根源是WebLogic 10.3不再支持Oracle 8i。</p>
-
-<p>WebLogic 10.3所支持的数据库：<a title="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" href="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" target="_blank">http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245</a></p>
-
-<p>目前暂时没有解决办法，只能升级Oracle数据库，或者，如果是付费用户的话可寻求官方技术支持！</p>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -361,38 +257,35 @@ set output-meta on</pre>
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left">数据库名称</p>
 </td>
-<td width="641" valign="top">
+<td width="750" valign="top">
 <p align="left">连接串</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>MySQL</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName(&#8220;org.gjt.mm.mysql.Driver&#8221;);</p>
-<p align="left">DriverManager.getConnection(   &#8220;jdbc:mysql://MyDbComputerNameOrIP:3306/myDatabaseName&#8221;, sUsr, sPwd   );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName(&#8220;org.gjt.mm.mysql.Driver&#8221;);<br />DriverManager.getConnection(&#8220;jdbc:mysql://MyDbComputerNameOrIP:3306/myDatabaseName&#8221;, sUsr, sPwd);</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>PostgreSQL</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName(&#8220;org.postgresql.Driver&#8221;);</p>
-<p align="left">DriverManager.getConnection(&#8220;jdbc:postgresql://MyDbComputerNameOrIP/myDatabaseName&#8221;,   sUsr, sPwd );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName(&#8220;org.postgresql.Driver&#8221;);<br />DriverManager.getConnection(&#8220;jdbc:postgresql://MyDbComputerNameOrIP/myDatabaseName&#8221;, sUsr, sPwd );</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>Oracle</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName( &#8220;oracle.jdbc.driver.OracleDriver&#8221; );</p>
-<p align="left">DriverManager.getConnection( &#8220;jdbc:oracle:thin::1521:ORCL&#8221;,   sUsr, sPwd );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName( &#8220;oracle.jdbc.driver.OracleDriver&#8221; );<br />DriverManager.getConnection( &#8220;jdbc:oracle:thin::1521:ORCL&#8221;, sUsr, sPwd );</p>
 </td>
 </tr>
 <tr>
@@ -586,6 +479,95 @@ EXP-00024: 未安装导出视图，请通知您的DBA</div>
     <footer>
       <a rel="full-article" href="/Oracle/oracle-export-ora-00942.html">继续阅读 &rarr;</a>
     </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/Oracle/oracle-exception-ora.html">Oracle异常</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-19T00:00:00+08:00" pubdate data-updated="true">Jul 19<span>th</span>, 2009</time>
+        
+         | <a href="/Oracle/oracle-exception-ora.html#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>1、ORA-01791：不是 SELECTed 表达式<br />
+如果SELECT中用到DISTINCT关键字，还要使用ORDER BY 子句，那么排序的列必须是包含在SELECT列表中的字段，否则会报ORA-01791 不是SELECTed表达式。</p>
+
+<p>2、ORA-00979：不是GROUP BY 表达式<br />
+聚集函数前面几个列就要在group by后面出现几列，否则出现“不是 GROUP BY 表达式”。</p>
+
+<p>3、ORA-22858:：数据类型的更改无效<br />
+Oracle 数据库表字段类型直接从varchar2 修改为clob时报错：ORA-22858: 数据类型的更改无效<br />
+解决办法：可以先修改为Long类型，清空该列数据，然后再从Long修改为clob类型</p>
+
+<p>4、ORA-00972：identifier is too long  标识过长<br />
+Oracle 数据库 模式对象的名字长度上限为30个字符，因此数据库表名、字段名都不能超过30个字符</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/Java/ip-address-long-exchange.html">IP地址与长整型互转</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-19T00:00:00+08:00" pubdate data-updated="true">Jul 19<span>th</span>, 2009</time>
+        
+         | <a href="/Java/ip-address-long-exchange.html#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+<script src="https://gist.github.com/4181211.js"> </script>
+</p>
+</div>
+  
   
 
 

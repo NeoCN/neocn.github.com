@@ -4,7 +4,7 @@
   <title><![CDATA[Category: DataBase | DevX.Me]]></title>
   <link href="http://NeoCN.github.com//categories/database/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-12-01T17:11:03+08:00</updated>
+  <updated>2012-12-01T18:10:13+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -69,126 +69,110 @@ PS: 下午升级数据库后，服务起不来了，自己又是菜鸟一个，�
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left">数据库名称</p>
 </td>
-<td width="641" valign="top">
+<td width="750" valign="top">
 <p align="left">连接串</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>MySQL</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName("org.gjt.mm.mysql.Driver");</p>
-<p align="left">DriverManager.getConnection(   "jdbc:mysql://MyDbComputerNameOrIP:3306/myDatabaseName", sUsr, sPwd   );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName("org.gjt.mm.mysql.Driver");<br />DriverManager.getConnection("jdbc:mysql://MyDbComputerNameOrIP:3306/myDatabaseName", sUsr, sPwd);</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>PostgreSQL</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName("org.postgresql.Driver");</p>
-<p align="left">DriverManager.getConnection("jdbc:postgresql://MyDbComputerNameOrIP/myDatabaseName",   sUsr, sPwd );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName("org.postgresql.Driver");<br />DriverManager.getConnection("jdbc:postgresql://MyDbComputerNameOrIP/myDatabaseName", sUsr, sPwd );</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>Oracle</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName( "oracle.jdbc.driver.OracleDriver" );</p>
-<p align="left">DriverManager.getConnection( "jdbc:oracle:thin::1521:ORCL",   sUsr, sPwd );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName( "oracle.jdbc.driver.OracleDriver" );<br />DriverManager.getConnection( "jdbc:oracle:thin::1521:ORCL", sUsr, sPwd );</p>
 </td>
 </tr>
 <tr>
 <td colspan="2"><!--more--></td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>Sybase</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName("com.sybase.jdbc2.jdbc.SybDriver");</p>
-<p align="left">DriverManager.getConnection(   "jdbc:sybase:Tds:MyDbComputerNameOrIP:2638", sUsr, sPwd );</p>
-<p align="left">//(Default-Username/Password: "dba"/"sql")</p>
+<td width="750" valign="top">
+<p align="left">Class.forName("com.sybase.jdbc2.jdbc.SybDriver");<br />DriverManager.getConnection("jdbc:sybase:Tds:MyDbComputerNameOrIP:2638", sUsr, sPwd);<br />//(Default-Username/Password: "dba"/"sql")</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>SQLServer</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName( "net.sourceforge.jtds.jdbc.Driver" );</p>
-<p align="left">DriverManager.getConnection(   "jdbc:jtds:sqlserver://MyDbComputerNameOrIP:1433/master", sUsr,   sPwd );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName( "net.sourceforge.jtds.jdbc.Driver" );<br />DriverManager.getConnection("jdbc:jtds:sqlserver://MyDbComputerNameOrIP:1433/master", sUsr, sPwd );</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>ODBC</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName( "sun.jdbc.odbc.JdbcOdbcDriver" );</p>
-<p align="left">DriverManager.getConnection( "jdbc:odbc:" + sDsn, sUsr,   sPwd );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");<br />DriverManager.getConnection( "jdbc:odbc:" + sDsn, sUsr, sPwd );</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>DB2</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName("com.ibm.db2.jdbc.net.DB2Driver");</p>
-<p align="left">DriverManager.getConnection("jdbc:db2://192.9.200.108:6789/SAMPLE",   sUsr, sPwd );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName("com.ibm.db2.jdbc.net.DB2Driver");<br />DriverManager.getConnection("jdbc:db2://192.9.200.108:6789/SAMPLE", sUsr, sPwd );</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>SAP DB</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName ("com.sap.dbtech.jdbc.DriverSapDB");</p>
-<p align="left">DriverManager.getConnection ( "jdbc:sapdb://" + host +   "/" + database_name,user_name, password)</p>
+<td width="750" valign="top">
+<p align="left">Class.forName ("com.sap.dbtech.jdbc.DriverSapDB");<br />DriverManager.getConnection ( "jdbc:sapdb://" + host + "/" + database_name,user_name, password)</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>InterBase</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName("interbase.interclient.Driver");</p>
-<p align="left">DriverManager.getConnection("jdbc:interbase://localhost/e:/testbed/database/employee.gdb",   "sysdba", "masterkey" );</p>
+<td width="750" valign="top">
+<p align="left">Class.forName("interbase.interclient.Driver");<br />DriverManager.getConnection("jdbc:interbase://localhost/e:/testbed/database/employee.gdb", "sysdba", "masterkey" );</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left">Microsoft <strong>SQL Server </strong>series (6.5, 7.x and 2000) and Sybase 10</p>
 </td>
-<td width="641" valign="top">
-<p align="left">JDBC Name: jTDS</p>
-<p align="left">Class.forName("net.sourceforge.jtds.jdbc.Driver ");</p>
-<p align="left">DriverManager.getConnection("jdbc:jtds:sqlserver://host:port/database","user","password");or</p>
-<p align="left">DriverManager.getConnection("jdbc:jtds:sybase://host:port/database","user","password");</p>
+<td width="750" valign="top">
+<p align="left">JDBC Name: jTDS<br />Class.forName("net.sourceforge.jtds.jdbc.Driver ");<br />DriverManager.getConnection("jdbc:jtds:sqlserver://host:port/database","user","password");<br />或者<br />DriverManager.getConnection("jdbc:jtds:sybase://host:port/database","user","password");</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>IBM AS400</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">装V4R4以上版本的Client Access Express可以在C:Program FilesIBMClient Accessjt400ib找到 driver 档案 jt400.zip，并更改扩展名成为 jt400.jar语法</p>
-<p align="left">java.sql.DriverManager.registerDriver (new   com.ibm.as400.access.AS400JDBCDriver ());</p>
-<p align="left">Class.forName("com.ibm.as400.access.AS400JDBCConnection");con   = DriverManager.getConnection("jdbc:as400://IP","user","password");</p>
+<td width="750" valign="top">
+<p align="left">装V4R4以上版本的Client Access Express可以在C:Program FilesIBMClient Accessjt400ib找到 driver 档案 jt400.zip，并更改扩展名成为 jt400.jar语法<br />java.sql.DriverManager.registerDriver (new   com.ibm.as400.access.AS400JDBCDriver ());<br />Class.forName("com.ibm.as400.access.AS400JDBCConnection"); con = DriverManager.getConnection("jdbc:as400://IP","user","password");</p>
 </td>
 </tr>
 <tr>
-<td width="115" valign="top">
+<td width="150" valign="top">
 <p align="left"><strong>Informix</strong></p>
 </td>
-<td width="641" valign="top">
-<p align="left">Class.forName("com.informix.jdbc.IfxDriver").newInstance();</p>
-<p align="left">String url =   "jdbc:informix-sqli://123.45.67.89:1533/testDB:INFORMIXSERVER=myserver;   user=testuser;password=testpassword";</p>
+<td width="750" valign="top">
+<p align="left">Class.forName("com.informix.jdbc.IfxDriver").newInstance();<br />String url =   "jdbc:informix-sqli://123.45.67.89:1533/testDB:INFORMIXSERVER=myserver;user=testuser;password=testpassword";</p>
 </td>
 </tr>
 </tbody></table>

@@ -221,7 +221,7 @@
 
 <p><strong>解决方法：</strong>在网卡的高级属性设置中，将Offload Checksum设置为Disable ，如下图所示</p>
 
-<p>[caption id=&#8221;attachment_301&#8221; align=&#8221;aligncenter&#8221; width=&#8221;403&#8221; caption=&#8221;网卡设置&#8221;]<a href="http://www.devx.me/wp-content/uploads/2010/02/NIC-Setting.png"><img class="size-full wp-image-301" title="网卡设置" src="http://www.devx.me/wp-content/uploads/2010/02/NIC-Setting.png" alt="网卡设置" width="403" height="286" /></a>[/caption]</p>
+<p><a href="http://www.devx.me/wp-content/uploads/2010/02/NIC-Setting.png"><img class="size-full wp-image-301" title="网卡设置" src="http://www.devx.me/wp-content/uploads/2010/02/NIC-Setting.png" alt="网卡设置" width="403" height="286" /></a></p>
 </div>
   
   
@@ -442,48 +442,6 @@ GlassFish v3可以以两种方式下载：第一种包含所有Java EE 6 技术�
       
   <header>
     
-      <h1 class="entry-title"><a href="/其他/google-wave-invitations.html">送Google Wave邀请啦</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-09T00:00:00+08:00" pubdate data-updated="true">Dec 9<span>th</span>, 2009</time>
-        
-         | <a href="/其他/google-wave-invitations.html#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近Google邀请发放老快了，上两次给出的16个邀请都还没送完，昨天上去看，又多了几个，目前有20个邀请剩余～～邀请发送也更及时了，不像以前还要等段时间，现在貌似已经可以即时收到了～～</p>
-
-<p>大家有谁需要Wave邀请的，请留下Google帐号。</p>
-
-<p>[caption id=&#8221;attachment_262&#8221; align=&#8221;aligncenter&#8221; width=&#8221;594&#8221; caption=&#8221;Google Wave 邀请&#8221;]<img class="size-full wp-image-262" title="Google Wave 邀请" src="http://www.devx.me/wp-content/uploads/2009/12/Wave-Invitations.png" alt="Google Wave 邀请" width="594" height="110" />[/caption]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/Open Source/itext-license-changes-to-agpl.html">iText License 更换为 AGPL</a></h1>
     
     
@@ -563,13 +521,77 @@ GlassFish v3可以以两种方式下载：第一种包含所有Java EE 6 技术�
   <div class="entry-content"><p>图是从国外的一篇教程上整来的，觉得做得挺好～～<br />
 原文地址：<a title="8 Regular Expressions You Should Know" href="http://net.tutsplus.com/tutorials/other/8-regular-expressions-you-should-know/" target="_blank">http://net.tutsplus.com/tutorials/other/8-regular-expressions-you-should-know/</a></p>
 
-<p>[caption id=&#8221;attachment_243&#8221; align=&#8221;alignnone&#8221; width=&#8221;600&#8221; caption=&#8221;匹配用户名&#8221;]<img class="size-full wp-image-243" title="Matching a Username" src="http://www.devx.me/wp-content/uploads/2009/12/username.jpg" alt="匹配用户名" width="600" height="370" />[/caption]</p>
+<p><img class="size-full wp-image-243" title="Matching a Username" src="http://www.devx.me/wp-content/uploads/2009/12/username.jpg" alt="匹配用户名" width="600" height="370" /></p>
 
 <p></div>
   
   
     <footer>
       <a rel="full-article" href="/Java/8-regular-expressions-diagrammatic-explanation.html">继续阅读 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/Java/10-java-regular-expression-examples-you-should-know.html">[译]10个你应该知道的Java正则表达式的例子</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-01T00:00:00+08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2009</time>
+        
+         | <a href="/Java/10-java-regular-expression-examples-you-should-know.html#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>正则表达式，用于验证用户输入的合法性是非常方便的，正好在网上看到了这篇文章，顺手翻译一下。</p>
+
+<p>原文链接：<a title="10 Java Regular Expression Examples You Should Know " href="http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/" target="_blank">http://www.mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know/</a></p>
+
+<p>声明：原创翻译，不足之处请多多指正，转载请注明出处！</p>
+
+<p>正则表达式是一个编程的艺术，很难调试，学习和理解，但强大的功能，仍吸引不少开发者编写正则表达式。让我们探索一下下面10个实际应用中的正则表达式。
+<h3><strong>1. 用户名正则表达式模式</strong></h3>
+<pre>^[a-z0-9_-]{3,15}$</pre>
+<pre>^                         # 行开始
+  [a-z0-9_-]              # 匹配列表中的字符，a-z,0–9,下划线，连字符
+            {3,15}        # 长度至少3个字符，最大长度为15
+$                         # 行结束</pre>
+<h3>2. 密码正则表达式模式</h3>
+<pre>((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})</pre>
+<pre>(                        # 组开始
+    (?=.*\d)             # 必须包含一个数字 0-9
+    (?=.*[a-z])          # 必须包含一个小写字符
+    (?=.*[A-Z])          # 必须包含一个大写字符
+    (?=.*[@#$%])         # 必须包含一个列表中的特殊字符"@#$%"
+                .        # 检查所有字符串与前面的条件的匹配
+                 {6,20}  # 长度至少为6个字符，最大长度为20
+)                        # 组结束</pre>
+<h3></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/Java/10-java-regular-expression-examples-you-should-know.html">继续阅读 &rarr;</a>
     </footer>
   
 

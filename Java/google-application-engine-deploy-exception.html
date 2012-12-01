@@ -101,7 +101,10 @@
 
 <p>在了解了文件大小限制并成功部署之后，再次重新部署时，却出现如下异常，让人非常头疼：</p>
 
-<p>Another transaction by user XXXXXX is already in progress for this app and major version. That user can undo the transaction with appcfg.py&#8217;s &#8220;rollback&#8221; command.</p>
+<pre>
+Another transaction by user XXXXXX is already in progress for this app and major version. 
+That user can undo the transaction with appcfg.py's "rollback" command.
+</pre>
 
 <p>解决办法如下：</p>
 
@@ -113,11 +116,13 @@
 
 <p>输出如下：</p>
 
-<p>Reading application configuration data&#8230;<br />
-Beginning server interaction for XXXXXX&#8230;<br />
-0% Rolling back the update.<br />
-Success.<br />
-Cleaning up temporary files&#8230;</p>
+<pre>
+Reading application configuration data...
+Beginning server interaction for XXXXXX...
+0% Rolling back the update.
+Success.
+Cleaning up temporary files...
+</pre>
 </div>
 
 

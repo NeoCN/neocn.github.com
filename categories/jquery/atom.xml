@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jQuery | DevX.Me]]></title>
   <link href="http://NeoCN.github.com//categories/jquery/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-12-01T17:11:03+08:00</updated>
+  <updated>2012-12-01T18:10:13+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -59,28 +59,24 @@
     <li> 您可以对事件应用命名空间！这对于插件开发是特别有用的：</li>
 </ul>
 <pre lang="javascript">
-      jQuery.fn.myPlugin = function() {</pre></p>
+      jQuery.fn.myPlugin = function() {
+          //自己做一些清理 
+          jQuery.myPlugin = {
+              cleanUp: function() {
+                  // 该插件的作用是移除所有已绑定的click事件处理器
+                  jQuery('*').unbind('click.myPlugin'); 
+                  //或者，删除所有事件：
+                  jQuery('*').unbind('.myPlugin');
+              }
+          };
+          return this.bind('click.myPlugin', function() {
+              //做些什么...
+          });
+      };
 
-<p>          //自己做一些清理 <br />
-          jQuery.myPlugin = {<br />
-              cleanUp: function() { </p>
-
-<p>                  // 该插件的作用是移除所有已绑定的click事件处理器<br />
-                  jQuery('*').unbind('click.myPlugin'); </p>
-
-<p>                  //或者，删除所有事件：<br />
-                  jQuery('*').unbind('.myPlugin'); </p>
-
-<p>              }<br />
-          }; <br />
-          return this.bind('click.myPlugin', function() {<br />
-              //做些什么...<br />
-          });<br />
-      };<br />
-       <br />
-      //请注意，您也可以为数据定义命名空间：<br />
+      //请注意，您也可以为数据定义命名空间：
       // 例如. $(elem).data('whatever.myPlugin',value);
-
+</pre>
 <ul>
     <li> 您可以通过jQuery的事件存储机制访问所有绑定到一个元素（或任何对象）的所有事件处理器：</li>
 </ul>
@@ -95,7 +91,7 @@
       }); 
       //你可以看到某个事件发生时真正执行的方法，
       //对调试非常有用！
-</pre></p>
+</pre>
 
 <p><ul>
     <li> jQuery原生支持JSONP （'JSON with padding'），它实际上意味着可以做跨域“Ajax”请求（虽然严格意义上来讲并不是Ajax，因为它没有使用XHR ）。JSONP需要被请求域必须有一些相应的JSONP的API（它必须能够封装JSON数据与指定的回调函数）。一个例子：</li>
@@ -110,12 +106,11 @@
       //用法
       getLatestFlickrPics('ferrari', function(data){
           jQuery.each(data.items, function(i, item){
-              $("</pre><img />").attr("src", item.media.m).appendTo('body');<br />
-          });<br />
+              $("</pre><img />").attr("src", item.media.m).appendTo('body');
+          });
       });
-</p>
-
-<p><ul>
+</pre>
+<ul>
     <li> 您可能会发现它有点混乱，但jQuery使我们能够在一个链式代码中建立一个完整的DOM结构：</li>
 </ul>
 <pre lang="javascript">
@@ -136,38 +131,36 @@
               })
               .end()
           .appendTo('body');
-</div></pre></p>
+</pre>
 
-<p><ul>
+<ul>
     <li> 访问一个jQuery集合内部的DOM元素是非常简单的：</li>
 </ul>
 <pre lang="javascript">
-     var HTMLCollection = $('div').get(); </pre></p>
+     var HTMLCollection = $('div').get();
 
-<p>      //或者，如果您只想获取第一个元素：<br />
-      $('div').get(0);<br />
-      $('div').get()[0];<br />
+      //或者，如果您只想获取第一个元素：
+      $('div').get(0);
+      $('div').get()[0];
       $('div')[0];
-</p>
-
-<p><ul>
+</pre>
+<ul>
     <li> 您不仅可以绑定事件到DOM元素;您也可以绑定一个自定义事件到任何对象！</li>
 </ul>
 <pre lang="javascript">
       function Widget() {
           //做些什么...
-      };</pre></p>
+      };
 
-<p>      var myPhotoWidget = new Widget('photos');  <br />
-      var myPhotoWidget = new Widget('photos');  <br />
-      jQuery(myPhotoWidget).bind('photoAdd', function() {<br />
-            //自定义的事件处理...<br />
-      });<br />
-      //触发事件：<br />
+      var myPhotoWidget = new Widget('photos'); 
+      var myPhotoWidget = new Widget('photos'); 
+      jQuery(myPhotoWidget).bind('photoAdd', function() {
+            //自定义的事件处理...
+      });
+      //触发事件：
       jQuery(myPhotoWidget).trigger('photoAdd');
-</p>
-
-<p><ul>
+</pre>
+<ul>
     <li> 获取所选中的元素的索引值是非常容易的， jQuery给我们提供了一个'index'方法：</li>
 </ul>
 <pre lang="javascript">
@@ -203,30 +196,27 @@
           //返回False来终止循环
           //返回True来继续下一次循环
       });
-</pre></p>
-
-<p><ul>
+</pre>
+<ul>
     <li> '过滤器'方法接受一个字符串选择器或者一个函数。当和函数一起使用的时候，您必须返回false来从堆栈中删除这个元素，返回true来保留它：</li>
 </ul>
 <pre lang="javascript">
       $('div').filter(function(){
           return this.childNodes.length > 10; // 必须返回一个Boolean类型的值   
       });
-</pre></p>
-
-<p><ul>
+</pre>
+<ul>
     <li> 您没有必要为一个新的元素的指定ID或classes以便于以后对其进行引用，只需将他们缓存到一个变量就可以了：</li>
 </ul>
 <pre lang="javascript">
      var myInjectedDiv = $('<div>').appendTo('body'); </div></pre></p>
 
-<p>      //使用' myInjectedDiv '来引用这个元素：<br />
-      myInjectedDiv.bind('click', function(){<br />
-          // ...<br />
+      //使用' myInjectedDiv '来引用这个元素：
+      myInjectedDiv.bind('click', function(){
+          // ...
       });
-</p>
-
-<p><ul>
+</pre>
+<ul>
     <li> jQuery的'map'方法是非常有用的，参数中传递过来的函数将会对传递过来的数组（或对象）中的每一个元素进行操作，并且将每一次的函数返回值添加到新的数组中去，我们来看一看：</li>
 </ul>
 <pre lang="javascript">
@@ -236,24 +226,20 @@
       });
        
       // URLs = ['http://google.com', 'http://whatever.com', 'http://yahoo.com']
-</pre></p>
-
-<p><ul>
+</pre>
+<ul>
     <li> 这一个不是jQuery相关的，但它是非常有用的。当您需要比较做一些工作的不同方法时（为了获得更好的性能）您可以使用Firebug控制台来记录每一段代码的执行时间，例如：</li>
+</ul>
 <pre lang="javascript">
       console.time('My first method');
       //做些什么...
-      console.time('My first method'); </pre></ul></p>
+      console.time('My first method'); 
+      console.time('My second method');
+      //做些别的事情...
+      console.time('My second method');
 
-<p>      console.time('My second method');<br />
-      //做些别的事情...<br />
-      console.time('My second method'); </p>
-
-<p>      //Firebug会记录完成每块代码所用的时间（以毫秒为单位）
-
-</p>
-
-<p></p>
+      //Firebug会记录完成每块代码所用的时间（以毫秒为单位）
+</pre>
 
 ]]></content>
   </entry>

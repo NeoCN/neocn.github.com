@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Application Server | DevX.Me]]></title>
   <link href="http://NeoCN.github.com//categories/application-server/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-12-01T17:11:03+08:00</updated>
+  <updated>2012-12-01T18:10:13+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -86,12 +86,10 @@
 
 
 <p><strong>WebLogic的Cookie相关配置：</strong>
-<table border="0">
+<table>
 <tbody>
 <tr>
-<td>
-<p style="text-align: left;">属性名</p>
-</td>
+<td>属性名</td>
 <td>默认值</td>
 <td>值</td>
 </tr>
@@ -110,34 +108,21 @@
 <td>NULL</td>
 <td>如未设置，默认为发放cookie的服务器的域</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+<p>
 由于没有在Weblogic.xml配置文件中对cookie的相关属性值进行配置，因此应用CA和应用CB的cookie的Name、Domain和Path属性值均为默认值，即Name为JSESSIONID，Path为“/”，Domain为服务器的IP地址，三个属性值均相同，这就造成了应用CA的cookie与应用CB的cookie会互相覆盖，从而导致相应应用的session丢失。</p>
-
-
-
-
 <p><strong>三、解决办法：</strong></p>
-
-
-
 
 <p>在Weblogic.xml配置文件中增加Cookie的相应属性值的配置：<strong>
 </strong></p>
 
-
-
-
 <p>方法1：设置各应用的cookie的Name属性为不同值</p>
-
-
-
 
 <p>方法2：设置各应用的cookie的Path属性为不同值（cookie的Path属性值需与context-root值保持一致，context-root若未在Weblogic.xml中指定则默认为部署的WAR包名或文件夹名，若同一Weblogic服务器不同域中的两应用context-root相同，则此方法不可行）</p>
 
-
-
-
 <p><strong>附注：</strong>虽然问题是在WebLogic下的不同域部署应用进行互访的情况下发现的，但是，从问题产生的原因来看，在同一个域中的不同应用的互访，如果未做cookie相关属性值的配置，也会出现cookie冲突的问题。</p>
+</p>
 
 ]]></content>
   </entry>
@@ -167,7 +152,7 @@
 
 
 
-<p>WebLogic 10.3所支持的数据库：<a title="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" href="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" target="_blank">http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245</a></p>
+<p>WebLogic 10.3所支持的数据库：<br /><a title="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" href="http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245" target="_blank">http://download.oracle.com/docs/cd/E13196_01/platform/suppconfigs/configs103/103_over/supported_db.html#1179245</a></p>
 
 
 
@@ -231,13 +216,9 @@ CLASSPATH="${HIBERNATE_CLASSPATH}${SAVE_CLASSPATH}"</pre>
 
 
 
-<p>[xml]<br />
-&lt;weblogic-web-app&gt;<br />
-    &lt;container-descriptor&gt;<br />
-        &lt;prefer-web-inf-classes&gt;true&lt;/prefer-web-inf-classes&gt;<br />
-    &lt;/container-descriptor&gt;<br />
-&lt;/weblogic-web-app&gt;<br />
-[/xml]</p>
+<p>
+<script src="https://gist.github.com/4181243.js"> </script>
+</p>
 
 
 

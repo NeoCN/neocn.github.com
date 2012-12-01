@@ -125,13 +125,9 @@ CLASSPATH="${HIBERNATE_CLASSPATH}${SAVE_CLASSPATH}"</pre>
 <p>我们需要在部署系统的war包中，添加（*.war/web/WEB-INF/）weblogic.xml<br />
 其内容如下：</p>
 
-<p>[xml]<br />
-&lt;weblogic-web-app&gt;<br />
-    &lt;container-descriptor&gt;<br />
-        &lt;prefer-web-inf-classes&gt;true&lt;/prefer-web-inf-classes&gt;<br />
-    &lt;/container-descriptor&gt;<br />
-&lt;/weblogic-web-app&gt;<br />
-[/xml]</p>
+<p>
+<script src="https://gist.github.com/4181243.js"> </script>
+</p>
 
 <p>要求Web应用优先加载应用系统WEB-INF下的Jar，上述问题得以解决。</p>
 </div>

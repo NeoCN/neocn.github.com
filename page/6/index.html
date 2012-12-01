@@ -9,8 +9,7 @@
   <meta name="author" content="小马">
 
   
-  <meta name="description" content="1、ORA-01791：不是 SELECTed 表达式
-如果SELECT中用到DISTINCT关键字，还要使用ORDER BY 子句，那么排序的列必须是包含在SELECT列表中的字段，否则会报ORA-01791 不是SELECTed表达式。 2、ORA-00979：不是GROUP BY 表达式 &hellip;">
+  <meta name="description" content="document.onkeypress = function(e) { // 兼容IE和Firefox var key = window.event ? window.event.keyCode : e.which; if (key == 13) { //13为Enter键的键值， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,95 +69,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/Oracle/oracle-exception-ora.html">Oracle异常</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-19T00:00:00+08:00" pubdate data-updated="true">Jul 19<span>th</span>, 2009</time>
-        
-         | <a href="/Oracle/oracle-exception-ora.html#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>1、ORA-01791：不是 SELECTed 表达式<br />
-如果SELECT中用到DISTINCT关键字，还要使用ORDER BY 子句，那么排序的列必须是包含在SELECT列表中的字段，否则会报ORA-01791 不是SELECTed表达式。</p>
-
-<p>2、ORA-00979：不是GROUP BY 表达式<br />
-聚集函数前面几个列就要在group by后面出现几列，否则出现“不是 GROUP BY 表达式”。</p>
-
-<p>3、ORA-22858:：数据类型的更改无效<br />
-Oracle 数据库表字段类型直接从varchar2 修改为clob时报错：ORA-22858: 数据类型的更改无效<br />
-解决办法：可以先修改为Long类型，清空该列数据，然后再从Long修改为clob类型</p>
-
-<p>4、ORA-00972：identifier is too long  标识过长<br />
-Oracle 数据库 模式对象的名字长度上限为30个字符，因此数据库表名、字段名都不能超过30个字符</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/Java/ip-address-long-exchange.html">IP地址与长整型互转</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-19T00:00:00+08:00" pubdate data-updated="true">Jul 19<span>th</span>, 2009</time>
-        
-         | <a href="/Java/ip-address-long-exchange.html#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-<script src="https://gist.github.com/4181211.js"> </script>
-</p>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -235,23 +145,9 @@ document.onkeypress = function(e) { // 兼容IE和Firefox
   </header>
 
 
-  <div class="entry-content"><p><pre lang="javascript">
-var xmlHttp;
-function createXMLHttpRequest(){
-    try{
-        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }catch(e){
-        try{
-            xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-        }catch(e){
-            xmlHttp = null;
-        }
-    }
-    if ( !xmlHttp && typeof XMLHttpRequest != "undefined" ){
-        xmlHttp=new XMLHttpRequest();
-    }
-}
-</pre></p>
+  <div class="entry-content"><p>
+<script src="https://gist.github.com/4181252.js"> </script>
+</p>
 </div>
   
   

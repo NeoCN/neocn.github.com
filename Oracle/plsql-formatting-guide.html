@@ -154,73 +154,9 @@ RETURN INTEGER;
 <p align="left">提供一个头部注释，用于说明代码块的用途并列出创建日期和作者名字。并且每个修订版都要有一行注释，包含作者名、日期和修订版描述。</p>
 <p align="left">例如：下面的这个示例体现了上述建议。请注意该示例还使用了等宽字体（Courier New），因为每个字体占据同等宽度可以使格式化更加简便。等比例空格字体会隐藏空格使得行间对齐比较困难。多数文本和程序编辑器默认使用等宽字体。</p></p>
 
-<p><pre lang="plsql">REM ********************************************************
-REM * 文件名：coursediscount01.sql
-REM * 版本：1
-REM * 用途：对于至少有一部分超过十个学生登记的课程给予折扣
-REM * 参数：无
-REM *
-REM * 作者：s.tashi  时间：2000.1.1
-REM * 修改者：y.sonam 时间：2000.2.1
-REM * 描述：修正游标，添加缩进和注释。
-REM ********************************************************
-DECLARE
-   -- C_DISCOUNT_COURSE 找出那些至少有一部分超过十个学生登记的课程
-   CURSOR c_discount_course IS
-      SELECT DISTINCT course_no
-      FROM section sect
-      WHERE 10 &lt;= (SELECT COUNT(*)
-                    FROM enrollment enr
-                   WHERE enr.section_id = sect.section_id
-                   );
-   -- 费用超过 $2000.00的课程的折扣率
-   con_discount_2000 CONSTANT NUMBER := .90;
-   -- 费用在$1001.00和$2000.00之间的课程的折扣率
-   con_discount_other CONSTANT NUMBER := .95;</pre></p>
-
-<p>   v_current_course_cost course.cost%TYPE;<br />
-   v_discount_all NUMBER;<br />
-   e_update_is_problematic EXCEPTION;<br />
-BEGIN<br />
-   &#8211; 对于那些要打折的课程, 确定当前费用和新的费用<br />
-   FOR r_discount_course in c_discount_course LOOP<br />
-       SELECT cost<br />
-       INTO v_current_course_cost<br />
-       FROM course<br />
-       WHERE course_no = r_discount_course.course_no;</p>
-
-<p>       IF v_current_course_cost &gt; 2000 THEN<br />
-          v_discount_all := con_discount_2000;<br />
-       ELSE<br />
-          IF v_current_course_cost &gt; 1000 THEN<br />
-             v_discount_all := con_discount_other;<br />
-          ELSE<br />
-             v_discount_all := 1;<br />
-          END IF;<br />
-       END IF;</p>
-
-<p>       BEGIN<br />
-          UPDATE course<br />
-          SET cost = cost * v_discount_all<br />
-          WHERE course_no = r_discount_course.course_no;<br />
-       EXCEPTION<br />
-          WHEN OTHERS THEN<br />
-             RAISE e_update_is_problematic;<br />
-       END; &#8211; 更新记录的子代码块结束</p>
-
-<p>   END LOOP;&#8211; 主循环结束</p>
-
-<p>   COMMIT;</p>
-
-<p>EXCEPTION<br />
-   WHEN e_update_is_problematic THEN<br />
-   &#8211; 事务回滚<br />
-   ROLLBACK;<br />
-   DBMS_OUTPUT.PUT_LINE<br />
-      (&#8216;There was a problem updating a course cost.&#8217;);<br />
-   WHEN OTHERS THEN<br />
-      NULL;<br />
-END;</p>
+<p>
+<script src="https://gist.github.com/4181293.js"> </script>
+</p>
 </div>
 
 
