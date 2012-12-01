@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | DevX.Me]]></title>
   <link href="http://NeoCN.github.com//categories/java/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-12-01T18:10:13+08:00</updated>
+  <updated>2012-12-01T18:51:47+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -34,7 +34,7 @@ Java图形界面设计器，支持Swing, SWT, GWT, RCP, 和 XWT UI 框架</li>
     <li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-wintester.html" target="_blank">WindowTester Pro</a>
 使用Java富客户端应用测试GUI交互，支持SWT 和 Swing UI框架</li>
 </ul>
-<a href="http://www.devx.me/wp-content/uploads/2010/09/Gwt-Designer.png"><img class="aligncenter size-full wp-image-429" title="Gwt Designer" src="http://www.devx.me/wp-content/uploads/2010/09/Gwt-Designer.png" alt="" width="640" height="411" /></a></p>
+<a href="https://dl.dropbox.com/u/46811550/images/Gwt-Designer.png"><img class="aligncenter size-full wp-image-429" title="Gwt Designer" src="https://dl.dropbox.com/u/46811550/images/Gwt-Designer.png" alt="" width="640" height="411" /></a></p>
 
 
 
@@ -339,6 +339,7 @@ The expectation given in an Expect request-header field (see section
 the server has unambiguous evidence that the request could not be met    
 by the next-hop server.
 </pre>
+<p><!--more--></p>
 大致的意思是：
 <pre>服务器不支持Expect请求头部域，或者，如果服务器是代理服务器的话，
 服务器有明确的证据表明请求不能到达下一跳服务器。</pre>

@@ -100,14 +100,14 @@
 <div class="entry-content"><p>周四的时候，修改我们系统的代码，应另外一个公司的要求，要修改我们系统调用他们公司的提供的存储过程的调用方式。修改前，是通过配置的数据库用户名和密码直接访问到他们的数据库，再调用存储过程；现在要修改成从我们的数据库中直接访问他们授权的存储过程。以前之所以通过用户名密码访问他们的数据库后再调用，是因为储过程的一个输入参数是数组类型的，传递数组参数的时候，Connection的类型一定要是OracleConnection的，当时只知道使用用户名密码直接通过JDBC访问Oracle，获取连接，再传递参数进去是没有问题的，其他的方式试了下不行，时间紧，也就没去折腾。正好这次又要改，而且不允许直接JDBC访问拿Connection了，系统部署在WebLogic上，必须从WebLogic的连接池中获取连接。</p>
 
 <p>Java向Oracle传递数组参数的方法：
-<pre>ArrayDescriptor arraydesc = ArrayDescriptor.createDescriptor
-                                           (<em><code>sql_type_name</code></em>, <em><code>connection</code></em>);
+<pre>
+ArrayDescriptor arraydesc = ArrayDescriptor.createDescriptor(<em><code>sql_type_name</code></em>, <em><code>connection</code></em>);
 //<em><code>sql_type_name </code></em><code>是</code><code>Oracle数据库</code>中定义的数组类型的名称
 ARRAY array = new ARRAY(<em><code>arraydesc</code></em>, <em><code>connection</code></em>, <em><code>elements</code></em>);
 //<em><code>elements</code></em><code>是</code><code>Java数组类型的对象
 </code></pre>
 这里的array对象，就可以在调用存储过程时作为数组参数传入。需注意的是，connection必须是Native Connection，如果connection是通过JDBC建立数据库连接并获取的，就不会有问题，但是如果是通过JNDI数据源获取的，就不行，因为从数据源获取的Connection是Native Connection的代理类，比如Tomcat中通过配置的JNDI数据源获取连接，连接类型是org.apache.commons.dbcp.PoolableConnection类型的；在WebLogic、JBoss等其他服务器中，得到的Connection类型又是不同的。</p>
-
+<p><!--more--></p>
 <p>通过JNDI数据源获取连接的情况下，需要对获取到的连接进行一定的处理，获取到Native Connection。</p>
 
 <p>如果项目中使用了Spring，那么，在使用JNDI数据源获取数据库连接的情况下，可以方便地通过Spring的NativeJdbcExtractor获取Native Connection。Spring中所包含的NativeJdbcExtractor实现有：C3P0NativeJdbcExtractor、CommonsDbcpNativeJdbcExtractor、JBossNativeJdbcExtractor、NativeJdbcExtractor、SimpleNativeJdbcExtractor、WebLogicNativeJdbcExtractor、WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor，根据应用部署环境的不同选择相应的NativeJdbcExtractor实现。</p>
@@ -116,9 +116,11 @@ ARRAY array = new ARRAY(<em><code>arraydesc</code></em>, <em><code>connection</c
 
 <p>在成功获得Native Connection后，运行代码，却没有出现预期的成功调用的结果，而是抛出如下异常：</p>
 
-<p><strong><em>java.lang.ClassCastException: oracle.jdbc.driver.T4CConnection cannot be cast to oracle.jdbc.OracleConnection</em></strong>
-at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:149)<br />
-at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:115)</p>
+<pre>
+java.lang.ClassCastException: oracle.jdbc.driver.T4CConnection cannot be cast to oracle.jdbc.OracleConnection
+                              at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:149)
+                              at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:115)
+</pre>
 
 <p>搞到这里，我就糊涂了，我拿到了Native Connection了啊，你还要我怎样啊……心里那个郁闷啊……</p>
 

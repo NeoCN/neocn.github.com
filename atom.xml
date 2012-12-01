@@ -4,7 +4,7 @@
   <title><![CDATA[DevX.Me]]></title>
   <link href="http://NeoCN.github.com/atom.xml" rel="self"/>
   <link href="http://NeoCN.github.com/"/>
-  <updated>2012-12-01T18:10:13+08:00</updated>
+  <updated>2012-12-01T18:51:47+08:00</updated>
   <id>http://NeoCN.github.com/</id>
   <author>
     <name><![CDATA[小马]]></name>
@@ -133,6 +133,8 @@
 <p>The first story is about connecting the dots.</p>
 
 <p><strong>第一个故事是关于如何把生命中的点点滴滴串连起来。</strong></p>
+
+<p><!--more--></p>
 
 <p>I dropped out of Reed College after the first 6 months, but then  stayed around as a drop-in for another 18 months or so before I really  quit. So why did I drop out?
 <strong>
@@ -266,7 +268,7 @@ Thank you all very much.</p>
 
 <p>例如，目前的网上约会服务比Google诞生之前的搜索服务水平还要糟糕。他们都基于简单的数据库匹配算法。和现实生活中人们如何约会简直是风马牛不相及。一个本科生的毕业设计都有可能设计出更好的约会网站来。而在这个领域人们投资的钱又很多。在线约会的生意现在很火，但如果现在的约会网站能向Goolge<br />
 对搜索的提高那样进行提高，可能服务状况可能会比现在还要好上一百倍。</p>
-
+<p><!--more--></p>
 <p>然而，有了创业的点子，只是创业道路万里长征的第一步。很多跃跃欲试想创业的人都认为一个创业的点子是最重要的，有了点子，剩下的就是如何去执行去实现的问题了。但风险投资商们可不这么认为，但是如果你跑到风险投资商哪里，说你有一个天才的想法，只要他们同意签署不扩散协议（NDA）， 你就可以告诉他们你想要做什么，他们基本上连理都不会理你。这时你就可以看出，一个点子到底值多少钱。如果你只有一个点子，风险投资商们来签署一个NDA的功夫都懒的出。</p>
 
 <p>而且很多创业公司在创业的时候就已经在改变他们的创业计划和点子了，从这一点你也可以看出一个点子是多么的不值钱。 微软当初创业的想法是靠卖编程语言赚钱，创业的五年内没有任何起色，直到有一天 IBM决定使用他们的操作系统。</p>
@@ -548,7 +550,9 @@ Lycos, Excite, Infoseek, Altavista, Inktomi。在1998年才进入搜索市场好
 
 <p>2006年3月，一个很平常的工作日，我接到了一个自称tangmu的家伙给我电话，然后经过一轮饭局，一轮参观，一轮被面试，一个月左右的挣扎，加入到TX CDC的交互组，一直到现在。</p>
 
-<p><!--more-->06年算是一个临界点，之前的我一直都在所谓传统IT行业，工作按部就班，我按照流行说法，是真正进入新兴行业，这也让我有机会从两面来看，多 年后，我蓦然发现，正是这样一种前后反差，让我有机会有对比的机会，总结自己的设计理念和设计管理思路，也让我始终能很冷静看待互联网行业所谓日新月异的 “新理念”，“新思潮”。</p>
+<p><!--more--></p>
+
+<p>06年算是一个临界点，之前的我一直都在所谓传统IT行业，工作按部就班，我按照流行说法，是真正进入新兴行业，这也让我有机会从两面来看，多 年后，我蓦然发现，正是这样一种前后反差，让我有机会有对比的机会，总结自己的设计理念和设计管理思路，也让我始终能很冷静看待互联网行业所谓日新月异的 “新理念”，“新思潮”。</p>
 
 <p>第一个想说的是做一个交互设计师挺好玩的，特别是在CDC，在早期团队规模不大的时候，大家有很多机会很容易凑在一起吃喝玩乐，印象中最深刻的 是，每天中午吃饭，要冒死横穿一条大马路，然后东拐西拐进入大冲的一家小饭馆，每每想起当时的场景，都是相当怀念，很快我也融入了这样的氛围，后来我在 想，这个也算是CDC的特色，大家都很本色，不装，而不装在职场上是相当难得的品质，也很容易让内心有同样认同感的人找到归属感，在后来自己有机会带领团 队时，我也会特别去找一些性格外向，充满生活情趣，能搞气氛的团队开心果，但也得承认这样的设计师挺少。</p>
 
@@ -759,7 +763,7 @@ Lycos, Excite, Infoseek, Altavista, Inktomi。在1998年才进入搜索市场好
 <p>6.95%的创业公司不应该融资。</p>
 
 <p>95% of startups shouldn&#8217;t raise money</p>
-
+<p><!--more--></p>
 <p>7.加入创业者团体。</p>
 
 <p>Join a startup peer group</p>
@@ -958,7 +962,7 @@ Java图形界面设计器，支持Swing, SWT, GWT, RCP, 和 XWT UI 框架</li>
 	<li><a href="http://code.google.com/intl/zh-CN/webtoolkit/tools/download-wintester.html" target="_blank">WindowTester Pro</a>
 使用Java富客户端应用测试GUI交互，支持SWT 和 Swing UI框架</li>
 </ul>
-<a href="http://www.devx.me/wp-content/uploads/2010/09/Gwt-Designer.png"><img class="aligncenter size-full wp-image-429" title="Gwt Designer" src="http://www.devx.me/wp-content/uploads/2010/09/Gwt-Designer.png" alt="" width="640" height="411" /></a></p>
+<a href="https://dl.dropbox.com/u/46811550/images/Gwt-Designer.png"><img class="aligncenter size-full wp-image-429" title="Gwt Designer" src="https://dl.dropbox.com/u/46811550/images/Gwt-Designer.png" alt="" width="640" height="411" /></a></p>
 
 <p>官方博客上这样写到：
 <pre>下一步的是将这些开发工具更深的整合到GWT开发工具家族中去，将神奇的Instantiations技术融合进
@@ -1000,10 +1004,12 @@ Eclipse Google 插件(Google Plugin for Eclipse ，GPE) 。 所以，后续还�
 很多时候我们不能开始做事、无可作为的原因是缺少技术、资源、和工具。但这真正阻挡我们的却是自我挑剔和找借口。在<a href="http://en.wikipedia.org/wiki/Drawing_on_the_Right_Side_of_the_Brain"><em>Drawing on the Right Side of the Brain</em></a>这本优秀的书中，作者贝蒂·爱德华讨论了为什么当还是孩子时喜欢写写画画而到了青春期大部分人都停止了开发这种能力。
 <blockquote>“跟据很多成人的绘画技能来看，进入青春期标志着人们在艺术才能方面发展的突然中止。作为孩子，他们面临一个艺术危机，面临着他们对周围这世界日益增长的复杂的意识和自身艺术技能水平的冲突。”</blockquote>
 孩子们的自我批判意识会逐渐增强，他们同样喜欢绘画，但当他们意识到画不好时，就完全放弃了绘画。这种感觉会持续到成年。我们想起设计一个网站，或去开发一个应用程序时，如果我们拥有的资源和工具达不到我们预设的要求和水平，我们永远不会开始去做。即使互联网让我们看到了那些无数的伟大作品、天才个人和优秀的操作过程作为样板，也无济于事。人们很容易跟那些最好的比较起来发现自己的各种不充分和缺失，但从来没想过，任何人都不是天生都拥有这些技能的，如果他们不从开始做起，永远也走不到这一天。
+</p>
+<p>
 <h3>去干——无须试</h3>
 成功的人会找到一种方法让自己坚持做下去——尽管疑虑不满。艺术家文森特·梵高，只是在他的人生的后十年才称得上是艺术家。我们都因他的伟大艺术作品而认识他，但他并非一开始就是大师。对比一下<em>Drawing on the Right Side of the Brain</em>这本书里提供的两幅画，一副是其早期的作品，一副是两年后的作品：</p>
 
-<p><a href="http://www.devx.me/wp-content/uploads/2010/09/Vincent-Van-Gogh-Carpenter-1880-and-Woman-Mourning-1882.jpg"><img class="size-full wp-image-418" title="Vincent Van Gogh Carpenter, 1880 and Woman Mourning, 1882" src="http://www.devx.me/wp-content/uploads/2010/09/Vincent-Van-Gogh-Carpenter-1880-and-Woman-Mourning-1882.jpg" alt="文森特·梵高 木匠， 1880 和 Woman Mourning, 1882" width="530" height="361" /></a></p>
+<p><a href="https://dl.dropbox.com/u/46811550/images/Vincent-Van-Gogh-Carpenter-1880-and-Woman-Mourning-1882.jpg"><img class="size-full wp-image-418" title="Vincent Van Gogh Carpenter, 1880 and Woman Mourning, 1882" src="https://dl.dropbox.com/u/46811550/images/Vincent-Van-Gogh-Carpenter-1880-and-Woman-Mourning-1882.jpg" alt="文森特·梵高 木匠， 1880 和 Woman Mourning, 1882" width="530" height="361" /></a></p>
 
 <p>他不是什么神童（27岁才开始学画），他通过艰苦努力练就了一身技艺。如果当他感觉到技术水平比不上保罗·高更时，他屈服了自己的疑虑和绝望，他很有可能就放弃了自己的前程。</p>
 
@@ -1247,6 +1253,7 @@ The expectation given in an Expect request-header field (see section
 the server has unambiguous evidence that the request could not be met    
 by the next-hop server.
 </pre>
+<p><!--more--></p>
 大致的意思是：
 <pre>服务器不支持Expect请求头部域，或者，如果服务器是代理服务器的话，
 服务器有明确的证据表明请求不能到达下一跳服务器。</pre>
@@ -1373,14 +1380,14 @@ false);
     <content type="html"><![CDATA[<p>周四的时候，修改我们系统的代码，应另外一个公司的要求，要修改我们系统调用他们公司的提供的存储过程的调用方式。修改前，是通过配置的数据库用户名和密码直接访问到他们的数据库，再调用存储过程；现在要修改成从我们的数据库中直接访问他们授权的存储过程。以前之所以通过用户名密码访问他们的数据库后再调用，是因为储过程的一个输入参数是数组类型的，传递数组参数的时候，Connection的类型一定要是OracleConnection的，当时只知道使用用户名密码直接通过JDBC访问Oracle，获取连接，再传递参数进去是没有问题的，其他的方式试了下不行，时间紧，也就没去折腾。正好这次又要改，而且不允许直接JDBC访问拿Connection了，系统部署在WebLogic上，必须从WebLogic的连接池中获取连接。</p>
 
 <p>Java向Oracle传递数组参数的方法：
-<pre>ArrayDescriptor arraydesc = ArrayDescriptor.createDescriptor
-                                           (<em><code>sql_type_name</code></em>, <em><code>connection</code></em>);
+<pre>
+ArrayDescriptor arraydesc = ArrayDescriptor.createDescriptor(<em><code>sql_type_name</code></em>, <em><code>connection</code></em>);
 //<em><code>sql_type_name </code></em><code>是</code><code>Oracle数据库</code>中定义的数组类型的名称
 ARRAY array = new ARRAY(<em><code>arraydesc</code></em>, <em><code>connection</code></em>, <em><code>elements</code></em>);
 //<em><code>elements</code></em><code>是</code><code>Java数组类型的对象
 </code></pre>
 这里的array对象，就可以在调用存储过程时作为数组参数传入。需注意的是，connection必须是Native Connection，如果connection是通过JDBC建立数据库连接并获取的，就不会有问题，但是如果是通过JNDI数据源获取的，就不行，因为从数据源获取的Connection是Native Connection的代理类，比如Tomcat中通过配置的JNDI数据源获取连接，连接类型是org.apache.commons.dbcp.PoolableConnection类型的；在WebLogic、JBoss等其他服务器中，得到的Connection类型又是不同的。</p>
-
+<p><!--more--></p>
 <p>通过JNDI数据源获取连接的情况下，需要对获取到的连接进行一定的处理，获取到Native Connection。</p>
 
 <p>如果项目中使用了Spring，那么，在使用JNDI数据源获取数据库连接的情况下，可以方便地通过Spring的NativeJdbcExtractor获取Native Connection。Spring中所包含的NativeJdbcExtractor实现有：C3P0NativeJdbcExtractor、CommonsDbcpNativeJdbcExtractor、JBossNativeJdbcExtractor、NativeJdbcExtractor、SimpleNativeJdbcExtractor、WebLogicNativeJdbcExtractor、WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor，根据应用部署环境的不同选择相应的NativeJdbcExtractor实现。</p>
@@ -1389,9 +1396,11 @@ ARRAY array = new ARRAY(<em><code>arraydesc</code></em>, <em><code>connection</c
 
 <p>在成功获得Native Connection后，运行代码，却没有出现预期的成功调用的结果，而是抛出如下异常：</p>
 
-<p><strong><em>java.lang.ClassCastException: oracle.jdbc.driver.T4CConnection cannot be cast to oracle.jdbc.OracleConnection</em></strong>
-at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:149)<br />
-at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:115)</p>
+<pre>
+java.lang.ClassCastException: oracle.jdbc.driver.T4CConnection cannot be cast to oracle.jdbc.OracleConnection
+                              at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:149)
+                              at oracle.sql.ArrayDescriptor.createDescriptor(ArrayDescriptor.java:115)
+</pre>
 
 <p>搞到这里，我就糊涂了，我拿到了Native Connection了啊，你还要我怎样啊……心里那个郁闷啊……</p>
 
@@ -1437,9 +1446,9 @@ IW参数：一年中的周次（1～52或1～53），基于ISO标准；</pre>
     <id>http://NeoCN.github.com/Web/html-5-file-operation</id>
     <content type="html"><![CDATA[<p>Gmail的附件添加，已经支持拖拽操作，可以直接从文件系统中拖拽文件至Gmail附件区域，完成文件上传操作，并且支持多文件操作，如下图所示：</p>
 
-<p><a href="http://www.devx.me/wp-content/uploads/2010/04/File-Drag-Drop.png"><img class="size-full wp-image-326 " title="GMail文件拖拽操作" src="http://www.devx.me/wp-content/uploads/2010/04/File-Drag-Drop.png" alt="GMail文件拖拽操作" /></a></p>
+<p><a href="https://dl.dropbox.com/u/46811550/imagesFile-Drag-Drop.png"><img class="size-full wp-image-326 " title="GMail文件拖拽操作" src="https://dl.dropbox.com/u/46811550/imagesFile-Drag-Drop.png" alt="GMail文件拖拽操作" /></a></p>
 
-<p><a href="http://www.devx.me/wp-content/uploads/2010/04/File-Uploading.png"><img class="size-full wp-image-327 " title="GMail附件上传" src="http://www.devx.me/wp-content/uploads/2010/04/File-Uploading.png" alt="GMail附件上传" /></a></p>
+<p><a href="https://dl.dropbox.com/u/46811550/imagesFile-Uploading.png"><img class="size-full wp-image-327 " title="GMail附件上传" src="https://dl.dropbox.com/u/46811550/imagesFile-Uploading.png" alt="GMail附件上传" /></a></p>
 
 <p>文件拖拽操作，在Firefox 3.6 和 Chrome 4.1中均被支持，IE 8中无效……同时，我们可以注意到，附件在上传前，我们已经可以获取到附件的一些更具体信息，比如文件大小，不需要任何的浏览器插件来支持。这些特性，是很多Web应用开发者所期待的，所需要的……</p>
 
@@ -1477,7 +1486,7 @@ IW参数：一年中的周次（1～52或1～53），基于ISO标准；</pre>
 <p>方案一、安装 <a href="http://www.microsoft.com/downloads/details.aspx?displaylang=zh-cn&amp;FamilyID=cecc62dc-96a7-4657-af91-6383ba034eab" target="_blank">用于 Firefox 的 .NET Framework Assistant 1.0 的 .NET Framework 3.5 SP1 更新</a>，然后即可正常卸载插件(如果已经安装了Firefox 3.6或者更高版本而且<strong>.NET  Framework Assistant 0.0.0</strong>已经出现在Firefox附加组件列表中，那么请使用方案二删除该插件)；</p>
 
 <p>该更新的描述如下：在 .NET Framework 3.5 SP1 中，.NET Framework Assistant 使 Firefox 可以使用  .NET Framework 中所包含的 ClickOnce 技术。.NET Framework Assistant  是在计算机级别添加的，支持计算机的所有用户使用其功能。因而，<strong>Firefox  加载项列表中的“卸载”按钮显示为不可用，这是因为不允许标准用户卸载计算机级别的组件</strong>。在此 .NET Framework 3.5 SP1 更新和  Windows 7 中，将基于每个用户安装 .NET Framework Assistant。这样，<strong>Firefox  加载项列表中的“卸载”按钮将可用</strong>。此外，此更新还将使用于 Firefox 的此版本的 .NET Framework Assistant 与将来的  Firefox 浏览器版本兼容。  此更新还将使用于 Firefox 的此版本的 .NET Framework Assistant 与将来的 Firefox  浏览器版本兼容。为了正确地更新 .NET Framework Assistant，必须先在 Firefox  中启用该扩展，然后才能应用此更新。若要修正因在禁用该扩展时安装此更新所造成的后果，请卸载更新，重新启用该扩展，然后重新安装此更新。.NET  Framework Assistant 的更新可能包含用于 Firefox 的 Windows Presentation Foundation  插件，从而能够在首次更新时启用该扩展。</p>
-
+<p><!--more--></p>
 <p>方案二、手动删除。
 <ol>
 	<li>删除注册表项为扩展。若要执行此操作，使用下列方法之一。
