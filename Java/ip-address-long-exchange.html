@@ -9,8 +9,7 @@
   <meta name="author" content="小马">
 
   
-  <meta name="description" content="import java.net.InetAddress;
-import java.net.UnknownHostException; public class IPUtil { /** * @param ip *            ip的字符串表示 * @return ip地址的数值表示 &hellip;">
+  <meta name="description" content=" ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -98,63 +97,9 @@ import java.net.UnknownHostException; public class IPUtil { /** * @param ip * �
   </header>
 
 
-<div class="entry-content"><p><pre lang="java" /></p>
-
-<p>import java.net.InetAddress;<br />
-import java.net.UnknownHostException;</p>
-
-<p>public class IPUtil {<br />
- /**<br />
- * @param ip<br />
- *            ip的字符串表示<br />
- * @return ip地址的数值表示<br />
- * @throws UnknownHostException<br />
- */<br />
- public static long ipToLong(String ip) <br />
-     throws UnknownHostException {<br />
-     InetAddress ipAddress = InetAddress.getByName(ip);<br />
-     return ipToLong(ipAddress);<br />
- }</p>
-
-<p> /**<br />
- * IP地址转换到长整型<br />
- * @param ipAddress<br />
- *            InetAddress对象<br />
- * @return ip地址的数值表示<br />
- * @throws UnknownHostException<br />
- */<br />
- public static long ipToLong(InetAddress ipAddress) <br />
-     throws UnknownHostException {<br />
-     byte[] ipBytes = ipAddress.getAddress();<br />
-     Long ipLong = (ipBytes[0] << 24 & 0xff000000L)<br />
-                 | (ipBytes[1] << 16 & 0xff0000L)<br />
-                 | (ipBytes[2] <<  8 & 0xff00L)<br />
-                 | (ipBytes[3] <<  0 & 0xffL);<br />
-     return ipLong;<br />
- }</p>
-
-<p> /**<br />
- * 由低32位二进制数构成InetAddress对象<br />
- *<br />
- * @param ip<br />
- *            ip地址的数值表示<br />
- * @return InetAddress对象<br />
- * @throws UnknownHostException<br />
- */<br />
- public static InetAddress longToIP(long ip) <br />
-     throws UnknownHostException {<br />
-     byte[] ipBytes = new byte[4];<br />
-     int i = (int) ip;// 低32位<br />
-     ipBytes[0] = (byte) ((i >> 24) & 0x000000ff);<br />
-     ipBytes[1] = (byte) ((i >> 16) & 0x000000ff);<br />
-     ipBytes[2] = (byte) ((i >> 8 ) & 0x000000ff);<br />
-     ipBytes[3] = (byte) ((i >> 0 ) & 0x000000ff);<br />
-     return InetAddress.getByAddress(ipBytes);<br />
- }</p>
-
-<p>}</p>
-
-<p></p>
+<div class="entry-content"><p>
+<script src="https://gist.github.com/4181211.js"> </script>
+</p>
 </div>
 
 

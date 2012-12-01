@@ -122,10 +122,11 @@ EXP-00024: 未安装导出视图，请通知您的DBA<!--more--></p>
 <p>解决方法：<br />
 使用SQL Plus，以DBA的身份登录；<br />
 执行以下语句：<br />
-Shutdown immediate  //关掉数据库<br />
-startup migrate  //启动到migrate模式<br />
-@&#8221;%oracle_home%\rdbms\admin\catpatch.sql&#8221;   //迁移到新版本的字典</p>
-</div>
+<pre>
+Shutdown immediate  //关掉数据库
+startup migrate  //启动到migrate模式
+@"%oracle_home%\rdbms\admin\catpatch.sql"   //迁移到新版本的字典
+</pre></div>
 
 
   <footer>
